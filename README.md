@@ -2,6 +2,13 @@
 
 Three interactive, dependency-free web presentations for 90-minute grades 6–10 math circles. They are designed for a projector, audience participation, and more visuals than words.
 
+## Published URL
+
+- https://amessbee.github.io/codes_correction/ (GLITCH!)
+- https://amessbee.github.io/codes_correction/carnival.html
+- https://amessbee.github.io/codes_correction/monster-party.html
+- Author: [amessbee.github.io](https://amessbee.github.io/)
+
 ## Choose a circle
 
 - `index.html` — **GLITCH!**: parity, redundancy, Hamming distance, and error-correcting codes
