@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#170f2f">
+  <title>Monster Party — The Seating Chart from Hell</title>
+  <link rel="stylesheet" href="circle-templates.css">
+</head>
+<body class="monster" data-visuals="1">
+  <header class="deck-chrome" aria-label="Presentation controls">
+    <button class="brand-mark" data-action="go-home"><span class="brand-icon">👻</span> Monster Party</button>
+    <div class="chapter-label" id="chapterLabel">You're invited</div>
+    <div class="header-actions">
+      <small class="deck-signature">mudassir</small>
+      <button class="icon-button" data-action="display" title="Display controls (D)">◐</button>
+      <button class="icon-button" data-action="notes" title="Facilitator notes (N)">N</button>
+      <button class="icon-button" data-action="fullscreen" title="Fullscreen (F)">⛶</button>
+    </div>
+  </header>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-chapter="You're invited" data-notes="Welcome everyone as the newly appointed Chief Seating Officer. The previous officer vanished under mysterious but probably table-related circumstances. Do not say graph coloring yet.">
+      <div class="slide-inner hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">A 90-minute social catastrophe</p>
+          <h1><small>Monster Party</small>SEATING CHART FROM HELL</h1>
+          <p class="lead">One banquet. Seven monsters. Too many grudges.</p>
+          <button class="primary-button" data-action="next">Accept the job →</button>
+        </div>
+        <div class="moon-stage" aria-hidden="true"><div class="moon"></div><div class="castle">🏰</div><span class="bat">🦇</span><span class="bat">🦇</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Meet the guests" data-notes="Introduce the cast in character. Click cards to hear their ridiculous demand appear below. Encourage students to choose voices. The constraints are intentionally silly and memorable.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">The guest list</p>
+        <h2>Every monster has… concerns.</h2>
+        <div class="monster-roster" id="introRoster"></div>
+        <div class="panel lead" id="monsterDemand">Click a guest. Regret everything.</div>
+      </div>
+    </section>
+
+    <section class="slide seating-slide" data-chapter="First disaster" data-notes="Click monster cards to cycle them from lobby to Table A to Table B. The bell rings whenever enemies share a table. The goal is to seat everyone with only two tables. Let the room shout instructions.">
+      <div class="slide-inner">
+        <div class="copy-stack">
+          <p class="eyebrow">Dinner in 3… 2… scream</p>
+          <h2>Seat everyone. Ring no bells.</h2>
+        </div>
+        <div class="monster-roster" id="seatingRoster"></div>
+        <div class="banquet">
+          <div class="party-table" id="tableA"><h3>TABLE A</h3></div>
+          <div class="party-table" id="tableB"><h3>TABLE B</h3></div>
+        </div>
+        <div class="action-row" style="justify-content:center">
+          <button class="secondary-button" data-action="seating-reset">Evacuate</button>
+          <span class="bell" id="dinnerBell" aria-label="Violation bell">🔔</span>
+          <p class="lead" id="seatingStatus">Click each guest to move them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Two-table challenge" data-notes="Give teams seven character cards or paper scraps. They have six minutes. A valid split is possible. Ask teams to display their two groups without explaining yet.">
+      <div class="slide-inner split-even">
+        <div class="copy-stack">
+          <p class="eyebrow">Team mission</p>
+          <h2>Two tables. Zero feuds.</h2>
+          <div class="timer" id="tablesTimer" data-duration="360">06:00</div>
+          <div class="action-row">
+            <button class="primary-button" data-action="timer-toggle" data-target="tablesTimer">Start / pause</button>
+            <button class="secondary-button" data-action="timer-reset" data-target="tablesTimer">Reset</button>
+          </div>
+        </div>
+        <div class="panel finale-layout">
+          <div class="big-quote">✂️ → 🔴 🔵</div>
+          <div class="constraint-strip"><span class="constraint-chip">Enemies split</span><span class="constraint-chip">Everyone seated</span><span class="constraint-chip">Explain why</span></div>
+          <button class="choice-button" data-action="monster-hint">Emergency hint</button>
+          <p class="lead" id="monsterHint">No apologies accepted.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Triangle of doom" data-notes="Three pairwise enemies cannot fit at two tables. Invite three students to embody the triangle. Place the first two, then ask where the third can go. This is the first genuine impossibility proof.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">A new guest arrives</p>
+          <h2>Where can the third enemy sit?</h2>
+          <div class="action-row">
+            <button class="choice-button" data-action="triangle-color">Try two tables</button>
+            <button class="primary-button" data-action="triangle-third">Open Table C</button>
+          </div>
+          <p class="lead" id="triangleStatus">Every pair refuses to share.</p>
+        </div>
+        <div class="triangle-stage">
+          <i class="triangle-line"></i><i class="triangle-line"></i><i class="triangle-line"></i>
+          <span class="triangle-monster" data-triangle="0">🧛</span>
+          <span class="triangle-monster" data-triangle="1">🧟</span>
+          <span class="triangle-monster" data-triangle="2">🐺</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="The feud map" data-notes="Reveal the abstraction: guests become dots, feuds become lines. Ask what information has been discarded and what has been preserved. This is a map of relationships, not geography.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">Remove the furniture</p>
+          <h2>Guests become dots. Feuds become lines.</h2>
+          <div class="constraint-strip"><span class="constraint-chip">monster = dot</span><span class="constraint-chip">feud = line</span><span class="constraint-chip">table = color</span></div>
+        </div>
+        <div class="graph-board" id="mapGraph" aria-label="Feud network"></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Human graph" data-notes="Give each student a monster card. String or outstretched arms represent feuds. Teams must split themselves into two zones with no feud inside a zone. Add one feud midway for comic panic.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">Everybody stand up</p>
+        <h2>Become the feud map.</h2>
+        <div class="big-quote" aria-hidden="true">🧛━━🧟━━👻━━🤖</div>
+        <div class="timer" id="humanTimer" data-duration="480">08:00</div>
+        <div class="action-row">
+          <button class="primary-button" data-action="timer-toggle" data-target="humanTimer">Release monsters</button>
+          <button class="secondary-button" data-action="timer-reset" data-target="humanTimer">Reset</button>
+        </div>
+        <p class="lead">No feud may remain inside one zone.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Minimum tables" data-notes="Click each monster dot to cycle through table colors. Adjacent dots may not match. The board begins with no assignments. Challenge the room to use as few colors as possible.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">Interactive seating map</p>
+          <h2>Use the fewest tables.</h2>
+          <div class="color-key"><span><i style="background:#f2509d"></i>A</span><span><i style="background:#c6ff4a"></i>B</span><span><i style="background:#6ce5ff"></i>C</span><span><i style="background:#ffb86b"></i>D</span></div>
+          <div class="action-row"><button class="secondary-button" data-action="color-reset">Clear</button><button class="primary-button" data-action="color-check">Check plan</button></div>
+          <p class="lead" id="colorStatus">Click dots to change tables.</p>
+        </div>
+        <div class="graph-board" id="colorGraph" aria-label="Interactive graph coloring puzzle"></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Sabotage" data-notes="The graph starts colorable with two tables. Click two monsters to add or remove a feud. Goal: force a third table with one strategic new feud. Ask teams to predict before editing.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">Villain mode unlocked</p>
+          <h2>Add one feud. Cause maximum chaos.</h2>
+          <p class="lead">Select two guests to toggle a feud.</p>
+          <div class="action-row"><button class="secondary-button" data-action="sabotage-reset">Undo scandal</button><button class="primary-button" data-action="sabotage-test">Try two tables</button></div>
+          <p class="lead" id="sabotageStatus">Choose your enemies wisely.</p>
+        </div>
+        <div class="graph-board" id="sabotageGraph" aria-label="Editable feud network"></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Monster court" data-notes="Read each argument in an outrageous lawyer voice. Students vote. The second claim is the valid proof: an odd cycle blocks two colors. The others are anecdotes or irrelevant.">
+      <div class="slide-inner courtroom">
+        <div class="judge" aria-hidden="true">👩‍⚖️</div>
+        <div class="court-cards">
+          <p class="eyebrow">Monster Court is now in session</p>
+          <h2>Which argument proves it?</h2>
+          <button class="choice-button" data-action="court" data-court="0">“We tried twice and it looked impossible.”</button>
+          <button class="choice-button" data-action="court" data-court="1">“Going around this odd loop forces the last pair to match.”</button>
+          <button class="choice-button" data-action="court" data-court="2">“Vampires are dramatic, your honor.”</button>
+          <p class="lead" id="courtStatus">The jury is restless.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Build an impossible party" data-notes="Teams sketch a feud network that needs at least three tables, then another team audits it. Clicking two dots toggles a line; clicking a dot alone after a pause cancels selection. Seek the smallest impossible example first.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">Construction challenge</p>
+          <h2>Build the smallest disaster.</h2>
+          <p class="lead">Toggle feuds. Then dare another team to use two tables.</p>
+          <div class="action-row"><button class="secondary-button" data-action="builder-clear">Clear map</button><button class="primary-button" data-action="builder-test">Audit</button></div>
+          <p class="lead" id="builderStatus">A blank social calendar. For now.</p>
+        </div>
+        <div class="graph-board" id="builderGraph" aria-label="Build-your-own feud network"></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Boss schedule" data-notes="Now tables become class periods and feuds become shared students. Click each course to cycle periods. The fixed conflict graph requires three periods. Ask what has changed mathematically: almost nothing.">
+      <div class="slide-inner split-even">
+        <div class="copy-stack">
+          <p class="eyebrow">Boss level · School edition</p>
+          <h2>No student can be in two rooms.</h2>
+          <div class="schedule-grid" id="scheduleGrid"></div>
+          <div class="action-row"><button class="secondary-button" data-action="schedule-reset">Clear</button><button class="primary-button" data-action="schedule-check">Publish schedule</button></div>
+        </div>
+        <div class="panel finale-layout">
+          <div class="big-quote" aria-hidden="true">📚 🕒 😱</div>
+          <p class="lead" id="scheduleStatus">Click each course to choose a period.</p>
+          <div class="constraint-strip"><span class="constraint-chip">Math—Art</span><span class="constraint-chip">Art—Music</span><span class="constraint-chip">Music—Math</span><span class="constraint-chip">Math—Drama</span><span class="constraint-chip">Drama—Robotics</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="The mathematical name" data-notes="Ask students to supply each word from the visual: dots and lines form a graph; tables become colors; the minimum number is the chromatic number. Reveal one term at a time if preferred.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">The party planner confesses</p>
+        <h2>Color connected dots differently. Use as few colors as possible.</h2>
+        <button class="stamp-button" data-action="reveal" data-target="graphColoring">Reveal the name</button>
+        <div class="reveal-word covered" id="graphColoring">GRAPH COLORING</div>
+        <p class="lead">The fewest colors needed = the <strong>chromatic number</strong>.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Beyond the banquet" data-notes="Collect applications: timetables, radio frequencies, map colors, sports rounds, register allocation, incompatible chemicals. Ask which ones are really about conflicts.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">The monsters were a disguise</p>
+        <h2>What else is secretly a seating chart?</h2>
+        <div class="big-quote" aria-hidden="true">🗺️ 📡 🏫 🏟️ 💻</div>
+        <p class="lead">Whenever some things cannot share the same slot, color the conflict.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Party survived" data-notes="Award titles: Chief Peacekeeper, Most Dramatic Monster, Fastest Proof, Best Saboteur. End with the room chanting: dots, lines, colors, done.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">Final incident report</p>
+        <h2>We did not fix the monsters.</h2>
+        <div class="reveal-word">WE ORGANIZED THE CONFLICT</div>
+        <div class="big-quote" aria-hidden="true">🎉👻🧛🧟🐺🎉</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav-dock" aria-label="Slide navigation">
+    <button class="nav-button" data-action="prev" aria-label="Previous slide">←</button>
+    <div class="progress-track"><span id="progressBar"></span></div>
+    <span class="slide-count" id="slideCount">01 / 15</span>
+    <button class="nav-button" data-action="next" aria-label="Next slide">→</button>
+  </nav>
+
+  <aside class="notes-panel" id="notesPanel" hidden><div class="panel-title"><span>Facilitator notes</span><button data-action="close-panel">×</button></div><p id="notesText"></p></aside>
+  <aside class="display-panel" id="displayPanel" hidden>
+    <div class="panel-title"><span>Projector controls</span><button data-action="close-panel">×</button></div>
+    <div class="density-control"><button data-action="visuals-less" aria-label="Show fewer figures">−</button><output id="visualsLabel">Current</output><button data-action="visuals-more" aria-label="Show more figures">+</button></div>
+    <button class="primary-button" data-action="theme">Flip dark / light colors</button>
+    <div class="shortcut-grid"><kbd>← →</kbd><span>move slides</span><kbd>N</kbd><span>notes</span><kbd>C</kbd><span>flip colors</span><kbd>F</kbd><span>fullscreen</span></div>
+  </aside>
+
+  <script src="circle-deck.js"></script>
+  <script src="monster-party.js"></script>
+</body>
+</html>

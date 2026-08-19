@@ -1,6 +1,12 @@
-# GLITCH! Math Circle deck
+# Interactive Math Circle decks
 
-An interactive, dependency-free web presentation for a 90-minute grades 6–10 math circle on parity, redundancy, Hamming distance, and error-correcting codes.
+Three interactive, dependency-free web presentations for 90-minute grades 6–10 math circles. They are designed for a projector, audience participation, and more visuals than words.
+
+## Choose a circle
+
+- `index.html` — **GLITCH!**: parity, redundancy, Hamming distance, and error-correcting codes
+- `carnival.html` — **The Totally Honest Carnival**: probability, expected value, fairness, and game design
+- `monster-party.html` — **Monster Party: The Seating Chart from Hell**: constraints, networks, graph coloring, and scheduling
 
 ## Run it
 
@@ -10,7 +16,11 @@ Open `index.html` in a browser, or serve the directory locally:
 python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Then visit:
+
+- `http://localhost:8000/` for GLITCH!
+- `http://localhost:8000/carnival.html` for the carnival
+- `http://localhost:8000/monster-party.html` for the monster banquet
 
 ## Presenting
 
@@ -23,17 +33,20 @@ Then visit `http://localhost:8000`.
 - `C`: flip between dark and light projector colors
 - Touch screens: swipe horizontally
 
-The display panel includes a **Fewer / Current / More** figure slider. “Current” is the default and preserves the original visual density; “More” reveals additional story figures, while “Fewer” removes nonessential decoration. The projector toggle switches the whole deck to a high-contrast light theme, and Reset restores the original design.
+The projector toggle switches each deck between its original palette and a high-contrast light theme. Every deck also includes **Fewer / Current / More** figure controls. “Current” is the default and preserves the designed visual density.
 
-Buttons inside the slides run the live card trick, activity timers, alien repair, two-error experiment, codebook stress tests, Hamming-distance comparison, nearest-code decoder, robot alarm designer, and QR damage demo.
+Buttons inside the slides run live games, activity timers, simulations, manipulatives, reveals, and challenge checks. Each slide also has facilitator notes under `N`.
 
 The deck intentionally delays the terms “parity” and “Hamming distance” until after students have had a chance to invent the ideas.
 
-## Files
+## Main files
 
 - `index.html` — slide content and facilitator notes
 - `styles.css` — responsive presentation design
 - `app.js` — navigation and activity logic
 - `glitch-qr.svg` — high-error-correction QR finale
+- `carnival.html` / `carnival.js` — probability carnival deck and activities
+- `monster-party.html` / `monster-party.js` — graph-coloring party deck and activities
+- `circle-templates.css` / `circle-deck.js` — shared styling and controls for the two new circles
 
 The QR asset was generated with QuickChart at error-correction level H. It encodes: “CONGRATULATIONS. HUMANITY HAS SURVIVED THE GLITCH!”

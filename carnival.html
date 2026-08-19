@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8ecd0">
+  <title>The Totally Honest Carnival — Math Circle</title>
+  <link rel="stylesheet" href="circle-templates.css">
+</head>
+<body class="carnival" data-visuals="1">
+  <header class="deck-chrome" aria-label="Presentation controls">
+    <button class="brand-mark" data-action="go-home"><span class="brand-icon">🎪</span> Totally Honest Carnival</button>
+    <div class="chapter-label" id="chapterLabel">Step right up</div>
+    <div class="header-actions">
+      <small class="deck-signature">mudassir</small>
+      <button class="icon-button" data-action="display" title="Display controls (D)">◐</button>
+      <button class="icon-button" data-action="notes" title="Facilitator notes (N)">N</button>
+      <button class="icon-button" data-action="fullscreen" title="Fullscreen (F)">⛶</button>
+    </div>
+  </header>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-chapter="Step right up" data-notes="Play this completely straight. Welcome everyone to the most honest carnival in mathematical history. Invite suspicion, but do not say probability or expected value yet.">
+      <div class="slide-inner hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">A 90-minute mathematical swindle</p>
+          <h1><small>The Totally Honest</small>CARNIVAL</h1>
+          <p class="lead">Win glory. Win prizes. Definitely do not inspect the rules.</p>
+          <button class="primary-button" data-action="next">Enter the midway →</button>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-art"><span>🎪</span><strong>100% FAIR*</strong><small>*according to management</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Your fortune" data-notes="Give each team ten physical counters if possible. The digital bank is a visual anchor. Tell them tickets are precious and bankruptcy is hilarious but optional.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">Every team begins rich</p>
+        <h2>Ten tickets. Spend suspiciously.</h2>
+        <div class="ticket-bank" id="ticketBank" aria-label="Ten carnival tickets"></div>
+        <div class="action-row">
+          <button class="secondary-button" data-action="ticket-minus">Spend one</button>
+          <button class="secondary-button" data-action="ticket-plus">Win one</button>
+          <button class="primary-button" data-action="ticket-reset">Restore fortune</button>
+        </div>
+        <p class="big-quote" id="ticketStatus">FORTUNE: 10</p>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="The Great Swindle" data-notes="Charge one ticket per play. Secretly, the winning ball appears under cup 1 only about 15% of the time, while students naturally tend to pick the middle. Let the room get noisy and accuse you. Reset when ready.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">Game 01 · The Great Swindle</p>
+          <h2>Find the golden ball.</h2>
+          <p class="lead">Pay 1 ticket. Win 3. Choose one cup.</p>
+          <div class="scoreboard">
+            <div><strong id="swindlePlays">0</strong><span>plays</span></div>
+            <div><strong id="swindleWins">0</strong><span>wins</span></div>
+            <div><strong id="houseProfit">0</strong><span>house</span></div>
+          </div>
+          <button class="secondary-button" data-action="swindle-reset">Hide the evidence</button>
+        </div>
+        <div class="panel swindle-stage">
+          <span class="dealer-grin" aria-hidden="true">😇</span>
+          <div class="cups" id="cups">
+            <button class="cup" data-cup="0" aria-label="Choose left cup"></button>
+            <button class="cup" data-cup="1" aria-label="Choose middle cup"></button>
+            <button class="cup" data-cup="2" aria-label="Choose right cup"></button>
+          </div>
+          <p class="lead" id="swindleStatus" aria-live="polite">The dealer is definitely trustworthy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Catch the cheat" data-notes="Teams may replay digitally or model the game with cards. First minute: record only. Then ask what evidence would convince a skeptical judge. Hint buttons may be revealed one at a time.">
+      <div class="slide-inner split-even">
+        <div class="copy-stack">
+          <p class="eyebrow">Carnival investigation unit</p>
+          <h2>Catch the cheat.</h2>
+          <div class="timer" id="cheatTimer" data-duration="420">07:00</div>
+          <div class="action-row">
+            <button class="primary-button" data-action="timer-toggle" data-target="cheatTimer">Start / pause</button>
+            <button class="secondary-button" data-action="timer-reset" data-target="cheatTimer">Reset</button>
+          </div>
+        </div>
+        <div class="panel action-column">
+          <div class="ticket" style="--tilt:2deg">OBSERVE</div>
+          <div class="ticket" style="--tilt:-3deg">COUNT</div>
+          <div class="ticket" style="--tilt:1deg">ACCUSE</div>
+          <button class="choice-button" data-action="carnival-hint" data-hint="1">Hint 01</button>
+          <p class="lead" id="carnivalHint">Build a case the dealer cannot wriggle out of.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Outcome lab" data-notes="Ask which totals should be common before rolling. Roll 1, then 25, then 250. Let the bar chart do the arguing. Students should notice that equal-looking totals are not equally likely.">
+      <div class="slide-inner dice-lab">
+        <div class="copy-stack">
+          <p class="eyebrow">Evidence machine A</p>
+          <h2>Which sum loves attention?</h2>
+          <div class="dice-stage">
+            <div class="die" id="dieOne">⚅</div>
+            <div class="die" id="dieTwo">⚅</div>
+          </div>
+          <div class="action-row">
+            <button class="primary-button" data-action="roll-dice" data-rolls="1">Roll 1</button>
+            <button class="secondary-button" data-action="roll-dice" data-rolls="25">Roll 25</button>
+            <button class="secondary-button" data-action="roll-dice" data-rolls="250">Roll 250</button>
+            <button class="secondary-button" data-action="dice-reset">Clear</button>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="bar-chart" id="diceChart" aria-label="Frequency chart of dice sums"></div>
+          <p class="microcopy" id="diceStatus">No evidence yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Spinner lab" data-notes="Invite a student to predict a color, then spin repeatedly. The sectors are intentionally unequal. Ask whether four colors means one-quarter each. Do not formalize yet.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">Evidence machine B</p>
+          <h2>Four colors. Equal chances?</h2>
+          <p class="big-quote" id="spinnerResult">PLACE BETS</p>
+          <button class="primary-button" data-action="spin">Spin the wheel</button>
+        </div>
+        <div class="spinner-shell"><div class="spinner-wheel" id="spinnerWheel"></div></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Fair or foul" data-notes="Read each offer aloud. Teams vote with thumbs or by clicking. Ask for one-sentence defenses. These are deliberately debatable until the long-run outcome is made explicit.">
+      <div class="slide-inner split-even">
+        <div class="copy-stack">
+          <p class="eyebrow">Instant audit</p>
+          <h2>Fair… or foul?</h2>
+          <div class="stamp-mark" id="auditStamp">YOUR CALL</div>
+        </div>
+        <div class="panel action-column" id="auditCards">
+          <p class="big-quote" id="auditOffer">Pay 2 · Heads wins 4 · Tails wins 0</p>
+          <div class="action-row">
+            <button class="choice-button" data-action="audit-vote" data-vote="fair">✓ Fair</button>
+            <button class="choice-button" data-action="audit-vote" data-vote="foul">✕ Foul</button>
+            <button class="primary-button" data-action="audit-next">Next offer</button>
+          </div>
+          <p class="lead" id="auditAnswer">Make the room commit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Balance the booth" data-notes="Move the chance, prize, and entry sliders. Interpret the scale as the player's average gain versus the booth's average gain. Seek a near-horizontal beam. The meter uses expected net value behind the scenes.">
+      <div class="slide-inner two-column">
+        <div class="copy-stack">
+          <p class="eyebrow">Repair shop</p>
+          <h2>Balance the booth.</h2>
+          <div class="panel slider-grid">
+            <label for="chanceSlider">Win chance</label><input id="chanceSlider" type="range" min="5" max="95" value="25"><output id="chanceOut">25%</output>
+            <label for="prizeSlider">Prize</label><input id="prizeSlider" type="range" min="1" max="20" value="8"><output id="prizeOut">8</output>
+            <label for="costSlider">Entry</label><input id="costSlider" type="range" min="1" max="10" value="2"><output id="costOut">2</output>
+          </div>
+        </div>
+        <div class="panel fairness-card">
+          <div class="scale-visual">
+            <div class="scale-pans"><span>🙂</span><span>🎪</span></div>
+            <div class="scale-beam" id="scaleBeam"></div><div class="scale-post"></div>
+          </div>
+          <div class="fairness-verdict" id="fairnessVerdict">BALANCED!</div>
+          <div class="meter"><span id="fairnessMeter"></span></div>
+          <p class="microcopy" id="fairnessMath">Average player change: 0.00 tickets</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Design a trap" data-notes="Teams now design a carnival game. They may aim for fair, slightly generous, or shamelessly profitable. Use the simulator to reveal what happens over many plays. Encourage ridiculous game names and prizes.">
+      <div class="slide-inner booth-builder">
+        <div class="copy-stack">
+          <p class="eyebrow">Your booth · Your reputation</p>
+          <h2>Design a trap.</h2>
+          <div class="panel slider-grid">
+            <label for="builderChance">Chance</label><input id="builderChance" type="range" min="1" max="99" value="30"><output id="builderChanceOut">30%</output>
+            <label for="builderPrize">Prize</label><input id="builderPrize" type="range" min="1" max="30" value="5"><output id="builderPrizeOut">5</output>
+            <label for="builderCost">Entry</label><input id="builderCost" type="range" min="1" max="12" value="2"><output id="builderCostOut">2</output>
+          </div>
+          <div class="action-row">
+            <button class="primary-button" data-action="simulate" data-trials="100">Test ×100</button>
+            <button class="secondary-button" data-action="simulate" data-trials="1000">Test ×1000</button>
+          </div>
+        </div>
+        <div class="panel fairness-card">
+          <div class="sim-plot" id="simPlot" aria-label="Simulation of player fortunes"></div>
+          <div class="fairness-verdict" id="simVerdict">OPEN FOR BUSINESS</div>
+          <p class="lead" id="simResult">Set the rules. Then face the crowd.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Tournament" data-notes="Teams rotate through each other's booths. Give each visitor five test plays and an audit card. Designers must advertise honestly but may use theatrical misdirection. Run for 12–15 minutes.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">The midway opens</p>
+        <h2>Play. Laugh. Audit.</h2>
+        <div class="ticket-bank">
+          <div class="ticket">01<br>PLAY</div><div class="ticket">02<br>RECORD</div><div class="ticket">03<br>REVERSE</div><div class="ticket">04<br>ACCUSE</div>
+        </div>
+        <div class="timer" id="tournamentTimer" data-duration="720">12:00</div>
+        <div class="action-row">
+          <button class="primary-button" data-action="timer-toggle" data-target="tournamentTimer">Open carnival</button>
+          <button class="secondary-button" data-action="timer-reset" data-target="tournamentTimer">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Boss level" data-notes="This game looks lopsided: a 10% jackpot of 18, a 40% small prize of 3, otherwise zero, entry 3. Reveal that the average payout is exactly 3. Ask why most players still lose and why the game can still be fair in the long run.">
+      <div class="slide-inner split-even">
+        <div class="copy-stack">
+          <p class="eyebrow">Boss level</p>
+          <h2>Ugly… but fair?</h2>
+          <div class="ticket-bank"><div class="ticket">10%<br>WIN 18</div><div class="ticket">40%<br>WIN 3</div><div class="ticket">50%<br>WIN 0</div></div>
+          <p class="lead">Entry: 3 tickets</p>
+        </div>
+        <div class="panel finale-layout">
+          <button class="stamp-button" data-action="boss-sim">Run 1,000 players</button>
+          <div class="big-number" id="bossProfit">?</div>
+          <p class="lead" id="bossStatus">House profit after a very busy night</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="The mathematical name" data-notes="Let a student describe the long-run calculation before revealing the term. Expected value is a weighted average of changes, not a promise about one play.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">The accountant finally confesses</p>
+        <h2>Chance × change, added across every outcome.</h2>
+        <button class="stamp-button" data-action="reveal" data-target="expectedValue">Reveal the name</button>
+        <div class="reveal-word covered" id="expectedValue">EXPECTED VALUE</div>
+        <p class="lead">A prediction for the long run—not a prophecy for the next turn.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Beyond the carnival" data-notes="Collect examples: insurance, lotteries, discounts, free trials, board games, sports strategies. Keep it conversational and emphasize that the tool helps ask better questions, not merely avoid fun.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">The midway is everywhere</p>
+        <h2>Where else is someone setting the odds?</h2>
+        <div class="marquee-art" aria-hidden="true"><span>🎲 🏦 🎮 🛡️ 🎟️</span></div>
+        <p class="big-quote">Who gains in the long run?</p>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Carnival closed" data-notes="End by awarding prizes: funniest game, most honest villain, sneakiest fair game, clearest auditor. Invite one final sentence from the room: Fair does not mean… / Fair does mean…">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">Final verdict</p>
+        <h2>Fair does not mean “everyone wins.”</h2>
+        <div class="stamp-mark">IT MEANS THE LONG RUN BALANCES</div>
+        <div class="marquee-art" aria-hidden="true"><span>🏆🎪😂</span></div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav-dock" aria-label="Slide navigation">
+    <button class="nav-button" data-action="prev" aria-label="Previous slide">←</button>
+    <div class="progress-track"><span id="progressBar"></span></div>
+    <span class="slide-count" id="slideCount">01 / 14</span>
+    <button class="nav-button" data-action="next" aria-label="Next slide">→</button>
+  </nav>
+
+  <aside class="notes-panel" id="notesPanel" hidden><div class="panel-title"><span>Facilitator notes</span><button data-action="close-panel">×</button></div><p id="notesText"></p></aside>
+  <aside class="display-panel" id="displayPanel" hidden>
+    <div class="panel-title"><span>Projector controls</span><button data-action="close-panel">×</button></div>
+    <div class="density-control"><button data-action="visuals-less" aria-label="Show fewer figures">−</button><output id="visualsLabel">Current</output><button data-action="visuals-more" aria-label="Show more figures">+</button></div>
+    <button class="primary-button" data-action="theme">Flip dark / light colors</button>
+    <div class="shortcut-grid"><kbd>← →</kbd><span>move slides</span><kbd>N</kbd><span>notes</span><kbd>C</kbd><span>flip colors</span><kbd>F</kbd><span>fullscreen</span></div>
+  </aside>
+
+  <script src="circle-deck.js"></script>
+  <script src="carnival.js"></script>
+</body>
+</html>

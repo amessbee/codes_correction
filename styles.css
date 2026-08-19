@@ -116,6 +116,15 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--yellow); ou
 }
 
 .header-actions { justify-self: end; display: flex; gap: .5rem; }
+.deck-signature {
+  align-self: center;
+  margin-right: .25rem;
+  color: var(--muted);
+  font: 650 .62rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .1em;
+  opacity: .72;
+  user-select: none;
+}
 .icon-button {
   width: 2.35rem;
   height: 2.35rem;
