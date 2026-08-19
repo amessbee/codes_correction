@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050816">
+  <title>GLITCH! — A Math Circle Mission</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-visuals="1">
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <header class="deck-chrome" aria-label="Presentation controls">
+    <button class="brand-mark" data-action="go-home" aria-label="Go to first slide">
+      <span class="signal-dot"></span>
+      <span>GLITCH // MATH CIRCLE</span>
+    </button>
+    <div class="chapter-label" id="chapterLabel">Incoming transmission</div>
+    <div class="header-actions">
+      <button class="icon-button" data-action="toggle-display-panel" title="Display controls (D)" aria-label="Toggle display controls" aria-expanded="false">◐</button>
+      <button class="icon-button" data-action="toggle-notes" title="Facilitator notes (N)" aria-label="Toggle facilitator notes">N</button>
+      <button class="icon-button" data-action="fullscreen" title="Fullscreen (F)" aria-label="Enter fullscreen">⛶</button>
+    </div>
+  </header>
+
+  <main class="deck" id="deck">
+    <section class="slide active title-slide" data-chapter="Incoming transmission" data-notes="Welcome students without naming parity or coding theory. Let the room settle, then press Start transmission. Ask: What do you notice? What do you wonder?">
+      <div class="slide-inner hero-layout">
+        <p class="eyebrow">A 90-minute mathematics mission</p>
+        <h1 class="glitch-title" data-text="GLITCH!" aria-label="GLITCH!">GLITCH!</h1>
+        <p class="hero-subtitle">Can mathematics repair a broken message?</p>
+        <div class="transmission-window" aria-live="polite">
+          <span class="transmission-label">UNKNOWN ORIGIN · SIGNAL 01</span>
+          <strong id="heroTransmission">H?M?N?TY H?S A PR?BL?M</strong>
+          <span class="signal-strength"><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <button class="primary-button" data-action="stabilize">Start transmission <span>→</span></button>
+      </div>
+      <div class="hero-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="slide" data-chapter="The glitch" data-notes="Read the question slowly. Establish the rules: no retransmission, exactly one piece changes, and the receiver knows the system in advance. Take a few spontaneous ideas, but do not evaluate them yet.">
+      <div class="slide-inner question-layout">
+        <p class="eyebrow alarm">One piece will change</p>
+        <h2>Can the receiver recover the original—without asking again?</h2>
+        <div class="bit-channel" id="openingChannel" aria-label="Animated binary transmission">
+          <span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span>
+        </div>
+        <div class="constraint-line">
+          <span>No second message.</span>
+          <span>Exactly one glitch.</span>
+          <span>You design the rules.</span>
+        </div>
+      </div>
+      <figure class="story-figure signal-story" aria-hidden="true"><span>📡</span><i></i><b>⚡</b><i></i><span>🛰️</span></figure>
+    </section>
+
+    <section class="slide" data-chapter="The impossible trick" data-notes="Act out the card trick live if you have physical cards. The digital board is a backup and a repeatable demo. Students may randomize the 5×5 core or build their own pattern by flipping as many core cards as they like. Then add the mysterious border, turn away, let a student flip exactly one square, and reveal.">
+      <div class="slide-inner demo-layout">
+        <div class="slide-copy">
+          <p class="eyebrow">Impossible mind-reading</p>
+          <h2>Flip one card. I’ll find it.</h2>
+          <p class="lead">Randomize the pattern—or build your own by flipping any cards. Then I add a border before one final sabotage.</p>
+          <div class="action-stack">
+            <button class="secondary-button" data-action="parity-randomize">1 · Random pattern</button>
+            <button class="secondary-button" data-action="parity-border">2 · Add my “decoration”</button>
+            <button class="primary-button" data-action="parity-reveal">3 · Find the flipped card</button>
+          </div>
+          <p class="microcopy" id="parityStatus" aria-live="polite">Randomize—or click any of the 25 core cards to make your own pattern.</p>
+        </div>
+        <div class="board-shell">
+          <div class="parity-grid" id="parityGrid" role="grid" aria-label="Interactive six by six card grid"></div>
+          <div class="board-legend"><span><i class="legend-core"></i> chosen cards</span><span><i class="legend-check"></i> added cards</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Steal the secret" data-notes="Give teams miniature grids and coins/cards. Start with 60 seconds of silence, then permit discussion. Do not explain the invariant. Use hints only if the room is stuck; reveal them one at a time.">
+      <div class="slide-inner mission-layout">
+        <p class="eyebrow mission">Team mission</p>
+        <h2>You have seven minutes to steal my secret.</h2>
+        <div class="mission-body">
+          <div class="timer-block">
+            <div class="mission-timer" id="secretTimer" data-duration="420">07:00</div>
+            <div class="timer-controls">
+              <button data-action="timer-toggle" data-target="secretTimer">Start / pause</button>
+              <button data-action="timer-reset" data-target="secretTimer">Reset</button>
+            </div>
+          </div>
+          <div class="mission-brief">
+            <p class="silent-rule"><strong>First 60 seconds:</strong> nobody speaks.</p>
+            <p>Your goal is not to perform the trick. Your goal is to explain why it must work.</p>
+            <div class="hint-ladder">
+              <button data-action="reveal-hint" data-hint="hint1">Hint 01</button>
+              <p id="hint1" hidden>Count something that has only two possible states.</p>
+              <button data-action="reveal-hint" data-hint="hint2">Hint 02</button>
+              <p id="hint2" hidden>Inspect whole rows and whole columns.</p>
+              <button data-action="reveal-hint" data-hint="hint3">Hint 03</button>
+              <p id="hint3" hidden>What changes when exactly one card flips?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="The reveal" data-notes="Invite a student to state the rule before revealing the name. Click the center diagram, then reveal the word PARITY. Emphasize: the extra squares looked useless, but they turned one invisible mistake into two visible alarms.">
+      <div class="slide-inner reveal-layout">
+        <p class="eyebrow">The intersection gives it away</p>
+        <h2>One flipped square trips exactly two alarms.</h2>
+        <button class="cross-diagram" data-action="pulse-cross" aria-label="Animate the bad row and column">
+          <span class="cross-row"></span><span class="cross-column"></span><strong>✕</strong>
+        </button>
+        <div class="reveal-logic">
+          <span>Every line begins <b>even</b></span>
+          <span class="logic-arrow">→</span>
+          <span>one flip makes one row + one column <b>odd</b></span>
+          <span class="logic-arrow">→</span>
+          <span>their intersection is the glitch</span>
+        </div>
+        <button class="name-reveal" data-action="reveal-parity"><span>Mathematicians call this…</span><strong id="parityWord">?</strong></button>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Alien rescue" data-notes="Teams should identify the odd row and column, select their intersection, and repair it. Reward explanations. After a successful repair, connect the digital result to the physical card trick—but avoid expanding into formal vocabulary yet.">
+      <div class="slide-inner demo-layout alien-layout">
+        <div class="slide-copy">
+          <p class="eyebrow mission">Alien transmission rescue</p>
+          <h2>One pixel is wrong. Repair the picture.</h2>
+          <p class="lead">The pale border contains checking pixels. Select the damaged square, then attempt the repair.</p>
+          <div class="action-stack horizontal-actions">
+            <button class="secondary-button" data-action="alien-new">New glitch</button>
+            <button class="primary-button" data-action="alien-repair">Repair selected</button>
+          </div>
+          <p class="microcopy" id="alienStatus" aria-live="polite">Find the line checks that have changed.</p>
+          <div class="decoded-message" id="alienDecoded" hidden><span>👽</span><strong>HELLO, HUMANS.</strong></div>
+        </div>
+        <div class="board-shell alien-shell">
+          <div class="parity-grid alien-grid" id="alienGrid" role="grid" aria-label="Corrupted alien pixel picture"></div>
+          <span class="channel-stamp">CHANNEL: EARTH–? / CHECKS ACTIVE</span>
+        </div>
+      </div>
+      <figure class="story-figure alien-story" aria-hidden="true"><span>🛸</span><i>· · ·</i><strong>👽</strong></figure>
+    </section>
+
+    <section class="slide" data-chapter="System limits" data-notes="Create two errors several times. Ask what the check information can prove. Students should discover that the method may detect something happened but cannot always identify the two original squares. The key word here is guarantee.">
+      <div class="slide-inner demo-layout two-glitch-layout">
+        <div class="slide-copy">
+          <p class="eyebrow alarm">Twist: two glitches</p>
+          <h2>Can the same system always repair both?</h2>
+          <p class="lead">Corrupt two squares. Then ask the checks what they know—and what they cannot know.</p>
+          <div class="action-stack horizontal-actions">
+            <button class="secondary-button" data-action="double-corrupt">Corrupt two</button>
+            <button class="primary-button" data-action="double-analyze">Analyze checks</button>
+          </div>
+          <p class="microcopy" id="doubleStatus" aria-live="polite">Run the experiment more than once.</p>
+          <div class="guarantee-question">What can our method <em>guarantee</em>?</div>
+        </div>
+        <div class="board-shell">
+          <div class="parity-grid" id="doubleGrid" role="grid" aria-label="Six by six board with two errors"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="New mission" data-notes="Introduce four NASA commands. Clarify that each command may use any row of red/blue cards, and another team flips exactly one card after sending. The receiver sees only the damaged row.">
+      <div class="slide-inner command-layout">
+        <p class="eyebrow">NASA needs only four commands</p>
+        <h2>Invent messages that survive one sabotage.</h2>
+        <div class="command-signal">
+          <div><span>🚀</span><strong>LAUNCH</strong><code>?????</code></div>
+          <div><span>🏠</span><strong>RETURN</strong><code>?????</code></div>
+          <div><span>⛽</span><strong>REFUEL</strong><code>?????</code></div>
+          <div><span>🛑</span><strong>STOP</strong><code>?????</code></div>
+        </div>
+        <p class="command-rule"><span class="goblin">☄</span> The Chaos Goblin flips exactly one card after every send.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Engineering challenge" data-notes="Give teams plenty of cards first so repetition can emerge naturally. Celebrate majority voting as a real code. Ask the Skeptic to find ambiguities. Only after a working design exists should you announce that every extra card costs money.">
+      <div class="slide-inner mission-layout">
+        <p class="eyebrow mission">Build a language that heals itself</p>
+        <h2>The receiver must always know the intended command.</h2>
+        <div class="mission-body chaos-brief">
+          <div class="timer-block">
+            <div class="mission-timer" id="buildTimer" data-duration="900">15:00</div>
+            <div class="timer-controls">
+              <button data-action="timer-toggle" data-target="buildTimer">Start / pause</button>
+              <button data-action="timer-reset" data-target="buildTimer">Reset</button>
+            </div>
+          </div>
+          <ol class="big-rules">
+            <li>Create four legal messages.</li>
+            <li>Let a rival flip one card.</li>
+            <li>Prove the receiver can still decode.</li>
+          </ol>
+        </div>
+        <div class="role-strip" aria-label="Suggested team roles"><span>Detective</span><span>Engineer</span><span>Skeptic</span><span>Saboteur</span><span>Spokesperson</span></div>
+      </div>
+      <figure class="story-figure goblin-story" aria-hidden="true"><span>☄️</span><strong>CHAOS<br>INBOUND</strong></figure>
+    </section>
+
+    <section class="slide" data-chapter="Code laboratory" data-notes="Round 2: each extra card costs $1 million. Teams enter four six-bit messages and press Stress-test. The lab tries every one-bit corruption and checks for ambiguity. Use Load a working sample only if teams need a foothold.">
+      <div class="slide-inner lab-layout">
+        <div class="lab-heading">
+          <div><p class="eyebrow cost">Engineering round 2 · $1M per card</p><h2>Can four commands fit in six cards?</h2></div>
+          <div class="length-indicator"><strong>6</strong><span>cards / message</span></div>
+        </div>
+        <div class="code-lab" data-length="6" data-preset="000000,111000,100110,011111">
+          <div class="codebook-inputs">
+            <label><span>🚀</span><input inputmode="numeric" maxlength="6" value="000000" aria-label="Launch code"></label>
+            <label><span>🏠</span><input inputmode="numeric" maxlength="6" value="111000" aria-label="Return code"></label>
+            <label><span>⛽</span><input inputmode="numeric" maxlength="6" value="100110" aria-label="Refuel code"></label>
+            <label><span>🛑</span><input inputmode="numeric" maxlength="6" value="011111" aria-label="Stop code"></label>
+          </div>
+          <div class="lab-console">
+            <div class="console-screen" aria-live="polite"><span class="console-kicker">CHAOS GOBLIN STRESS TEST</span><strong class="lab-result">Ready to attack every position.</strong><p class="lab-detail">Four commands × six possible flips.</p></div>
+            <div class="lab-actions"><button class="secondary-button" data-action="clear-lab">Clear</button><button class="primary-button" data-action="test-lab">Stress-test all glitches</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Boss round" data-notes="Announce the five-card boss round as a genuine research problem. Let students use the lab, but ask for an explanation, not just a green result. Hold the reveal for at least several minutes.">
+      <div class="slide-inner lab-layout boss-lab-layout">
+        <div class="lab-heading">
+          <div><p class="eyebrow boss">Boss round</p><h2>Can it be done with only five cards?</h2></div>
+          <div class="mission-timer compact-timer" id="bossTimer" data-duration="480">08:00</div>
+        </div>
+        <div class="code-lab" data-length="5" data-preset="00000,11100,10011,01111">
+          <div class="codebook-inputs">
+            <label><span>A</span><input inputmode="numeric" maxlength="5" placeholder="?????" aria-label="Code A"></label>
+            <label><span>B</span><input inputmode="numeric" maxlength="5" placeholder="?????" aria-label="Code B"></label>
+            <label><span>C</span><input inputmode="numeric" maxlength="5" placeholder="?????" aria-label="Code C"></label>
+            <label><span>D</span><input inputmode="numeric" maxlength="5" placeholder="?????" aria-label="Code D"></label>
+          </div>
+          <div class="lab-console">
+            <div class="console-screen" aria-live="polite"><span class="console-kicker">FIVE-CARD CODE LAB</span><strong class="lab-result">No codebook loaded.</strong><p class="lab-detail">The Skeptic should attack every position.</p></div>
+            <div class="lab-actions wrap-actions">
+              <button class="secondary-button" data-action="timer-toggle" data-target="bossTimer">Start / pause</button>
+              <button class="secondary-button" data-action="reveal-preset">Reveal one solution</button>
+              <button class="primary-button" data-action="test-lab">Stress-test</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Sabotage tournament" data-notes="Pair teams. Round roles: sender, goblin, receiver, skeptic. Score one point for successful decoding and one point for a valid counterexample. If a team claims its code always works, the Skeptic must test all positions.">
+      <div class="slide-inner tournament-layout">
+        <p class="eyebrow alarm">Sabotage tournament</p>
+        <h2>Attack the code. Reward proof, not speed.</h2>
+        <div class="tournament-flow">
+          <div><span>1</span><strong>SEND</strong><p>Choose a legal command.</p></div>
+          <i>→</i>
+          <div class="danger-step"><span>2</span><strong>FLIP</strong><p>The Goblin changes one card.</p></div>
+          <i>→</i>
+          <div><span>3</span><strong>DECODE</strong><p>Name the intended command.</p></div>
+          <i>→</i>
+          <div><span>4</span><strong>CHALLENGE</strong><p>The Skeptic demands a reason.</p></div>
+        </div>
+        <div class="score-line"><span>+1 successful decode</span><span>+1 genuine counterexample</span><span>Switch roles each round</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Invent a distance" data-notes="Ask: Forget what the strings mean—how would you measure how far apart they are? Take suggestions before interacting. Change either string. The deck highlights exactly the positions that disagree.">
+      <div class="slide-inner distance-layout">
+        <p class="eyebrow">Forget what the symbols mean</p>
+        <h2>How far apart are two messages?</h2>
+        <div class="distance-workbench">
+          <label>Message 1 <input id="distanceA" inputmode="numeric" maxlength="8" value="101101"></label>
+          <div class="bit-comparison" id="bitComparison" aria-live="polite"></div>
+          <label>Message 2 <input id="distanceB" inputmode="numeric" maxlength="8" value="100001"></label>
+        </div>
+        <div class="distance-answer"><strong id="distanceValue">2</strong><span>positions disagree</span></div>
+        <button class="name-reveal distance-name" data-action="reveal-distance"><span>Mathematicians call this…</span><strong id="distanceWord">?</strong></button>
+      </div>
+      <figure class="story-figure distance-story" aria-hidden="true"><span>◉</span><i>× ×</i><span>◉</span></figure>
+    </section>
+
+    <section class="slide" data-chapter="Safe separation" data-notes="Reveal the three cases in order. For distance 1, a glitch can turn one legal message into another. At distance 2, one damaged word can be one step from two legal words. At distance 3, the one-flip neighborhoods no longer overlap.">
+      <div class="slide-inner separation-layout">
+        <p class="eyebrow">Keep legal messages far apart</p>
+        <h2>To repair one mistake, we need a gap of at least three.</h2>
+        <div class="distance-cases">
+          <button data-action="show-distance-case" data-case="1"><span>Distance 1</span><code>00000 ↔ 10000</code><strong>one flip becomes legal</strong></button>
+          <button data-action="show-distance-case" data-case="2"><span>Distance 2</span><code>00000 → 10000 ← 11000</code><strong>the middle is ambiguous</strong></button>
+          <button data-action="show-distance-case" data-case="3"><span>Distance 3</span><code>00000 · · · 11100</code><strong>one-error zones stay apart</strong></button>
+        </div>
+        <div class="separation-rule" id="separationRule">Select a case to test the gap.</div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="A five-card code" data-notes="This is the facilitator solution from the brief. Demonstrate nearest-message decoding: type a code with at most one error, then decode. Ask students to justify why the nearest legal message is unique.">
+      <div class="slide-inner decoder-layout">
+        <div class="solution-codebook">
+          <p class="eyebrow boss">One five-card solution</p>
+          <h2>The legal messages stay three or more apart.</h2>
+          <div class="solution-rows">
+            <div><span>A</span><code>00000</code></div><div><span>B</span><code>11100</code></div><div><span>C</span><code>10011</code></div><div><span>D</span><code>01111</code></div>
+          </div>
+        </div>
+        <div class="decoder-console">
+          <span class="console-kicker">RECEIVED SIGNAL</span>
+          <input id="decoderInput" inputmode="numeric" maxlength="5" value="10111" aria-label="Received five-bit signal">
+          <button class="primary-button" data-action="decode-signal">Find nearest legal message</button>
+          <div class="decode-result" id="decodeResult" aria-live="polite">Waiting to decode…</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Boss level" data-notes="Do not mention binary at first. Students may click the three sensor dots on each robot to design monitoring groups. A valid design gives each robot a different nonzero pattern. Test the design, then simulate failures. Reveal the 001–111 assignment only if needed.">
+      <div class="slide-inner robot-layout">
+        <div class="robot-heading">
+          <div><p class="eyebrow boss">Boss level · 7 robots · 3 alarms</p><h2>Can three yes/no lights identify one failed robot?</h2></div>
+          <div class="alarm-bank" aria-label="Alarm lights"><i data-alarm="0"></i><i data-alarm="1"></i><i data-alarm="2"></i></div>
+        </div>
+        <div class="robot-designer" id="robotDesigner" aria-label="Robot monitoring group designer"></div>
+        <div class="robot-actions">
+          <button class="secondary-button" data-action="robot-clear">Clear</button>
+          <button class="secondary-button" data-action="robot-reveal">Reveal a design</button>
+          <button class="secondary-button" data-action="robot-test">Test design</button>
+          <button class="primary-button" data-action="robot-fail">Simulate a failure</button>
+        </div>
+        <p class="microcopy robot-status" id="robotStatus" aria-live="polite">Click the three sensor dots on each robot. Give every robot a unique nonzero pattern.</p>
+      </div>
+      <figure class="story-figure robot-story" aria-hidden="true"><span>🤖</span><i>001 → 111</i></figure>
+    </section>
+
+    <section class="slide" data-chapter="The real-world reveal" data-notes="The QR code uses high error correction and links only to the congratulatory sentence. Scan the clean code first, then click Damage it and scan again. Performance depends on camera and display; the damaged region has been kept modest. Ask why the code contains so many apparently extra squares.">
+      <div class="slide-inner qr-layout">
+        <div class="qr-copy">
+          <p class="eyebrow mission">Final transmission</p>
+          <h2>Real messages survive real damage.</h2>
+          <p class="lead">Scan it. Then damage it—and try again.</p>
+          <div class="horizontal-actions">
+            <button class="secondary-button" data-action="qr-restore">Restore</button>
+            <button class="primary-button" data-action="qr-damage">Damage it</button>
+          </div>
+          <p class="qr-status" id="qrStatus">Signal integrity: 100%</p>
+        </div>
+        <div class="qr-frame" id="qrFrame">
+          <img src="glitch-qr.svg" alt="QR code encoding a congratulatory message">
+          <div class="qr-damage" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="scan-line" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="Mission complete" data-notes="Return to the opening question. Invite one sentence from several teams before revealing the closing line. Exit ticket: name one system you built, one guarantee it made, and one limitation you found.">
+      <div class="slide-inner finale-layout">
+        <p class="eyebrow">Mission complete</p>
+        <h2>Why would anyone deliberately add extra information?</h2>
+        <button class="final-reveal" data-action="final-reveal"><span id="finalBefore">Reveal the answer</span><strong id="finalAnswer" hidden>Redundancy is what makes information survive an imperfect world.</strong></button>
+        <div class="exit-ticket">
+          <span>Exit signal</span>
+          <p>Name one <b>system</b>, one <b>guarantee</b>, and one <b>limitation</b> you discovered.</p>
+        </div>
+      </div>
+      <figure class="story-figure world-story" aria-hidden="true"><span>🌍</span><i></i><span>📡</span></figure>
+    </section>
+  </main>
+
+  <aside class="notes-panel" id="notesPanel" aria-label="Facilitator notes" hidden>
+    <div><span>FACILITATOR NOTE</span><button data-action="toggle-notes" aria-label="Close notes">×</button></div>
+    <p id="notesText"></p>
+  </aside>
+
+  <aside class="display-panel" id="displayPanel" aria-label="Display controls" hidden>
+    <div class="display-panel-heading"><span>DISPLAY</span><button data-action="toggle-display-panel" aria-label="Close display controls">×</button></div>
+    <label class="visual-density-label" for="visualDensity"><span>Figures</span><output id="visualDensityValue" for="visualDensity">Current</output></label>
+    <div class="visual-density-control"><span>Fewer</span><input id="visualDensity" type="range" min="0" max="2" value="1" step="1" aria-label="Amount of optional figures"><span>More</span></div>
+    <button class="projector-toggle" id="projectorToggle" data-action="toggle-projector" aria-pressed="false"><i aria-hidden="true"></i><span>Flip colors for projector</span></button>
+    <button class="display-reset" data-action="reset-display">Reset to current design</button>
+    <p class="display-shortcuts">Shortcuts: <kbd>D</kbd> controls · <kbd>C</kbd> flip colors</p>
+  </aside>
+
+  <footer class="deck-footer">
+    <div class="progress-track"><i id="progressBar"></i></div>
+    <div class="slide-count"><strong id="slideNumber">01</strong><span>/</span><span id="slideTotal">18</span></div>
+    <div class="nav-controls">
+      <button data-action="prev" aria-label="Previous slide">←</button>
+      <button data-action="next" aria-label="Next slide">→</button>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
