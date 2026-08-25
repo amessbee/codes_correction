@@ -1,0 +1,786 @@
+{"kind":"deck","id":"pr/gr4s94","name":"Deck"}
+{"kind":"layout","layoutId":"f6976f25-93f8-4638-bde6-de47435af2d9","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"9762a7fd-3fa0-4b28-a2bc-3d89b38d7278","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/g1nusy","slide":1,"title":"GLITCH! // LEVEL 2","textShapes":5}
+{"kind":"textbox","id":"sh/l0b25svm","slide":1,"name":"text","text":"GLITCH! // LEVEL 2","textPreview":"GLITCH! // LEVEL 2","textChars":18,"textLines":1,"bbox":[42,38,510,34]}
+{"kind":"textbox","id":"sh/ydk3axcv","slide":1,"name":"cover-title","text":"Signal Rescue Lab","textPreview":"Signal Rescue Lab","textChars":17,"textLines":1,"bbox":[42,115,560,180]}
+{"kind":"textbox","id":"sh/jytk3idg","slide":1,"name":"cover-subtitle","text":"Build a message that can find and fix its own one-bit mistake.","textPreview":"Build a message that can find and fix its own one-bit mistake.","textChars":62,"textLines":1,"bbox":[42,342,540,130]}
+{"kind":"textbox","id":"sh/832lg7ud","slide":1,"name":"text","text":"A two-hour math circle • Grades 9–10","textPreview":"A two-hour math circle • Grades 9–10","textChars":36,"textLines":1,"bbox":[42,564,540,40]}
+{"kind":"shape","id":"sh/t4v29cvy","slide":1,"name":"hero-backing","bbox":[658,42,582,588]}
+{"kind":"textbox","id":"sh/72tk72ds","slide":1,"name":"text","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"image","id":"im/nad87et8","slide":1,"name":"","geometry":"roundRect","alt":"Seven binary tiles travel through three scanning beams; one tile is visibly corrupted","bbox":[658,42,582,588]}
+{"kind":"notes","id":"nt/g1nusy","slide":1,"text":"Timing: 2 minutes.\n\nWelcome students as returning signal engineers. Ask them to silently count the seven tiles and spot the corrupted one. Say: Today the challenge is not merely to notice damage; it is to make the message tell us exactly where the damage happened. Do not name Hamming codes yet.\n\n\n[Sources]\n- Hero illustration generated for this deck with OpenAI ImageGen on 2026-08-25; no external asset.\n- Session theme continues the local GLITCH! math-circle deck in this workspace.\n[/Sources]"}
+{"kind":"slide","id":"sl/lcba03","slide":2,"title":"MISSION BRIEFING","textShapes":11}
+{"kind":"textbox","id":"sh/5kn6p07y","slide":2,"name":"section-2","text":"MISSION BRIEFING","textPreview":"MISSION BRIEFING","textChars":16,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/ihw7u5on","slide":2,"name":"title-2","text":"Your mission has one precise finish line","textPreview":"Your mission has one precise finish line","textChars":40,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/3i5onap8","slide":2,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/snep0f6p","slide":2,"name":"page-2","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/do7qtk7a","slide":2,"name":"text","text":"By the end, you will be able to…","textPreview":"By the end, you will be able to…","textChars":32,"textLines":1,"bbox":[42,215,520,54]}
+{"kind":"textbox","id":"sh/qlw7y5oj","slide":2,"name":"text","text":"ENCODE","textPreview":"ENCODE","textChars":6,"textLines":1,"bbox":[42,316,340,55]}
+{"kind":"textbox","id":"sh/rm5orap4","slide":2,"name":"text","text":"four message bits into seven","textPreview":"four message bits into seven","textChars":28,"textLines":1,"bbox":[42,378,360,80]}
+{"kind":"textbox","id":"sh/8rupobql","slide":2,"name":"text","text":"REPAIR","textPreview":"REPAIR","textChars":6,"textLines":1,"bbox":[465,316,340,55]}
+{"kind":"textbox","id":"sh/ts36hg7q","slide":2,"name":"text","text":"any single flipped bit","textPreview":"any single flipped bit","textChars":22,"textLines":1,"bbox":[465,378,340,80]}
+{"kind":"textbox","id":"sh/po36tszi","slide":2,"name":"text","text":"PROVE IT","textPreview":"PROVE IT","textChars":8,"textLines":1,"bbox":[888,316,350,55]}
+{"kind":"textbox","id":"sh/4nup0nyx","slide":2,"name":"text","text":"with a solo final challenge","textPreview":"with a solo final challenge","textChars":27,"textLines":1,"bbox":[888,378,350,80]}
+{"kind":"textbox","id":"sh/3mlorihc","slide":2,"name":"text","text":"You will invent every ingredient along the way.","textPreview":"You will invent every ingredient along the way.","textChars":47,"textLines":1,"bbox":[42,566,920,50]}
+{"kind":"notes","id":"nt/lcba03","slide":2,"text":"Timing: 2 minutes.\n\nRead the three verbs aloud. Students give a thumbs-sideways or thumbs-up for how possible this feels. Tell them the solo challenge is open-note and the worksheet is their lab notebook.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/he6rib","slide":3,"title":"THE IMPOSSIBLE REPAIR","textShapes":7}
+{"kind":"textbox","id":"sh/ydwvq90n","slide":3,"name":"section-3","text":"THE IMPOSSIBLE REPAIR","textPreview":"THE IMPOSSIBLE REPAIR","textChars":21,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/lg7elozy","slide":3,"name":"title-3","text":"A damaged message cannot explain itself","textPreview":"A damaged message cannot explain itself","textChars":39,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/0fexsjit","slide":3,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/ba5wfuhw","slide":3,"name":"page-3","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/q9wvmp0b","slide":3,"name":"damaged-message","text":"1 0 1 ? 1 1 0","textPreview":"1 0 1 ? 1 1 0","textChars":13,"textLines":1,"bbox":[100,248,1080,105]}
+{"kind":"textbox","id":"sh/dcneh4z2","slide":3,"name":"text","text":"What was the missing bit?","textPreview":"What was the missing bit?","textChars":25,"textLines":1,"bbox":[260,404,760,60]}
+{"kind":"textbox","id":"sh/cbedozih","slide":3,"name":"text","text":"Convince someone who disagrees.","textPreview":"Convince someone who disagrees.","textChars":31,"textLines":1,"bbox":[320,500,640,44]}
+{"kind":"shape","id":"sh/v6pwryhg","slide":3,"name":"prompt-badge","bbox":[448,590,384,56]}
+{"kind":"textbox","id":"sh/a5gfyt0v","slide":3,"name":"prompt-badge-text","text":"THINK → PAIR → SHARE","textPreview":"THINK → PAIR → SHARE","textChars":20,"textLines":1,"bbox":[464,602,352,32]}
+{"kind":"notes","id":"nt/he6rib","slide":3,"text":"Timing: 4 minutes.\n\nGive 30 seconds of silence, then pairs discuss. Accept both 0 and 1 as possible. Key conclusion: without extra structure, the receiver cannot know. Ask: What extra information could we add without sending the whole message twice? Worksheet 1A.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/p7p07j","slide":4,"title":"PARITY SPRINT","textShapes":11}
+{"kind":"textbox","id":"sh/q9svuhk3","slide":4,"name":"section-4","text":"PARITY SPRINT","textPreview":"PARITY SPRINT","textChars":13,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/dc3u5wju","slide":4,"name":"title-4","text":"One extra bit can make a promise","textPreview":"One extra bit can make a promise","textChars":32,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/cbudwr29","slide":4,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/361czmlc","slide":4,"name":"page-4","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"shape","id":"sh/25svqhk7","slide":4,"name":"parity-0","bbox":[262,238,120,120]}
+{"kind":"textbox","id":"sh/p8ju1w3i","slide":4,"name":"parity-bit-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[262,262,120,72]}
+{"kind":"shape","id":"sh/47adsr2x","slide":4,"name":"parity-1","bbox":[422,238,120,120]}
+{"kind":"textbox","id":"sh/f2hcv2lg","slide":4,"name":"parity-bit-1","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[422,262,120,72]}
+{"kind":"shape","id":"sh/uh8vmxkv","slide":4,"name":"parity-2","bbox":[582,238,120,120]}
+{"kind":"textbox","id":"sh/gzm1sjyh","slide":4,"name":"parity-bit-2","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[582,262,120,72]}
+{"kind":"shape","id":"sh/hkv214z2","slide":4,"name":"parity-3","bbox":[742,238,120,120]}
+{"kind":"textbox","id":"sh/ux4jq9gr","slide":4,"name":"parity-bit-3","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[742,262,120,72]}
+{"kind":"textbox","id":"sh/vydkzehc","slide":4,"name":"text","text":"+ check","textPreview":"+ check","textChars":7,"textLines":1,"bbox":[742,372,120,28]}
+{"kind":"textbox","id":"sh/8v21ozyl","slide":4,"name":"text","text":"2 ones already → add 0","textPreview":"2 ones already → add 0","textChars":22,"textLines":1,"bbox":[300,443,680,50]}
+{"kind":"textbox","id":"sh/twb2x4z6","slide":4,"name":"text","text":"EVEN PARITY: the total number of 1s must be even.","textPreview":"EVEN PARITY: the total number of 1s must be even.","textChars":49,"textLines":1,"bbox":[210,556,860,48]}
+{"kind":"shape","id":"sh/6tkjmpgf","slide":4,"name":"prompt-badge","bbox":[889,167,349,56]}
+{"kind":"textbox","id":"sh/7utkvuh0","slide":4,"name":"prompt-badge-text","text":"Worksheet 1B • race all four","textPreview":"Worksheet 1B • race all four","textChars":28,"textLines":1,"bbox":[905,179,317,32]}
+{"kind":"notes","id":"nt/p7p07j","slide":4,"text":"Timing: 5 minutes.\n\nModel 101. Then teams complete 111, 000, and 0101 on Worksheet 1B. Answers: 111 needs 1; 000 needs 0; 0101 needs 0. Ask teams to hold up fingers 0 or 1 together. Emphasize the convention is even parity.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/nwcfml","slide":5,"title":"WHAT PARITY CAN DO","textShapes":11}
+{"kind":"textbox","id":"sh/7yhcbadc","slide":5,"name":"section-5","text":"WHAT PARITY CAN DO","textPreview":"WHAT PARITY CAN DO","textChars":18,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/szqt4fux","slide":5,"name":"title-5","text":"Parity raises an alarm—but gives no address","textPreview":"Parity raises an alarm—but gives no address","textChars":43,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/t0zudkvi","slide":5,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/u18b6pc3","slide":5,"name":"page-5","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/f2hcfudo","slide":5,"name":"text","text":"Sent","textPreview":"Sent","textChars":4,"textLines":1,"bbox":[90,225,180,40]}
+{"kind":"textbox","id":"sh/gnqt8fu9","slide":5,"name":"text","text":"1 0 1 0","textPreview":"1 0 1 0","textChars":7,"textLines":1,"bbox":[90,282,450,75]}
+{"kind":"textbox","id":"sh/hojuhkvu","slide":5,"name":"text","text":"even ✓","textPreview":"even ✓","textChars":6,"textLines":1,"bbox":[90,375,240,40]}
+{"kind":"textbox","id":"sh/a5obulcz","slide":5,"name":"text","text":"Received","textPreview":"Received","textChars":8,"textLines":1,"bbox":[710,225,220,40]}
+{"kind":"textbox","id":"sh/v6xs3qdk","slide":5,"name":"text","text":"1 1 1 0","textPreview":"1 1 1 0","textChars":7,"textLines":1,"bbox":[710,282,450,75]}
+{"kind":"textbox","id":"sh/juhsvyh0","slide":5,"name":"text","text":"odd !","textPreview":"odd !","textChars":5,"textLines":1,"bbox":[710,375,240,40]}
+{"kind":"textbox","id":"sh/yt8b2tgf","slide":5,"name":"text","text":"Which position changed?","textPreview":"Which position changed?","textChars":23,"textLines":1,"bbox":[348,500,584,55]}
+{"kind":"textbox","id":"sh/lgzaxozq","slide":5,"name":"text","text":"One check gives one yes/no answer. We need several overlapping checks.","textPreview":"One check gives one yes/no answer. We need several overlapping checks.","textChars":70,"textLines":1,"bbox":[226,582,828,45]}
+{"kind":"notes","id":"nt/nwcfml","slide":5,"text":"Timing: 3 minutes.\n\nAsk students to name all four possible single-bit changes that could create odd parity. Conclude that one alarm detects a problem but cannot locate it. This creates the need for overlapping checks.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/fahbxy","slide":6,"title":"ADDRESS DETECTIVE","textShapes":9}
+{"kind":"textbox","id":"sh/yxo7m9c3","slide":6,"name":"section-6","text":"ADDRESS DETECTIVE","textPreview":"ADDRESS DETECTIVE","textChars":17,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/lkz6hove","slide":6,"name":"title-6","text":"Three yes/no questions can name any position 1–7","textPreview":"Three yes/no questions can name any position 1–7","textChars":48,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/kj6pojut","slide":6,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/7mhojydk","slide":6,"name":"page-6","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/6l87qtcz","slide":6,"name":"text","text":"Secret position","textPreview":"Secret position","textChars":15,"textLines":1,"bbox":[42,207,270,38]}
+{"kind":"shape","id":"sh/toz6lovq","slide":6,"name":"box","bbox":[42,266,225,225]}
+{"kind":"textbox","id":"sh/8nqpsju5","slide":6,"name":"text","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[42,301,225,140]}
+{"kind":"textbox","id":"sh/nqdo7udg","slide":6,"name":"text","text":"Is it in 1, 3, 5, 7?","textPreview":"Is it in 1, 3, 5, 7?","textChars":20,"textLines":1,"bbox":[370,225,650,55]}
+{"kind":"textbox","id":"sh/mp4nepcv","slide":6,"name":"text","text":"Is it in 2, 3, 6, 7?","textPreview":"Is it in 2, 3, 6, 7?","textChars":20,"textLines":1,"bbox":[370,330,650,55]}
+{"kind":"textbox","id":"sh/cnipc3q9","slide":6,"name":"text","text":"Is it in 4, 5, 6, 7?","textPreview":"Is it in 4, 5, 6, 7?","textChars":20,"textLines":1,"bbox":[370,435,650,55]}
+{"kind":"textbox","id":"sh/xor6l8ru","slide":6,"name":"text","text":"Challenge: choose a secret position. Your partner asks only these three questions.","textPreview":"Challenge: choose a secret position. Your partner asks only these three questions.","textChars":82,"textLines":1,"bbox":[370,555,820,58]}
+{"kind":"notes","id":"nt/fahbxy","slide":6,"text":"Timing: 6 minutes.\n\nPairs play three rounds. Partner A chooses a position 1–7; Partner B asks the three displayed questions and records yes/no. They should discover each position has a unique pattern. If stuck, suggest writing the three answers next to each number on Worksheet 1C. Do not introduce binary notation unless students mention it.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/tjgcca","slide":7,"title":"THREE OVERLAPPING CHECK GROUPS","textShapes":26}
+{"kind":"textbox","id":"sh/2tkfqdov","slide":7,"name":"section-7","text":"THREE OVERLAPPING CHECK GROUPS","textPreview":"THREE OVERLAPPING CHECK GROUPS","textChars":30,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/pwvyls7m","slide":7,"name":"title-7","text":"The failed checks spell the position’s address","textPreview":"The failed checks spell the position’s address","textChars":46,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/ov2xsn61","slide":7,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/fqtwfipk","slide":7,"name":"page-7","text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/epkfmdoz","slide":7,"name":"map-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[250,189,100,24]}
+{"kind":"textbox","id":"sh/1sbehs7a","slide":7,"name":"map-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[370,189,100,24]}
+{"kind":"textbox","id":"sh/0r2xon6p","slide":7,"name":"map-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[490,189,100,24]}
+{"kind":"textbox","id":"sh/r29wbyp8","slide":7,"name":"map-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[610,189,100,24]}
+{"kind":"textbox","id":"sh/q10fiton","slide":7,"name":"map-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[730,189,100,24]}
+{"kind":"textbox","id":"sh/czy9svqd","slide":7,"name":"map-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[850,189,100,24]}
+{"kind":"textbox","id":"sh/x07al07y","slide":7,"name":"map-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[970,189,100,24]}
+{"kind":"textbox","id":"sh/adgrql87","slide":7,"name":"map-label-0","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[42,255,170,35]}
+{"kind":"shape","id":"sh/bypsjqps","slide":7,"name":"map-0-1","bbox":[250,228,100,86]}
+{"kind":"textbox","id":"sh/oby9obq1","slide":7,"name":"map-mark-0-1","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[250,250,100,42]}
+{"kind":"shape","id":"sh/pc7ahg7m","slide":7,"name":"map-0-2","bbox":[370,228,100,86]}
+{"kind":"shape","id":"sh/29grml8b","slide":7,"name":"map-mark-0-2","bbox":[370,250,100,42]}
+{"kind":"shape","id":"sh/napsfq9w","slide":7,"name":"map-0-3","bbox":[490,228,100,86]}
+{"kind":"textbox","id":"sh/87it0fql","slide":7,"name":"map-mark-0-3","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[490,250,100,42]}
+{"kind":"shape","id":"sh/98batk76","slide":7,"name":"map-0-4","bbox":[610,228,100,86]}
+{"kind":"shape","id":"sh/hcnixgvy","slide":7,"name":"map-mark-0-4","bbox":[610,250,100,42]}
+{"kind":"shape","id":"sh/wbe1obed","slide":7,"name":"map-0-5","bbox":[730,228,100,86]}
+{"kind":"textbox","id":"sh/va50v6ds","slide":7,"name":"map-mark-0-5","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[730,250,100,42]}
+{"kind":"shape","id":"sh/u9cjmlw7","slide":7,"name":"map-0-6","bbox":[850,228,100,86]}
+{"kind":"shape","id":"sh/983itgvm","slide":7,"name":"map-mark-0-6","bbox":[850,250,100,42]}
+{"kind":"shape","id":"sh/87u1kbeh","slide":7,"name":"map-0-7","bbox":[970,228,100,86]}
+{"kind":"textbox","id":"sh/7ml0r6dw","slide":7,"name":"map-mark-0-7","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[970,250,100,42]}
+{"kind":"textbox","id":"sh/mlczi1wb","slide":7,"name":"map-label-1","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[42,367,170,35]}
+{"kind":"shape","id":"sh/lk3ipwvq","slide":7,"name":"map-1-1","bbox":[250,340,100,86]}
+{"kind":"shape","id":"sh/kjuhgre5","slide":7,"name":"map-mark-1-1","bbox":[250,362,100,42]}
+{"kind":"shape","id":"sh/ap8fqxc3","slide":7,"name":"map-1-2","bbox":[370,340,100,86]}
+{"kind":"textbox","id":"sh/bqhgj2to","slide":7,"name":"map-mark-1-2","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[370,362,100,42]}
+{"kind":"shape","id":"sh/craxs7u9","slide":7,"name":"map-1-3","bbox":[490,340,100,86]}
+{"kind":"textbox","id":"sh/xsjylcbe","slide":7,"name":"map-mark-1-3","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[490,362,100,42]}
+{"kind":"shape","id":"sh/2l8fmxcr","slide":7,"name":"map-1-4","bbox":[610,340,100,86]}
+{"kind":"shape","id":"sh/nmhgfitc","slide":7,"name":"map-mark-1-4","bbox":[610,362,100,42]}
+{"kind":"shape","id":"sh/onqxonux","slide":7,"name":"map-1-5","bbox":[730,340,100,86]}
+{"kind":"shape","id":"sh/pozyhsbi","slide":7,"name":"map-mark-1-5","bbox":[730,362,100,42]}
+{"kind":"shape","id":"sh/exofidcv","slide":7,"name":"map-1-6","bbox":[850,340,100,86]}
+{"kind":"textbox","id":"sh/fixwbitg","slide":7,"name":"map-mark-1-6","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[850,362,100,42]}
+{"kind":"shape","id":"sh/rahcnexc","slide":7,"name":"map-1-7","bbox":[970,340,100,86]}
+{"kind":"textbox","id":"sh/698butgr","slide":7,"name":"map-mark-1-7","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[970,362,100,42]}
+{"kind":"textbox","id":"sh/tcjupof2","slide":7,"name":"map-label-2","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[42,479,170,35]}
+{"kind":"shape","id":"sh/sbqtwjyh","slide":7,"name":"map-2-1","bbox":[250,452,100,86]}
+{"kind":"shape","id":"sh/j6hcjex0","slide":7,"name":"map-mark-2-1","bbox":[250,474,100,42]}
+{"kind":"shape","id":"sh/i58bq9gf","slide":7,"name":"map-2-2","bbox":[370,452,100,86]}
+{"kind":"shape","id":"sh/58zulof6","slide":7,"name":"map-mark-2-2","bbox":[370,474,100,42]}
+{"kind":"shape","id":"sh/47qtsjyl","slide":7,"name":"map-2-3","bbox":[490,452,100,86]}
+{"kind":"shape","id":"sh/vixcfux4","slide":7,"name":"map-mark-2-3","bbox":[490,474,100,42]}
+{"kind":"shape","id":"sh/ahobm9gj","slide":7,"name":"map-2-4","bbox":[610,452,100,86]}
+{"kind":"textbox","id":"sh/0nm9wve1","slide":7,"name":"map-mark-2-4","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[610,474,100,42]}
+{"kind":"shape","id":"sh/lovqp0vm","slide":7,"name":"map-2-5","bbox":[730,452,100,86]}
+{"kind":"textbox","id":"sh/ylkru5wb","slide":7,"name":"map-mark-2-5","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[730,474,100,42]}
+{"kind":"shape","id":"sh/zmd8nqdw","slide":7,"name":"map-2-6","bbox":[850,452,100,86]}
+{"kind":"textbox","id":"sh/8bm90fed","slide":7,"name":"map-mark-2-6","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[850,474,100,42]}
+{"kind":"shape","id":"sh/9cvatkvy","slide":7,"name":"map-2-7","bbox":[970,452,100,86]}
+{"kind":"textbox","id":"sh/mp4ry5w7","slide":7,"name":"map-mark-2-7","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[970,474,100,42]}
+{"kind":"textbox","id":"sh/nqd8rads","slide":7,"name":"text","text":"Example: position 6 answers NO, YES, YES → 2 + 4 = 6","textPreview":"Example: position 6 answers NO, YES, YES → 2 + 4 = 6","textChars":52,"textLines":1,"bbox":[218,590,844,44]}
+{"kind":"notes","id":"nt/tjgcca","slide":7,"text":"Timing: 3 minutes.\n\nHave the room read down the column for position 6: check 1 no, check 2 yes, check 4 yes. The labels of the YES rows add to 6. Ask for the address of positions 3, 5, and 7. Answers: 1+2=3; 1+4=5; 1+2+4=7. Worksheet 1C.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/4b6ml5","slide":8,"title":"HUMAN CODE GAME","textShapes":21}
+{"kind":"textbox","id":"sh/etkba5sr","slide":8,"name":"section-8","text":"HUMAN CODE GAME","textPreview":"HUMAN CODE GAME","textChars":15,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/1gvul0b2","slide":8,"name":"title-8","text":"Become the seven-position machine","textPreview":"Become the seven-position machine","textChars":33,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/0v2tcvax","slide":8,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/nidcnat8","slide":8,"name":"page-8","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/mh4be5sn","slide":8,"name":"human-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,227,132,25]}
+{"kind":"shape","id":"sh/9kvupkbe","slide":8,"name":"human-cell-1","bbox":[82,265,132,132]}
+{"kind":"textbox","id":"sh/ojmtgfat","slide":8,"name":"human-bit-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,289,132,70]}
+{"kind":"textbox","id":"sh/bmdcrutk","slide":8,"name":"human-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,227,132,25]}
+{"kind":"shape","id":"sh/al4bipsz","slide":8,"name":"human-cell-2","bbox":[253,265,132,132]}
+{"kind":"textbox","id":"sh/oby90zih","slide":8,"name":"human-bit-2","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[253,289,132,70]}
+{"kind":"textbox","id":"sh/pcrqtkj2","slide":8,"name":"human-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,227,132,25]}
+{"kind":"shape","id":"sh/2pgryp0r","slide":8,"name":"human-cell-3","bbox":[424,265,132,132]}
+{"kind":"textbox","id":"sh/nqp8ru1c","slide":8,"name":"human-bit-3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[424,289,132,70]}
+{"kind":"textbox","id":"sh/cfi94zit","slide":8,"name":"human-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,227,132,25]}
+{"kind":"shape","id":"sh/xgrqx4je","slide":8,"name":"human-cell-4","bbox":[595,265,132,132]}
+{"kind":"textbox","id":"sh/ad0r2p0n","slide":8,"name":"human-bit-4","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[595,289,132,70]}
+{"kind":"textbox","id":"sh/be98vu18","slide":8,"name":"human-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,227,132,25]}
+{"kind":"shape","id":"sh/kji98jip","slide":8,"name":"human-cell-5","bbox":[766,265,132,132]}
+{"kind":"textbox","id":"sh/lkbq14ja","slide":8,"name":"human-bit-5","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[766,289,132,70]}
+{"kind":"textbox","id":"sh/t07ql4be","slide":8,"name":"human-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,227,132,25]}
+{"kind":"shape","id":"sh/szy9czat","slide":8,"name":"human-cell-6","bbox":[937,265,132,132]}
+{"kind":"textbox","id":"sh/7y58juto","slide":8,"name":"human-bit-6","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[937,289,132,70]}
+{"kind":"textbox","id":"sh/6xwra9s3","slide":8,"name":"human-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,227,132,25]}
+{"kind":"shape","id":"sh/h47qpobq","slide":8,"name":"human-cell-7","bbox":[1108,265,132,132]}
+{"kind":"textbox","id":"sh/g3y9gja5","slide":8,"name":"human-bit-7","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1108,289,132,70]}
+{"kind":"textbox","id":"sh/f2p8netk","slide":8,"name":"text","text":"Round 1: stand if check 1 covers you.","textPreview":"Round 1: stand if check 1 covers you.","textChars":37,"textLines":1,"bbox":[42,508,540,45]}
+{"kind":"textbox","id":"sh/u1gre9sz","slide":8,"name":"text","text":"Round 2: stand if check 2 covers you.","textPreview":"Round 2: stand if check 2 covers you.","textChars":37,"textLines":1,"bbox":[42,566,540,45]}
+{"kind":"textbox","id":"sh/x8nqdkb6","slide":8,"name":"text","text":"Round 3: stand if check 4 covers you.","textPreview":"Round 3: stand if check 4 covers you.","textChars":37,"textLines":1,"bbox":[658,508,540,45]}
+{"kind":"textbox","id":"sh/w7epkfa1","slide":8,"name":"text","text":"Finale: one person flips their bit. Which checks become odd?","textPreview":"Finale: one person flips their bit. Which checks become odd?","textChars":60,"textLines":1,"bbox":[658,566,540,60]}
+{"kind":"notes","id":"nt/4b6ml5","slide":8,"text":"Timing: 7 minutes.\n\nInvite seven volunteers and give each a position card 1–7. For each check, students in that group stand or raise a card. Then secretly tap one volunteer to flip their bit card. The class counts each check group and uses the labels of odd groups to name the volunteer. Rotate volunteers if time. This physicalizes the syndrome before any formal encoding.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/ohag24","slide":9,"title":"BUILD THE SEVEN-SLOT MACHINE","textShapes":21}
+{"kind":"textbox","id":"sh/t43yl0b2","slide":9,"name":"section-9","text":"BUILD THE SEVEN-SLOT MACHINE","textPreview":"BUILD THE SEVEN-SLOT MACHINE","textChars":28,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/6hsfalcr","slide":9,"name":"title-9","text":"Powers of two become the check-bit stations","textPreview":"Powers of two become the check-bit stations","textChars":43,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/r2lwjqtw","slide":9,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/4fax8vul","slide":9,"name":"page-9","text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/5gjeh0b6","slide":9,"name":"roles-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,230,132,25]}
+{"kind":"shape","id":"sh/idsf6lcf","slide":9,"name":"roles-cell-1","bbox":[82,268,132,132]}
+{"kind":"textbox","id":"sh/je1wfqt0","slide":9,"name":"roles-bit-1","text":"p₁","textPreview":"p₁","textChars":2,"textLines":1,"bbox":[82,292,132,70]}
+{"kind":"textbox","id":"sh/wbax4bu9","slide":9,"name":"roles-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,230,132,25]}
+{"kind":"shape","id":"sh/hcjedgbu","slide":9,"name":"roles-cell-2","bbox":[253,268,132,132]}
+{"kind":"textbox","id":"sh/xsryxcby","slide":9,"name":"roles-bit-2","text":"p₂","textPreview":"p₂","textChars":2,"textLines":1,"bbox":[253,292,132,70]}
+{"kind":"textbox","id":"sh/crih47ad","slide":9,"name":"roles-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,230,132,25]}
+{"kind":"shape","id":"sh/bq9gv2ts","slide":9,"name":"roles-cell-3","bbox":[424,268,132,132]}
+{"kind":"textbox","id":"sh/ap0z2xs7","slide":9,"name":"roles-bit-3","text":"d₁","textPreview":"d₁","textChars":2,"textLines":1,"bbox":[424,292,132,70]}
+{"kind":"textbox","id":"sh/porytcbm","slide":9,"name":"roles-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,230,132,25]}
+{"kind":"shape","id":"sh/onix07ah","slide":9,"name":"roles-cell-4","bbox":[595,268,132,132]}
+{"kind":"textbox","id":"sh/nm9gr2tw","slide":9,"name":"roles-bit-4","text":"p₄","textPreview":"p₄","textChars":2,"textLines":1,"bbox":[595,292,132,70]}
+{"kind":"textbox","id":"sh/2lgfyxsb","slide":9,"name":"roles-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,230,132,25]}
+{"kind":"shape","id":"sh/1k7ypsbq","slide":9,"name":"roles-cell-5","bbox":[766,268,132,132]}
+{"kind":"textbox","id":"sh/0zyxwna5","slide":9,"name":"roles-bit-5","text":"d₂","textPreview":"d₂","textChars":2,"textLines":1,"bbox":[766,292,132,70]}
+{"kind":"textbox","id":"sh/s32hcni1","slide":9,"name":"roles-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,230,132,25]}
+{"kind":"shape","id":"sh/t4bylsjm","slide":9,"name":"roles-cell-6","bbox":[937,268,132,132]}
+{"kind":"textbox","id":"sh/61kzax0v","slide":9,"name":"roles-bit-6","text":"d₃","textPreview":"d₃","textChars":2,"textLines":1,"bbox":[937,292,132,70]}
+{"kind":"textbox","id":"sh/72tgj21g","slide":9,"name":"roles-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,230,132,25]}
+{"kind":"shape","id":"sh/kf2h8ni5","slide":9,"name":"roles-cell-7","bbox":[1108,268,132,132]}
+{"kind":"textbox","id":"sh/50byhsja","slide":9,"name":"roles-bit-7","text":"d₄","textPreview":"d₄","textChars":2,"textLines":1,"bbox":[1108,292,132,70]}
+{"kind":"textbox","id":"sh/id0f6d0z","slide":9,"name":"text","text":"CHECK BITS","textPreview":"CHECK BITS","textChars":10,"textLines":1,"bbox":[90,520,438,42]}
+{"kind":"textbox","id":"sh/je9gfi1k","slide":9,"name":"text","text":"positions 1, 2, 4","textPreview":"positions 1, 2, 4","textChars":17,"textLines":1,"bbox":[90,568,438,38]}
+{"kind":"textbox","id":"sh/obmhk7i9","slide":9,"name":"text","text":"MESSAGE BITS","textPreview":"MESSAGE BITS","textChars":12,"textLines":1,"bbox":[746,520,438,42]}
+{"kind":"textbox","id":"sh/pwvitcju","slide":9,"name":"text","text":"positions 3, 5, 6, 7","textPreview":"positions 3, 5, 6, 7","textChars":20,"textLines":1,"bbox":[746,568,438,38]}
+{"kind":"notes","id":"nt/ohag24","slide":9,"text":"Timing: 3 minutes.\n\nName the positions and roles. Ask why 1, 2, and 4 are special: they are exactly the check labels and each belongs to only its own check group. Students fill the role row on Worksheet 2A.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/cunexf","slide":10,"title":"COVERAGE MAP","textShapes":26}
+{"kind":"textbox","id":"sh/36toj294","slide":10,"name":"section-10","text":"COVERAGE MAP","textPreview":"COVERAGE MAP","textChars":12,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/472pc7ap","slide":10,"name":"title-10","text":"Each check bit controls its own overlapping group","textPreview":"Each check bit controls its own overlapping group","textChars":49,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/p8bqlcra","slide":10,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/q9k7ehsv","slide":10,"name":"page-10","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/rut8n29g","slide":10,"name":"map-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[250,191,100,24]}
+{"kind":"textbox","id":"sh/cv2pg7a1","slide":10,"name":"map-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[370,191,100,24]}
+{"kind":"textbox","id":"sh/dwvqpcrm","slide":10,"name":"map-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[490,191,100,24]}
+{"kind":"textbox","id":"sh/6d07idsr","slide":10,"name":"map-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[610,191,100,24]}
+{"kind":"textbox","id":"sh/7e9obi9c","slide":10,"name":"map-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[730,191,100,24]}
+{"kind":"textbox","id":"sh/b6p8vm5g","slide":10,"name":"map-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[850,191,100,24]}
+{"kind":"textbox","id":"sh/a5g72hov","slide":10,"name":"map-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[970,191,100,24]}
+{"kind":"textbox","id":"sh/x87qxwnm","slide":10,"name":"map-label-0","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[42,257,170,35]}
+{"kind":"shape","id":"sh/c7yp4r61","slide":10,"name":"map-0-1","bbox":[250,230,100,86]}
+{"kind":"textbox","id":"sh/3258rm5k","slide":10,"name":"map-mark-0-1","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[250,252,100,42]}
+{"kind":"shape","id":"sh/21w7yhoz","slide":10,"name":"map-0-2","bbox":[370,230,100,86]}
+{"kind":"shape","id":"sh/p47qtcna","slide":10,"name":"map-mark-0-2","bbox":[370,252,100,42]}
+{"kind":"shape","id":"sh/o3ep0r65","slide":10,"name":"map-0-3","bbox":[490,230,100,86]}
+{"kind":"textbox","id":"sh/fe5on258","slide":10,"name":"map-mark-0-3","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[490,252,100,42]}
+{"kind":"shape","id":"sh/edw7uxon","slide":10,"name":"map-0-4","bbox":[610,230,100,86]}
+{"kind":"shape","id":"sh/i9cr6x8v","slide":10,"name":"map-mark-0-4","bbox":[610,252,100,42]}
+{"kind":"shape","id":"sh/jal8z29g","slide":10,"name":"map-0-5","bbox":[730,230,100,86]}
+{"kind":"textbox","id":"sh/4bu987ql","slide":10,"name":"map-mark-0-5","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[730,252,100,42]}
+{"kind":"shape","id":"sh/5cnq1cr6","slide":10,"name":"map-0-6","bbox":[850,230,100,86]}
+{"kind":"shape","id":"sh/6xwrah8r","slide":10,"name":"map-mark-0-6","bbox":[850,252,100,42]}
+{"kind":"shape","id":"sh/ry58329c","slide":10,"name":"map-0-7","bbox":[970,230,100,86]}
+{"kind":"textbox","id":"sh/sze9c7qx","slide":10,"name":"map-mark-0-7","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[970,252,100,42]}
+{"kind":"textbox","id":"sh/t0nq5cri","slide":10,"name":"map-label-1","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[42,369,170,35]}
+{"kind":"shape","id":"sh/e1wreh83","slide":10,"name":"map-1-1","bbox":[250,342,100,86]}
+{"kind":"shape","id":"sh/f2587m98","slide":10,"name":"map-mark-1-1","bbox":[250,364,100,42]}
+{"kind":"shape","id":"sh/pwrudgbq","slide":10,"name":"map-1-2","bbox":[370,342,100,86]}
+{"kind":"textbox","id":"sh/ovyt4ba5","slide":10,"name":"map-mark-1-2","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[370,364,100,42]}
+{"kind":"shape","id":"sh/nupsb6tk","slide":10,"name":"map-1-3","bbox":[490,342,100,86]}
+{"kind":"textbox","id":"sh/2tgb2lsz","slide":10,"name":"map-mark-1-3","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[490,364,100,42]}
+{"kind":"shape","id":"sh/x0ruh0bm","slide":10,"name":"map-1-4","bbox":[610,342,100,86]}
+{"kind":"shape","id":"sh/czit8va1","slide":10,"name":"map-mark-1-4","bbox":[610,364,100,42]}
+{"kind":"shape","id":"sh/by9cfqtg","slide":10,"name":"map-1-5","bbox":[730,342,100,86]}
+{"kind":"shape","id":"sh/ax0b6lsb","slide":10,"name":"map-mark-1-5","bbox":[730,364,100,42]}
+{"kind":"shape","id":"sh/lobul0by","slide":10,"name":"map-1-6","bbox":[850,342,100,86]}
+{"kind":"textbox","id":"sh/kn2tcvad","slide":10,"name":"map-mark-1-6","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[850,364,100,42]}
+{"kind":"shape","id":"sh/gv6503yh","slide":10,"name":"map-1-7","bbox":[970,342,100,86]}
+{"kind":"textbox","id":"sh/hwf6t8z2","slide":10,"name":"map-mark-1-7","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[970,364,100,42]}
+{"kind":"textbox","id":"sh/utonytgr","slide":10,"name":"map-label-2","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[42,481,170,35]}
+{"kind":"shape","id":"sh/vuxoryhc","slide":10,"name":"map-2-1","bbox":[250,454,100,86]}
+{"kind":"shape","id":"sh/87m5wjyl","slide":10,"name":"map-mark-2-1","bbox":[250,476,100,42]}
+{"kind":"shape","id":"sh/tsfmpoz6","slide":10,"name":"map-2-2","bbox":[370,454,100,86]}
+{"kind":"shape","id":"sh/654nu9gf","slide":10,"name":"map-mark-2-2","bbox":[370,476,100,42]}
+{"kind":"shape","id":"sh/76d4neh0","slide":10,"name":"map-2-3","bbox":[490,454,100,86]}
+{"kind":"shape","id":"sh/s3q58nyp","slide":10,"name":"map-mark-2-3","bbox":[490,476,100,42]}
+{"kind":"shape","id":"sh/doz61sfa","slide":10,"name":"map-2-4","bbox":[610,454,100,86]}
+{"kind":"textbox","id":"sh/ni18rm1s","slide":10,"name":"map-mark-2-4","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[610,476,100,42]}
+{"kind":"shape","id":"sh/2xsryh07","slide":10,"name":"map-2-5","bbox":[730,454,100,86]}
+{"kind":"textbox","id":"sh/9k3qtwji","slide":10,"name":"map-mark-2-5","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[730,476,100,42]}
+{"kind":"shape","id":"sh/oju90rix","slide":10,"name":"map-2-6","bbox":[850,454,100,86]}
+{"kind":"textbox","id":"sh/bml8vmho","slide":10,"name":"map-mark-2-6","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[850,476,100,42]}
+{"kind":"shape","id":"sh/alcr2h03","slide":10,"name":"map-2-7","bbox":[970,454,100,86]}
+{"kind":"textbox","id":"sh/xo3qxwzu","slide":10,"name":"map-mark-2-7","text":"●","textPreview":"●","textChars":1,"textLines":1,"bbox":[970,476,100,42]}
+{"kind":"textbox","id":"sh/wnu94ri9","slide":10,"name":"text","text":"Your rule: choose each check bit so its whole row has an even number of 1s.","textPreview":"Your rule: choose each check bit so its whole row has an even number of 1s.","textChars":75,"textLines":1,"bbox":[166,596,948,42]}
+{"kind":"notes","id":"nt/cunexf","slide":10,"text":"Timing: 3 minutes.\n\nPoint out that each check includes its own check-bit position. Students trace the three sets on Worksheet 2A. Quick call-and-response: Does check 1 cover 6? no. Does check 2 cover 6? yes. Does check 4 cover 6? yes.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/r8eb3d","slide":11,"title":"RESTRICTED WARM-UP","textShapes":26}
+{"kind":"textbox","id":"sh/gba98b6x","slide":11,"name":"section-11","text":"RESTRICTED WARM-UP","textPreview":"RESTRICTED WARM-UP","textChars":18,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/va18f6pc","slide":11,"name":"title-11","text":"Training wheels: use three message bits first","textPreview":"Training wheels: use three message bits first","textChars":45,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/u9s761or","slide":11,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/tojqdw76","slide":11,"name":"page-11","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/8nqp4b6l","slide":11,"name":"warm-roles-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,232,132,25]}
+{"kind":"shape","id":"sh/7mh8b6p0","slide":11,"name":"warm-roles-cell-1","bbox":[82,270,132,132]}
+{"kind":"textbox","id":"sh/6l8721ov","slide":11,"name":"warm-roles-bit-1","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[82,294,132,70]}
+{"kind":"textbox","id":"sh/dk3qp07q","slide":11,"name":"warm-roles-role-1","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[76,417,144,32]}
+{"kind":"textbox","id":"sh/sju9gv65","slide":11,"name":"warm-roles-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,232,132,25]}
+{"kind":"shape","id":"sh/epwb690z","slide":11,"name":"warm-roles-cell-2","bbox":[253,270,132,132]}
+{"kind":"textbox","id":"sh/fq5cze1k","slide":11,"name":"warm-roles-bit-2","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[253,294,132,70]}
+{"kind":"textbox","id":"sh/0ret8ji5","slide":11,"name":"warm-roles-role-2","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[247,417,144,32]}
+{"kind":"textbox","id":"sh/1snu1ojq","slide":11,"name":"warm-roles-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,232,132,25]}
+{"kind":"shape","id":"sh/qlcb2903","slide":11,"name":"warm-roles-cell-3","bbox":[424,270,132,132]}
+{"kind":"textbox","id":"sh/rm5cvu1o","slide":11,"name":"warm-roles-bit-3","text":"d₁","textPreview":"d₁","textChars":2,"textLines":1,"bbox":[424,294,132,70]}
+{"kind":"textbox","id":"sh/snet4zi9","slide":11,"name":"warm-roles-role-3","text":"data 1","textPreview":"data 1","textChars":6,"textLines":1,"bbox":[418,417,144,32]}
+{"kind":"textbox","id":"sh/donux4ju","slide":11,"name":"warm-roles-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,232,132,25]}
+{"kind":"shape","id":"sh/ahgvet07","slide":11,"name":"warm-roles-cell-4","bbox":[595,270,132,132]}
+{"kind":"textbox","id":"sh/bipc7yhs","slide":11,"name":"warm-roles-bit-4","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[595,294,132,70]}
+{"kind":"textbox","id":"sh/7218zqh4","slide":11,"name":"warm-roles-role-4","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[589,417,144,32]}
+{"kind":"textbox","id":"sh/m18r6lgz","slide":11,"name":"warm-roles-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,232,132,25]}
+{"kind":"shape","id":"sh/94jq10za","slide":11,"name":"warm-roles-cell-5","bbox":[766,270,132,132]}
+{"kind":"textbox","id":"sh/83a98vyp","slide":11,"name":"warm-roles-bit-5","text":"d₂","textPreview":"d₂","textChars":2,"textLines":1,"bbox":[766,294,132,70]}
+{"kind":"textbox","id":"sh/v6183qhg","slide":11,"name":"warm-roles-role-5","text":"data 2","textPreview":"data 2","textChars":6,"textLines":1,"bbox":[760,417,144,32]}
+{"kind":"textbox","id":"sh/u5sra5gv","slide":11,"name":"warm-roles-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,232,132,25]}
+{"kind":"shape","id":"sh/hsjq50zm","slide":11,"name":"warm-roles-cell-6","bbox":[937,270,132,132]}
+{"kind":"textbox","id":"sh/gra9cvy1","slide":11,"name":"warm-roles-bit-6","text":"d₃","textPreview":"d₃","textChars":2,"textLines":1,"bbox":[937,294,132,70]}
+{"kind":"textbox","id":"sh/3uls7ahc","slide":11,"name":"warm-roles-role-6","text":"data 3","textPreview":"data 3","textChars":6,"textLines":1,"bbox":[931,417,144,32]}
+{"kind":"textbox","id":"sh/itsre5gr","slide":11,"name":"warm-roles-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,232,132,25]}
+{"kind":"shape","id":"sh/0zupofe5","slide":11,"name":"warm-roles-cell-7","bbox":[1108,270,132,132]}
+{"kind":"textbox","id":"sh/103qxkvq","slide":11,"name":"warm-roles-bit-7","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[1108,294,132,70]}
+{"kind":"textbox","id":"sh/exc7m5wz","slide":11,"name":"warm-roles-role-7","text":"fixed 0","textPreview":"fixed 0","textChars":7,"textLines":1,"bbox":[1102,417,144,32]}
+{"kind":"textbox","id":"sh/fyl8vadk","slide":11,"name":"text","text":"Place data in 3, 5, 6. Lock position 7 at zero.","textPreview":"Place data in 3, 5, 6. Lock position 7 at zero.","textChars":47,"textLines":1,"bbox":[223,539,834,46]}
+{"kind":"textbox","id":"sh/svupkfet","slide":11,"name":"text","text":"This is a restricted practice version—not the standard Hamming(7,3) code.","textPreview":"This is a restricted practice version—not the standard Hamming(7,3) code.","textChars":73,"textLines":1,"bbox":[223,608,834,30]}
+{"kind":"notes","id":"nt/r8eb3d","slide":11,"text":"Timing: 2 minutes.\n\nExplain the accuracy note briefly: we are taking the full seven-slot machine and simply fixing the last message slot at 0. That lets students practice all three parity checks with less cognitive load. Worksheet 2B.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/93710a","slide":12,"title":"TRAINING-WHEELS CHALLENGE","textShapes":26}
+{"kind":"textbox","id":"sh/fapwjahk","slide":12,"name":"section-12","text":"TRAINING-WHEELS CHALLENGE","textPreview":"TRAINING-WHEELS CHALLENGE","textChars":25,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/gbyxcfy5","slide":12,"name":"title-12","text":"Encode the three bits 1 0 1","textPreview":"Encode the three bits 1 0 1","textChars":27,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/hc7elkzq","slide":12,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/2dgfepgb","slide":12,"name":"page-12","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/3e9wnuhw","slide":12,"name":"warm-try-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,232,132,25]}
+{"kind":"shape","id":"sh/4fixgzyh","slide":12,"name":"warm-try-cell-1","bbox":[82,270,132,132]}
+{"kind":"textbox","id":"sh/pgrep4z2","slide":12,"name":"warm-try-bit-1","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[82,294,132,70]}
+{"kind":"textbox","id":"sh/qh0fi9g7","slide":12,"name":"warm-try-role-1","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[76,417,144,32]}
+{"kind":"textbox","id":"sh/ri9wruhs","slide":12,"name":"warm-try-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,232,132,25]}
+{"kind":"shape","id":"sh/zud43yd4","slide":12,"name":"warm-try-cell-2","bbox":[253,270,132,132]}
+{"kind":"textbox","id":"sh/y943atwj","slide":12,"name":"warm-try-bit-2","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[253,294,132,70]}
+{"kind":"textbox","id":"sh/lwvm58va","slide":12,"name":"warm-try-role-2","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[247,417,144,32]}
+{"kind":"textbox","id":"sh/0vm5c3ep","slide":12,"name":"warm-try-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,232,132,25]}
+{"kind":"shape","id":"sh/b6t4zyds","slide":12,"name":"warm-try-cell-3","bbox":[424,270,132,132]}
+{"kind":"textbox","id":"sh/q5k36twn","slide":12,"name":"warm-try-bit-3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[424,294,132,70]}
+{"kind":"textbox","id":"sh/d8bm1ovy","slide":12,"name":"warm-try-role-3","text":"data 1","textPreview":"data 1","textChars":6,"textLines":1,"bbox":[418,417,144,32]}
+{"kind":"textbox","id":"sh/c72l83ed","slide":12,"name":"warm-try-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,232,132,25]}
+{"kind":"shape","id":"sh/v2x4bidc","slide":12,"name":"warm-try-cell-4","bbox":[595,270,132,132]}
+{"kind":"textbox","id":"sh/a1onidwr","slide":12,"name":"warm-try-bit-4","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[595,294,132,70]}
+{"kind":"textbox","id":"sh/6x87ahgz","slide":12,"name":"warm-try-role-4","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[589,417,144,32]}
+{"kind":"textbox","id":"sh/7yho3mxk","slide":12,"name":"warm-try-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,232,132,25]}
+{"kind":"shape","id":"sh/szqpcry5","slide":12,"name":"warm-try-cell-5","bbox":[766,270,132,132]}
+{"kind":"textbox","id":"sh/tkjq5wfq","slide":12,"name":"warm-try-bit-5","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[766,294,132,70]}
+{"kind":"textbox","id":"sh/uls7e1wv","slide":12,"name":"warm-try-role-5","text":"data 2","textPreview":"data 2","textChars":6,"textLines":1,"bbox":[760,417,144,32]}
+{"kind":"textbox","id":"sh/fm1876xg","slide":12,"name":"warm-try-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,232,132,25]}
+{"kind":"shape","id":"sh/gnapgbe1","slide":12,"name":"warm-try-cell-6","bbox":[937,270,132,132]}
+{"kind":"textbox","id":"sh/hojq9wfm","slide":12,"name":"warm-try-bit-6","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[937,294,132,70]}
+{"kind":"textbox","id":"sh/apo72xgr","slide":12,"name":"warm-try-role-6","text":"data 3","textPreview":"data 3","textChars":6,"textLines":1,"bbox":[931,417,144,32]}
+{"kind":"textbox","id":"sh/vqxov2xc","slide":12,"name":"warm-try-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,232,132,25]}
+{"kind":"shape","id":"sh/dkna10zu","slide":12,"name":"warm-try-cell-7","bbox":[1108,270,132,132]}
+{"kind":"textbox","id":"sh/cje98vy9","slide":12,"name":"warm-try-bit-7","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[1108,294,132,70]}
+{"kind":"textbox","id":"sh/bilszaho","slide":12,"name":"warm-try-role-7","text":"fixed 0","textPreview":"fixed 0","textChars":7,"textLines":1,"bbox":[1102,417,144,32]}
+{"kind":"textbox","id":"sh/qhcr6503","slide":12,"name":"text","text":"Find p₁, p₂, p₄ so every check group is even.","textPreview":"Find p₁, p₂, p₄ so every check group is even.","textChars":45,"textLines":1,"bbox":[218,540,844,50]}
+{"kind":"shape","id":"sh/lona5kzq","slide":12,"name":"prompt-badge","bbox":[879,173,359,56]}
+{"kind":"textbox","id":"sh/0netcfyl","slide":12,"name":"prompt-badge-text","text":"Worksheet 2B • build all 7 bits","textPreview":"Worksheet 2B • build all 7 bits","textChars":31,"textLines":1,"bbox":[895,185,327,32]}
+{"kind":"notes","id":"nt/93710a","slide":12,"text":"Timing: 5 minutes.\n\nPairs solve without a formula. Hint ladder: (1) start with check 1 positions 1,3,5,7; (2) count the known 1s; (3) choose p1 to make that count even; repeat for checks 2 and 4. Expected p1=1, p2=0, p4=1. Do not reveal until most pairs have committed.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/a2o1mc","slide":13,"title":"TRAINING-WHEELS REVEAL","textShapes":28}
+{"kind":"textbox","id":"sh/nix8ju5w","slide":13,"name":"section-13","text":"TRAINING-WHEELS REVEAL","textPreview":"TRAINING-WHEELS REVEAL","textChars":22,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/oj6pszmh","slide":13,"name":"title-13","text":"The warm-up codeword is 1 0 1 1 0 1 0","textPreview":"The warm-up codeword is 1 0 1 1 0 1 0","textChars":37,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/9kfql432","slide":13,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/a587up4n","slide":13,"name":"page-13","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/b6h8nul8","slide":13,"name":"warm-reveal-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,224,132,25]}
+{"kind":"shape","id":"sh/w7qpwzmt","slide":13,"name":"warm-reveal-cell-1","bbox":[82,262,132,132]}
+{"kind":"textbox","id":"sh/x8zqp43e","slide":13,"name":"warm-reveal-bit-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,286,132,70]}
+{"kind":"textbox","id":"sh/y987y94j","slide":13,"name":"warm-reveal-role-1","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[76,409,144,32]}
+{"kind":"textbox","id":"sh/jah8rel4","slide":13,"name":"warm-reveal-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,224,132,25]}
+{"kind":"shape","id":"sh/jmlkjm5o","slide":13,"name":"warm-reveal-cell-2","bbox":[253,262,132,132]}
+{"kind":"textbox","id":"sh/ilcjqho3","slide":13,"name":"warm-reveal-bit-2","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[253,286,132,70]}
+{"kind":"textbox","id":"sh/5o32lwnu","slide":13,"name":"warm-reveal-role-2","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[247,409,144,32]}
+{"kind":"textbox","id":"sh/knu1sr69","slide":13,"name":"warm-reveal-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,224,132,25]}
+{"kind":"shape","id":"sh/vy1kf2ps","slide":13,"name":"warm-reveal-cell-3","bbox":[424,262,132,132]}
+{"kind":"textbox","id":"sh/axsjmxo7","slide":13,"name":"warm-reveal-bit-3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[424,286,132,70]}
+{"kind":"textbox","id":"sh/xkj2hcny","slide":13,"name":"warm-reveal-role-3","text":"data 1","textPreview":"data 1","textChars":6,"textLines":1,"bbox":[418,409,144,32]}
+{"kind":"textbox","id":"sh/wza1o76d","slide":13,"name":"warm-reveal-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,224,132,25]}
+{"kind":"shape","id":"sh/fu5kr65w","slide":13,"name":"warm-reveal-cell-4","bbox":[595,262,132,132]}
+{"kind":"textbox","id":"sh/utwjy1ob","slide":13,"name":"warm-reveal-bit-4","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[595,286,132,70]}
+{"kind":"textbox","id":"sh/al0v6pcv","slide":13,"name":"warm-reveal-role-4","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[589,409,144,32]}
+{"kind":"textbox","id":"sh/bm9wfutg","slide":13,"name":"warm-reveal-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,224,132,25]}
+{"kind":"shape","id":"sh/cnid8zu1","slide":13,"name":"warm-reveal-cell-5","bbox":[766,262,132,132]}
+{"kind":"textbox","id":"sh/xoreh4bm","slide":13,"name":"warm-reveal-bit-5","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[766,286,132,70]}
+{"kind":"textbox","id":"sh/ypkva9c7","slide":13,"name":"warm-reveal-role-5","text":"data 2","textPreview":"data 2","textChars":6,"textLines":1,"bbox":[760,409,144,32]}
+{"kind":"textbox","id":"sh/zqtwjetc","slide":13,"name":"warm-reveal-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,224,132,25]}
+{"kind":"shape","id":"sh/kr2dcjux","slide":13,"name":"warm-reveal-cell-6","bbox":[937,262,132,132]}
+{"kind":"textbox","id":"sh/lsbelobi","slide":13,"name":"warm-reveal-bit-6","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[937,286,132,70]}
+{"kind":"textbox","id":"sh/etgvy5cn","slide":13,"name":"warm-reveal-role-6","text":"data 3","textPreview":"data 3","textChars":6,"textLines":1,"bbox":[931,409,144,32]}
+{"kind":"textbox","id":"sh/fupc7ad8","slide":13,"name":"warm-reveal-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,224,132,25]}
+{"kind":"shape","id":"sh/hofyd8vq","slide":13,"name":"warm-reveal-cell-7","bbox":[1108,262,132,132]}
+{"kind":"textbox","id":"sh/wnmhkne5","slide":13,"name":"warm-reveal-bit-7","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[1108,286,132,70]}
+{"kind":"textbox","id":"sh/vmdgbidk","slide":13,"name":"warm-reveal-role-7","text":"fixed 0","textPreview":"fixed 0","textChars":7,"textLines":1,"bbox":[1102,409,144,32]}
+{"kind":"textbox","id":"sh/ul4zidwf","slide":13,"name":"text","text":"check 1: 1+1+0+0 = 2","textPreview":"check 1: 1+1+0+0 = 2","textChars":20,"textLines":1,"bbox":[42,526,370,38]}
+{"kind":"textbox","id":"sh/5cfyhsv2","slide":13,"name":"text","text":"check 2: 0+1+1+0 = 2","textPreview":"check 2: 0+1+1+0 = 2","textChars":20,"textLines":1,"bbox":[455,526,370,38]}
+{"kind":"textbox","id":"sh/4b6honeh","slide":13,"name":"text","text":"check 4: 1+0+1+0 = 2","textPreview":"check 4: 1+0+1+0 = 2","textChars":20,"textLines":1,"bbox":[868,526,370,38]}
+{"kind":"textbox","id":"sh/jaxgfidw","slide":13,"name":"text","text":"All three totals are even ✓","textPreview":"All three totals are even ✓","textChars":27,"textLines":1,"bbox":[330,600,620,44]}
+{"kind":"notes","id":"nt/a2o1mc","slide":13,"text":"Timing: 2 minutes.\n\nHave three students each verify one check aloud. Ask what would change if the original three bits were different: only the count in the groups, not the groups themselves.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/wpl3jw","slide":14,"title":"FULL CODE","textShapes":28}
+{"kind":"textbox","id":"sh/hcj2p4fq","slide":14,"name":"section-14","text":"FULL CODE","textPreview":"FULL CODE","textChars":9,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/upsjepwf","slide":14,"name":"title-14","text":"Now unlock position 7: this is Hamming(7,4)","textPreview":"Now unlock position 7: this is Hamming(7,4)","textChars":43,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/va1knux0","slide":14,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/8nq1cze9","slide":14,"name":"page-14","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/toj2lkfu","slide":14,"name":"full-roles-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,228,132,25]}
+{"kind":"shape","id":"sh/6l8japw3","slide":14,"name":"full-roles-cell-1","bbox":[82,266,132,132]}
+{"kind":"textbox","id":"sh/7mh0juxo","slide":14,"name":"full-roles-bit-1","text":"p₁","textPreview":"p₁","textChars":2,"textLines":1,"bbox":[82,290,132,70]}
+{"kind":"textbox","id":"sh/kjq18fyd","slide":14,"name":"full-roles-role-1","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[76,413,144,32]}
+{"kind":"textbox","id":"sh/lkzihkfi","slide":14,"name":"full-roles-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,228,132,25]}
+{"kind":"shape","id":"sh/lsn2l4z6","slide":14,"name":"full-roles-cell-2","bbox":[253,266,132,132]}
+{"kind":"textbox","id":"sh/krelszi1","slide":14,"name":"full-roles-bit-2","text":"p₂","textPreview":"p₂","textChars":2,"textLines":1,"bbox":[253,290,132,70]}
+{"kind":"textbox","id":"sh/jq5kjuhg","slide":14,"name":"full-roles-role-2","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[247,413,144,32]}
+{"kind":"textbox","id":"sh/ypw3qp0v","slide":14,"name":"full-roles-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,228,132,25]}
+{"kind":"shape","id":"sh/xon2hkza","slide":14,"name":"full-roles-cell-3","bbox":[424,266,132,132]}
+{"kind":"textbox","id":"sh/cnelofip","slide":14,"name":"full-roles-bit-3","text":"d₁","textPreview":"d₁","textChars":2,"textLines":1,"bbox":[424,290,132,70]}
+{"kind":"textbox","id":"sh/bm5kfah4","slide":14,"name":"full-roles-role-3","text":"data 1","textPreview":"data 1","textChars":6,"textLines":1,"bbox":[418,413,144,32]}
+{"kind":"textbox","id":"sh/alcjmp0j","slide":14,"name":"full-roles-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,228,132,25]}
+{"kind":"shape","id":"sh/p032dkze","slide":14,"name":"full-roles-cell-4","bbox":[595,266,132,132]}
+{"kind":"textbox","id":"sh/ozu1kfit","slide":14,"name":"full-roles-bit-4","text":"p₄","textPreview":"p₄","textChars":2,"textLines":1,"bbox":[595,290,132,70]}
+{"kind":"textbox","id":"sh/0fitgjul","slide":14,"name":"full-roles-role-4","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[589,413,144,32]}
+{"kind":"textbox","id":"sh/1grup4b6","slide":14,"name":"full-roles-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,228,132,25]}
+{"kind":"shape","id":"sh/ed0be9cv","slide":14,"name":"full-roles-cell-5","bbox":[766,266,132,132]}
+{"kind":"textbox","id":"sh/fe9cnet0","slide":14,"name":"full-roles-bit-5","text":"d₂","textPreview":"d₂","textChars":2,"textLines":1,"bbox":[766,290,132,70]}
+{"kind":"textbox","id":"sh/sbytczup","slide":14,"name":"full-roles-role-5","text":"data 2","textPreview":"data 2","textChars":6,"textLines":1,"bbox":[760,413,144,32]}
+{"kind":"textbox","id":"sh/dcrul4ba","slide":14,"name":"full-roles-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,228,132,25]}
+{"kind":"shape","id":"sh/qpgbapcj","slide":14,"name":"full-roles-cell-6","bbox":[937,266,132,132]}
+{"kind":"textbox","id":"sh/rqpcjut4","slide":14,"name":"full-roles-bit-6","text":"d₃","textPreview":"d₃","textChars":2,"textLines":1,"bbox":[937,290,132,70]}
+{"kind":"textbox","id":"sh/w72do3ut","slide":14,"name":"full-roles-role-6","text":"data 3","textPreview":"data 3","textChars":6,"textLines":1,"bbox":[931,413,144,32]}
+{"kind":"textbox","id":"sh/x8buxobe","slide":14,"name":"full-roles-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,228,132,25]}
+{"kind":"shape","id":"sh/72dwn2dg","slide":14,"name":"full-roles-cell-7","bbox":[1108,266,132,132]}
+{"kind":"textbox","id":"sh/614fexwv","slide":14,"name":"full-roles-bit-7","text":"d₄","textPreview":"d₄","textChars":2,"textLines":1,"bbox":[1108,290,132,70]}
+{"kind":"textbox","id":"sh/t4fepsvm","slide":14,"name":"full-roles-role-7","text":"data 4","textPreview":"data 4","textChars":6,"textLines":1,"bbox":[1102,413,144,32]}
+{"kind":"textbox","id":"sh/836xgne1","slide":14,"name":"text","text":"4 message bits","textPreview":"4 message bits","textChars":14,"textLines":1,"bbox":[111,526,380,55]}
+{"kind":"textbox","id":"sh/v6xwr2ds","slide":14,"name":"text","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[571,521,138,62]}
+{"kind":"textbox","id":"sh/u5ofixw7","slide":14,"name":"text","text":"7 transmitted bits","textPreview":"7 transmitted bits","textChars":18,"textLines":1,"bbox":[790,526,380,55]}
+{"kind":"textbox","id":"sh/h8fetcvy","slide":14,"name":"text","text":"The same three checks still do all the work.","textPreview":"The same three checks still do all the work.","textChars":44,"textLines":1,"bbox":[290,604,700,38]}
+{"kind":"notes","id":"nt/wpl3jw","slide":14,"text":"Timing: 3 minutes.\n\nReveal the notation: Hamming(7,4) means seven transmitted bits carry four message bits. The three check bits are the redundancy that buys single-error correction. Students circle the four data stations on Worksheet 3A.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/h1kqwt","slide":15,"title":"HAMMING(7,4) RECIPE","textShapes":15}
+{"kind":"textbox","id":"sh/6dgb2x4n","slide":15,"name":"section-15","text":"HAMMING(7,4) RECIPE","textPreview":"HAMMING(7,4) RECIPE","textChars":19,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/tg7adc3e","slide":15,"name":"title-15","text":"Encoding is a four-move routine","textPreview":"Encoding is a four-move routine","textChars":31,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/sfyt47mt","slide":15,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/fi9sf2l4","slide":15,"name":"page-15","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/eh0b6h4j","slide":15,"name":"step-num-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[42,222,266,70]}
+{"kind":"shape","id":"sh/1krahc3a","slide":15,"bbox":[42,304,266,0.1]}
+{"kind":"textbox","id":"sh/gjit872p","slide":15,"name":"step-title-0","text":"Label 1–7","textPreview":"Label 1–7","textChars":9,"textLines":1,"bbox":[42,332,266,70]}
+{"kind":"textbox","id":"sh/nm9cjmlg","slide":15,"name":"step-body-0","text":"Keep the address above every slot.","textPreview":"Keep the address above every slot.","textChars":34,"textLines":1,"bbox":[42,420,266,170]}
+{"kind":"textbox","id":"sh/2l0bahkv","slide":15,"name":"step-num-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[340,222,266,70]}
+{"kind":"shape","id":"sh/0r2x0z21","slide":15,"bbox":[340,304,266,0.1]}
+{"kind":"textbox","id":"sh/1svy9kjm","slide":15,"name":"step-title-1","text":"Place data","textPreview":"Place data","textChars":10,"textLines":1,"bbox":[340,332,266,70]}
+{"kind":"textbox","id":"sh/epkfypkv","slide":15,"name":"step-body-1","text":"Write d₁,d₂,d₃,d₄ in 3,5,6,7.","textPreview":"Write d₁,d₂,d₃,d₄ in 3,5,6,7.","textChars":29,"textLines":1,"bbox":[340,420,266,170]}
+{"kind":"textbox","id":"sh/zqtg7u1g","slide":15,"name":"step-num-2","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[638,222,266,70]}
+{"kind":"shape","id":"sh/ofmh4z2x","slide":15,"bbox":[638,304,266,0.1]}
+{"kind":"textbox","id":"sh/9gvyd4ji","slide":15,"name":"step-title-2","text":"Set checks","textPreview":"Set checks","textChars":10,"textLines":1,"bbox":[638,332,266,70]}
+{"kind":"textbox","id":"sh/mt4f2pk7","slide":15,"name":"step-body-2","text":"Choose p₁,p₂,p₄ so each group is even.","textPreview":"Choose p₁,p₂,p₄ so each group is even.","textChars":38,"textLines":1,"bbox":[638,420,266,170]}
+{"kind":"textbox","id":"sh/nudgbu1c","slide":15,"name":"step-num-3","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[936,222,266,70]}
+{"kind":"shape","id":"sh/wj6h8j29","slide":15,"bbox":[936,304,266,0.1]}
+{"kind":"textbox","id":"sh/xkfyh4ju","slide":15,"name":"step-title-3","text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[936,332,266,70]}
+{"kind":"textbox","id":"sh/lor65k7m","slide":15,"name":"step-body-3","text":"Recount all three groups before sending.","textPreview":"Recount all three groups before sending.","textChars":40,"textLines":1,"bbox":[936,420,266,170]}
+{"kind":"notes","id":"nt/h1kqwt","slide":15,"text":"Timing: 3 minutes.\n\nStudents write this recipe in their own words on Worksheet 3A. Stress that the order of p1, p2, p4 does not matter mathematically because each is in only its own check position, but a consistent order prevents mistakes.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/0s0hqf","slide":16,"title":"FULL HAMMING(7,4)","textShapes":26}
+{"kind":"textbox","id":"sh/gfq1k7at","slide":16,"name":"section-16","text":"FULL HAMMING(7,4)","textPreview":"FULL HAMMING(7,4)","textChars":17,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/vehkr2t8","slide":16,"name":"title-16","text":"Pair challenge: encode 1 0 1 1","textPreview":"Pair challenge: encode 1 0 1 1","textChars":30,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/ud8jixs3","slide":16,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/9cz2pcbi","slide":16,"name":"page-16","text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/8b61g7ax","slide":16,"name":"encode-try-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,232,132,25]}
+{"kind":"shape","id":"sh/7axkn2tc","slide":16,"name":"encode-try-cell-1","bbox":[82,270,132,132]}
+{"kind":"textbox","id":"sh/m9ojexsr","slide":16,"name":"encode-try-bit-1","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[82,294,132,70]}
+{"kind":"textbox","id":"sh/l8f2lsb6","slide":16,"name":"encode-try-role-1","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[76,417,144,32]}
+{"kind":"textbox","id":"sh/kn61cnul","slide":16,"name":"encode-try-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,232,132,25]}
+{"kind":"shape","id":"sh/ihsnixk3","slide":16,"name":"encode-try-cell-2","bbox":[253,270,132,132]}
+{"kind":"textbox","id":"sh/jilorilo","slide":16,"name":"encode-try-bit-2","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[253,294,132,70]}
+{"kind":"textbox","id":"sh/4ju5kn29","slide":16,"name":"encode-try-role-2","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[247,417,144,32]}
+{"kind":"textbox","id":"sh/5436ts3e","slide":16,"name":"encode-try-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,232,132,25]}
+{"kind":"shape","id":"sh/udsned4r","slide":16,"name":"encode-try-cell-3","bbox":[424,270,132,132]}
+{"kind":"textbox","id":"sh/ve14nilc","slide":16,"name":"encode-try-bit-3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[424,294,132,70]}
+{"kind":"textbox","id":"sh/wfa5gnmx","slide":16,"name":"encode-try-role-3","text":"data 1","textPreview":"data 1","textChars":6,"textLines":1,"bbox":[418,417,144,32]}
+{"kind":"textbox","id":"sh/hgj6ps3i","slide":16,"name":"encode-try-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,232,132,25]}
+{"kind":"shape","id":"sh/m98nad4v","slide":16,"name":"encode-try-cell-4","bbox":[595,270,132,132]}
+{"kind":"textbox","id":"sh/7ah4jylg","slide":16,"name":"encode-try-bit-4","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[595,294,132,70]}
+{"kind":"textbox","id":"sh/bidcvaxw","slide":16,"name":"encode-try-role-4","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[589,417,144,32]}
+{"kind":"textbox","id":"sh/qh4b25gb","slide":16,"name":"encode-try-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,232,132,25]}
+{"kind":"shape","id":"sh/d4vuxkf2","slide":16,"name":"encode-try-cell-5","bbox":[766,270,132,132]}
+{"kind":"textbox","id":"sh/c3mt4feh","slide":16,"name":"encode-try-bit-5","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[766,294,132,70]}
+{"kind":"textbox","id":"sh/z6xczaxs","slide":16,"name":"encode-try-role-5","text":"data 2","textPreview":"data 2","textChars":6,"textLines":1,"bbox":[760,417,144,32]}
+{"kind":"textbox","id":"sh/y54b6pwn","slide":16,"name":"encode-try-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,232,132,25]}
+{"kind":"shape","id":"sh/l8fu1kfy","slide":16,"name":"encode-try-cell-6","bbox":[937,270,132,132]}
+{"kind":"textbox","id":"sh/076t8fed","slide":16,"name":"encode-try-bit-6","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[937,294,132,70]}
+{"kind":"textbox","id":"sh/fatsnqxo","slide":16,"name":"encode-try-role-6","text":"data 3","textPreview":"data 3","textChars":6,"textLines":1,"bbox":[931,417,144,32]}
+{"kind":"textbox","id":"sh/e9kbulg3","slide":16,"name":"encode-try-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,232,132,25]}
+{"kind":"shape","id":"sh/kfi94re1","slide":16,"name":"encode-try-cell-7","bbox":[1108,270,132,132]}
+{"kind":"textbox","id":"sh/5grqxwvm","slide":16,"name":"encode-try-bit-7","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1108,294,132,70]}
+{"kind":"textbox","id":"sh/itgr2hwv","slide":16,"name":"encode-try-role-7","text":"data 4","textPreview":"data 4","textChars":6,"textLines":1,"bbox":[1102,417,144,32]}
+{"kind":"textbox","id":"sh/jep8vmdg","slide":16,"name":"text","text":"One partner sets the checks. The other partner audits all three groups.","textPreview":"One partner sets the checks. The other partner audits all three groups.","textChars":71,"textLines":1,"bbox":[190,536,900,56]}
+{"kind":"shape","id":"sh/wryp07e5","slide":16,"name":"prompt-badge","bbox":[850,173,388,56]}
+{"kind":"textbox","id":"sh/xs7qtcva","slide":16,"name":"prompt-badge-text","text":"Worksheet 3B • audit all 3 checks","textPreview":"Worksheet 3B • audit all 3 checks","textChars":33,"textLines":1,"bbox":[866,185,356,32]}
+{"kind":"notes","id":"nt/0s0hqf","slide":16,"text":"Timing: 7 minutes.\n\nPairs encode 1011. Hint ladder: p1 checks positions 1,3,5,7; p2 checks 2,3,6,7; p4 checks 4,5,6,7. Expected p1=0, p2=1, p4=0. Ask auditors to mark each check even before the reveal.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/vke29m","slide":17,"title":"ENCODING REVEAL","textShapes":28}
+{"kind":"textbox","id":"sh/8v61gn6t","slide":17,"name":"section-17","text":"ENCODING REVEAL","textPreview":"ENCODING REVEAL","textChars":15,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/nux0nip8","slide":17,"name":"title-17","text":"1 0 1 1 becomes the codeword 0 1 1 0 0 1 1","textPreview":"1 0 1 1 becomes the codeword 0 1 1 0 0 1 1","textChars":42,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/mt4jedon","slide":17,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/lsvil87i","slide":17,"name":"page-17","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/0rm1c36x","slide":17,"name":"encode-reveal-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,222,132,25]}
+{"kind":"shape","id":"sh/zqd0jypc","slide":17,"name":"encode-reveal-cell-1","bbox":[82,260,132,132]}
+{"kind":"textbox","id":"sh/yp4zator","slide":17,"name":"encode-reveal-bit-1","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[82,284,132,70]}
+{"kind":"textbox","id":"sh/dovih876","slide":17,"name":"encode-reveal-role-1","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[76,407,144,32]}
+{"kind":"textbox","id":"sh/c3mh836l","slide":17,"name":"encode-reveal-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,222,132,25]}
+{"kind":"shape","id":"sh/u1072hsj","slide":17,"name":"encode-reveal-cell-2","bbox":[253,260,132,132]}
+{"kind":"textbox","id":"sh/v298v294","slide":17,"name":"encode-reveal-bit-2","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[253,284,132,70]}
+{"kind":"textbox","id":"sh/wnip47ap","slide":17,"name":"encode-reveal-role-2","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[247,407,144,32]}
+{"kind":"textbox","id":"sh/horqxcra","slide":17,"name":"encode-reveal-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,222,132,25]}
+{"kind":"shape","id":"sh/mxg7yxsn","slide":17,"name":"encode-reveal-cell-3","bbox":[424,260,132,132]}
+{"kind":"textbox","id":"sh/7yp8r298","slide":17,"name":"encode-reveal-bit-3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[424,284,132,70]}
+{"kind":"textbox","id":"sh/8zyp07ad","slide":17,"name":"encode-reveal-role-3","text":"data 1","textPreview":"data 1","textChars":6,"textLines":1,"bbox":[418,407,144,32]}
+{"kind":"textbox","id":"sh/90rqtcry","slide":17,"name":"encode-reveal-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,222,132,25]}
+{"kind":"shape","id":"sh/ytg7uxsb","slide":17,"name":"encode-reveal-cell-4","bbox":[595,260,132,132]}
+{"kind":"textbox","id":"sh/zuponi9w","slide":17,"name":"encode-reveal-bit-4","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[595,284,132,70]}
+{"kind":"textbox","id":"sh/nyl4vypo","slide":17,"name":"encode-reveal-role-4","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[589,407,144,32]}
+{"kind":"textbox","id":"sh/2xcn2t83","slide":17,"name":"encode-reveal-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,222,132,25]}
+{"kind":"shape","id":"sh/p0nmxo7u","slide":17,"name":"encode-reveal-cell-5","bbox":[766,260,132,132]}
+{"kind":"textbox","id":"sh/ozu54jq9","slide":17,"name":"encode-reveal-bit-5","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[766,284,132,70]}
+{"kind":"textbox","id":"sh/b254zyp0","slide":17,"name":"encode-reveal-role-5","text":"data 2","textPreview":"data 2","textChars":6,"textLines":1,"bbox":[760,407,144,32]}
+{"kind":"textbox","id":"sh/a1wn6t8f","slide":17,"name":"encode-reveal-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,222,132,25]}
+{"kind":"shape","id":"sh/x4nm187q","slide":17,"name":"encode-reveal-cell-6","bbox":[937,260,132,132]}
+{"kind":"textbox","id":"sh/c3e583q5","slide":17,"name":"encode-reveal-bit-6","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[937,284,132,70]}
+{"kind":"textbox","id":"sh/r614nepg","slide":17,"name":"encode-reveal-role-6","text":"data 3","textPreview":"data 3","textChars":6,"textLines":1,"bbox":[931,407,144,32]}
+{"kind":"textbox","id":"sh/q5s3u98v","slide":17,"name":"encode-reveal-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,222,132,25]}
+{"kind":"shape","id":"sh/gbq14f6t","slide":17,"name":"encode-reveal-cell-7","bbox":[1108,260,132,132]}
+{"kind":"textbox","id":"sh/hcz2x0ne","slide":17,"name":"encode-reveal-bit-7","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1108,284,132,70]}
+{"kind":"textbox","id":"sh/u9oj25on","slide":17,"name":"encode-reveal-role-7","text":"data 4","textPreview":"data 4","textChars":6,"textLines":1,"bbox":[1102,407,144,32]}
+{"kind":"textbox","id":"sh/vahkva58","slide":17,"name":"text","text":"p₁=0","textPreview":"p₁=0","textChars":4,"textLines":1,"bbox":[158,525,250,43]}
+{"kind":"textbox","id":"sh/8n610v6x","slide":17,"name":"text","text":"p₂=1","textPreview":"p₂=1","textChars":4,"textLines":1,"bbox":[515,525,250,43]}
+{"kind":"textbox","id":"sh/t8f2t0n2","slide":17,"name":"text","text":"p₄=0","textPreview":"p₄=0","textChars":4,"textLines":1,"bbox":[872,525,250,43]}
+{"kind":"textbox","id":"sh/mlojylor","slide":17,"name":"text","text":"Extract positions 3,5,6,7 → 1 0 1 1","textPreview":"Extract positions 3,5,6,7 → 1 0 1 1","textChars":35,"textLines":1,"bbox":[320,601,640,40]}
+{"kind":"notes","id":"nt/vke29m","slide":17,"text":"Timing: 2 minutes.\n\nVerify all three groups. Ask students to point to the original message bits in the codeword. This prepares later extraction after repair.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/ljhkgg","slide":18,"title":"FLUENCY CHECK","textShapes":12}
+{"kind":"textbox","id":"sh/dozaxo3a","slide":18,"name":"section-18","text":"FLUENCY CHECK","textPreview":"FLUENCY CHECK","textChars":13,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/q1orm9kj","slide":18,"name":"title-18","text":"Speed round: can your team encode without hints?","textPreview":"Speed round: can your team encode without hints?","textChars":48,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/bmhsvel4","slide":18,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/0rq9s321","slide":18,"name":"page-18","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/lsza1836","slide":18,"name":"text","text":"0 0 0 0","textPreview":"0 0 0 0","textChars":7,"textLines":1,"bbox":[42,207,260,50]}
+{"kind":"shape","id":"sh/yp8rqtkv","slide":18,"bbox":[42,274,540,0.1]}
+{"kind":"textbox","id":"sh/zqhszylg","slide":18,"name":"text","text":"codeword: _______","textPreview":"codeword: _______","textChars":17,"textLines":1,"bbox":[42,293,540,50]}
+{"kind":"textbox","id":"sh/gv69gzmh","slide":18,"name":"text","text":"1 1 1 1","textPreview":"1 1 1 1","textChars":7,"textLines":1,"bbox":[658,207,260,50]}
+{"kind":"shape","id":"sh/1wfqp432","slide":18,"bbox":[658,274,540,0.1]}
+{"kind":"textbox","id":"sh/xs7ilkju","slide":18,"name":"text","text":"codeword: _______","textPreview":"codeword: _______","textChars":17,"textLines":1,"bbox":[658,293,540,50]}
+{"kind":"textbox","id":"sh/wry1sfi9","slide":18,"name":"text","text":"0 1 0 1","textPreview":"0 1 0 1","textChars":7,"textLines":1,"bbox":[42,403,260,50]}
+{"kind":"shape","id":"sh/bq50ja1o","slide":18,"bbox":[42,470,540,0.1]}
+{"kind":"textbox","id":"sh/apwjq503","slide":18,"name":"text","text":"codeword: _______","textPreview":"codeword: _______","textChars":17,"textLines":1,"bbox":[42,489,540,50]}
+{"kind":"textbox","id":"sh/lw7ipkzq","slide":18,"name":"text","text":"1 1 0 0","textPreview":"1 1 0 0","textChars":7,"textLines":1,"bbox":[658,403,260,50]}
+{"kind":"shape","id":"sh/kvy1wzi5","slide":18,"bbox":[658,470,540,0.1]}
+{"kind":"textbox","id":"sh/jup0nu1k","slide":18,"name":"text","text":"codeword: _______","textPreview":"codeword: _______","textChars":17,"textLines":1,"bbox":[658,489,540,50]}
+{"kind":"shape","id":"sh/ytgjup0f","slide":18,"name":"prompt-badge","bbox":[894,586,344,56]}
+{"kind":"textbox","id":"sh/tkrit4z2","slide":18,"name":"prompt-badge-text","text":"Worksheet 3C • one each","textPreview":"Worksheet 3C • one each","textChars":23,"textLines":1,"bbox":[910,598,312,32]}
+{"kind":"notes","id":"nt/ljhkgg","slide":18,"text":"Timing: 6 minutes.\n\nAssign one message per teammate, then cross-audit. Answers: 0000→0000000; 1111→1111111; 0101→0100101; 1100→0111100. If a team finishes early, have them prove why 1111 maps to seven 1s.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/z22m78","slide":19,"title":"PAUSE THE SIGNAL","textShapes":5}
+{"kind":"textbox","id":"sh/ozutc3ux","slide":19,"name":"text","text":"PAUSE THE SIGNAL","textPreview":"PAUSE THE SIGNAL","textChars":16,"textLines":1,"bbox":[42,43,520,40]}
+{"kind":"textbox","id":"sh/nyls3ytc","slide":19,"name":"text","text":"05:00","textPreview":"05:00","textChars":5,"textLines":1,"bbox":[200,198,880,190]}
+{"kind":"textbox","id":"sh/mxcratc7","slide":19,"name":"text","text":"When you return: we make the message point to its own mistake.","textPreview":"When you return: we make the message point to its own mistake.","textChars":62,"textLines":1,"bbox":[212,458,856,82]}
+{"kind":"textbox","id":"sh/1w3a18bm","slide":19,"name":"text","text":"Stretch • water • keep your worksheet","textPreview":"Stretch • water • keep your worksheet","textChars":37,"textLines":1,"bbox":[340,583,600,42]}
+{"kind":"textbox","id":"sh/0vu983u1","slide":19,"name":"text","text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"notes","id":"nt/z22m78","slide":19,"text":"Timing: 5 minutes.\n\nTake a real five-minute break. Leave the slide projected. Resume by asking students to restate the encoding roles from memory."}
+{"kind":"slide","id":"sl/3g6emu","slide":20,"title":"ERROR HUNT","textShapes":32}
+{"kind":"textbox","id":"sh/dcr250j6","slide":20,"name":"section-20","text":"ERROR HUNT","textPreview":"ERROR HUNT","textChars":10,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/q90jul0v","slide":20,"name":"title-20","text":"A corrupted codeword makes specific checks fail","textPreview":"A corrupted codeword makes specific checks fail","textChars":47,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/ba9k3q1g","slide":20,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/0zi10fix","slide":20,"name":"page-20","text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/l0b290ji","slide":20,"name":"received-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,214,132,25]}
+{"kind":"shape","id":"sh/yd0jy50r","slide":20,"name":"received-cell-1","bbox":[82,252,132,132]}
+{"kind":"textbox","id":"sh/ze9k7a1c","slide":20,"name":"received-bit-1","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[82,276,132,70]}
+{"kind":"textbox","id":"sh/832l4fi9","slide":20,"name":"received-role-1","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[76,399,144,32]}
+{"kind":"textbox","id":"sh/94b2dkze","slide":20,"name":"received-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[253,214,132,25]}
+{"kind":"shape","id":"sh/1gj2p8bu","slide":20,"name":"received-cell-2","bbox":[253,252,132,132]}
+{"kind":"textbox","id":"sh/gfa1w3u9","slide":20,"name":"received-bit-2","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[253,276,132,70]}
+{"kind":"textbox","id":"sh/fe1knyto","slide":20,"name":"received-role-2","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[247,399,144,32]}
+{"kind":"textbox","id":"sh/edsjudcj","slide":20,"name":"received-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[424,214,132,25]}
+{"kind":"shape","id":"sh/pk32tsb6","slide":20,"name":"received-cell-3","bbox":[424,252,132,132]}
+{"kind":"textbox","id":"sh/oju10nul","slide":20,"name":"received-bit-3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[424,276,132,70]}
+{"kind":"textbox","id":"sh/ni1krit0","slide":20,"name":"received-role-3","text":"data 1","textPreview":"data 1","textChars":6,"textLines":1,"bbox":[418,399,144,32]}
+{"kind":"textbox","id":"sh/2hsjydcf","slide":20,"name":"received-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[595,214,132,25]}
+{"kind":"shape","id":"sh/5oz2hobm","slide":20,"name":"received-cell-4","bbox":[595,252,132,132]}
+{"kind":"textbox","id":"sh/4nq1oju1","slide":20,"name":"received-bit-4","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[595,276,132,70]}
+{"kind":"textbox","id":"sh/w3etkn69","slide":20,"name":"received-role-4","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[589,399,144,32]}
+{"kind":"textbox","id":"sh/h4natsnu","slide":20,"name":"received-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[766,214,132,25]}
+{"kind":"shape","id":"sh/uhcbido3","slide":20,"name":"received-cell-5","bbox":[766,252,132,132]}
+{"kind":"textbox","id":"sh/vi5sri5o","slide":20,"name":"received-bit-5","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[766,276,132,70]}
+{"kind":"textbox","id":"sh/47eton6l","slide":20,"name":"received-role-5","text":"data 2","textPreview":"data 2","textChars":6,"textLines":1,"bbox":[760,399,144,32]}
+{"kind":"textbox","id":"sh/58naxsnq","slide":20,"name":"received-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[937,214,132,25]}
+{"kind":"shape","id":"sh/i5wbmxof","slide":20,"name":"received-cell-6","bbox":[937,252,132,132]}
+{"kind":"textbox","id":"sh/j65sv250","slide":20,"name":"received-bit-6","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[937,276,132,70]}
+{"kind":"textbox","id":"sh/sbyts76h","slide":20,"name":"received-role-6","text":"data 3","textPreview":"data 3","textChars":6,"textLines":1,"bbox":[931,399,144,32]}
+{"kind":"textbox","id":"sh/dc7u1cn2","slide":20,"name":"received-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1108,214,132,25]}
+{"kind":"shape","id":"sh/n69wr6p4","slide":20,"name":"received-cell-7","bbox":[1108,252,132,132]}
+{"kind":"textbox","id":"sh/250vi18j","slide":20,"name":"received-bit-7","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1108,276,132,70]}
+{"kind":"textbox","id":"sh/psretg7a","slide":20,"name":"received-role-7","text":"data 4","textPreview":"data 4","textChars":6,"textLines":1,"bbox":[1102,399,144,32]}
+{"kind":"textbox","id":"sh/o7idkbqp","slide":20,"name":"text","text":"Received: 0 1 1 0 0 0 1","textPreview":"Received: 0 1 1 0 0 0 1","textChars":23,"textLines":1,"bbox":[42,506,500,43]}
+{"kind":"textbox","id":"sh/f29wn6p8","slide":20,"name":"text","text":"Run all three parity checks again.","textPreview":"Run all three parity checks again.","textChars":34,"textLines":1,"bbox":[42,570,500,43]}
+{"kind":"textbox","id":"sh/e10ve18n","slide":20,"name":"text","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[760,504,150,35]}
+{"kind":"textbox","id":"sh/14repw7y","slide":20,"name":"text","text":"PASS","textPreview":"PASS","textChars":4,"textLines":1,"bbox":[987,504,180,35]}
+{"kind":"textbox","id":"sh/03idgrqt","slide":20,"name":"text","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[760,553,150,35]}
+{"kind":"textbox","id":"sh/zytwzqpc","slide":20,"name":"text","text":"FAIL","textPreview":"FAIL","textChars":4,"textLines":1,"bbox":[987,553,180,35]}
+{"kind":"textbox","id":"sh/yxkfql8r","slide":20,"name":"text","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[760,602,150,35]}
+{"kind":"textbox","id":"sh/650zup4v","slide":20,"name":"text","text":"FAIL","textPreview":"FAIL","textChars":4,"textLines":1,"bbox":[987,602,180,35]}
+{"kind":"notes","id":"nt/3g6emu","slide":20,"text":"Timing: 4 minutes.\n\nStudents recount each check group for received 0110001. Check 1 has two ones and passes; checks 2 and 4 each have three ones and fail. Ask: Which position belongs to check 2 and check 4 but not check 1? Worksheet 4A.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/kr7iof","slide":21,"title":"SYNDROME ADDRESS","textShapes":11}
+{"kind":"textbox","id":"sh/u9o7adk3","slide":21,"name":"section-21","text":"SYNDROME ADDRESS","textPreview":"SYNDROME ADDRESS","textChars":16,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/hcfql8ju","slide":21,"name":"title-21","text":"Failed labels 2 + 4 point to position 6","textPreview":"Failed labels 2 + 4 point to position 6","textChars":39,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/gb6pc329","slide":21,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/7mxofy1s","slide":21,"name":"page-21","text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/6l476tk7","slide":21,"name":"text","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[96,244,250,45]}
+{"kind":"textbox","id":"sh/t8fqh8ji","slide":21,"name":"text","text":"PASS → 0","textPreview":"PASS → 0","textChars":8,"textLines":1,"bbox":[96,311,250,60]}
+{"kind":"textbox","id":"sh/s76p832x","slide":21,"name":"text","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[515,244,250,45]}
+{"kind":"textbox","id":"sh/rih8r21w","slide":21,"name":"text","text":"FAIL → 2","textPreview":"FAIL → 2","textChars":8,"textLines":1,"bbox":[515,311,250,60]}
+{"kind":"textbox","id":"sh/qh87ixkb","slide":21,"name":"text","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[934,244,250,45]}
+{"kind":"textbox","id":"sh/4jux4zql","slide":21,"name":"text","text":"FAIL → 4","textPreview":"FAIL → 4","textChars":8,"textLines":1,"bbox":[934,311,250,60]}
+{"kind":"shape","id":"sh/pk3ed476","slide":21,"bbox":[145,430,990,0.1]}
+{"kind":"textbox","id":"sh/2hcf2p8f","slide":21,"name":"text","text":"0 + 2 + 4 = 6","textPreview":"0 + 2 + 4 = 6","textChars":13,"textLines":1,"bbox":[260,467,760,86]}
+{"kind":"textbox","id":"sh/3ilwbup0","slide":21,"name":"text","text":"Flip bit 6, then verify all checks pass.","textPreview":"Flip bit 6, then verify all checks pass.","textChars":40,"textLines":1,"bbox":[305,586,670,43]}
+{"kind":"notes","id":"nt/kr7iof","slide":21,"text":"Timing: 5 minutes.\n\nName this three-check result the syndrome. The most beginner-friendly rule is to add the labels of failed checks. Optionally connect to binary: fail pattern check4-check2-check1 is 110₂ = 6. Students correct position 6 from 0 back to 1 and recover 0110011.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/7swpp7","slide":22,"title":"WHY CORRECTION WORKS","textShapes":27}
+{"kind":"textbox","id":"sh/y5s3qx8v","slide":22,"name":"section-22","text":"WHY CORRECTION WORKS","textPreview":"WHY CORRECTION WORKS","textChars":20,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/l8j21c7m","slide":22,"name":"title-22","text":"The syndrome is a seven-way pointer","textPreview":"The syndrome is a seven-way pointer","textChars":35,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/07als7q1","slide":22,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/7al432pc","slide":22,"name":"page-22","text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/m9s3uh87","slide":22,"name":"map-pos-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[250,186,100,24]}
+{"kind":"textbox","id":"sh/9c3m5c7i","slide":22,"name":"map-pos-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[370,186,100,24]}
+{"kind":"textbox","id":"sh/8bulw7qx","slide":22,"name":"map-pos-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[490,186,100,24]}
+{"kind":"textbox","id":"sh/vyl4rmpo","slide":22,"name":"map-pos-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[610,186,100,24]}
+{"kind":"textbox","id":"sh/uxc3yh83","slide":22,"name":"map-pos-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[730,186,100,24]}
+{"kind":"textbox","id":"sh/0fut8ru9","slide":22,"name":"map-pos-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[850,186,100,24]}
+{"kind":"textbox","id":"sh/lg3u1wbe","slide":22,"name":"map-pos-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[970,186,100,24]}
+{"kind":"textbox","id":"sh/ydcb6hc3","slide":22,"name":"map-label-0","text":"check 1","textPreview":"check 1","textChars":7,"textLines":1,"bbox":[42,252,170,35]}
+{"kind":"shape","id":"sh/zelczmto","slide":22,"name":"map-0-1","bbox":[250,225,100,86]}
+{"kind":"textbox","id":"sh/83etcru5","slide":22,"name":"map-mark-0-1","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[250,247,100,42]}
+{"kind":"shape","id":"sh/94nu5wbq","slide":22,"name":"map-0-2","bbox":[370,225,100,86]}
+{"kind":"shape","id":"sh/m1cba1cz","slide":22,"name":"map-mark-0-2","bbox":[370,247,100,42]}
+{"kind":"shape","id":"sh/n2lc3mtk","slide":22,"name":"map-0-3","bbox":[490,225,100,86]}
+{"kind":"textbox","id":"sh/w7edgbu1","slide":22,"name":"map-mark-0-3","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[490,247,100,42]}
+{"kind":"shape","id":"sh/x8nu9gbm","slide":22,"name":"map-0-4","bbox":[610,225,100,86]}
+{"kind":"shape","id":"sh/5cj2dczu","slide":22,"name":"map-mark-0-4","bbox":[610,247,100,42]}
+{"kind":"shape","id":"sh/kbql47i9","slide":22,"name":"map-0-5","bbox":[730,225,100,86]}
+{"kind":"textbox","id":"sh/jahkb2ho","slide":22,"name":"map-mark-0-5","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[730,247,100,42]}
+{"kind":"shape","id":"sh/ip832x03","slide":22,"name":"map-0-6","bbox":[850,225,100,86]}
+{"kind":"shape","id":"sh/tgj2hczq","slide":22,"name":"map-mark-0-6","bbox":[850,247,100,42]}
+{"kind":"shape","id":"sh/sfal8ry5","slide":22,"name":"map-0-7","bbox":[970,225,100,86]}
+{"kind":"textbox","id":"sh/7e1kfmhk","slide":22,"name":"map-mark-0-7","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[970,247,100,42]}
+{"kind":"textbox","id":"sh/6ds36h0f","slide":22,"name":"map-label-1","text":"check 2","textPreview":"check 2","textChars":7,"textLines":1,"bbox":[42,364,170,35]}
+{"kind":"shape","id":"sh/9kz25szm","slide":22,"name":"map-1-1","bbox":[250,337,100,86]}
+{"kind":"shape","id":"sh/8j6lwni1","slide":22,"name":"map-mark-1-1","bbox":[250,359,100,42]}
+{"kind":"shape","id":"sh/yp4z6tgz","slide":22,"name":"map-1-2","bbox":[370,337,100,86]}
+{"kind":"textbox","id":"sh/zqd0fyx4","slide":22,"name":"map-mark-1-2","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[370,359,100,42]}
+{"kind":"shape","id":"sh/0rmh83yp","slide":22,"name":"map-1-3","bbox":[490,337,100,86]}
+{"kind":"textbox","id":"sh/lsfih8fa","slide":22,"name":"map-mark-1-3","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[490,359,100,42]}
+{"kind":"shape","id":"sh/mtozatgv","slide":22,"name":"map-1-4","bbox":[610,337,100,86]}
+{"kind":"shape","id":"sh/nux0jyxg","slide":22,"name":"map-mark-1-4","bbox":[610,359,100,42]}
+{"kind":"shape","id":"sh/8v61c3y1","slide":22,"name":"map-1-5","bbox":[730,337,100,86]}
+{"kind":"shape","id":"sh/9gfil8fm","slide":22,"name":"map-mark-1-5","bbox":[730,359,100,42]}
+{"kind":"shape","id":"sh/2xkzy9gr","slide":22,"name":"map-1-6","bbox":[850,337,100,86]}
+{"kind":"textbox","id":"sh/3yt07exc","slide":22,"name":"map-mark-1-6","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[850,359,100,42]}
+{"kind":"shape","id":"sh/3elgbqp0","slide":22,"name":"map-1-7","bbox":[970,337,100,86]}
+{"kind":"textbox","id":"sh/itcf258f","slide":22,"name":"map-mark-1-7","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[970,359,100,42]}
+{"kind":"textbox","id":"sh/5g3yd076","slide":22,"name":"map-label-2","text":"check 4","textPreview":"check 4","textChars":7,"textLines":1,"bbox":[42,476,170,35]}
+{"kind":"shape","id":"sh/4fux4vql","slide":22,"name":"map-2-1","bbox":[250,449,100,86]}
+{"kind":"shape","id":"sh/ri5gfapw","slide":22,"name":"map-mark-2-1","bbox":[250,471,100,42]}
+{"kind":"shape","id":"sh/qhwf658r","slide":22,"name":"map-2-2","bbox":[370,449,100,86]}
+{"kind":"shape","id":"sh/dknyhk72","slide":22,"name":"map-mark-2-2","bbox":[370,471,100,42]}
+{"kind":"shape","id":"sh/sjex8fqh","slide":22,"name":"map-2-3","bbox":[490,449,100,86]}
+{"kind":"shape","id":"sh/fm5gjup8","slide":22,"name":"map-mark-2-3","bbox":[490,471,100,42]}
+{"kind":"shape","id":"sh/elwfap8n","slide":22,"name":"map-2-4","bbox":[610,449,100,86]}
+{"kind":"textbox","id":"sh/cbyx0zml","slide":22,"name":"map-mark-2-4","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[610,471,100,42]}
+{"kind":"shape","id":"sh/xc7etkn6","slide":22,"name":"map-2-5","bbox":[730,449,100,86]}
+{"kind":"textbox","id":"sh/apgfypov","slide":22,"name":"map-mark-2-5","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[730,471,100,42]}
+{"kind":"shape","id":"sh/bqpwru5g","slide":22,"name":"map-2-6","bbox":[850,449,100,86]}
+{"kind":"textbox","id":"sh/onexwf6p","slide":22,"name":"map-mark-2-6","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[850,471,100,42]}
+{"kind":"shape","id":"sh/po7epkna","slide":22,"name":"map-2-7","bbox":[970,449,100,86]}
+{"kind":"textbox","id":"sh/2lwfu5oj","slide":22,"name":"map-mark-2-7","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[970,471,100,42]}
+{"kind":"textbox","id":"sh/nm5wna54","slide":22,"name":"text","text":"No failed checks → address 0 → no error","textPreview":"No failed checks → address 0 → no error","textChars":39,"textLines":1,"bbox":[42,586,530,42]}
+{"kind":"textbox","id":"sh/0jexsf6t","slide":22,"name":"text","text":"Any nonzero address 1–7 → flip that position","textPreview":"Any nonzero address 1–7 → flip that position","textChars":44,"textLines":1,"bbox":[650,586,588,42]}
+{"kind":"notes","id":"nt/7swpp7","slide":22,"text":"Timing: 2 minutes.\n\nConnect back to the address detective game: an error at one position flips exactly the checks that cover that position, so the failed-check pattern is unique. Emphasize the one-error assumption.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/34twf0","slide":23,"title":"DECODE ROUTINE","textShapes":15}
+{"kind":"textbox","id":"sh/y94vqpgb","slide":23,"name":"section-23","text":"DECODE ROUTINE","textPreview":"DECODE ROUTINE","textChars":14,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/lwfe1kzm","slide":23,"name":"title-23","text":"Repair first; read the message second","textPreview":"Repair first; read the message second","textChars":37,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/kv6dsfy1","slide":23,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/b6dwvahk","slide":23,"name":"page-23","text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/a54vm5gz","slide":23,"name":"step-num-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[42,222,266,70]}
+{"kind":"shape","id":"sh/x8vexkzq","slide":23,"bbox":[42,304,266,0.1]}
+{"kind":"textbox","id":"sh/w7mdofy5","slide":23,"name":"step-title-0","text":"Run checks","textPreview":"Run checks","textChars":10,"textLines":1,"bbox":[42,332,266,70]}
+{"kind":"textbox","id":"sh/n2dwrqho","slide":23,"name":"step-body-0","text":"Mark each group pass or fail.","textPreview":"Mark each group pass or fail.","textChars":29,"textLines":1,"bbox":[42,420,266,170]}
+{"kind":"textbox","id":"sh/m1kvi5g3","slide":23,"name":"step-num-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[340,222,266,70]}
+{"kind":"shape","id":"sh/k32xwfe5","slide":23,"bbox":[340,304,266,0.1]}
+{"kind":"textbox","id":"sh/54vypkva","slide":23,"name":"step-title-1","text":"Find address","textPreview":"Find address","textChars":12,"textLines":1,"bbox":[340,332,266,70]}
+{"kind":"textbox","id":"sh/ihkfu5wz","slide":23,"name":"step-body-1","text":"Add labels of the failed checks.","textPreview":"Add labels of the failed checks.","textChars":32,"textLines":1,"bbox":[340,420,266,170]}
+{"kind":"textbox","id":"sh/j2tgnadk","slide":23,"name":"step-num-2","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[638,222,266,70]}
+{"kind":"shape","id":"sh/wf2xsvet","slide":23,"bbox":[638,304,266,0.1]}
+{"kind":"textbox","id":"sh/xgbel0ve","slide":23,"name":"step-title-2","text":"Flip once","textPreview":"Flip once","textChars":9,"textLines":1,"bbox":[638,332,266,70]}
+{"kind":"textbox","id":"sh/adkfq5wn","slide":23,"name":"step-body-2","text":"Change the bit at that address.","textPreview":"Change the bit at that address.","textChars":31,"textLines":1,"bbox":[638,420,266,170]}
+{"kind":"textbox","id":"sh/vetwjqd8","slide":23,"name":"step-num-3","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[936,222,266,70]}
+{"kind":"shape","id":"sh/gbmx4zux","slide":23,"bbox":[936,304,266,0.1]}
+{"kind":"textbox","id":"sh/hcfyx4vi","slide":23,"name":"step-title-3","text":"Extract data","textPreview":"Extract data","textChars":12,"textLines":1,"bbox":[936,332,266,70]}
+{"kind":"textbox","id":"sh/psbyh4nm","slide":23,"name":"step-body-3","text":"Read positions 3,5,6,7.","textPreview":"Read positions 3,5,6,7.","textChars":23,"textLines":1,"bbox":[936,420,266,170]}
+{"kind":"notes","id":"nt/34twf0","slide":23,"text":"Timing: 2 minutes.\n\nStudents copy the decode routine onto Worksheet 4A. Make them say the order aloud: checks, address, flip, extract. Warn that extracting before repairing can preserve the wrong data bit.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/4bb6fy","slide":24,"title":"TEAM CHALLENGE","textShapes":11}
+{"kind":"textbox","id":"sh/vq1svy1c","slide":24,"name":"section-24","text":"TEAM CHALLENGE","textPreview":"TEAM CHALLENGE","textChars":14,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/gru943ix","slide":24,"name":"title-24","text":"Packet repair race: two corrupted transmissions","textPreview":"Packet repair race: two corrupted transmissions","textChars":47,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/hs3ax8ji","slide":24,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/itcr6d03","slide":24,"name":"page-24","text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/3ulszi18","slide":24,"name":"text","text":"Packet A","textPreview":"Packet A","textChars":8,"textLines":1,"bbox":[42,215,240,48]}
+{"kind":"textbox","id":"sh/4vu98nit","slide":24,"name":"text","text":"0 1 0 1 1 0 1","textPreview":"0 1 0 1 1 0 1","textChars":13,"textLines":1,"bbox":[42,282,530,66]}
+{"kind":"textbox","id":"sh/5g3a1sje","slide":24,"name":"text","text":"Find error → correct → message","textPreview":"Find error → correct → message","textChars":30,"textLines":1,"bbox":[42,370,530,48]}
+{"kind":"shape","id":"sh/qhcrax0z","slide":24,"bbox":[42,446,530,0.1]}
+{"kind":"textbox","id":"sh/ri5s3i1k","slide":24,"name":"text","text":"Packet B","textPreview":"Packet B","textChars":8,"textLines":1,"bbox":[666,215,240,48]}
+{"kind":"textbox","id":"sh/fu503ux0","slide":24,"name":"text","text":"0 1 1 1 1 0 1","textPreview":"0 1 1 1 1 0 1","textChars":13,"textLines":1,"bbox":[666,282,530,66]}
+{"kind":"textbox","id":"sh/utwzapwf","slide":24,"name":"text","text":"Find error → correct → message","textPreview":"Find error → correct → message","textChars":30,"textLines":1,"bbox":[666,370,530,48]}
+{"kind":"shape","id":"sh/hw7i5kv6","slide":24,"bbox":[666,446,530,0.1]}
+{"kind":"textbox","id":"sh/gvehcfel","slide":24,"name":"text","text":"Every teammate must be able to explain one failed check.","textPreview":"Every teammate must be able to explain one failed check.","textChars":56,"textLines":1,"bbox":[207,540,866,50]}
+{"kind":"shape","id":"sh/7650zaxo","slide":24,"name":"prompt-badge","bbox":[833,607,405,56]}
+{"kind":"textbox","id":"sh/65wz65wj","slide":24,"name":"prompt-badge-text","text":"Worksheet 4B • show all three counts","textPreview":"Worksheet 4B • show all three counts","textChars":36,"textLines":1,"bbox":[849,619,373,32]}
+{"kind":"notes","id":"nt/4bb6fy","slide":24,"text":"Timing: 7 minutes.\n\nTeams repair both. Packet A 0101101 has only check 4 failing, so error position 4; corrected 0100101; message 0101. Packet B 0111101 has all checks failing, so error position 7; corrected 0111100; message 1100. Require visible check counts, not guesses.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/tm2t8c","slide":25,"title":"PARTNER PACKET EXCHANGE","textShapes":16}
+{"kind":"textbox","id":"sh/mhwbyh0f","slide":25,"name":"section-25","text":"PARTNER PACKET EXCHANGE","textPreview":"PARTNER PACKET EXCHANGE","textChars":23,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/94na9wj6","slide":25,"name":"title-25","text":"Create, corrupt, swap, rescue","textPreview":"Create, corrupt, swap, rescue","textChars":29,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/8jet0ril","slide":25,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/zels3m14","slide":25,"name":"page-25","text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/ydcruh0j","slide":25,"name":"step-num-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[42,210,266,70]}
+{"kind":"shape","id":"sh/lgna5cja","slide":25,"bbox":[42,292,266,0.1]}
+{"kind":"textbox","id":"sh/kfe9w7ip","slide":25,"name":"step-title-0","text":"Choose","textPreview":"Choose","textChars":6,"textLines":1,"bbox":[42,320,266,70]}
+{"kind":"textbox","id":"sh/3apsf618","slide":25,"name":"step-body-0","text":"Invent any four-bit message.","textPreview":"Invent any four-bit message.","textChars":28,"textLines":1,"bbox":[42,408,266,170]}
+{"kind":"textbox","id":"sh/i9gb610n","slide":25,"name":"step-num-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[340,210,266,70]}
+{"kind":"shape","id":"sh/o7mpk7m9","slide":25,"bbox":[340,292,266,0.1]}
+{"kind":"textbox","id":"sh/p8v6ds3u","slide":25,"name":"step-title-1","text":"Encode","textPreview":"Encode","textChars":6,"textLines":1,"bbox":[340,320,266,70]}
+{"kind":"textbox","id":"sh/2547ix43","slide":25,"name":"step-body-1","text":"Build a valid seven-bit codeword.","textPreview":"Build a valid seven-bit codeword.","textChars":33,"textLines":1,"bbox":[340,408,266,170]}
+{"kind":"textbox","id":"sh/36dob2lo","slide":25,"name":"step-num-2","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[638,210,266,70]}
+{"kind":"shape","id":"sh/g3mpgnmd","slide":25,"bbox":[638,292,266,0.1]}
+{"kind":"textbox","id":"sh/14v69s3i","slide":25,"name":"step-title-2","text":"Corrupt","textPreview":"Corrupt","textChars":7,"textLines":1,"bbox":[638,320,266,70]}
+{"kind":"textbox","id":"sh/e1k7ed47","slide":25,"name":"step-body-2","text":"Flip exactly one position; record it secretly.","textPreview":"Flip exactly one position; record it secretly.","textChars":46,"textLines":1,"bbox":[638,408,266,170]}
+{"kind":"textbox","id":"sh/f2to7ils","slide":25,"name":"step-num-3","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[936,210,266,70]}
+{"kind":"shape","id":"sh/sf2pcnm1","slide":25,"bbox":[936,292,266,0.1]}
+{"kind":"textbox","id":"sh/tgb6583m","slide":25,"name":"step-title-3","text":"Rescue","textPreview":"Rescue","textChars":6,"textLines":1,"bbox":[936,320,266,70]}
+{"kind":"textbox","id":"sh/tw3m94va","slide":25,"name":"step-body-3","text":"Swap papers. Repair and recover the message.","textPreview":"Swap papers. Repair and recover the message.","textChars":44,"textLines":1,"bbox":[936,408,266,170]}
+{"kind":"textbox","id":"sh/8vu50zep","slide":25,"name":"text","text":"Success = corrected codeword + recovered message + explanation","textPreview":"Success = corrected codeword + recovered message + explanation","textChars":62,"textLines":1,"bbox":[220,612,840,40]}
+{"kind":"notes","id":"nt/tm2t8c","slide":25,"text":"Timing: 12 minutes.\n\nUse Worksheet 5A. First partner creates while the other audits, then both secretly flip one bit and swap. Receiver shows all checks and the syndrome. Sender verifies the recovered message. If a pair finishes, repeat with a check-bit error and compare with a data-bit error. This is the longest independent practice before the solo task.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/tqz303","slide":26,"title":"SYSTEM LIMITS","textShapes":10}
+{"kind":"textbox","id":"sh/h4ryt87e","slide":26,"name":"section-26","text":"SYSTEM LIMITS","textPreview":"SYSTEM LIMITS","textChars":13,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/u10zidon","slide":26,"name":"title-26","text":"One-error correction has a sharp boundary","textPreview":"One-error correction has a sharp boundary","textChars":41,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/v29grip8","slide":26,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/472hon65","slide":26,"name":"page-26","text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/58bixsna","slide":26,"name":"text","text":"0 errors","textPreview":"0 errors","textChars":8,"textLines":1,"bbox":[42,216,360,48]}
+{"kind":"textbox","id":"sh/i50zmdoz","slide":26,"name":"text","text":"syndrome 0\nleave the word alone","textPreview":"syndrome 0 | leave the word alone","textChars":31,"textLines":2,"bbox":[42,288,360,112]}
+{"kind":"textbox","id":"sh/36tgvipk","slide":26,"name":"text","text":"1 error","textPreview":"1 error","textChars":7,"textLines":1,"bbox":[460,216,360,48]}
+{"kind":"textbox","id":"sh/kbyhcj6l","slide":26,"name":"text","text":"syndrome 1–7\nflip that address","textPreview":"syndrome 1–7 | flip that address","textChars":30,"textLines":2,"bbox":[460,288,360,112]}
+{"kind":"textbox","id":"sh/lc7ylo76","slide":26,"name":"text","text":"2 errors","textPreview":"2 errors","textChars":8,"textLines":1,"bbox":[878,216,360,48]}
+{"kind":"textbox","id":"sh/pgjuxcze","slide":26,"name":"text","text":"may imitate one error\ndo not trust the repair","textPreview":"may imitate one error | do not trust the repair","textChars":45,"textLines":2,"bbox":[878,288,360,112]}
+{"kind":"shape","id":"sh/ofat4rit","slide":26,"name":"limit-callout","bbox":[42,475,1196,118]}
+{"kind":"textbox","id":"sh/ne1svmh8","slide":26,"name":"text","text":"Guarantee: Hamming(7,4) corrects any single-bit error—not every possible pattern of damage.","textPreview":"Guarantee: Hamming(7,4) corrects any single-bit error—not every possible pattern of damage.","textChars":91,"textLines":1,"bbox":[82,504,1116,62]}
+{"kind":"notes","id":"nt/tqz303","slide":26,"text":"Timing: 4 minutes.\n\nHave students predict what two errors might do, then state the guarantee precisely. A standard Hamming(7,4) decoder can miscorrect a double error because the two error addresses combine into a third nonzero syndrome. Avoid implying it reliably detects two errors.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/kaqtml","slide":27,"title":"EXTENDED HAMMING(8,4)","textShapes":13}
+{"kind":"textbox","id":"sh/mtwzux8r","slide":27,"name":"section-27","text":"EXTENDED HAMMING(8,4)","textPreview":"EXTENDED HAMMING(8,4)","textChars":21,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/9gnipc72","slide":27,"name":"title-27","text":"Bonus eighth bit: detect two errors","textPreview":"Bonus eighth bit: detect two errors","textChars":35,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/8fehg7qx","slide":27,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/zql0jip0","slide":27,"name":"page-27","text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/ypczqd8f","slide":27,"name":"text","text":"Positions 1–7","textPreview":"Positions 1–7","textChars":13,"textLines":1,"bbox":[42,218,500,46]}
+{"kind":"textbox","id":"sh/ls3ils76","slide":27,"name":"text","text":"the Hamming(7,4) codeword","textPreview":"the Hamming(7,4) codeword","textChars":25,"textLines":1,"bbox":[42,278,500,48]}
+{"kind":"textbox","id":"sh/0ruhsnql","slide":27,"name":"text","text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[571,250,100,70]}
+{"kind":"textbox","id":"sh/jmp0vmpk","slide":27,"name":"text","text":"Position 8","textPreview":"Position 8","textChars":10,"textLines":1,"bbox":[718,218,500,46]}
+{"kind":"textbox","id":"sh/ilgjmh8z","slide":27,"name":"text","text":"one overall even-parity bit","textPreview":"one overall even-parity bit","textChars":27,"textLines":1,"bbox":[718,278,500,48]}
+{"kind":"shape","id":"sh/o7i5sri1","slide":27,"bbox":[42,369,1196,0.1]}
+{"kind":"textbox","id":"sh/p8b6lczm","slide":27,"name":"text","text":"Syndrome ≠ 0 + overall parity odd","textPreview":"Syndrome ≠ 0 + overall parity odd","textChars":33,"textLines":1,"bbox":[42,419,560,44]}
+{"kind":"textbox","id":"sh/2l0nqh0b","slide":27,"name":"text","text":"→ correct one error in positions 1–7","textPreview":"→ correct one error in positions 1–7","textChars":36,"textLines":1,"bbox":[42,472,560,44]}
+{"kind":"textbox","id":"sh/n69ojmhw","slide":27,"name":"text","text":"Syndrome ≠ 0 + overall parity even","textPreview":"Syndrome ≠ 0 + overall parity even","textChars":34,"textLines":1,"bbox":[678,419,560,44]}
+{"kind":"textbox","id":"sh/0ji5o7i5","slide":27,"name":"text","text":"→ detect two errors; do not correct","textPreview":"→ detect two errors; do not correct","textChars":35,"textLines":1,"bbox":[678,472,560,44]}
+{"kind":"textbox","id":"sh/1kr6hczq","slide":27,"name":"text","text":"The extra bit turns single-error correction into SECDED: single-error correction, double-error detection.","textPreview":"The extra bit turns single-error correction into SECDED: single-error correction, double-error detection.","textChars":105,"textLines":1,"bbox":[126,578,1028,60]}
+{"kind":"notes","id":"nt/kaqtml","slide":27,"text":"Timing: 4 minutes.\n\nTreat this as optional enrichment, not required mastery. Ask students to add an eighth overall parity bit to 0110011: it contains four ones, so bit 8 is 0. Explain the four decoding cases only if time; Worksheet 6B contains the complete table.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/6yoaim","slide":28,"title":"FINAL CHALLENGE","textShapes":11}
+{"kind":"textbox","id":"sh/ny98f6x8","slide":28,"name":"section-28","text":"FINAL CHALLENGE","textPreview":"FINAL CHALLENGE","textChars":15,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/ozipobet","slide":28,"name":"title-28","text":"Solo certification: encode, then rescue","textPreview":"Solo certification: encode, then rescue","textChars":39,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/90rqhgfe","slide":28,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/a107q1wz","slide":28,"name":"page-28","text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/b2t8j6xk","slide":28,"name":"text","text":"Part A","textPreview":"Part A","textChars":6,"textLines":1,"bbox":[42,205,220,45]}
+{"kind":"textbox","id":"sh/w329sbe5","slide":28,"name":"text","text":"Encode the message 1 0 0 1.","textPreview":"Encode the message 1 0 0 1.","textChars":27,"textLines":1,"bbox":[42,268,545,60]}
+{"kind":"textbox","id":"sh/x4bqlgfa","slide":28,"name":"text","text":"Show p₁, p₂, p₄ and audit all checks.","textPreview":"Show p₁, p₂, p₄ and audit all checks.","textChars":37,"textLines":1,"bbox":[42,356,545,74]}
+{"kind":"textbox","id":"sh/q5g7ehwf","slide":28,"name":"text","text":"Part B","textPreview":"Part B","textChars":6,"textLines":1,"bbox":[666,205,220,45]}
+{"kind":"textbox","id":"sh/r6p87mx0","slide":28,"name":"text","text":"Repair 0 0 1 1 1 0 1.","textPreview":"Repair 0 0 1 1 1 0 1.","textChars":21,"textLines":1,"bbox":[666,268,545,60]}
+{"kind":"textbox","id":"sh/vul8vqpk","slide":28,"name":"text","text":"Name the bad position and recover the message.","textPreview":"Name the bad position and recover the message.","textChars":46,"textLines":1,"bbox":[666,356,545,74]}
+{"kind":"shape","id":"sh/utcr2lof","slide":28,"bbox":[42,482,1196,0.1]}
+{"kind":"textbox","id":"sh/hg3qx0nq","slide":28,"name":"text","text":"No partner. Notes allowed. Every check must be visible.","textPreview":"No partner. Notes allowed. Every check must be visible.","textChars":55,"textLines":1,"bbox":[240,528,800,50]}
+{"kind":"shape","id":"sh/wfu94v65","slide":28,"name":"prompt-badge","bbox":[470,608,340,56]}
+{"kind":"textbox","id":"sh/7ql8rqpo","slide":28,"name":"prompt-badge-text","text":"Worksheet 6A • 5 minutes","textPreview":"Worksheet 6A • 5 minutes","textChars":24,"textLines":1,"bbox":[486,620,308,32]}
+{"kind":"notes","id":"nt/6yoaim","slide":28,"text":"Timing: 5 minutes.\n\nStudents work alone. Part A expected codeword 0011001. Part B: checks 1 and 4 fail, so error position 5; correct to 0011001; extract 1001. Use this as the learning-outcome check. Provide only process prompts: roles, check sets, add failed labels.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/v3mwhb","slide":29,"title":"ANSWER CHECK","textShapes":10}
+{"kind":"textbox","id":"sh/d8rupwvi","slide":29,"name":"section-29","text":"ANSWER CHECK","textPreview":"ANSWER CHECK","textChars":12,"textLines":1,"bbox":[42,28,300,24]}
+{"kind":"textbox","id":"sh/q5gbu1c7","slide":29,"name":"title-29","text":"Certification check","textPreview":"Certification check","textChars":19,"textLines":1,"bbox":[42,61,1196,80]}
+{"kind":"shape","id":"sh/r6pcnmds","slide":29,"bbox":[42,153,1196,0.1]}
+{"kind":"textbox","id":"sh/0vid0bu9","slide":29,"name":"page-29","text":"29","textPreview":"29","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"textbox","id":"sh/1wrutgvu","slide":29,"name":"text","text":"Part A","textPreview":"Part A","textChars":6,"textLines":1,"bbox":[42,210,220,44]}
+{"kind":"textbox","id":"sh/e90vy1c3","slide":29,"name":"text","text":"0 0 1 1 0 0 1","textPreview":"0 0 1 1 0 0 1","textChars":13,"textLines":1,"bbox":[42,275,560,62]}
+{"kind":"textbox","id":"sh/fu9cr6do","slide":29,"name":"text","text":"message 1 0 0 1 • p₁=0, p₂=0, p₄=1","textPreview":"message 1 0 0 1 • p₁=0, p₂=0, p₄=1","textChars":34,"textLines":1,"bbox":[42,366,560,45]}
+{"kind":"textbox","id":"sh/oz2d4bul","slide":29,"name":"text","text":"Part B","textPreview":"Part B","textChars":6,"textLines":1,"bbox":[666,210,220,44]}
+{"kind":"textbox","id":"sh/p0buxgvq","slide":29,"name":"text","text":"error at position 5","textPreview":"error at position 5","textChars":19,"textLines":1,"bbox":[666,275,560,62]}
+{"kind":"textbox","id":"sh/54jy1ozu","slide":29,"name":"text","text":"corrected 0011001 • message 1001","textPreview":"corrected 0011001 • message 1001","textChars":32,"textLines":1,"bbox":[666,366,560,54]}
+{"kind":"shape","id":"sh/k3ax8jy9","slide":29,"name":"box","bbox":[42,505,1196,112]}
+{"kind":"textbox","id":"sh/j21gzeho","slide":29,"name":"text","text":"If your method found both answers, you can do Hamming(7,4).","textPreview":"If your method found both answers, you can do Hamming(7,4).","textChars":59,"textLines":1,"bbox":[112,536,1056,52]}
+{"kind":"notes","id":"nt/v3mwhb","slide":29,"text":"Timing: 1 minute.\n\nStudents self-check in a different color and fix any process error. Collect or glance at Part B to see who independently met the outcome. Do not frame corrections as failure; the visible method identifies exactly where the thinking diverged.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}
+{"kind":"slide","id":"sl/nn1rj1","slide":30,"title":"SIGNAL RESTORED","textShapes":7}
+{"kind":"textbox","id":"sh/oz65wb29","slide":30,"name":"text","text":"SIGNAL RESTORED","textPreview":"SIGNAL RESTORED","textChars":15,"textLines":1,"bbox":[42,42,430,35]}
+{"kind":"textbox","id":"sh/3yxo36lo","slide":30,"name":"closing-title","text":"You built a message that points to its own mistake.","textPreview":"You built a message that points to its own mistake.","textChars":51,"textLines":1,"bbox":[42,174,1080,155]}
+{"kind":"textbox","id":"sh/2donu1k3","slide":30,"name":"text","text":"parity","textPreview":"parity","textChars":6,"textLines":1,"bbox":[42,414,280,50]}
+{"kind":"textbox","id":"sh/1cf61w3y","slide":30,"name":"text","text":"overlapping checks","textPreview":"overlapping checks","textChars":18,"textLines":1,"bbox":[365,414,360,50]}
+{"kind":"textbox","id":"sh/gb65sr2d","slide":30,"name":"text","text":"syndrome address","textPreview":"syndrome address","textChars":16,"textLines":1,"bbox":[781,414,390,50]}
+{"kind":"shape","id":"sh/fadozmls","slide":30,"bbox":[42,495,1130,0.1]}
+{"kind":"textbox","id":"sh/e94nqhk7","slide":30,"name":"text","text":"Exit whisper: What is the one step you are least likely to forget?","textPreview":"Exit whisper: What is the one step you are least likely to forget?","textChars":66,"textLines":1,"bbox":[140,548,1000,60]}
+{"kind":"textbox","id":"sh/l8z6dg32","slide":30,"name":"text","text":"30","textPreview":"30","textChars":2,"textLines":1,"bbox":[1184,672,54,20]}
+{"kind":"notes","id":"nt/nn1rj1","slide":30,"text":"Timing: 1 minute.\n\nPairs share one memorable step. Close by naming Hamming's achievement: not magic, but three deliberately overlapping parity questions. Invite students to keep the worksheet as a reusable decoder guide.\n\n[Sources]\n- R. W. Hamming, “Error Detecting and Error Correcting Codes,” Bell System Technical Journal 29(2), 1950. https://doi.org/10.1002/j.1538-7305.1950.tb00463.x\n[/Sources]"}

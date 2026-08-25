@@ -1,0 +1,14 @@
+Communication job
+By the end, grade 9-10 math-circle students should independently encode and repair a Hamming(7,4) word because they understand parity checks as overlapping yes/no questions whose failed labels identify one bad position.
+
+Narrative arc
+Impossible repair question -> parity intuition -> address a position with three checks -> training-wheels encoding -> full Hamming(7,4) -> syndrome repair -> packet exchange -> solo certification -> optional Hamming(8,4).
+
+Visual route
+Codex Grid: white canvas, black ink, pale gray fields, thin rules, cyan/cobalt highlight. Candidate silhouettes used as references: slide 08 (cover image split), slide 01 (sparse large message), slide 13 (four-point grid), and slide 17 (three-stage timeline). Adjacent slides vary between sparse prompts, bit-row diagrams, check-set maps, and process layouts.
+
+Deck pacing
+30 slides, 120 minutes total. Timing and facilitator moves live in speaker notes; only the five-minute break is timed on the visible slide.
+
+Worksheet design
+US Letter portrait, compact_reference_guide preset with a named classroom-form override for light cyan section fills and generous answer space. Student worksheet and instructor key are separate.

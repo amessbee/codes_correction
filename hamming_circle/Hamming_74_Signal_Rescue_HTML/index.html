@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a3a">
+  <title>Signal Rescue Lab — Hamming(7,4)</title>
+  <link rel="stylesheet" href="deck.css">
+</head>
+<body>
+  <main id="app" aria-label="Signal Rescue Lab slide presentation">
+    <div id="viewport">
+      <div id="stage" aria-live="polite"></div>
+    </div>
+
+    <div id="progress" aria-hidden="true"><span></span></div>
+
+    <nav id="controls" aria-label="Presentation controls">
+      <button id="previous" type="button" aria-label="Previous slide" title="Previous slide (←)">←</button>
+      <button id="next" type="button" aria-label="Next slide" title="Next slide (→ or Space)">→</button>
+      <span id="counter">01 / 30</span>
+      <span id="timeline">0–2 min</span>
+      <button id="overviewButton" type="button" aria-label="Open slide overview" title="Overview (O)">Grid</button>
+      <button id="notesButton" type="button" aria-label="Toggle facilitator notes" title="Notes (N)">Notes</button>
+      <button id="fullscreenButton" type="button" aria-label="Toggle fullscreen" title="Fullscreen (F)">Full</button>
+      <button id="helpButton" type="button" aria-label="Show keyboard help" title="Help (?)">?</button>
+    </nav>
+
+    <aside id="notesPanel" aria-label="Facilitator notes" aria-hidden="true">
+      <div class="panel-head">
+        <strong>Facilitator notes</strong>
+        <button id="closeNotes" type="button" aria-label="Close notes">×</button>
+      </div>
+      <p id="notesTiming"></p>
+      <p id="notesText"></p>
+    </aside>
+
+    <section id="overview" aria-label="Slide overview" aria-hidden="true">
+      <div class="overlay-head">
+        <div>
+          <span class="eyebrow">SIGNAL RESCUE LAB</span>
+          <h2>Choose a slide</h2>
+        </div>
+        <button id="closeOverview" type="button" aria-label="Close overview">×</button>
+      </div>
+      <div id="overviewGrid"></div>
+    </section>
+
+    <section id="help" aria-label="Keyboard shortcuts" aria-hidden="true">
+      <div class="help-card">
+        <button id="closeHelp" type="button" aria-label="Close help">×</button>
+        <span class="eyebrow">KEYBOARD</span>
+        <h2>Present without touching the mouse</h2>
+        <dl>
+          <div><dt>← / →</dt><dd>Previous / next slide</dd></div>
+          <div><dt>Space</dt><dd>Next slide</dd></div>
+          <div><dt>Home / End</dt><dd>First / last slide</dd></div>
+          <div><dt>N</dt><dd>Facilitator notes</dd></div>
+          <div><dt>O</dt><dd>Slide overview</dd></div>
+          <div><dt>F</dt><dd>Fullscreen</dd></div>
+          <div><dt>P</dt><dd>Print all slides</dd></div>
+          <div><dt>?</dt><dd>This help</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <noscript>This presentation requires JavaScript for navigation.</noscript>
+  <script src="slides.js" defer></script>
+  <script src="deck.js" defer></script>
+</body>
+</html>
