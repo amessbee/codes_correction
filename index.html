@@ -56,50 +56,28 @@
       <figure class="story-figure signal-story" aria-hidden="true"><span>📡</span><i></i><b>⚡</b><i></i><span>🛰️</span></figure>
     </section>
 
-    <section class="slide" data-chapter="The impossible trick" data-notes="Act out the card trick live if you have physical cards. The digital board is a backup and a repeatable demo. Students may randomize the 5×5 core or build their own pattern by flipping as many core cards as they like. Then add the mysterious border, turn away, let a student flip exactly one square, and reveal.">
-      <div class="slide-inner demo-layout">
-        <div class="slide-copy">
+    <section class="slide parity-demo-slide" data-chapter="The impossible trick" data-notes="Act out the card trick live if you have physical cards. The digital board is a backup and a repeatable demo. Students may randomize the 5×5 core or build their own pattern by flipping as many core cards as they like. Then add the mysterious border, turn away, let a student flip exactly one square, and use the separate final reveal.">
+      <div class="slide-inner parity-demo-layout">
+        <div class="slide-copy parity-demo-copy">
           <p class="eyebrow">Impossible mind-reading</p>
           <h2>Flip one card. I’ll find it.</h2>
-          <p class="lead">Randomize the pattern—or build your own by flipping any cards. Then I add a border before one final sabotage.</p>
-          <div class="action-stack">
+          <p class="lead">Choose a random pattern—or flip as many of the 25 center cards as you like.</p>
+          <div class="action-stack parity-setup-actions">
             <button class="secondary-button" data-action="parity-randomize">1 · Random pattern</button>
             <button class="secondary-button" data-action="parity-border">2 · Add my “decoration”</button>
-            <button class="primary-button" data-action="parity-reveal">3 · Find the flipped card</button>
           </div>
-          <p class="microcopy" id="parityStatus" aria-live="polite">Randomize—or click any of the 25 core cards to make your own pattern.</p>
+          <div class="flip-instruction" id="parityFlipPrompt" data-state="waiting" aria-live="polite">
+            <span>3</span><strong>After the decoration, flip one card.</strong>
+          </div>
+          <p class="microcopy" id="parityStatus" aria-live="polite">Start with any pattern you want.</p>
         </div>
-        <div class="board-shell">
+        <div class="board-shell parity-board-shell">
           <div class="parity-grid" id="parityGrid" role="grid" aria-label="Interactive six by six card grid"></div>
           <div class="board-legend"><span><i class="legend-core"></i> chosen cards</span><span><i class="legend-check"></i> added cards</span></div>
         </div>
-      </div>
-    </section>
-
-    <section class="slide" data-chapter="Steal the secret" data-notes="Give teams miniature grids and coins/cards. Start with 60 seconds of silence, then permit discussion. Do not explain the invariant. Use hints only if the room is stuck; reveal them one at a time.">
-      <div class="slide-inner mission-layout">
-        <p class="eyebrow mission">Team mission</p>
-        <h2>You have seven minutes to steal my secret.</h2>
-        <div class="mission-body">
-          <div class="timer-block">
-            <div class="mission-timer" id="secretTimer" data-duration="420">07:00</div>
-            <div class="timer-controls">
-              <button data-action="timer-toggle" data-target="secretTimer">Start / pause</button>
-              <button data-action="timer-reset" data-target="secretTimer">Reset</button>
-            </div>
-          </div>
-          <div class="mission-brief">
-            <p class="silent-rule"><strong>First 60 seconds:</strong> nobody speaks.</p>
-            <p>Your goal is not to perform the trick. Your goal is to explain why it must work.</p>
-            <div class="hint-ladder">
-              <button data-action="reveal-hint" data-hint="hint1">Hint 01</button>
-              <p id="hint1" hidden>Count something that has only two possible states.</p>
-              <button data-action="reveal-hint" data-hint="hint2">Hint 02</button>
-              <p id="hint2" hidden>Inspect whole rows and whole columns.</p>
-              <button data-action="reveal-hint" data-hint="hint3">Hint 03</button>
-              <p id="hint3" hidden>What changes when exactly one card flips?</p>
-            </div>
-          </div>
+        <div class="parity-reveal-zone">
+          <span>Final reveal</span>
+          <button class="primary-button" id="parityRevealButton" data-action="parity-reveal" disabled>Find the flipped card</button>
         </div>
       </div>
     </section>
@@ -122,12 +100,17 @@
       </div>
     </section>
 
-    <section class="slide" data-chapter="Alien rescue" data-notes="Teams should identify the odd row and column, select their intersection, and repair it. Reward explanations. After a successful repair, connect the digital result to the physical card trick—but avoid expanding into formal vocabulary yet.">
+    <section class="slide" data-chapter="Alien rescue" data-notes="What the board represents: every square has only two possible values—green means ON and white means OFF. The upper-left 5 × 5 area is the alien picture. The gold-outlined sixth column and sixth row are checking pixels added before transmission; the gold outline marks their job, not a third value. The checks were chosen so that every complete row and every complete column originally contained an even number of ON squares. When this slide loads—or when you press New glitch—the computer secretly flips exactly one of the 36 squares. The damaged square may be in the picture or in the outlined checking border. How to run it: (1) Ask students to count green ON squares across each complete row, including its outlined checking square. Exactly one row now has an odd count. (2) Count down each complete column in the same way. Exactly one column has an odd count. (3) The damaged pixel must be where that odd row and odd column cross. Click that intersection, then press Repair selected. A correct choice flips the pixel back, restores even counts everywhere, and reveals HELLO, HUMANS. A wrong choice is not destructive; the board shakes and students can select another square. Important: students do not need to recognize the picture, and the app does not highlight the odd lines for them—the mathematical task is to find them by counting. If the room is stuck, model one row aloud and remind them that outlined pixels still have the same ON/OFF values. After success, connect this directly to the card trick: one changed square disturbs one row check and one column check, so their intersection locates the error.">
       <div class="slide-inner demo-layout alien-layout">
         <div class="slide-copy">
           <p class="eyebrow mission">Alien transmission rescue</p>
           <h2>One pixel is wrong. Repair the picture.</h2>
-          <p class="lead">The pale border contains checking pixels. Select the damaged square, then attempt the repair.</p>
+          <p class="lead">Every square is ON or OFF. The gold-outlined border contains the checking pixels.</p>
+          <div class="alien-key" aria-label="Pixel color legend">
+            <span><i class="alien-key-on"></i>Green = ON</span>
+            <span><i class="alien-key-off"></i>White = OFF</span>
+            <span><i class="alien-key-check"></i>Gold outline = check</span>
+          </div>
           <div class="action-stack horizontal-actions">
             <button class="secondary-button" data-action="alien-new">New glitch</button>
             <button class="primary-button" data-action="alien-repair">Repair selected</button>

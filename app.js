@@ -219,7 +219,11 @@
       button.classList.toggle("suspect-col", options.cols?.includes(col));
       button.dataset.index = String(index);
       button.setAttribute("role", "gridcell");
-      button.setAttribute("aria-label", `row ${row + 1}, column ${col + 1}, ${value ? "black" : "white"}`);
+      const valueLabel = options.valueLabels?.[value] || (value ? "black" : "white");
+      const roleLabel = options.roleLabels
+        ? `, ${row < 5 && col < 5 ? options.roleLabels.core : options.roleLabels.check}`
+        : "";
+      button.setAttribute("aria-label", `row ${row + 1}, column ${col + 1}, ${valueLabel}${roleLabel}`);
       if (typeof options.onClick === "function") button.addEventListener("click", () => options.onClick(index, button));
       element.appendChild(button);
     });
@@ -228,7 +232,34 @@
   // Mind-reading grid.
   const parityGrid = document.getElementById("parityGrid");
   const parityStatus = document.getElementById("parityStatus");
+  const parityFlipPrompt = document.getElementById("parityFlipPrompt");
+  const parityRevealButton = document.getElementById("parityRevealButton");
   const parityState = { values: addEvenChecks(randomBits(25)), borderVisible: false, flipped: null, revealed: false };
+
+  function updateParityFlow() {
+    const prompt = parityFlipPrompt.querySelector("strong");
+    if (!parityState.borderVisible) {
+      parityFlipPrompt.dataset.state = "waiting";
+      prompt.textContent = "After the decoration, flip one card.";
+      parityRevealButton.disabled = true;
+      parityRevealButton.textContent = "Find the flipped card";
+    } else if (parityState.flipped === null) {
+      parityFlipPrompt.dataset.state = "ready";
+      prompt.textContent = "Your turn: flip exactly one card.";
+      parityRevealButton.disabled = true;
+      parityRevealButton.textContent = "Find the flipped card";
+    } else if (!parityState.revealed) {
+      parityFlipPrompt.dataset.state = "done";
+      prompt.textContent = "Card flipped. Keep it secret.";
+      parityRevealButton.disabled = false;
+      parityRevealButton.textContent = "Find the flipped card";
+    } else {
+      parityFlipPrompt.dataset.state = "done";
+      prompt.textContent = "Caught it.";
+      parityRevealButton.disabled = true;
+      parityRevealButton.textContent = "Card found";
+    }
+  }
 
   function drawParity() {
     const lines = parityState.revealed ? oddLines(parityState.values) : { rows: [], cols: [] };
@@ -255,10 +286,11 @@
         parityState.values[index] = 1 - parityState.values[index];
         parityState.flipped = index;
         button.classList.add("flipped");
-        parityStatus.textContent = "Sabotage complete. I can turn around now.";
+        parityStatus.textContent = "Card flipped. Keep it secret—then use the final reveal.";
         setTimeout(drawParity, 220);
       }
     });
+    updateParityFlow();
   }
 
   function parityRandomize() {
@@ -266,7 +298,7 @@
     parityState.borderVisible = false;
     parityState.flipped = null;
     parityState.revealed = false;
-    parityStatus.textContent = "A new 5 × 5 pattern is ready. You can still flip any core cards before step 2.";
+    parityStatus.textContent = "A new 5 × 5 pattern is ready. You may keep editing it before the decoration.";
     drawParity();
   }
 
@@ -274,7 +306,7 @@
     if (parityState.borderVisible) {
       parityStatus.textContent = parityState.flipped === null
         ? "The decoration is already in place. Now flip exactly one square."
-        : "The decoration is locked. Reveal the sabotaged square with step 3.";
+        : "The decoration is locked. Use the final reveal below.";
       return;
     }
 
@@ -286,13 +318,17 @@
     parityState.borderVisible = true;
     parityState.flipped = null;
     parityState.revealed = false;
-    parityStatus.textContent = "Border added. Click exactly one square while I look away.";
+    parityStatus.textContent = "Decoration added. Now flip exactly one card while I look away.";
     drawParity();
   }
 
   function parityReveal() {
     if (!parityState.borderVisible) {
       parityStatus.textContent = "Add the mysterious border first.";
+      return;
+    }
+    if (parityState.flipped === null) {
+      parityStatus.textContent = "Flip exactly one card before the final reveal.";
       return;
     }
     parityState.revealed = true;
@@ -332,6 +368,8 @@
     renderGrid(alienGrid, alienState.values, {
       borderVisible: true,
       selected: alienState.selected,
+      valueLabels: ["off", "on"],
+      roleLabels: { core: "picture pixel", check: "checking pixel" },
       onClick: (index) => { alienState.selected = index; drawAlien(); }
     });
   }

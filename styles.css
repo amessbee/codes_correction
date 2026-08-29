@@ -322,6 +322,77 @@ h2 {
 .board-legend { position: absolute; left: 105%; top: 10%; display: flex; flex-direction: column; gap: .6rem; width: 9rem; color: var(--muted); font-size: .74rem; }
 .board-legend span { display: flex; gap: .4rem; align-items: center; }.board-legend i { width: .7rem; height: .7rem; border-radius: 2px; background: rgba(255,255,255,.14); }.board-legend .legend-check { border: 1px solid var(--cyan); background: rgba(111,255,233,.12); }
 
+/* The mind-reading demo uses the full projector canvas: a large board hugs the
+   right edge while the final reveal stays separate at the lower left. */
+.parity-demo-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, .78fr) auto;
+  grid-template-rows: 1fr auto;
+  gap: 1rem clamp(1.5rem, 3vw, 3.4rem);
+  align-items: center;
+  padding-top: 5rem;
+  padding-right: 1rem;
+  padding-bottom: 5.1rem;
+}
+.parity-demo-copy { grid-column: 1; grid-row: 1; align-self: center; max-width: 560px; }
+.parity-demo-copy h2 { margin-bottom: .8rem; font-size: clamp(2.5rem, 4.2vw, 4.8rem); }
+.parity-demo-copy .lead { max-width: 42ch; font-size: clamp(1rem, 1.45vw, 1.25rem); }
+.parity-setup-actions { margin: 1rem 0 .75rem; }
+.parity-board-shell {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: end;
+  justify-self: end;
+  padding: clamp(.7rem, 1.15vw, 1rem);
+}
+.parity-demo-slide .parity-grid { width: min(68vh, 49vw, 650px); gap: clamp(.32rem, .65vw, .72rem); }
+.parity-demo-slide .board-legend { display: none; }
+.flip-instruction {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  max-width: 30rem;
+  padding: .65rem .8rem;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+  background: rgba(255,255,255,.025);
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.flip-instruction span {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 auto;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font: 900 .8rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.flip-instruction strong { font-size: clamp(.95rem, 1.25vw, 1.1rem); }
+.flip-instruction[data-state="ready"] { color: var(--yellow); border-color: var(--yellow); background: rgba(255,209,102,.055); }
+.flip-instruction[data-state="done"] { color: var(--green); border-color: var(--green); background: rgba(111,255,161,.05); }
+.parity-reveal-zone {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: end;
+  display: grid;
+  grid-template-columns: auto minmax(210px, 1fr);
+  align-items: center;
+  gap: .8rem;
+  max-width: 540px;
+  padding-top: .8rem;
+  border-top: 1px solid var(--line);
+}
+.parity-reveal-zone > span { color: var(--red); font: 900 .7rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .14em; text-transform: uppercase; }
+.parity-reveal-zone .primary-button { width: 100%; }
+.parity-reveal-zone .primary-button:disabled {
+  color: var(--muted);
+  background: rgba(255,255,255,.05);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: .55;
+}
+
 /* Mission */
 .mission-layout { display: flex; flex-direction: column; justify-content: center; }
 .mission-layout h2 { max-width: 1180px; }
@@ -353,10 +424,15 @@ h2 {
 .name-reveal strong { min-width: 7rem; color: var(--yellow); font-size: 1.25em; letter-spacing: .05em; }.name-reveal.revealed { border-color: var(--yellow); }
 
 /* Alien */
-.alien-grid .grid-cell.core.black { background: var(--cyan); box-shadow: 0 0 18px rgba(111,255,233,.28); }
-.alien-grid .grid-cell.check { opacity: .6; }
+.alien-grid .grid-cell.black { background: var(--cyan); box-shadow: 0 0 18px rgba(111,255,233,.28); }
+.alien-grid .grid-cell.check { opacity: 1; border-color: var(--yellow); box-shadow: inset 0 0 0 3px rgba(255,209,102,.42), 0 7px 14px rgba(0,0,0,.24); }
 .alien-shell { transform: rotate(.45deg); }
 .channel-stamp { display: block; margin-top: 1rem; color: var(--cyan); font: 700 .7rem/1 ui-monospace, monospace; letter-spacing: .1em; }
+.alien-key { display: flex; flex-wrap: wrap; gap: .45rem 1rem; margin: .9rem 0 .35rem; color: var(--muted); font: 800 .72rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .04em; text-transform: uppercase; }
+.alien-key span { display: inline-flex; align-items: center; gap: .4rem; }
+.alien-key i { width: 1rem; height: 1rem; border: 1px solid rgba(255,255,255,.22); border-radius: 3px; background: #dce9ff; box-shadow: 0 3px 7px rgba(0,0,0,.2); }
+.alien-key .alien-key-on { background: var(--cyan); }
+.alien-key .alien-key-check { border-color: var(--yellow); box-shadow: inset 0 0 0 2px rgba(255,209,102,.55); }
 .decoded-message { align-items: center; gap: 1rem; margin-top: 1.2rem; color: var(--green); font: 850 1.2rem/1 ui-monospace, monospace; }.decoded-message:not([hidden]) { display: flex; }.decoded-message span { font-size: 2.2rem; }
 .guarantee-question { margin-top: 1.5rem; font-size: clamp(1.3rem, 2vw, 1.8rem); font-weight: 850; }.guarantee-question em { color: var(--yellow); font-style: normal; }
 
@@ -472,7 +548,7 @@ h2 {
 .progress-track { height: 2px; background: rgba(255,255,255,.09); overflow: hidden; }.progress-track i { display: block; width: 5.26%; height: 100%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); transition: width .4s ease; }
 .slide-count { display: flex; align-items: baseline; gap: .4rem; color: var(--muted); font-family: ui-monospace, monospace; }.slide-count strong { color: var(--ink); font-size: 1.25rem; }.slide-count span { font-size: .75rem; }
 .nav-controls { display: flex; gap: .45rem; }.nav-controls button { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); cursor: pointer; }.nav-controls button:hover { color: var(--cyan); border-color: var(--cyan); }
-.notes-panel { position: fixed; z-index: 80; right: 1rem; bottom: 5.7rem; width: min(520px, calc(100vw - 2rem)); padding: 1.2rem; border: 1px solid rgba(255,209,102,.36); background: rgba(9, 14, 29, .98); box-shadow: var(--shadow); }
+.notes-panel { position: fixed; z-index: 80; right: 1rem; bottom: 5.7rem; width: min(520px, calc(100vw - 2rem)); max-height: calc(100vh - 7rem); overflow-y: auto; padding: 1.2rem; border: 1px solid rgba(255,209,102,.36); background: rgba(9, 14, 29, .98); box-shadow: var(--shadow); }
 .notes-panel > div { display: flex; justify-content: space-between; align-items: center; }.notes-panel span { color: var(--yellow); font: 850 .72rem/1 ui-monospace, monospace; letter-spacing: .13em; }.notes-panel button { border: 0; background: transparent; color: var(--muted); font-size: 1.6rem; cursor: pointer; }.notes-panel p { margin: 1rem 0 0; color: #d4ddf2; font-size: .98rem; line-height: 1.55; }
 
 /* Display controls */
@@ -548,7 +624,7 @@ body.projector-mode .transmission-window, body.projector-mode .command-signal di
 body.projector-mode .board-shell { background: linear-gradient(145deg, #ffffff, #e9eef8); box-shadow: var(--shadow), inset 0 0 42px rgba(0,119,111,.045); }
 body.projector-mode .grid-cell { background: #ffffff; border-color: rgba(10,22,51,.24); }
 body.projector-mode .grid-cell.black { background: #10203d; }
-body.projector-mode .alien-grid .grid-cell.core.black { background: var(--cyan); }
+body.projector-mode .alien-grid .grid-cell.black { background: var(--cyan); }
 body.projector-mode .cross-diagram strong, body.projector-mode .alarm-bank i, body.projector-mode .sensor-dots button { background: #ffffff; }
 body.projector-mode .console-screen, body.projector-mode .decoder-console { background: rgba(255,255,255,.92); }
 body.projector-mode .distance-cases button, body.projector-mode .final-reveal, body.projector-mode .secondary-button, body.projector-mode .projector-toggle, body.projector-mode .display-reset { background: rgba(10,22,51,.035); }
@@ -602,6 +678,11 @@ body.projector-mode .glitch-title { text-shadow: .045em .035em 0 rgba(0,119,111,
   .deck-footer { grid-template-columns: 1fr auto auto; gap: .7rem; }
   .brand-mark span:last-child { display: none; }
   .display-panel { top: 5rem; right: .65rem; width: calc(100vw - 1.3rem); }
+  .parity-demo-layout { display: flex; flex-direction: column; align-items: stretch; gap: 1rem; padding: 5.2rem 1rem 6rem; }
+  .parity-demo-copy { max-width: none; }
+  .parity-board-shell { align-self: center; margin: 0; }
+  .parity-demo-slide .parity-grid { width: min(80vw, 440px); }
+  .parity-reveal-zone { width: 100%; max-width: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
