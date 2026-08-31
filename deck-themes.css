@@ -1,0 +1,259 @@
+/* deck-themes.css — colour themes for the GLITCH deck.
+ *
+ * A theme is chosen from the control bar (palette button) and stored per device.
+ * It sets `data-deck-theme` on <body>; light themes also add `.deck-light`.
+ * Each theme repaints the shared palette custom properties; `.deck-light` then
+ * carries the structural fixes that dark-only rules would otherwise miss
+ * (mirrors the existing `body.projector-mode` overrides in styles.css).
+ *
+ * Contrast: every theme's body text (--ink) clears WCAG AAA on its ground and
+ * --muted clears AA; light-theme accent colours are darkened to stay legible.
+ */
+
+/* =============================== DARK FAMILY =============================== */
+
+body[data-deck-theme="abyss"] {
+  --ink: #eef2ff;
+  --muted: #9fb0cf;
+  --deep: #04060d;
+  --panel: rgba(10, 16, 34, 0.82);
+  --panel-solid: #0a1024;
+  --line: rgba(150, 172, 224, 0.22);
+  background:
+    radial-gradient(circle at 16% 12%, rgba(70, 90, 190, 0.22), transparent 30%),
+    radial-gradient(circle at 84% 84%, rgba(0, 190, 180, 0.1), transparent 26%),
+    var(--deep);
+}
+
+body[data-deck-theme="nebula"] {
+  --ink: #f3efff;
+  --muted: #b5aada;
+  --deep: #0e0a1d;
+  --panel: rgba(26, 18, 46, 0.82);
+  --panel-solid: #150f28;
+  --line: rgba(190, 170, 255, 0.24);
+  --cyan: #7bf0e6;
+  --violet: #b49bff;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(150, 90, 240, 0.26), transparent 32%),
+    radial-gradient(circle at 82% 82%, rgba(80, 200, 255, 0.12), transparent 28%),
+    var(--deep);
+}
+
+/* Lighter dark — a raised slate-blue ground; bright text still clears ~14:1. */
+body[data-deck-theme="slate"] {
+  --ink: #f4f7fd;
+  --muted: #b3bed9;
+  --deep: #1a2130;
+  --panel: rgba(38, 47, 66, 0.82);
+  --panel-solid: #262f42;
+  --line: rgba(170, 190, 226, 0.26);
+  --shadow: 0 22px 66px rgba(0, 0, 0, 0.42);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(90, 120, 210, 0.18), transparent 32%),
+    radial-gradient(circle at 82% 84%, rgba(0, 175, 165, 0.1), transparent 28%),
+    var(--deep);
+}
+
+/* Lighter dark — warm graphite. */
+body[data-deck-theme="graphite"] {
+  --ink: #f5f6f9;
+  --muted: #bcc2cd;
+  --deep: #23262e;
+  --panel: rgba(46, 50, 60, 0.86);
+  --panel-solid: #2e3440;
+  --line: rgba(200, 205, 216, 0.22);
+  --shadow: 0 22px 66px rgba(0, 0, 0, 0.44);
+  background:
+    radial-gradient(circle at 16% 12%, rgba(120, 130, 150, 0.16), transparent 34%),
+    radial-gradient(circle at 84% 84%, rgba(0, 160, 150, 0.08), transparent 28%),
+    var(--deep);
+}
+
+/* =============================== LIGHT FAMILY ============================== */
+
+body.deck-light {
+  --ink: #121a2b;
+  --muted: #45536d;
+  --deep: #eef2f8;
+  --panel: rgba(255, 255, 255, 0.9);
+  --panel-solid: #ffffff;
+  --line: rgba(18, 30, 54, 0.18);
+  --cyan: #0a6b62;
+  --cyan-dark: #d7f2ee;
+  --red: #c62438;
+  --yellow: #7a5600;
+  --violet: #563cd0;
+  --green: #0a7a42;
+  --shadow: 0 20px 60px rgba(20, 32, 58, 0.16);
+}
+
+body[data-deck-theme="daylight"] {
+  --deep: #eef2f8;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(70, 110, 200, 0.14), transparent 32%),
+    radial-gradient(circle at 82% 84%, rgba(0, 150, 138, 0.1), transparent 28%),
+    var(--deep);
+}
+
+body[data-deck-theme="paper"] {
+  --ink: #221d16;
+  --muted: #4d4739;
+  --deep: #f6f2e9;
+  --line: rgba(44, 34, 18, 0.18);
+  --cyan: #0a6a5a;
+  --violet: #5a3fc0;
+  --yellow: #7a5300;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(180, 130, 40, 0.12), transparent 32%),
+    radial-gradient(circle at 82% 84%, rgba(0, 140, 120, 0.09), transparent 28%),
+    var(--deep);
+}
+
+body[data-deck-theme="parchment"] {
+  --ink: #2a2317;
+  --muted: #574a3b;
+  --deep: #efe6d3;
+  --panel: rgba(255, 253, 246, 0.92);
+  --panel-solid: #fffdf6;
+  --line: rgba(52, 40, 22, 0.2);
+  --cyan: #0a6250;
+  --violet: #5a3ab8;
+  --yellow: #7a5200;
+  --red: #bb2536;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(170, 120, 40, 0.14), transparent 34%),
+    radial-gradient(circle at 82% 84%, rgba(0, 130, 110, 0.1), transparent 28%),
+    var(--deep);
+}
+
+/* ---- structural fixes shared by every light theme (GLITCH slides) ---- */
+body.deck-light::before {
+  background-image:
+    linear-gradient(rgba(26, 55, 106, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 55, 106, 0.07) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+body.deck-light .ambient { opacity: 0.16; filter: invert(1); }
+body.deck-light[data-visuals="0"] .ambient { opacity: 0; }
+body.deck-light .deck-chrome {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.97), rgba(244, 247, 253, 0.72));
+}
+body.deck-light .notes-panel,
+body.deck-light .display-panel { background: var(--panel-solid); }
+body.deck-light .notes-panel p,
+body.deck-light .notes-panel h2 { color: var(--ink); }
+body.deck-light .primary-button { color: #fff; }
+body.deck-light .transmission-window,
+body.deck-light .command-signal div,
+body.deck-light .robot-card {
+  background: linear-gradient(180deg, rgba(10, 107, 98, 0.08), transparent);
+}
+body.deck-light .board-shell {
+  background: linear-gradient(145deg, #ffffff, #e9eef8);
+  box-shadow: var(--shadow), inset 0 0 42px rgba(10, 107, 98, 0.05);
+}
+body.deck-light .grid-cell { background: #ffffff; border-color: rgba(18, 30, 54, 0.24); }
+body.deck-light .grid-cell.black { background: #10203d; }
+body.deck-light .alien-grid .grid-cell.black { background: var(--cyan); }
+body.deck-light .cross-diagram strong,
+body.deck-light .alarm-bank i,
+body.deck-light .sensor-dots button { background: #ffffff; }
+body.deck-light .console-screen,
+body.deck-light .decoder-console { background: rgba(255, 255, 255, 0.92); }
+body.deck-light .distance-cases button,
+body.deck-light .final-reveal,
+body.deck-light .secondary-button,
+body.deck-light .projector-toggle,
+body.deck-light .display-reset { background: rgba(18, 30, 54, 0.04); }
+body.deck-light .bit-channel span { background: rgba(10, 107, 98, 0.06); }
+body.deck-light .bit-comparison i { background: rgba(18, 30, 54, 0.16); }
+body.deck-light .bit-comparison i.diff { background: var(--red); }
+body.deck-light .progress-track { background: rgba(18, 30, 54, 0.12); }
+body.deck-light .glitch-title { text-shadow: 0.045em 0.035em 0 rgba(10, 107, 98, 0.12); }
+body.deck-light .story-figure { opacity: 0.5; filter: none; }
+
+/* =================== LIGHT FAMILY · ported NILA slides ==================== */
+/* Model: light slide canvas, panels become light, text darkened to match. */
+
+body.deck-light .slide.nila {
+  --ink: var(--dl-ink, #16213a);
+  --muted: var(--dl-muted, #4b5a75);
+  --panel: rgba(255, 255, 255, 0.86);
+  --panel-2: rgba(255, 255, 255, 0.94);
+  --line: rgba(20, 32, 54, 0.16);
+  --cyan: #0a6b62;
+  --blue: #2f5fd0;
+  --green: #0a7a42;
+  --red: #c62438;
+  --amber: #8a5a00;
+  --violet: #5a3fc0;
+  --shadow: 0 20px 58px rgba(20, 32, 58, 0.16);
+}
+/* per-theme nila text tints (default above covers Daylight) */
+body[data-deck-theme="paper"] .slide.nila { --dl-ink: #241f17; --dl-muted: #52493a; }
+body[data-deck-theme="parchment"] .slide.nila { --dl-ink: #2b2418; --dl-muted: #59493a; }
+
+/* text that sits directly on the (now light) canvas */
+body.deck-light .slide.nila .slide-foot,
+body.deck-light .slide.nila .tagline,
+body.deck-light .slide.nila .lede,
+body.deck-light .slide.nila .micro,
+body.deck-light .slide.nila .mission-time,
+body.deck-light .slide.nila .signal-label,
+body.deck-light .slide.nila .range-labels,
+body.deck-light .slide.nila .doubling-column small,
+body.deck-light .slide.nila .repeat-row label,
+body.deck-light .slide.nila .fiction {
+  color: var(--muted);
+}
+body.deck-light .slide.nila .doubling-column strong,
+body.deck-light .slide.nila .game-rules .rule,
+body.deck-light .slide.nila .prompt {
+  color: var(--ink);
+}
+
+/* near-white text now on light cards → dark / accent */
+body.deck-light .slide.nila .message-label,
+body.deck-light .slide.nila .binary-caption,
+body.deck-light .slide.nila .bound-equation,
+body.deck-light .slide.nila .equation-strip,
+body.deck-light .slide.nila .sphere {
+  color: var(--ink);
+}
+body.deck-light .slide.nila .research-door { color: #3a2b7a; }
+body.deck-light .slide.nila .final-received { color: var(--cyan); text-shadow: none; }
+
+/* light pills / strips that were dark translucent */
+body.deck-light .slide.nila .prompt { background: rgba(10, 107, 98, 0.1); border-color: rgba(10, 107, 98, 0.3); }
+body.deck-light .slide.nila .status-box { background: rgba(18, 30, 54, 0.06); }
+body.deck-light .slide.nila .equation-strip { background: rgba(18, 30, 54, 0.05); }
+body.deck-light .slide.nila .packing-box { background: rgba(255, 255, 255, 0.55); }
+body.deck-light .slide.nila .message-card,
+body.deck-light .slide.nila .idea-card,
+body.deck-light .slide.nila .metric,
+body.deck-light .slide.nila .research-card,
+body.deck-light .slide.nila .world-card,
+body.deck-light .slide.nila .inspector,
+body.deck-light .slide.nila .extra-parity {
+  background: var(--panel);
+  box-shadow: 0 12px 30px rgba(20, 32, 58, 0.12);
+}
+body.deck-light .slide.nila .extra-parity { border: 1px solid var(--line); }
+body.deck-light .slide.nila .extra-parity h2 { color: var(--ink); }
+body.deck-light .slide.nila .extra-parity .lede { color: var(--muted); }
+body.deck-light .slide.nila .doubling-column .stack span { opacity: 0.9; }
+
+/* "MISSION EMERGENCY" stays an alarm — a solid dark-red card so its text pops */
+body.deck-light .slide.nila .alarm-panel {
+  background: linear-gradient(160deg, #7a1526, #3a0a13);
+  border: 1px solid rgba(255, 92, 112, 0.5);
+}
+body.deck-light .slide.nila .alarm-panel h2,
+body.deck-light .slide.nila .alarm-panel .alarm-icon { color: #ffe9ec; }
+
+/* SVG diagram labels that were near-white on a dark canvas */
+body.deck-light .slide.nila svg text { fill: var(--muted); }
+
+/* keep the ::before glow subtle on a light ground */
+body.deck-light .slide.nila::before { opacity: 0.55; }

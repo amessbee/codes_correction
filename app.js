@@ -20,7 +20,9 @@
 
   slideTotal.textContent = String(total).padStart(2, "0");
 
-  function showSlide(index) {
+  const deckSubscribers = [];
+
+  function applySlide(index) {
     current = Math.max(0, Math.min(total - 1, index));
     slides.forEach((slide, i) => {
       slide.classList.toggle("active", i === current);
@@ -28,14 +30,48 @@
       slide.setAttribute("aria-hidden", i === current ? "false" : "true");
     });
     chapterLabel.textContent = slides[current].dataset.chapter || "GLITCH";
-    slideNumber.textContent = String(current + 1).padStart(2, "0");
-    progressBar.style.width = `${((current + 1) / total) * 100}%`;
-    notesText.textContent = slides[current].dataset.notes || "";
+    if (slideNumber) slideNumber.textContent = String(current + 1).padStart(2, "0");
+    if (progressBar) progressBar.style.width = `${((current + 1) / total) * 100}%`;
+    if (notesText) notesText.textContent = slides[current].dataset.notes || "";
     history.replaceState(null, "", `#${current + 1}`);
+    deckSubscribers.forEach((fn) => { try { fn(current, total); } catch (_) {} });
   }
 
-  function nextSlide() { showSlide(current + 1); }
-  function previousSlide() { showSlide(current - 1); }
+  function showSlide(index) {
+    const target = Math.max(0, Math.min(total - 1, index));
+    const runTransition = window.__deckTransition;
+    if (typeof runTransition === "function" && target !== current) {
+      runTransition(target < current ? "backward" : "forward", () => applySlide(target));
+    } else {
+      applySlide(target);
+    }
+  }
+
+  // Let the control bar (deck-controls.js) skip hidden slides during stepping.
+  function resolveStep(from, direction) {
+    const resolver = window.__deckResolveStep;
+    return typeof resolver === "function" ? resolver(from, direction) : from + direction;
+  }
+
+  window.__glitchDeck = {
+    slides,
+    get current() { return current; },
+    get total() { return total; },
+    go: showSlide,
+    next: () => showSlide(resolveStep(current, 1)),
+    prev: () => showSlide(resolveStep(current, -1)),
+    subscribe(fn) {
+      deckSubscribers.push(fn);
+      try { fn(current, total); } catch (_) {}
+      return () => {
+        const at = deckSubscribers.indexOf(fn);
+        if (at >= 0) deckSubscribers.splice(at, 1);
+      };
+    },
+  };
+
+  function nextSlide() { showSlide(resolveStep(current, 1)); }
+  function previousSlide() { showSlide(resolveStep(current, -1)); }
 
   function toggleNotes() {
     notesPanel.hidden = !notesPanel.hidden;
@@ -59,6 +95,14 @@
   }
 
   function setProjectorMode(enabled) {
+    // When the theme system (deck-controls.js) is present, "flip colors" just
+    // routes through it so the two mechanisms never fight.
+    if (typeof window.__deckSetTheme === "function") {
+      projectorToggle.setAttribute("aria-pressed", String(enabled));
+      projectorToggle.querySelector("span").textContent = enabled ? "Restore dark colors" : "Flip colors for projector";
+      window.__deckSetTheme(enabled ? "daylight" : "midnight");
+      return;
+    }
     document.body.classList.toggle("projector-mode", enabled);
     projectorToggle.setAttribute("aria-pressed", String(enabled));
     projectorToggle.querySelector("span").textContent = enabled ? "Restore dark colors" : "Flip colors for projector";
@@ -89,12 +133,12 @@
     }
     if (["ArrowRight", "PageDown", " "].includes(event.key)) { event.preventDefault(); nextSlide(); }
     if (["ArrowLeft", "PageUp"].includes(event.key)) { event.preventDefault(); previousSlide(); }
-    if (event.key === "Home") showSlide(0);
-    if (event.key === "End") showSlide(total - 1);
+    if (event.key === "Home") showSlide(typeof window.__deckFirst === "function" ? window.__deckFirst() : 0);
+    if (event.key === "End") showSlide(typeof window.__deckLast === "function" ? window.__deckLast() : total - 1);
     if (event.key.toLowerCase() === "n") toggleNotes();
     if (event.key.toLowerCase() === "f") toggleFullscreen();
     if (event.key.toLowerCase() === "d") toggleDisplayPanel();
-    if (event.key.toLowerCase() === "c") setProjectorMode(!document.body.classList.contains("projector-mode"));
+    if (event.key.toLowerCase() === "c") setProjectorMode(projectorToggle.getAttribute("aria-pressed") !== "true");
   });
 
   document.addEventListener("touchstart", (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
@@ -355,6 +399,7 @@
   const alienState = { original: addEvenChecks(alienCore), values: [], corrupt: 0, selected: null };
 
   function alienNew() {
+    if (!alienGrid) return;
     alienState.values = [...alienState.original];
     alienState.corrupt = Math.floor(Math.random() * 36);
     alienState.values[alienState.corrupt] = 1 - alienState.values[alienState.corrupt];
@@ -396,6 +441,7 @@
   const doubleState = { base: addEvenChecks(alienCore), values: [], errors: [], analyzed: false };
 
   function doubleCorrupt() {
+    if (!doubleGrid) return;
     doubleState.values = [...doubleState.base];
     const first = Math.floor(Math.random() * 36);
     let second = Math.floor(Math.random() * 36);
@@ -513,6 +559,7 @@
   const distanceValue = document.getElementById("distanceValue");
 
   function updateDistance() {
+    if (!distanceA || !distanceB) return;
     const a = distanceA.value;
     const b = distanceB.value;
     const length = Math.max(a.length, b.length);
@@ -525,8 +572,8 @@
     }
     distanceValue.textContent = String(hamming(a, b));
   }
-  distanceA.addEventListener("input", updateDistance);
-  distanceB.addEventListener("input", updateDistance);
+  if (distanceA) distanceA.addEventListener("input", updateDistance);
+  if (distanceB) distanceB.addEventListener("input", updateDistance);
 
   // Nearest-message decoder.
   const legalCodes = ["00000", "11100", "10011", "01111"];
@@ -557,6 +604,7 @@
   let failedRobot = null;
 
   function renderRobots() {
+    if (!robotDesigner) return;
     robotDesigner.innerHTML = "";
     robotPatterns.forEach((pattern, robotIndex) => {
       const card = document.createElement("div");
@@ -647,7 +695,7 @@
     else if (action === "go-home") showSlide(0);
     else if (action === "toggle-notes") toggleNotes();
     else if (action === "toggle-display-panel") toggleDisplayPanel();
-    else if (action === "toggle-projector") setProjectorMode(!document.body.classList.contains("projector-mode"));
+    else if (action === "toggle-projector") setProjectorMode(projectorToggle.getAttribute("aria-pressed") !== "true");
     else if (action === "reset-display") resetDisplay();
     else if (action === "fullscreen") toggleFullscreen();
     else if (action === "stabilize") {
