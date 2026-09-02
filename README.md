@@ -4,14 +4,16 @@ Three interactive, dependency-free web presentations for 90-minute grades 6–10
 
 ## Published URL
 
-- https://amessbee.github.io/codes_correction/ (GLITCH!)
+- https://amessbee.github.io/codes_correction/ (course materials)
+- https://amessbee.github.io/codes_correction/slides.html (GLITCH! interactive deck)
 - https://amessbee.github.io/codes_correction/carnival.html
 - https://amessbee.github.io/codes_correction/monster-party.html
 - Author: [amessbee.github.io](https://amessbee.github.io/)
 
 ## Choose a circle
 
-- `index.html` — **GLITCH!**: parity, redundancy, Hamming distance, and error-correcting codes
+- `index.html` — course overview, worksheets, and further reading
+- `slides.html` — **GLITCH!**: parity, redundancy, Hamming distance, and error-correcting codes
 - `carnival.html` — **The Totally Honest Carnival**: probability, expected value, fairness, and game design
 - `monster-party.html` — **Monster Party: The Seating Chart from Hell**: constraints, networks, graph coloring, and scheduling
 
@@ -25,7 +27,8 @@ python3 -m http.server 8000
 
 Then visit:
 
-- `http://localhost:8000/` for GLITCH!
+- `http://localhost:8000/` for the course overview
+- `http://localhost:8000/slides.html` for GLITCH!
 - `http://localhost:8000/carnival.html` for the carnival
 - `http://localhost:8000/monster-party.html` for the monster banquet
 
@@ -48,7 +51,8 @@ The deck intentionally delays the terms “parity” and “Hamming distance” 
 
 ## Main files
 
-- `index.html` — slide content and facilitator notes
+- `index.html` / `landing.css` — course overview and resource links
+- `slides.html` — slide content and facilitator notes
 - `styles.css` — responsive presentation design
 - `app.js` — navigation and activity logic
 - `glitch-qr.svg` — high-error-correction QR finale

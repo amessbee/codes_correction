@@ -69,7 +69,7 @@
   }
 
   function revealInspectorPlacement() {
-    if (current !== inspectorIndex || inspectorPlacementStage >= 3) return false;
+    if (current !== inspectorIndex || inspectorPlacementStage >= 5) return false;
     inspectorPlacementStage += 1;
     if (typeof window.__advanceInspectorPlacement === "function") {
       window.__advanceInspectorPlacement(inspectorPlacementStage);

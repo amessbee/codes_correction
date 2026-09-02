@@ -58,6 +58,15 @@
     };
   }
 
+  function extractNibble(word) {
+    return (
+      (bit(word, 3) << 3) |
+      (bit(word, 5) << 2) |
+      (bit(word, 6) << 1) |
+      bit(word, 7)
+    );
+  }
+
   function verifyCodec() {
     for (let nibble = 0; nibble < 16; nibble++) {
       const encoded = encodeNibble(nibble);
@@ -139,6 +148,22 @@
     const percentage = Number(panel.querySelector("[data-noise-rate]").value);
     panel.querySelector("[data-noise-output]").textContent = `${percentage}%`;
     panel.querySelector('[data-hamming-action="corrupt"]').textContent = `2 · Flip ${percentage}%`;
+  }
+
+  function showDecodedOutput(output, text, placeholder) {
+    if (output.tagName === "IFRAME") output.srcdoc = text || placeholder;
+    else output.textContent = text ? text.slice(0, 2400) : placeholder;
+  }
+
+  function damagedPreview(state) {
+    const byteCount = Math.min(state.bytes.length, 2400);
+    const bytes = new Uint8Array(byteCount);
+    for (let index = 0; index < byteCount; index++) {
+      bytes[index] =
+        (extractNibble(state.damaged[index * 2]) << 4) |
+        extractNibble(state.damaged[index * 2 + 1]);
+    }
+    return textDecoder.decode(bytes);
   }
 
   async function loadBook(panel) {
@@ -240,6 +265,11 @@
     setMetric(panel, "recovery", "not decoded");
     setProgress(panel, 1);
     showBitSample(panel, state.encoded, damaged);
+    showDecodedOutput(
+      panel.querySelector("[data-damaged-output]"),
+      damagedPreview(state),
+      "Damaged text will appear here.",
+    );
     panel.querySelector("[data-game-status]").textContent = `${multipleErrors.toLocaleString()} codewords received two or more flips—beyond this code's guarantee.`;
     panel.dataset.stage = "2";
     setBusy(panel, false);
@@ -275,9 +305,11 @@
     setMetric(panel, "recovery", `${recovery.toFixed(2)}% exact`);
     setProgress(panel, 1);
     showBitSample(panel, state.encoded, state.damaged, repairedWords);
-    const output = panel.querySelector("[data-recovered-output]");
-    if (output.tagName === "IFRAME") output.srcdoc = recovered;
-    else output.textContent = recovered.slice(0, 2400);
+    showDecodedOutput(
+      panel.querySelector("[data-recovered-output]"),
+      recovered,
+      "Recovered text will appear here.",
+    );
     panel.querySelector("[data-game-status]").textContent = `${syndromeRepairs.toLocaleString()} codewords triggered a repair; ${exactBytes.toLocaleString()} of ${state.bytes.length.toLocaleString()} bytes are exact.`;
     panel.dataset.stage = "3";
     setBusy(panel, false);
@@ -299,9 +331,17 @@
     setMetric(panel, "recovery", "—");
     panel.querySelector("[data-game-status]").textContent = "Ready. Encode the source to begin.";
     panel.querySelector("[data-bit-sample]").innerHTML = "<em>original</em><b>→</b><em>damaged</em><b>→</b><em>repaired</em>";
-    const output = panel.querySelector("[data-recovered-output]");
-    if (output.tagName === "IFRAME") output.srcdoc = "<p style='font-family:system-ui;padding:1rem;color:#667'>Recovered webpage will appear here.</p>";
-    else output.textContent = "Recovered text will appear here.";
+    const webpagePlaceholder = "<p style='font-family:system-ui;padding:1rem;color:#667'>Preview will appear here.</p>";
+    showDecodedOutput(
+      panel.querySelector("[data-damaged-output]"),
+      "",
+      panel.dataset.source === "web" ? webpagePlaceholder : "Damaged text will appear here.",
+    );
+    showDecodedOutput(
+      panel.querySelector("[data-recovered-output]"),
+      "",
+      panel.dataset.source === "web" ? webpagePlaceholder : "Recovered text will appear here.",
+    );
     updateButtons(panel, 0);
   }
 

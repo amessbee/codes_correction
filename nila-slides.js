@@ -1,6 +1,6 @@
 /* nila-slides.js — interactive widgets for the ported NILA slides.
    Source: nila2.html <script>, with deck navigation / speaker-notes / overview
-   code removed (index.html's app.js drives navigation). Element ids are
+   code removed (slides.html's app.js drives navigation). Element ids are
    namespaced with a `nila-` prefix to avoid clashes with the GLITCH deck. */
 (() => {
   "use strict";
@@ -406,17 +406,38 @@
               <i class="quiet">000</i><i>001</i><i>010</i><i>011</i>
               <i>100</i><i>101</i><i>110</i><i>111</i>
             </div>
-            <p><strong>000</strong> must mean “no error,” leaving exactly seven nonzero signatures for seven positions.</p>`;
+            <p>One pattern must mean “no error.” Which one should we reserve?</p>`;
           positionCaption.textContent =
-            "We do not just need three check bits—we need seven distinct nonzero alarm signatures.";
-          inspectorPrompt.textContent = "Which three signatures use only one inspector?";
-          inspectorFooterHint.textContent = "Next: find the three simplest signatures";
+            "Three yes/no answers create eight patterns, but one must describe an undamaged message.";
+          inspectorPrompt.textContent = "Which pattern naturally means no inspector complains?";
+          inspectorFooterHint.textContent = "Next: reserve no-error and number the rest";
           return;
         }
 
         if (stage === 2) {
           placementDiscovery.innerHTML = `
-            <span>Step 2 · Find the anchors</span>
+            <span>Step 2 · Turn signatures into addresses</span>
+            <div class="signature-grid numbered">
+              <i class="quiet"><code>000</code><small>no error</small></i>
+              <i><code>001</code><small>position 1</small></i>
+              <i><code>010</code><small>position 2</small></i>
+              <i><code>011</code><small>position 3</small></i>
+              <i><code>100</code><small>position 4</small></i>
+              <i><code>101</code><small>position 5</small></i>
+              <i><code>110</code><small>position 6</small></i>
+              <i><code>111</code><small>position 7</small></i>
+            </div>
+            <p>Read each complaint pattern as a binary number. The syndrome can become the damaged light's <strong>address</strong>.</p>`;
+          positionCaption.textContent =
+            "After reserving 000, the seven nonzero patterns map perfectly onto positions 1 through 7.";
+          inspectorPrompt.textContent = "Which addresses contain exactly one 1?";
+          inspectorFooterHint.textContent = "Next: identify the solo-inspector anchors";
+          return;
+        }
+
+        if (stage === 3) {
+          placementDiscovery.innerHTML = `
+            <span>Step 3 · Find the anchors</span>
             <div class="signature-anchors">
               <b><code>001</code><small>Inspector 1 only</small></b>
               <b><code>010</code><small>Inspector 2 only</small></b>
@@ -425,12 +446,27 @@
             <p>Give these three “solo alarm” signatures to the check bits themselves. Where should <strong>P1, P2, P4</strong> move?</p>`;
           positionCaption.textContent =
             "Look for the positions named by one binary place value: 1, 2, and 4.";
-          inspectorPrompt.textContent = "Can you predict the new order before the next step?";
-          inspectorFooterHint.textContent = "Next: reveal and test the placement";
+          inspectorPrompt.textContent = "Which bits should own these three solo-check addresses?";
+          inspectorFooterHint.textContent = "Next: assign the check bits";
           return;
         }
 
-        if (stage === 3) {
+        if (stage === 4) {
+          placementDiscovery.innerHTML = `
+            <span>Step 4 · Fill the seven positions</span>
+            <div class="placement-ledger">
+              <p><strong>Checks</strong><code>P1 → 1</code><code>P2 → 2</code><code>P4 → 4</code></p>
+              <p><strong>Data</strong><code>D1, D2, D3, D4</code><small>must fill 3, 5, 6, 7</small></p>
+            </div>
+            <p>The check bits take the solo addresses. Put the data bits, in order, into the four positions left over.</p>`;
+          positionCaption.textContent =
+            "The first draft above is now contradicted: move P1 → 1, P2 → 2, and P4 → 4. Which data bits fill the gaps?";
+          inspectorPrompt.textContent = "Say the complete seven-position order aloud.";
+          inspectorFooterHint.textContent = "Next: reveal the order and test every signature";
+          return;
+        }
+
+        if (stage === 5) {
           renderPositionMap(usefulPlacement, true);
           positionCaption.innerHTML =
             'Better placement: checks move to <strong>positions 1, 2, and 4</strong>, giving every position a unique inspector signature.';
