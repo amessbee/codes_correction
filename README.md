@@ -1,63 +1,109 @@
-# Interactive Math Circle decks
+# GLITCH! — Error-Correcting Codes Math Circle
 
-Three interactive, dependency-free web presentations for 90-minute grades 6–10 math circles. They are designed for a projector, audience participation, and more visuals than words.
+**GLITCH!** is a projector-ready, interactive mathematics-circle lesson about
+how information survives noise. Students begin with a parity card trick, build
+their own error-detection ideas, discover Hamming distance and Hamming(7,4),
+and finish with applications and extensions to repetition, Golay, and
+Reed–Solomon codes.
 
-## Published URL
+The main lesson is designed for a roughly 90-minute session with students in
+grades 6–10. It assumes no prior coding-theory or binary-arithmetic knowledge.
 
-- https://amessbee.github.io/codes_correction/ (course materials)
-- https://amessbee.github.io/codes_correction/slides.html (GLITCH! interactive deck)
-- https://amessbee.github.io/codes_correction/carnival.html
-- https://amessbee.github.io/codes_correction/monster-party.html
-- Author: [amessbee.github.io](https://amessbee.github.io/)
+## Published site
 
-## Choose a circle
+- [Course overview and resources](https://amessbee.github.io/codes_correction/)
+- [Launch the interactive GLITCH! slides](https://amessbee.github.io/codes_correction/slides.html)
+- [Mudassir Shabbir’s homepage](https://amessbee.github.io/)
 
-- `index.html` — course overview, worksheets, and further reading
-- `slides.html` — **GLITCH!**: parity, redundancy, Hamming distance, and error-correcting codes
-- `carnival.html` — **The Totally Honest Carnival**: probability, expected value, fairness, and game design
-- `monster-party.html` — **Monster Party: The Seating Chart from Hell**: constraints, networks, graph coloring, and scheduling
+The course overview contains the slide deck, printable worksheets, an
+instructor introduction, and links to foundational papers and accessible
+real-world examples.
 
-## Run it
+## Printable worksheets
 
-Open `index.html` in a browser, or serve the directory locally:
+Each worksheet includes both approachable questions and more demanding
+extensions. The original codebook of 16 messages and their four-bit codes is
+included for reference.
 
-```bash
-python3 -m http.server 8000
-```
+1. [Codebook and Binary](https://amessbee.github.io/codes_correction/output/pdf/worksheet-1-codebook-and-binary.pdf)
+2. [Detection and Repetition](https://amessbee.github.io/codes_correction/output/pdf/worksheet-2-detection-and-repetition.pdf)
+3. [Hamming Repair](https://amessbee.github.io/codes_correction/output/pdf/worksheet-3-hamming-repair.pdf)
+4. [Limits and Noise](https://amessbee.github.io/codes_correction/output/pdf/worksheet-4-limits-and-noise.pdf)
 
-Then visit:
+## Lesson arc
 
-- `http://localhost:8000/` for the course overview
-- `http://localhost:8000/slides.html` for GLITCH!
-- `http://localhost:8000/carnival.html` for the carnival
-- `http://localhost:8000/monster-party.html` for the monster banquet
+- Perform the parity card trick and ask students to infer the hidden rule.
+- Build a 16-message, four-bit codebook.
+- Introduce a one-bit glitch and let students propose protection strategies.
+- Compare watchdog parity with repetition and majority voting.
+- Use Hamming distance and sphere packing to show why five and six bits fail.
+- Discover suitable parity positions and construct Hamming(7,4).
+- Diagnose and repair damaged messages using a syndrome.
+- Stress-test encoded webpages and longer text with adjustable noise.
+- Meet repetition codes, the `[23,12,7]` Golay code, and Reed–Solomon codes.
 
-## Presenting
+Several optional slides are hidden by default. Use **Include hidden slides** in
+the presentation toolbar when you want the extended route.
 
-- `→`, `Space`, or `Page Down`: next slide
+## Presenting the deck
+
+The control bar starts hidden so the projected slide remains uncluttered. Move
+the pointer to the bottom edge, or focus that edge with the keyboard, to reveal
+the controls.
+
+Useful shortcuts:
+
+- `→`, `Space`, or `Page Down`: next slide or reveal
 - `←` or `Page Up`: previous slide
-- `Home` / `End`: first / last slide
+- `Home` / `End`: first / last visible slide
+- `O`: slide overview
 - `F`: fullscreen
 - `N`: facilitator notes
 - `D`: display controls
-- `C`: flip between dark and light projector colors
-- Touch screens: swipe horizontally
+- `T`: colour theme
+- `V`: slide transition
+- `W`: blank teaching canvas
+- `P`, `H`, `B`: pen, highlighter, and blackout tools
+- `?`: keyboard help
 
-The projector toggle switches each deck between its original palette and a high-contrast light theme. Every deck also includes **Fewer / Current / More** figure controls. “Current” is the default and preserves the designed visual density.
+The toolbar also supports slide hiding, inclusion of hidden slides, printable
+slide export, a class timer, annotations, and a light projector theme. Touch
+screens can navigate with horizontal swipes.
 
-Buttons inside the slides run live games, activity timers, simulations, manipulatives, reveals, and challenge checks. Each slide also has facilitator notes under `N`.
+## Run locally
 
-The deck intentionally delays the terms “parity” and “Hamming distance” until after students have had a chance to invent the ideas.
+This is a dependency-free static site. From the repository directory, run:
 
-## Main files
+```bash
+python3 -m http.server 8000 --bind 127.0.0.1
+```
 
-- `index.html` / `landing.css` — course overview and resource links
-- `slides.html` — slide content and facilitator notes
-- `styles.css` — responsive presentation design
-- `app.js` — navigation and activity logic
-- `glitch-qr.svg` — high-error-correction QR finale
-- `carnival.html` / `carnival.js` — probability carnival deck and activities
-- `monster-party.html` / `monster-party.js` — graph-coloring party deck and activities
-- `circle-templates.css` / `circle-deck.js` — shared styling and controls for the two new circles
+Then open:
 
-The QR asset was generated with QuickChart at error-correction level H. It encodes: “CONGRATULATIONS. HUMANITY HAS SURVIVED THE GLITCH!”
+- `http://127.0.0.1:8000/` for the course overview
+- `http://127.0.0.1:8000/slides.html` for the GLITCH! deck
+
+Opening the files directly also works, but a local server gives more consistent
+browser behavior for the interactive text experiments.
+
+## Repository map
+
+- `index.html` and `landing.css` — public course overview
+- `slides.html` — GLITCH! slide content and facilitator notes
+- `styles.css` and `nila-slides.css` — presentation layout and visuals
+- `app.js`, `nila-slides.js`, and `hamming-text-game.js` — activities and simulations
+- `deck-controls.js`, `deck-controls.css`, and `deck-themes.css` — presentation tools
+- `output/pdf/` — printable worksheet PDFs
+- `war-and-peace.txt` and `war-and-peace-data.js` — openly available long-text experiment
+- `carnival.html` — probability and expected-value math circle
+- `monster-party.html` — graph-colouring and scheduling math circle
+
+## Additional interactive math circles
+
+- [The Totally Honest Carnival](https://amessbee.github.io/codes_correction/carnival.html) — probability, expected value, fairness, and game design
+- [Monster Party: The Seating Chart from Hell](https://amessbee.github.io/codes_correction/monster-party.html) — constraints, networks, graph colouring, and scheduling
+
+## Instructor
+
+Created by **Dr. Mudassir Shabbir**, Associate Professor in the Department of
+Computer Science at the Lahore University of Management Sciences (LUMS).

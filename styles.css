@@ -311,7 +311,16 @@ h2 {
 .glitch-title::after { color: var(--red); clip-path: inset(63% 0 8% 0); transform: translateX(.03em); animation: glitchB 3.9s steps(1) infinite; }
 @keyframes glitchA { 0%, 88%, 100% { transform: translateX(-.025em); } 90% { transform: translateX(.045em); } 92% { transform: translateX(-.055em); } }
 @keyframes glitchB { 0%, 85%, 100% { transform: translateX(.03em); } 87% { transform: translateX(-.04em); } 89% { transform: translateX(.06em); } }
-.hero-subtitle { margin: 1.4rem 0 1.8rem; color: var(--muted); font-size: clamp(1.55rem, 3vw, 2.8rem); letter-spacing: -.025em; }
+.hero-subtitle { margin: 1.4rem 0 .7rem; color: var(--muted); font-size: clamp(1.55rem, 3vw, 2.8rem); letter-spacing: -.025em; }
+.presenter-credit {
+  display: flex;
+  align-items: baseline;
+  gap: .8rem;
+  margin: 0 0 1.45rem;
+  font-size: clamp(.78rem, 1.15vw, 1rem);
+}
+.presenter-credit strong { color: var(--ink); }
+.presenter-credit span { color: var(--cyan); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .045em; }
 .transmission-window {
   width: min(700px, 80vw);
   display: grid;
@@ -332,6 +341,22 @@ h2 {
 .hero-orbit { position: absolute; z-index: 1; right: -18vw; top: 10vh; width: min(52vw, 760px); aspect-ratio: 1; border: 1px solid rgba(111,255,233,.12); border-radius: 50%; }
 .hero-orbit::before, .hero-orbit::after { content: ""; position: absolute; inset: 12%; border: 1px solid rgba(144,123,255,.12); border-radius: 50%; }.hero-orbit::after { inset: 27%; }
 .hero-orbit i { position: absolute; width: .7rem; height: .7rem; background: var(--cyan); border-radius: 50%; left: 12%; top: 52%; box-shadow: 0 0 24px var(--cyan); }
+
+@media (max-width: 620px) {
+  .presenter-credit { align-items: flex-start; flex-direction: column; gap: .2rem; }
+  .transmission-window {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .65rem;
+  }
+  .transmission-label { grid-column: 1 / -1; }
+  .transmission-window strong {
+    min-width: 0;
+    white-space: nowrap;
+    font-size: clamp(.68rem, 3.2vw, .82rem);
+    letter-spacing: .035em;
+  }
+}
 
 /* Opening question */
 .question-layout { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }

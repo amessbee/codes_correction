@@ -145,7 +145,7 @@
   let editMode = false;
   let tool = "none"; // none | pen | hl | blackout
   let scratchpadOpen = false;
-  let controlsHidden = false;
+  let controlsHidden = true;
   let fillWindow = false;
 
   let annotations = store.get(KEY.annotations, {}) || {};
@@ -1179,7 +1179,7 @@
   renderContextToolbar();
   renderPanel();
   renderOverlay();
-  setControlsHidden(false);
+  setControlsHidden(true);
   if (!includeHidden && hiddenSet.has(idx)) {
     deck.go(visibleIndexes()[0] ?? 0);
   } else {
