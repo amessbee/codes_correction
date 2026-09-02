@@ -51,7 +51,7 @@
     }, 1600);
   }
 
-// Fill decorative stacks and sphere-packing bubbles.
+// Fill decorative stacks and the optimistic five/six-flash packing attempts.
       document
         .querySelectorAll(".doubling-column .stack")
         .forEach((stack, i) => {
@@ -60,12 +60,53 @@
               stack.appendChild(document.createElement("span"));
           }
         });
-      const packingBox = document.querySelector(".packing-box");
+
+      function buildCapacityAttempt(id, totalSlots, neighborhoodSize, columns) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        const completeGroups = Math.floor(totalSlots / neighborhoodSize);
+        const spareSlots = totalSlots % neighborhoodSize;
+        container.style.setProperty("--attempt-cols", columns);
+        for (let group = 0; group < completeGroups; group++) {
+          const card = document.createElement("div");
+          card.className = "attempt-group";
+          card.style.setProperty("--attempt-index", group);
+          card.style.setProperty("--group-hue", 178 + (group % 5) * 24);
+          const dots = Array.from(
+            { length: neighborhoodSize },
+            (_, index) => `<i class="${index === 0 ? "attempt-original" : "attempt-neighbour"}"></i>`,
+          ).join("");
+          card.innerHTML = `<strong>message ${group + 1}</strong><div class="attempt-dots">${dots}</div>`;
+          container.appendChild(card);
+        }
+
+        const failed = document.createElement("div");
+        failed.className = "attempt-group attempt-failed";
+        failed.style.setProperty("--attempt-index", completeGroups);
+        const failedDots = Array.from(
+          { length: neighborhoodSize },
+          (_, index) => index < spareSlots
+            ? '<i class="attempt-spare"></i>'
+            : '<i class="attempt-missing">×</i>',
+        ).join("");
+        failed.innerHTML = `<strong>message ${completeGroups + 1} cannot fit</strong><div class="attempt-dots">${failedDots}</div><small>${spareSlots} left · ${neighborhoodSize} needed</small>`;
+        container.appendChild(failed);
+      }
+
+      buildCapacityAttempt("nila-fiveAttempt", 32, 6, 3);
+      buildCapacityAttempt("nila-sixAttempt", 64, 7, 5);
+
+      // Fill the seven-flash perfect packing diagram.
+      const packingGrid = document.getElementById("nila-packingGrid");
       for (let i = 1; i <= 16; i++) {
-        const d = document.createElement("div");
-        d.className = "sphere";
-        d.textContent = i;
-        packingBox.appendChild(d);
+        const bubble = document.createElement("div");
+        bubble.className = "message-bubble";
+        bubble.style.setProperty("--bubble-index", i - 1);
+        const words = Array.from({ length: 8 }, (_, word) =>
+          `<i class="${word === 0 ? "original-word" : "neighbour-word"}">${word === 0 ? String(i).padStart(2, "0") : ""}</i>`,
+        ).join("");
+        bubble.innerHTML = `<div class="bubble-words">${words}</div>`;
+        packingGrid.appendChild(bubble);
       }
 
       // One-light slide.
@@ -208,7 +249,7 @@
       }
       capacitySlider.oninput = updateCapacity;
       function resetCapacity() {
-        capacitySlider.value = 4;
+        capacitySlider.value = 3;
         updateCapacity();
         showToast("Capacity lab reset");
       }
@@ -275,7 +316,7 @@
         showToast("Distance example reset");
       }
 
-      // Inspector maps (Hamming(7,4): checks at 1, 2, 4; data at 3, 5, 6, 7).
+      // Inspector maps: begin with appended checks, then reveal positions 1, 2, 4.
       const watcherSets = {
         1: [1, 3, 5, 7],
         2: [2, 3, 6, 7],
@@ -285,13 +326,38 @@
         return [1, 2, 4].filter((k) => watcherSets[k].includes(pos));
       }
       const positionMap = document.getElementById("nila-positionMap");
-      for (let p = 1; p <= 7; p++) {
-        const c = document.createElement("div");
-        const check = [1, 2, 4].includes(p);
-        c.className = `position-cell ${check ? "check" : "data"}`;
-        c.dataset.watch = watchedBy(p).join("+");
-        c.innerHTML = `<small>${check ? "CHECK" : "DATA"}</small><strong>${p}</strong>`;
-        positionMap.appendChild(c);
+      const naturalPlacement = ["d1", "d2", "d3", "d4", "p1", "p2", "p4"];
+      const usefulPlacement = ["p1", "p2", "d1", "p4", "d2", "d3", "d4"];
+      function renderPositionMap(placement, animate = false) {
+        const oldRects = new Map(
+          [...positionMap.children].map((cell) => [cell.dataset.bit, cell.getBoundingClientRect()]),
+        );
+        positionMap.innerHTML = "";
+        placement.forEach((bit, index) => {
+          const position = index + 1;
+          const check = bit.startsWith("p");
+          const cell = document.createElement("div");
+          cell.className = `position-cell ${check ? "check" : "data"}`;
+          cell.dataset.bit = bit;
+          cell.dataset.watch = placement === usefulPlacement ? watchedBy(position).join("+") : "";
+          cell.innerHTML = `<small>${check ? "CHECK" : "DATA"}</small><strong>${bit.toUpperCase()}</strong><span class="position-slot">position ${position}</span>`;
+          positionMap.appendChild(cell);
+        });
+
+        if (animate && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          [...positionMap.children].forEach((cell) => {
+            const previous = oldRects.get(cell.dataset.bit);
+            if (!previous || typeof cell.animate !== "function") return;
+            const next = cell.getBoundingClientRect();
+            cell.animate(
+              [
+                { transform: `translate(${previous.left - next.left}px, ${previous.top - next.top}px) scale(.94)`, opacity: 0.42 },
+                { transform: "translate(0, 0) scale(1)", opacity: 1 },
+              ],
+              { duration: 900, easing: "cubic-bezier(.2,.78,.2,1)" },
+            );
+          });
+        }
       }
       function buildInspectors(container, statuses = {}) {
         container.innerHTML = "";
@@ -303,7 +369,78 @@
           container.appendChild(d);
         });
       }
-      buildInspectors(document.getElementById("nila-inspectorCards"));
+      const inspectorCards = document.getElementById("nila-inspectorCards");
+      const placementDiscovery = document.getElementById("nila-placementDiscovery");
+      const positionCaption = document.getElementById("nila-positionCaption");
+      const inspectorPrompt = document.getElementById("nila-inspectorPrompt");
+      const inspectorFooterHint = document.getElementById("nila-inspectorFooterHint");
+      buildInspectors(inspectorCards);
+
+      function setInspectorDetailsVisible(visible) {
+        inspectorCards.classList.toggle("step-hidden", !visible);
+        inspectorCards.setAttribute("aria-hidden", String(!visible));
+        placementDiscovery.classList.toggle("step-hidden", visible);
+        placementDiscovery.setAttribute("aria-hidden", String(visible));
+      }
+
+      window.__resetInspectorPlacement = () => {
+        renderPositionMap(naturalPlacement);
+        placementDiscovery.innerHTML = `
+          <span>Design requirement</span>
+          <h2>Every damaged position needs its own alarm pattern.</h2>
+          <p>Three inspectors each answer yes or no. How many different patterns can they report?</p>`;
+        positionCaption.textContent =
+          "First attempt: keep the four data lights together and append all three checks.";
+        inspectorPrompt.textContent = "Do three checks help just because we appended them?";
+        inspectorFooterHint.textContent =
+          "Next: find positions that give every light a distinct signature";
+        setInspectorDetailsVisible(false);
+      };
+
+      window.__advanceInspectorPlacement = (stage) => {
+        if (stage === 1) {
+          placementDiscovery.innerHTML = `
+            <span>Step 1 · Count the signatures</span>
+            <div class="signature-equation">2<sup>3</sup> = 8</div>
+            <div class="signature-grid">
+              <i class="quiet">000</i><i>001</i><i>010</i><i>011</i>
+              <i>100</i><i>101</i><i>110</i><i>111</i>
+            </div>
+            <p><strong>000</strong> must mean “no error,” leaving exactly seven nonzero signatures for seven positions.</p>`;
+          positionCaption.textContent =
+            "We do not just need three check bits—we need seven distinct nonzero alarm signatures.";
+          inspectorPrompt.textContent = "Which three signatures use only one inspector?";
+          inspectorFooterHint.textContent = "Next: find the three simplest signatures";
+          return;
+        }
+
+        if (stage === 2) {
+          placementDiscovery.innerHTML = `
+            <span>Step 2 · Find the anchors</span>
+            <div class="signature-anchors">
+              <b><code>001</code><small>Inspector 1 only</small></b>
+              <b><code>010</code><small>Inspector 2 only</small></b>
+              <b><code>100</code><small>Inspector 4 only</small></b>
+            </div>
+            <p>Give these three “solo alarm” signatures to the check bits themselves. Where should <strong>P1, P2, P4</strong> move?</p>`;
+          positionCaption.textContent =
+            "Look for the positions named by one binary place value: 1, 2, and 4.";
+          inspectorPrompt.textContent = "Can you predict the new order before the next step?";
+          inspectorFooterHint.textContent = "Next: reveal and test the placement";
+          return;
+        }
+
+        if (stage === 3) {
+          renderPositionMap(usefulPlacement, true);
+          positionCaption.innerHTML =
+            'Better placement: checks move to <strong>positions 1, 2, and 4</strong>, giving every position a unique inspector signature.';
+          inspectorPrompt.textContent = "Why powers of two: 1, 2, 4?";
+          inspectorFooterHint.textContent = "Every position now gets a unique inspector signature";
+          setInspectorDetailsVisible(true);
+        }
+      };
+
+      window.__resetInspectorPlacement();
 
       // Encoding sequence (message 1010 → codeword 1011010).
       const dataBits = { 3: 1, 5: 0, 6: 1, 7: 0 };

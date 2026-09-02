@@ -117,8 +117,12 @@
 
   /* --------------------------------------------------------------- state */
   let idx = deck.current;
+  const defaultHidden = slides
+    .map((slide, index) => slide.dataset.hiddenByDefault === "true" ? index : null)
+    .filter((index) => index !== null);
+  const savedHidden = store.get(KEY.hidden, null);
   let hiddenSet = new Set(
-    (store.get(KEY.hidden, []) || []).filter(
+    (Array.isArray(savedHidden) ? savedHidden : defaultHidden).filter(
       (n) => Number.isInteger(n) && n >= 0 && n < total,
     ),
   );
@@ -1176,5 +1180,9 @@
   renderPanel();
   renderOverlay();
   setControlsHidden(false);
-  refreshBar();
+  if (!includeHidden && hiddenSet.has(idx)) {
+    deck.go(visibleIndexes()[0] ?? 0);
+  } else {
+    refreshBar();
+  }
 })();

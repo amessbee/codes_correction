@@ -158,6 +158,80 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--yellow); ou
 .slide.active { opacity: 1; visibility: visible; transform: translateX(0); pointer-events: auto; }
 .slide.was-active { transform: translateX(-4%); }
 
+/* Layered content entrances keep each new slide readable without delaying use. */
+@keyframes slideContentFadeIn {
+  from { opacity: 0; transform: translateY(14px); filter: blur(3px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.slide:not(.nila).active .slide-inner > * {
+  animation: slideContentFadeIn 900ms cubic-bezier(.2, .75, .2, 1) both;
+}
+.slide:not(.nila).active .slide-inner > :nth-child(2) { animation-delay: 110ms; }
+.slide:not(.nila).active .slide-inner > :nth-child(3) { animation-delay: 220ms; }
+.slide:not(.nila).active .slide-inner > :nth-child(4) { animation-delay: 330ms; }
+.slide:not(.nila).active .slide-inner > :nth-child(n + 5) { animation-delay: 440ms; }
+.slide:not(.nila).active > .story-figure {
+  animation: slideContentFadeIn 1100ms 420ms cubic-bezier(.2, .75, .2, 1) both;
+}
+
+.slide.nila.active .slide-head {
+  animation: none;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  filter: none;
+}
+.slide.nila.active .slide-body > * {
+  animation: slideContentFadeIn 1050ms 210ms cubic-bezier(.2, .75, .2, 1) both;
+}
+.slide.nila.active .slide-foot {
+  animation: slideContentFadeIn 850ms 480ms cubic-bezier(.2, .75, .2, 1) both;
+}
+
+.slide.nila.active :is(
+  .metric-row > .metric,
+  .idea-arena > .idea-card,
+  .doubling-visual > .doubling-column,
+  .repeat-visual > .repeat-row,
+  .research-grid > .research-card,
+  .world-grid > .world-card,
+  .error-cards > .error-card,
+  .big-rules > .rule
+) {
+  animation: slideContentFadeIn 900ms 360ms cubic-bezier(.2, .75, .2, 1) both;
+}
+.slide.nila.active :is(
+  .metric-row,
+  .idea-arena,
+  .doubling-visual,
+  .repeat-visual,
+  .research-grid,
+  .world-grid,
+  .error-cards,
+  .big-rules
+) > :nth-child(2) { animation-delay: 470ms; }
+.slide.nila.active :is(
+  .metric-row,
+  .idea-arena,
+  .doubling-visual,
+  .repeat-visual,
+  .research-grid,
+  .world-grid,
+  .error-cards,
+  .big-rules
+) > :nth-child(3) { animation-delay: 580ms; }
+.slide.nila.active :is(
+  .metric-row,
+  .idea-arena,
+  .doubling-visual,
+  .repeat-visual,
+  .research-grid,
+  .world-grid,
+  .error-cards,
+  .big-rules
+) > :nth-child(n + 4) { animation-delay: 690ms; }
+
 .slide-inner {
   position: relative;
   z-index: 2;
@@ -694,4 +768,5 @@ body.projector-mode .glitch-title { text-shadow: .045em .035em 0 rgba(0,119,111,
   .deck-chrome, .deck-footer, .notes-panel, .display-panel, .story-figure { display: none !important; }
   .deck { height: auto; }
   .slide { position: relative; display: block; visibility: visible; opacity: 1; transform: none; height: 100vh; page-break-after: always; }
+  .slide *, .slide *::before, .slide *::after { animation: none !important; }
 }

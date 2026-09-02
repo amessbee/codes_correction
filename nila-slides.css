@@ -69,7 +69,13 @@
 }
 
 .slide.nila {
-  display: grid; grid-template-rows: auto 1fr auto; gap: clamp(12px, 2vh, 24px); padding: var(--slide-pad); overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: clamp(12px, 2vh, 24px);
+  padding-block-start: calc(4.6rem + clamp(0.75rem, 2vh, 1.5rem));
+  padding-block-end: calc(4.7rem + clamp(0.65rem, 1.5vh, 1.25rem));
+  padding-inline: var(--slide-pad);
+  overflow: hidden;
 }
 
 .slide.nila::before {
@@ -101,6 +107,9 @@
         justify-content: space-between;
         gap: 24px;
         min-height: 50px;
+        position: relative;
+        z-index: 10;
+        isolation: isolate;
 }
 
 .slide.nila .eyebrow {
@@ -191,6 +200,11 @@
         min-height: 34px;
         color: var(--muted);
         font-size: clamp(11px, 1vw, 15px);
+}
+
+.slide.nila .slide-source-link {
+  color: var(--cyan);
+  text-underline-offset: 0.18em;
 }
 
 .slide.nila .prompt {
@@ -1166,7 +1180,7 @@
 }
 
 .slide.nila .repeat-row label {
-  width: 90px;
+  width: 150px;
         color: var(--muted);
         font-weight: 800;
 }
@@ -1197,6 +1211,35 @@
         display: flex;
         flex-direction: column;
         gap: 22px;
+}
+
+.slide.nila .repetition-step {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition:
+    opacity 720ms ease,
+    transform 720ms cubic-bezier(.2, .8, .2, 1),
+    visibility 0s linear 0s;
+  will-change: opacity, transform;
+}
+
+.slide.nila .repetition-step.step-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+  visibility: hidden;
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease,
+    visibility 0s linear 520ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.nila .repetition-step,
+  .slide.nila .repetition-step.step-hidden {
+    transform: none;
+    transition-duration: 0.01ms;
+  }
 }
 
 .slide.nila .flash-count {
@@ -1359,6 +1402,239 @@
         line-height: 0.8;
 }
 
+.slide.nila .capacity-attempt-stage {
+  width: min(1200px, 96vw);
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+  gap: clamp(24px, 3.5vw, 52px);
+  align-items: center;
+}
+
+.slide.nila .attempt-board {
+  height: min(57vh, 510px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid rgba(88, 230, 255, 0.3);
+  border-radius: calc(var(--radius) + 3px);
+  background:
+    linear-gradient(rgba(88, 230, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 230, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, rgba(88, 230, 255, 0.09), transparent 70%),
+    rgba(4, 15, 27, 0.86);
+  background-size: 26px 26px, 26px 26px, auto, auto;
+  box-shadow: var(--shadow), inset 0 0 45px rgba(88, 230, 255, 0.035);
+  overflow: hidden;
+}
+
+.slide.nila .attempt-board-head,
+.slide.nila .attempt-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.slide.nila .attempt-board-head {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(88, 230, 255, 0.15);
+  color: var(--muted);
+  font: 850 clamp(11px, 1vw, 14px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.slide.nila .attempt-board-head strong {
+  color: var(--cyan);
+  font-size: 1.15em;
+}
+
+.slide.nila .attempt-groups {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--attempt-cols, 3), minmax(0, 1fr));
+  gap: 10px;
+}
+
+.slide.nila .attempt-group {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 5px;
+  padding: 8px 9px;
+  border: 1px solid hsl(var(--group-hue) 78% 68% / 0.42);
+  border-radius: 15px;
+  background: linear-gradient(145deg, hsl(var(--group-hue) 76% 58% / 0.12), rgba(5, 18, 30, 0.5));
+  box-shadow: inset 0 0 18px hsl(var(--group-hue) 76% 58% / 0.05);
+}
+
+.slide.nila .attempt-group > strong {
+  color: hsl(var(--group-hue) 88% 80%);
+  font: 850 clamp(8px, 0.75vw, 11px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.slide.nila .attempt-dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: clamp(5px, 0.55vw, 8px);
+}
+
+.slide.nila .attempt-dots i {
+  width: clamp(12px, 1.15vw, 17px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-style: normal;
+}
+
+.slide.nila .attempt-dots .attempt-original {
+  background: var(--amber);
+  box-shadow: 0 0 12px rgba(255, 209, 102, 0.42);
+}
+
+.slide.nila .attempt-dots .attempt-neighbour {
+  background: hsl(var(--group-hue) 82% 68%);
+  box-shadow: 0 0 9px hsl(var(--group-hue) 80% 60% / 0.38);
+}
+
+.slide.nila .attempt-group.attempt-failed {
+  --group-hue: 353;
+  border-style: dashed;
+  border-color: rgba(255, 92, 112, 0.75);
+  background: rgba(255, 92, 112, 0.07);
+}
+
+.slide.nila .attempt-dots .attempt-spare {
+  border: 2px solid var(--cyan);
+  background: rgba(88, 230, 255, 0.1);
+}
+
+.slide.nila .attempt-dots .attempt-missing {
+  color: var(--red);
+  border: 1px dashed rgba(255, 92, 112, 0.68);
+  background: rgba(255, 92, 112, 0.06);
+  font: 900 10px/1 ui-monospace, monospace;
+}
+
+.slide.nila .attempt-failed small {
+  align-self: end;
+  grid-column: 1 / -1;
+  color: #ffc0c8;
+  font-size: clamp(8px, 0.7vw, 10px);
+  text-align: center;
+}
+
+.slide.nila .attempt-legend {
+  justify-content: flex-start;
+  padding-top: 9px;
+  border-top: 1px solid rgba(88, 230, 255, 0.15);
+  color: var(--muted);
+  font: 750 clamp(8px, 0.72vw, 11px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.slide.nila .attempt-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.slide.nila .attempt-legend i {
+  width: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.slide.nila .attempt-original-key { background: var(--amber); }
+.slide.nila .attempt-neighbour-key { background: var(--cyan); }
+.slide.nila .attempt-missing-key { border: 1px dashed var(--red); }
+
+.slide.nila .attempt-reasoning {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 22px);
+}
+
+.slide.nila .attempt-kicker {
+  color: var(--amber);
+  font: 850 clamp(11px, 1vw, 14px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.slide.nila .attempt-reasoning h2 {
+  max-width: 620px;
+  font-size: clamp(32px, 3.7vw, 58px);
+}
+
+.slide.nila .attempt-math {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 7px;
+}
+
+.slide.nila .attempt-math span {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 7px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  color: var(--muted);
+  background: var(--panel);
+  font-size: clamp(9px, 0.82vw, 12px);
+  text-align: center;
+}
+
+.slide.nila .attempt-math strong {
+  color: var(--cyan);
+  font-size: clamp(23px, 2.6vw, 38px);
+}
+
+.slide.nila .attempt-math b {
+  align-self: center;
+  color: var(--muted);
+  font-size: 22px;
+}
+
+.slide.nila .attempt-verdict {
+  display: grid;
+  gap: 6px;
+  padding: 17px 19px;
+  border: 1px solid rgba(255, 92, 112, 0.52);
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(255, 92, 112, 0.13), rgba(255, 92, 112, 0.035));
+}
+
+.slide.nila .attempt-verdict span {
+  color: var(--muted);
+  font: 800 clamp(12px, 1.1vw, 16px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.slide.nila .attempt-verdict strong {
+  color: var(--red);
+  font-size: clamp(22px, 2.25vw, 34px);
+}
+
+.slide.nila .attempt-verdict small {
+  color: #ffd5da;
+  font-size: clamp(12px, 1.05vw, 15px);
+}
+
+.slide.nila.active .attempt-group {
+  animation: slideContentFadeIn 760ms calc(330ms + var(--attempt-index) * 55ms) cubic-bezier(.2, .75, .2, 1) both;
+}
+
 .slide.nila .packing-stage {
   width: min(1160px, 96vw);
         display: grid;
@@ -1369,41 +1645,157 @@
 
 .slide.nila .packing-box {
   height: min(62vh, 590px);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(5, 18, 30, 0.58);
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        gap: 10px;
-        padding: 18px;
-        box-shadow: var(--shadow);
+  border: 1px solid rgba(88, 230, 255, 0.28);
+  border-radius: calc(var(--radius) + 4px);
+  background:
+    linear-gradient(rgba(88, 230, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 230, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, rgba(88, 230, 255, 0.1), transparent 66%),
+    rgba(4, 15, 27, 0.86);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  padding: 15px 17px 13px;
+  box-shadow: var(--shadow), inset 0 0 45px rgba(88, 230, 255, 0.035);
+  overflow: hidden;
 }
 
-.slide.nila .sphere {
+.slide.nila .packing-box-head,
+.slide.nila .packing-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.slide.nila .packing-box-head {
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(88, 230, 255, 0.14);
+  color: var(--muted);
+  font: 850 clamp(11px, 1vw, 14px)/1.1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.slide.nila .packing-box-head strong {
+  color: var(--cyan);
+  font-size: 1.2em;
+  letter-spacing: 0;
+}
+
+.slide.nila .packing-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.slide.nila .message-bubble {
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  place-self: center;
+  height: 100%;
   border-radius: 50%;
-        border: 2px solid rgba(88, 230, 255, 0.62);
-        background: radial-gradient(
-          circle,
-          rgba(88, 230, 255, 0.2),
-          rgba(88, 230, 255, 0.04) 64%,
-          transparent 66%
-        );
-        display: grid;
-        place-items: center;
-        font-weight: 950;
-        color: #dffaff;
-        min-width: 0;
+  border: 1px solid rgba(88, 230, 255, 0.44);
+  background:
+    radial-gradient(circle at center, rgba(255, 209, 102, 0.1) 0 15%, transparent 16%),
+    radial-gradient(circle, rgba(88, 230, 255, 0.1), rgba(88, 230, 255, 0.025) 66%, transparent 68%);
+  box-shadow: inset 0 0 18px rgba(88, 230, 255, 0.08);
+  position: relative;
 }
 
-.slide.nila .sphere:nth-child(3n) {
-  border-color: rgba(181, 140, 255, 0.68);
-        background: radial-gradient(
-          circle,
-          rgba(181, 140, 255, 0.19),
-          rgba(181, 140, 255, 0.04) 64%,
-          transparent 66%
-        );
+.slide.nila .message-bubble:nth-child(4n + 2),
+.slide.nila .message-bubble:nth-child(4n + 3) {
+  border-color: rgba(181, 140, 255, 0.46);
+  background:
+    radial-gradient(circle at center, rgba(255, 209, 102, 0.1) 0 15%, transparent 16%),
+    radial-gradient(circle, rgba(181, 140, 255, 0.1), rgba(181, 140, 255, 0.025) 66%, transparent 68%);
+}
+
+.slide.nila .bubble-words,
+.slide.nila .bubble-words i {
+  position: absolute;
+}
+
+.slide.nila .bubble-words {
+  inset: 0;
+}
+
+.slide.nila .bubble-words i {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  font-style: normal;
+}
+
+.slide.nila .bubble-words .original-word {
+  left: 50%;
+  top: 50%;
+  width: clamp(17px, 1.55vw, 23px);
+  aspect-ratio: 1;
+  z-index: 2;
+  color: #1c1605;
+  background: var(--amber);
+  box-shadow: 0 0 15px rgba(255, 209, 102, 0.48);
+  font: 950 clamp(7px, 0.58vw, 9px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.slide.nila .bubble-words .neighbour-word {
+  width: clamp(5px, 0.55vw, 8px);
+  aspect-ratio: 1;
+  background: var(--cyan);
+  box-shadow: 0 0 7px rgba(88, 230, 255, 0.52);
+}
+
+.slide.nila .bubble-words .neighbour-word:nth-of-type(2) { left: 50%; top: 17%; }
+.slide.nila .bubble-words .neighbour-word:nth-of-type(3) { left: 25%; top: 31%; }
+.slide.nila .bubble-words .neighbour-word:nth-of-type(4) { left: 75%; top: 31%; }
+.slide.nila .bubble-words .neighbour-word:nth-of-type(5) { left: 17%; top: 58%; }
+.slide.nila .bubble-words .neighbour-word:nth-of-type(6) { left: 83%; top: 58%; }
+.slide.nila .bubble-words .neighbour-word:nth-of-type(7) { left: 34%; top: 80%; }
+.slide.nila .bubble-words .neighbour-word:nth-of-type(8) { left: 66%; top: 80%; }
+
+.slide.nila .packing-legend {
+  padding-top: 8px;
+  border-top: 1px solid rgba(88, 230, 255, 0.14);
+  color: var(--muted);
+  font: 750 clamp(9px, 0.8vw, 12px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.slide.nila .packing-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.slide.nila .packing-legend i {
+  width: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.slide.nila .packing-legend .legend-original {
+  background: var(--amber);
+  box-shadow: 0 0 8px rgba(255, 209, 102, 0.42);
+}
+
+.slide.nila .packing-legend .legend-neighbour {
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(88, 230, 255, 0.42);
+}
+
+.slide.nila .packing-legend strong {
+  margin-left: auto;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.slide.nila.active .message-bubble {
+  animation: slideContentFadeIn 720ms calc(300ms + var(--bubble-index) * 34ms) cubic-bezier(.2, .75, .2, 1) both;
 }
 
 .slide.nila .bound-panel {
@@ -1448,6 +1840,119 @@
         align-items: center;
 }
 
+.slide.nila .position-map-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.slide.nila .placement-side {
+  min-height: 370px;
+  position: relative;
+}
+
+.slide.nila .placement-side > .placement-details {
+  position: absolute;
+  inset: 0;
+}
+
+.slide.nila .placement-discovery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: clamp(22px, 2.7vw, 38px);
+  border: 1px solid rgba(88, 230, 255, 0.25);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 82% 15%, rgba(181, 140, 255, 0.13), transparent 36%),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.slide.nila .placement-discovery > span {
+  color: var(--cyan);
+  font: 850 clamp(10px, 0.9vw, 13px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.slide.nila .placement-discovery h2 {
+  max-width: 15ch;
+  font-size: clamp(27px, 3vw, 44px);
+}
+
+.slide.nila .placement-discovery p {
+  color: var(--muted);
+  font-size: clamp(14px, 1.35vw, 19px);
+  line-height: 1.4;
+}
+
+.slide.nila .placement-discovery p strong {
+  color: var(--amber);
+}
+
+.slide.nila .signature-equation {
+  color: var(--amber);
+  font: 950 clamp(42px, 5vw, 72px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.slide.nila .signature-equation sup {
+  font-size: 0.52em;
+}
+
+.slide.nila .signature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.slide.nila .signature-grid i {
+  padding: 9px 7px;
+  border: 1px solid rgba(88, 230, 255, 0.28);
+  border-radius: 10px;
+  color: var(--cyan);
+  background: rgba(88, 230, 255, 0.06);
+  font: 850 clamp(13px, 1.25vw, 18px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-style: normal;
+  text-align: center;
+}
+
+.slide.nila .signature-grid i.quiet {
+  color: var(--muted);
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.slide.nila .signature-anchors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.slide.nila .signature-anchors b {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 8px;
+  border: 1px solid rgba(255, 209, 102, 0.32);
+  border-radius: 13px;
+  background: rgba(255, 209, 102, 0.07);
+  text-align: center;
+}
+
+.slide.nila .signature-anchors code {
+  color: var(--amber);
+  font-size: clamp(20px, 2vw, 30px);
+}
+
+.slide.nila .signature-anchors small {
+  color: var(--muted);
+  font-size: clamp(8px, 0.72vw, 10px);
+}
+
 .slide.nila .position-map {
   display: grid;
         grid-template-columns: repeat(7, 1fr);
@@ -1483,7 +1988,7 @@
 }
 
 .slide.nila .position-cell strong {
-  font-size: clamp(24px, 2.8vw, 44px);
+  font-size: clamp(20px, 2.3vw, 36px);
 }
 
 .slide.nila .position-cell small {
@@ -1491,6 +1996,12 @@
         letter-spacing: 0.08em;
         color: var(--muted);
         font-weight: 900;
+}
+
+.slide.nila .position-slot {
+  color: var(--muted);
+  font: 750 clamp(8px, 0.72vw, 10px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
 }
 
 .slide.nila .position-cell::after {
@@ -1501,10 +2012,48 @@
         color: rgba(255, 255, 255, 0.55);
 }
 
+.slide.nila .position-order-caption {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  padding: 14px 17px;
+  border: 1px solid rgba(88, 230, 255, 0.24);
+  border-radius: 15px;
+  color: #dffaff;
+  background: rgba(7, 25, 39, 0.66);
+  font-size: clamp(13px, 1.2vw, 17px);
+  line-height: 1.35;
+}
+
+.slide.nila .position-order-caption strong {
+  margin-inline: 0.35em;
+  color: var(--amber);
+}
+
 .slide.nila .inspectors {
   display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 14px;
+}
+
+.slide.nila .placement-details {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 760ms ease,
+    transform 760ms cubic-bezier(.2, .8, .2, 1),
+    visibility 0s linear 0s;
+}
+
+.slide.nila .placement-details.step-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease,
+    visibility 0s linear 520ms;
 }
 
 .slide.nila .inspector {
@@ -1936,6 +2485,245 @@
   font-size: clamp(12px, 1.2vw, 18px);
         color: var(--muted);
         line-height: 1.25;
+}
+
+.slide.nila .hamming-text-game {
+  width: min(1220px, 96vw);
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(150px, 1fr) auto;
+  gap: clamp(9px, 1.3vh, 15px);
+}
+
+.slide.nila .hamming-game-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.slide.nila .hamming-game-title > div > span {
+  color: var(--cyan);
+  font: 850 clamp(9px, 0.8vw, 12px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em;
+}
+
+.slide.nila .hamming-game-title h2 {
+  max-width: none;
+  margin-top: 6px;
+  font-size: clamp(25px, 3vw, 44px);
+}
+
+.slide.nila .hamming-game-title h2 em {
+  color: var(--amber);
+  font-style: normal;
+}
+
+.slide.nila .hamming-noise-control {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(90px, 12vw) auto;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 92, 112, 0.5);
+  border-radius: 999px;
+  color: var(--red);
+  background: rgba(255, 92, 112, 0.09);
+  font: 850 clamp(10px, 0.9vw, 13px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.slide.nila .hamming-noise-control input {
+  width: 100%;
+  accent-color: var(--red);
+  cursor: pointer;
+}
+
+.slide.nila .hamming-noise-control input:disabled {
+  cursor: wait;
+  opacity: 0.5;
+}
+
+.slide.nila .hamming-noise-control output {
+  min-width: 3ch;
+  color: #ffd9de;
+  text-align: right;
+}
+
+.slide.nila .hamming-text-compare {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.slide.nila .hamming-text-pane {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 7px;
+  overflow: hidden;
+}
+
+.slide.nila .hamming-text-pane > span {
+  color: var(--muted);
+  font: 800 clamp(9px, 0.78vw, 11px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.slide.nila .hamming-text-pane textarea,
+.slide.nila .hamming-text-pane pre,
+.slide.nila .hamming-text-pane iframe {
+  width: 100%;
+  min-height: 0;
+  max-height: 100%;
+  height: 100%;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(4, 15, 27, 0.86);
+}
+
+.slide.nila .hamming-text-pane textarea,
+.slide.nila .hamming-text-pane pre {
+  padding: 13px 15px;
+  overflow: auto;
+  color: #dffaff;
+  font: 650 clamp(10px, 0.82vw, 12px)/1.48 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+  resize: none;
+}
+
+.slide.nila .hamming-text-pane iframe {
+  background: #fff;
+}
+
+.slide.nila .hamming-game-console {
+  display: grid;
+  grid-template-columns: minmax(460px, 1.2fr) minmax(350px, 0.8fr);
+  grid-template-areas:
+    "actions metrics"
+    "progress metrics"
+    "status sample";
+  gap: 7px 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.slide.nila .hamming-actions {
+  grid-area: actions;
+  display: flex;
+  gap: 7px;
+}
+
+.slide.nila .hamming-actions .action {
+  min-width: 0;
+  flex: 1;
+  padding: 8px 10px;
+  font-size: clamp(9px, 0.78vw, 12px);
+  white-space: nowrap;
+}
+
+.slide.nila .hamming-actions button:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.slide.nila .hamming-progress {
+  grid-area: progress;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.slide.nila .hamming-progress i {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+  box-shadow: 0 0 12px rgba(88, 230, 255, 0.42);
+  transition: width 180ms ease;
+}
+
+.slide.nila .hamming-status {
+  grid-area: status;
+  min-height: 1.25em;
+  color: #dffaff;
+  font-size: clamp(10px, 0.85vw, 12px);
+}
+
+.slide.nila .hamming-metrics {
+  grid-area: metrics;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.slide.nila .hamming-metrics span {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 7px 9px;
+  border: 1px solid rgba(88, 230, 255, 0.15);
+  border-radius: 10px;
+  color: var(--muted);
+  background: rgba(88, 230, 255, 0.035);
+  font: 750 clamp(8px, 0.68vw, 10px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  text-transform: uppercase;
+}
+
+.slide.nila .hamming-metrics strong {
+  overflow: hidden;
+  color: var(--green);
+  font-size: clamp(11px, 0.95vw, 14px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.slide.nila .hamming-bit-sample {
+  grid-area: sample;
+  max-height: 41px;
+  display: grid;
+  grid-template-columns: 7ch auto 7ch auto 7ch;
+  align-content: start;
+  justify-content: end;
+  gap: 2px 6px;
+  overflow: hidden;
+  color: var(--muted);
+  font: 750 clamp(8px, 0.67vw, 10px)/1.25 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.slide.nila .hamming-bit-sample span,
+.slide.nila .hamming-bit-sample em {
+  font-style: normal;
+  text-align: center;
+}
+
+.slide.nila .hamming-bit-sample b {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.slide.nila .hamming-bit-sample .damaged-bits { color: var(--red); }
+.slide.nila .hamming-bit-sample .fixed-bits { color: var(--green); }
+
+.slide.nila .hamming-text-game.is-busy .hamming-progress i {
+  background: linear-gradient(90deg, var(--violet), var(--cyan), var(--violet));
+  background-size: 200% 100%;
+  animation: hammingProgressPulse 1.2s linear infinite;
+}
+
+@keyframes hammingProgressPulse {
+  to { background-position: -200% 0; }
 }
 
 .slide.nila .final-console {
@@ -2378,6 +3166,7 @@
 @media (max-width: 900px) {
 .slide.nila {
   --slide-pad: 24px;
+  overflow-y: auto;
 }
 
 .slide.nila .hero-grid,
@@ -2388,11 +3177,35 @@
 .slide.nila .repeat-lab,
 .slide.nila .parity-layout,
 .slide.nila .distance-stage,
+.slide.nila .capacity-attempt-stage,
 .slide.nila .packing-stage,
 .slide.nila .inspector-stage,
+.slide.nila .hamming-text-compare,
+.slide.nila .hamming-game-console,
 .slide.nila .reveal-stage,
 .slide.nila .secded-stage {
   grid-template-columns: 1fr;
+}
+
+.slide.nila .capacity-attempt-stage {
+  gap: 18px;
+}
+
+.slide.nila .attempt-board {
+  height: min(52vh, 430px);
+}
+
+.slide.nila .hamming-game-console {
+  grid-template-areas:
+    "actions"
+    "progress"
+    "status"
+    "metrics"
+    "sample";
+}
+
+.slide.nila .hamming-bit-sample {
+  justify-content: start;
 }
 
 .slide.nila .hero-copy {

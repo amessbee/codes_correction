@@ -531,6 +531,7 @@
 
 <section
         data-chapter="The constraints"
+        data-hidden-by-default="true"
         data-notes="Make the constraints feel physical. Give twelve students or twelve tokens as the battery budget. Remove one token for every transmitted light. Radiation or detector noise can change a green reading to red or red to green. For the first half of the session assume at most one such flip. Do not introduce formal coding vocabulary yet. The students should feel the problem before they receive names for the tools." class="slide nila" data-title="The constraints" data-time="3 min">
         <header class="slide-head">
           <div class="eyebrow">Mission constraints</div>
@@ -670,6 +671,7 @@
 
 <section
         data-chapter="Human card game"
+        data-hidden-by-default="true"
         data-notes="Physical setup: Choose four volunteers. Give each a double-sided red/green card. They stand left-to-right in positions 8, 4, 2, 1. The displayed cards can also be clicked for a digital version. Round structure: One team draws a mission card.; They silently arrange the four volunteers.; Another team reads the pattern and identifies the message.; Swap teams quickly.; The place-value labels allow a secondary route: messages 0–15 can be treated as numbers, but students do not need binary arithmetic to play. The print button creates sixteen cut-out message cards plus red/green bit cards in a new window." class="slide nila" data-title="Human card game" data-time="8 min">
         <header class="slide-head">
           <div class="eyebrow">Card game · Human transmitter</div>
@@ -822,7 +824,7 @@
                 type="range"
                 min="1"
                 max="8"
-                value="4"
+                value="3"
                 aria-label="Number of lights"
               />
               <div class="range-labels">
@@ -830,14 +832,14 @@
                 ><span>5</span><span>6</span><span>7</span><span>8</span>
               </div>
               <div class="capacity-result" id="nila-capacityResult">
-                16 <span>patterns</span>
+                8 <span>patterns</span>
               </div>
               <div
                 class="capacity-verdict"
                 id="nila-capacityVerdict"
-                style="color: var(--green)"
+                style="color: var(--red)"
               >
-                Enough for 16 ✓
+                Not enough for 16
               </div>
             </div>
           </div>
@@ -866,6 +868,7 @@
 
 <section
         data-chapter="Play the codebook"
+        data-hidden-by-default="true"
         data-notes="Use this after one or two physical rounds. A random mission card appears. Students tell you which four lights should be green; click the lights and check. After a correct encoding, click “Radiation!” It flips one random light. Ask the receiving team to decode the corrupted pattern using the codebook. Every four-bit pattern is a valid message now, so a flipped light always produces a different valid report — never an obvious error. Keep one such ambiguous example for the next slide." class="slide nila" data-title="Play the codebook" data-time="8 min">
         <header class="slide-head">
           <div class="eyebrow">Card game · Round two</div>
@@ -919,6 +922,7 @@
 
 <section
         data-chapter="Decode the opening"
+        data-hidden-by-default="true"
         data-notes="Return to 1011. Let a student find it in the codebook. Make the consequence theatrical: Mission Control starts preparing a shelter command or abandonment procedure. Then announce a diagnostic alert: LUMEN detected a radiation spike during the 90-second link. One colour may have been misread. Ask students to compare 1011 with nearby valid messages. The most important comparison is 1010."
         class="slide nila"
         data-title="Decode the opening"
@@ -1039,7 +1043,7 @@
 
 <section
         data-chapter="Invent protection"
-        data-notes="Give groups a few minutes to invent any protection scheme. Each group must state: what it sends, how Earth detects damage, whether Earth can repair it, and how many flashes it costs. Collect proposals without judging immediately. Common ideas: repeat, majority vote, checksum/parity, reserve gaps, send position labels, use brighter or longer flashes. Use the three large cards as buckets for their ideas. The rest of the story tests them." class="slide nila" data-title="Invent protection" data-time="6 min">
+        data-notes="Give groups a few minutes to invent any protection scheme. Each group must state: what it sends, how Earth detects damage, whether Earth can repair it, and how many flashes it costs. Collect proposals without judging immediately. Common ideas: checksum/parity, repeat, majority vote, reserve gaps, send position labels, use brighter or longer flashes. Use the three large cards as buckets for their ideas. The rest of the story tests them." class="slide nila" data-title="Invent protection" data-time="6 min">
         <header class="slide-head">
           <div class="eyebrow">Engineering huddle</div>
           <div class="mission-time">You have 4 minutes</div>
@@ -1047,14 +1051,14 @@
         <div class="slide-body">
           <div class="idea-arena">
             <article class="idea-card">
-              <div class="idea-art">🔁</div>
-              <h3>Repeat the whole message</h3>
-              <div class="cost-tag">Cost: <strong>8–12 flashes</strong></div>
-            </article>
-            <article class="idea-card">
               <div class="idea-art">🐕</div>
               <h3>Add a watchdog light</h3>
               <div class="cost-tag">Cost: <strong>1 extra flash</strong></div>
+            </article>
+            <article class="idea-card">
+              <div class="idea-art">🔁</div>
+              <h3>Repeat the whole message</h3>
+              <div class="cost-tag">Cost: <strong>8–12 flashes</strong></div>
             </article>
             <article class="idea-card">
               <div class="idea-art">🏝️</div>
@@ -1076,8 +1080,8 @@
             Earth can repair it, and how many flashes it costs.
           </p>
           <p>
-            Collect proposals without judging immediately. Common ideas: repeat,
-            majority vote, checksum/parity, reserve gaps, send position labels,
+            Collect proposals without judging immediately. Common ideas:
+            checksum/parity, repeat, majority vote, reserve gaps, send position labels,
             use brighter or longer flashes.
           </p>
           <p>
@@ -1091,14 +1095,14 @@
         data-chapter="Repetition"
         data-notes="Two copies can reveal disagreement but cannot tell which copy is correct. Three copies allow a majority vote if at most one transmitted light among the three copies of each position is wrong. Repeating the four-bit report three times costs twelve flashes, beyond the mission budget of eight. Introduce redundancy: deliberate extra information used for reliability. The research question is not whether to use redundancy, but how efficiently." class="slide nila" data-title="Repetition" data-time="5 min">
         <header class="slide-head">
-          <div class="eyebrow">Idea 1 · Repetition</div>
+          <div class="eyebrow">Idea 2 · Repetition</div>
           <div class="mission-time">Simple, reliable, expensive</div>
         </header>
         <div class="slide-body">
           <div class="repeat-lab">
             <div class="repeat-visual">
               <div class="repeat-row">
-                <label>Copy 1</label><span class="mini-bit one"></span
+                <label>original message</label><span class="mini-bit one"></span
                 ><span class="mini-bit"></span><span class="mini-bit one"></span
                 ><span class="mini-bit"></span>
               </div>
@@ -1112,11 +1116,11 @@
                 ><span class="mini-bit"></span><span class="mini-bit one"></span
                 ><span class="mini-bit"></span>
               </div>
-              <div class="equation-strip">
+              <div class="equation-strip repetition-step step-hidden" id="repetitionMajority" aria-hidden="true">
                 majority → <span class="accent">1010</span>
               </div>
             </div>
-            <div class="battery-panel">
+            <div class="battery-panel repetition-step step-hidden" id="repetitionBudget" aria-hidden="true">
               <div class="micro">Battery budget</div>
               <div class="flash-count">12 flashes</div>
               <div class="battery">
@@ -1155,7 +1159,7 @@
         data-chapter="Parity watchdog"
         data-notes="Start from a four-bit message. Add one parity light so the total number of greens is even — five flashes in all. Let students toggle the lights and keep the watchdog satisfied. Flip any single light. The total parity changes from even to odd, so Earth detects an error. Then ask which light was wrong. One parity check cannot identify the location. Suggested joke: “The watchdog knows somebody entered the house, but cannot tell which window.” Vocabulary: error detection is not the same as error correction ." class="slide nila" data-title="Parity watchdog" data-time="7 min">
         <header class="slide-head">
-          <div class="eyebrow">Idea 2 · The watchdog</div>
+          <div class="eyebrow">Idea 1 · The watchdog</div>
           <div class="mission-time">Even parity</div>
         </header>
         <div class="slide-body">
@@ -1328,6 +1332,128 @@
       </section>
 
 <section
+        data-chapter="Try five flashes"
+        data-notes="Make this an intentionally generous attempt. Five flashes create only 32 possible received strings. Correcting one error means each legal message needs its untouched word plus five distinct one-flip outcomes: six exclusive slots. Pretend, optimistically, that these neighborhoods pack with no accidental overlap. Five complete neighborhoods already use 30 slots, leaving only two for the sixth message. We need sixteen messages, so five flashes cannot possibly work. Emphasize that this is not a failed construction—it is a best-case impossibility argument."
+        class="slide nila"
+        data-title="Try five flashes"
+        data-time="4 min"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Honest attempt 1 · Five flashes</div>
+          <div class="mission-time">32 possible received strings</div>
+        </header>
+        <div class="slide-body">
+          <div class="capacity-attempt-stage">
+            <div class="attempt-board">
+              <div class="attempt-board-head">
+                <span>Best-case packing attempt</span><strong>32 slots</strong>
+              </div>
+              <div class="attempt-groups" id="nila-fiveAttempt" aria-label="Five complete six-slot neighborhoods, two leftover slots, and an incomplete sixth neighborhood"></div>
+              <div class="attempt-legend">
+                <span><i class="attempt-original-key"></i> message</span>
+                <span><i class="attempt-neighbour-key"></i> one-flip result</span>
+                <span><i class="attempt-missing-key"></i> missing slot</span>
+              </div>
+            </div>
+            <div class="attempt-reasoning">
+              <div class="attempt-kicker">Be unrealistically generous</div>
+              <h2>Assume every neighborhood packs perfectly.</h2>
+              <div class="attempt-math">
+                <span><strong>1</strong> original</span>
+                <b>+</b>
+                <span><strong>5</strong> possible flips</span>
+                <b>=</b>
+                <span><strong>6</strong> slots per message</span>
+              </div>
+              <div class="attempt-verdict">
+                <span>32 ÷ 6</span><strong>At most 5 protected messages</strong>
+                <small>We need 16. The sixth message already spills over.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Can rearranging the bubbles create more space?</span
+          ><span>No—every message still needs six exclusive outcomes</span>
+        </footer>
+        <aside class="notes">
+          <p>
+            Treat this as a genuine attempt, but grant it every advantage: assume
+            the first neighborhoods never overlap accidentally.
+          </p>
+          <p>
+            Each protected five-bit message needs six received strings: the
+            original and the five strings reached by one flip. Five such groups
+            use 30 of the 32 strings. Only two remain, but message six needs six.
+          </p>
+          <p>
+            Therefore five flashes cannot protect sixteen reports, regardless
+            of how cleverly the legal messages are chosen.
+          </p>
+        </aside>
+      </section>
+
+<section
+        data-chapter="Try six flashes"
+        data-notes="Now give six flashes the same optimistic treatment. There are 64 possible received strings. Each legal message needs itself plus six distinct one-flip outcomes: seven exclusive slots. Even if nine neighborhoods pack perfectly, they consume 63 strings and leave only one. The tenth message already fails, and the mission needs sixteen. This visual should make 16×7 greater than 64 feel inevitable before presenting the formal bound."
+        class="slide nila"
+        data-title="Try six flashes"
+        data-time="4 min"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Honest attempt 2 · Six flashes</div>
+          <div class="mission-time">64 possible received strings</div>
+        </header>
+        <div class="slide-body">
+          <div class="capacity-attempt-stage">
+            <div class="attempt-board six-attempt-board">
+              <div class="attempt-board-head">
+                <span>Best-case packing attempt</span><strong>64 slots</strong>
+              </div>
+              <div class="attempt-groups" id="nila-sixAttempt" aria-label="Nine complete seven-slot neighborhoods, one leftover slot, and an incomplete tenth neighborhood"></div>
+              <div class="attempt-legend">
+                <span><i class="attempt-original-key"></i> message</span>
+                <span><i class="attempt-neighbour-key"></i> one-flip result</span>
+                <span><i class="attempt-missing-key"></i> missing slot</span>
+              </div>
+            </div>
+            <div class="attempt-reasoning">
+              <div class="attempt-kicker">Try again with twice the space</div>
+              <h2>Six flashes still run out far too early.</h2>
+              <div class="attempt-math">
+                <span><strong>1</strong> original</span>
+                <b>+</b>
+                <span><strong>6</strong> possible flips</span>
+                <b>=</b>
+                <span><strong>7</strong> slots per message</span>
+              </div>
+              <div class="attempt-verdict">
+                <span>64 ÷ 7</span><strong>At most 9 protected messages</strong>
+                <small>We need 16. The tenth message has only one slot left.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">What changes when we allow seven flashes?</span
+          ><span>One more flash doubles the universe to 128</span>
+        </footer>
+        <aside class="notes">
+          <p>
+            Again assume a perfect best case: every complete neighborhood is
+            disjoint and wastes no received string.
+          </p>
+          <p>
+            Each six-bit message needs seven exclusive outcomes. Nine groups use
+            63 of the 64 strings. The tenth group cannot fit, let alone all sixteen.
+          </p>
+          <p>
+            Now students are ready for the compact inequality on the next slide.
+          </p>
+        </aside>
+      </section>
+
+<section
         data-chapter="Sphere packing"
         data-notes="Group exercise: For length n, a word plus all words one flip away has size n+1. Sixteen correctable messages need sixteen disjoint balls, inside 2ⁿ total strings. n = 6: 16×7 = 112 &gt; 64, so impossible.; n = 7: 16×8 = 128 = 128 — an exact fit with nothing wasted.; The Hamming(7,4) code we build next meets this bound with equality: a perfect code. Emphasize the research lesson: a lower bound says what cannot work; here it is tight. Determining the largest code with given length and distance is written A₂(n,d). Extension: model all n-bit words as graph vertices, join pairs at distance 1 or 2, and seek a largest independent set." class="slide nila" data-title="Sphere packing" data-time="8 min">
         <header class="slide-head">
@@ -1338,8 +1464,20 @@
           <div class="packing-stage">
             <div
               class="packing-box"
-              aria-label="Sixteen non-overlapping message bubbles"
-            ></div>
+              role="img"
+              aria-label="All 128 seven-bit strings partitioned into sixteen non-overlapping neighborhoods. Each neighborhood contains one original message and its seven one-bit-flip neighbors."
+            >
+              <div class="packing-box-head">
+                <span>Universe of 7-bit strings</span>
+                <strong>2<sup>7</sup> = 128</strong>
+              </div>
+              <div class="packing-grid" id="nila-packingGrid" aria-hidden="true"></div>
+              <div class="packing-legend" aria-hidden="true">
+                <span><i class="legend-original"></i> original</span>
+                <span><i class="legend-neighbour"></i> one-flip neighbour</span>
+                <strong>16 perfect neighborhoods</strong>
+              </div>
+            </div>
             <div class="bound-panel">
               <h2>Each protected message occupies:</h2>
               <div class="bound-equation">
@@ -1383,26 +1521,47 @@
 
 <section
         data-chapter="Three inspectors"
-        data-notes="Place check lights in positions 1, 2, and 4. Data occupies 3, 5, 6, 7. Each position number has a unique binary description, which tells which inspectors watch it. Inspector 1 watches the odd positions 1,3,5,7.; Inspector 2 watches 2,3,6,7.; Inspector 4 watches 4,5,6,7.; Each inspector enforces even parity on its group. A damaged position triggers exactly the inspectors whose labels add to that position number. For younger groups, treat this as a detective game. For older groups, connect the pattern to binary place values." class="slide nila" data-title="Three inspectors" data-time="8 min">
+        data-notes="Begin with the obvious arrangement: four data lights followed by three check lights. Ask whether merely appending the checks gives each damaged position a unique alarm signature. Advance once to count the eight three-inspector yes/no patterns and reserve 000 for no error. Advance again to isolate 001, 010, and 100—the signatures belonging to exactly one inspector—and ask students to predict where P1, P2, and P4 should move. Only on the third advance reveal check positions 1, 2, and 4; data then occupies 3, 5, 6, 7. Inspector 1 watches 1,3,5,7.; Inspector 2 watches 2,3,6,7.; Inspector 4 watches 4,5,6,7." class="slide nila" data-title="Three inspectors" data-time="8 min">
         <header class="slide-head">
           <div class="eyebrow">A seven-flash repair code</div>
           <div class="mission-time">3 inspectors · 4 data lights</div>
         </header>
         <div class="slide-body">
           <div class="inspector-stage">
-            <div class="position-map" id="nila-positionMap"></div>
-            <div class="inspectors" id="nila-inspectorCards"></div>
+            <div class="position-map-panel">
+              <div class="position-map" id="nila-positionMap"></div>
+              <div class="position-order-caption" id="nila-positionCaption">
+                First attempt: keep the four data lights together and append all three checks.
+              </div>
+            </div>
+            <div class="placement-side">
+              <div class="placement-discovery placement-details" id="nila-placementDiscovery" aria-hidden="false">
+                <span>Design requirement</span>
+                <h2>Every damaged position needs its own alarm pattern.</h2>
+                <p>Three inspectors each answer yes or no. How many different patterns can they report?</p>
+              </div>
+              <div class="inspectors placement-details step-hidden" id="nila-inspectorCards" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">Why powers of two: 1, 2, 4?</span
-          ><span>Every position gets a unique inspector signature</span>
+          <span class="prompt" id="nila-inspectorPrompt">Do three checks help just because we appended them?</span
+          ><span id="nila-inspectorFooterHint">Next: find positions that give every light a distinct signature</span>
         </footer>
         <aside class="notes">
           <p>
-            Place check lights in positions 1, 2, and 4. Data occupies 3, 5, 6,
-            7. Each position number has a unique binary description, which tells
-            which inspectors watch it.
+            Start with the natural first draft: D1, D2, D3, D4, then P1, P2,
+            P4. Ask what makes those final three positions special. Nothing yet.
+          </p>
+          <p>
+            First count the eight possible three-inspector signatures. Reserve
+            000 for “no error,” leaving exactly seven signatures for seven
+            damaged positions. Then identify 001, 010, and 100 as the three
+            solo-inspector anchors.
+          </p>
+          <p>
+            Only after students predict the placement, relocate the checks to
+            positions 1, 2, and 4. Data occupies 3, 5, 6, 7.
           </p>
           <ul>
             <li>Inspector 1 watches the odd positions 1,3,5,7.</li>
@@ -1933,6 +2092,202 @@
       </section>
 
 <section
+        data-chapter="Recovery game"
+        data-notes="This is a real byte-by-byte Hamming(7,4) experiment. Let students edit the page of text, then press Encode. Every byte becomes two four-bit nibbles, and every nibble becomes a seven-bit Hamming codeword. Adjust the bit-flip percentage, then damage transmitted bits independently. Before repairing, ask for a prediction: how much of the text will survive? Hamming(7,4) guarantees repair only when a codeword receives at most one flip; as the rate rises, more seven-bit blocks receive multiple errors. Press Repair + compare to measure exact byte recovery."
+        class="slide nila"
+        data-title="Recovery game: text"
+        data-time="6 min"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Recovery game · Round 1</div>
+          <div class="mission-time">A page of editable text</div>
+        </header>
+        <div class="slide-body">
+          <div class="hamming-text-game" data-hamming-game data-source="text" data-stage="0">
+            <div class="hamming-game-title">
+              <div><span>LIVE PAYLOAD</span><h2>Can Hamming code rescue a damaged page?</h2></div>
+              <label class="hamming-noise-control">
+                <span>Random bit flips</span>
+                <input type="range" min="0" max="50" value="10" step="1" data-noise-rate aria-label="Random bit-flip percentage">
+                <output data-noise-output>10%</output>
+              </label>
+            </div>
+            <div class="hamming-text-compare">
+              <label class="hamming-text-pane">
+                <span>Original text · editable</span>
+                <textarea data-source-input spellcheck="false">NILA REPORT 47-B
+
+The drill reached a layer of unusually clear ice at 04:17. Beneath it, the spectrometer found a repeating chemical pattern. This is not proof of life, but it is exactly the kind of clue the mission came to investigate.
+
+Battery reserves are low. The next communication window lasts ninety seconds. Please confirm that this report arrived intact—and if it did not, let the mathematics repair what the radiation changed.</textarea>
+              </label>
+              <div class="hamming-text-pane">
+                <span>Recovered text</span>
+                <pre data-recovered-output>Recovered text will appear here.</pre>
+              </div>
+            </div>
+            <div class="hamming-game-console">
+              <div class="hamming-actions">
+                <button class="action" data-hamming-action="encode">1 · Encode (7,4)</button>
+                <button class="action warn" data-hamming-action="corrupt">2 · Flip 10%</button>
+                <button class="action primary" data-hamming-action="repair">3 · Repair + compare</button>
+                <button class="action ghost" data-hamming-action="reset">Reset</button>
+              </div>
+              <div class="hamming-progress"><i data-game-progress></i></div>
+              <div class="hamming-status" data-game-status aria-live="polite">Ready. Encode the source to begin.</div>
+              <div class="hamming-metrics">
+                <span>Source<strong data-metric="source">—</strong></span>
+                <span>Encoded<strong data-metric="encoded">—</strong></span>
+                <span>Flipped<strong data-metric="flips">—</strong></span>
+                <span>Recovered<strong data-metric="recovery">—</strong></span>
+              </div>
+              <div class="hamming-bit-sample" data-bit-sample><em>original</em><b>→</b><em>damaged</em><b>→</b><em>repaired</em></div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Predict the recovery percentage before decoding</span
+          ><span>Every result is computed from the actual transmitted bits</span>
+        </footer>
+        <aside class="notes">
+          <p>Edit the text if the group wants to send its own message.</p>
+          <p>
+            Compare several bit-flip rates and emphasize the difference between
+            a per-bit probability and the guarantee of at most one error per
+            seven-bit codeword.
+          </p>
+        </aside>
+      </section>
+
+<section
+        data-chapter="Recovery game"
+        data-notes="Round two uses a locally authored recreation inspired by CERN's first website. It is HTML, so damage can affect both visible words and structural markup. Encode the source, choose a bit-flip rate, apply fresh noise, and repair it. The right-hand browser preview renders the recovered HTML. Compare the exact-byte percentage with the visual result: a page may look plausible even when some bytes are wrong. This is a useful distinction between mathematical correctness and human-perceived usability."
+        class="slide nila"
+        data-title="Recovery game: webpage"
+        data-time="5 min"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Recovery game · Round 2</div>
+          <div class="mission-time">The first website · recreated</div>
+        </header>
+        <div class="slide-body">
+          <div class="hamming-text-game" data-hamming-game data-source="web" data-stage="0">
+            <div class="hamming-game-title">
+              <div><span>FAMOUS WEBPAGE</span><h2>Will damaged HTML still behave like a webpage?</h2></div>
+              <label class="hamming-noise-control">
+                <span>Random bit flips</span>
+                <input type="range" min="0" max="50" value="10" step="1" data-noise-rate aria-label="Random bit-flip percentage">
+                <output data-noise-output>10%</output>
+              </label>
+            </div>
+            <div class="hamming-text-compare webpage-compare">
+              <div class="hamming-text-pane">
+                <span>Original · a playful 1991-style recreation</span>
+                <iframe data-source-preview title="Original recreation of the first website" sandbox></iframe>
+              </div>
+              <div class="hamming-text-pane">
+                <span>Recovered webpage</span>
+                <iframe data-recovered-output title="Recovered webpage" sandbox></iframe>
+              </div>
+            </div>
+            <div class="hamming-game-console">
+              <div class="hamming-actions">
+                <button class="action" data-hamming-action="encode">1 · Encode HTML</button>
+                <button class="action warn" data-hamming-action="corrupt">2 · Flip 10%</button>
+                <button class="action primary" data-hamming-action="repair">3 · Repair + render</button>
+                <button class="action ghost" data-hamming-action="reset">Reset</button>
+              </div>
+              <div class="hamming-progress"><i data-game-progress></i></div>
+              <div class="hamming-status" data-game-status aria-live="polite">Ready. Encode the source to begin.</div>
+              <div class="hamming-metrics">
+                <span>HTML<strong data-metric="source">—</strong></span>
+                <span>Encoded<strong data-metric="encoded">—</strong></span>
+                <span>Flipped<strong data-metric="flips">—</strong></span>
+                <span>Recovered<strong data-metric="recovery">—</strong></span>
+              </div>
+              <div class="hamming-bit-sample" data-bit-sample><em>original</em><b>→</b><em>damaged</em><b>→</b><em>repaired</em></div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Can a page look right without being byte-perfect?</span
+          ><span>Source code is data too</span>
+        </footer>
+        <aside class="notes">
+          <p>
+            This reconstruction is intentionally simple and contains no active
+            scripts. The experiment encodes its complete HTML source.
+          </p>
+        </aside>
+      </section>
+
+<section
+        data-chapter="Recovery game"
+        data-notes="The final scale test processes the complete Project Gutenberg UTF-8 text of War and Peace by Leo Tolstoy, not an excerpt. The source file is 3,359,405 bytes. Encoding creates two Hamming codewords per byte and 47,031,670 transmitted bits. Choose a bit-flip rate, apply independent noise, then repair and compare every decoded byte with the original. Processing is chunked so the presentation remains responsive. Point out that the code is doing millions of small local repairs, but blocks with two or more errors remain outside its guarantee."
+        class="slide nila"
+        data-title="Recovery game: complete book"
+        data-time="6 min"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Recovery game · Final round</div>
+          <div class="mission-time">Complete public-domain book · 3.36 MB</div>
+        </header>
+        <div class="slide-body">
+          <div class="hamming-text-game" data-hamming-game data-source="book" data-stage="0">
+            <div class="hamming-game-title">
+              <div><span>PROJECT GUTENBERG EBOOK #2600</span><h2>Can we repair all of <em>War and Peace</em>?</h2></div>
+              <label class="hamming-noise-control">
+                <span>Random bit flips</span>
+                <input type="range" min="0" max="50" value="10" step="1" data-noise-rate aria-label="Random bit-flip percentage">
+                <output data-noise-output>10%</output>
+              </label>
+            </div>
+            <div class="hamming-text-compare book-compare">
+              <div class="hamming-text-pane">
+                <span>Original book · opening preview</span>
+                <pre data-source-preview>Loading book preview…</pre>
+              </div>
+              <div class="hamming-text-pane">
+                <span>Recovered book · opening preview</span>
+                <pre data-recovered-output>Recovered text will appear here.</pre>
+              </div>
+            </div>
+            <div class="hamming-game-console">
+              <div class="hamming-actions">
+                <button class="action" data-hamming-action="encode">1 · Encode complete book</button>
+                <button class="action warn" data-hamming-action="corrupt">2 · Flip 10%</button>
+                <button class="action primary" data-hamming-action="repair">3 · Repair + compare</button>
+                <button class="action ghost" data-hamming-action="reset">Reset</button>
+              </div>
+              <div class="hamming-progress"><i data-game-progress></i></div>
+              <div class="hamming-status" data-game-status aria-live="polite">Ready. Encode the source to begin.</div>
+              <div class="hamming-metrics">
+                <span>Book<strong data-metric="source">3.36 MB</strong></span>
+                <span>Encoded<strong data-metric="encoded">—</strong></span>
+                <span>Flipped<strong data-metric="flips">—</strong></span>
+                <span>Recovered<strong data-metric="recovery">—</strong></span>
+              </div>
+              <div class="hamming-bit-sample" data-bit-sample><em>original</em><b>→</b><em>damaged</em><b>→</b><em>repaired</em></div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Millions of repairs—what does the guarantee still miss?</span
+          ><span>Leo Tolstoy · <a class="slide-source-link" href="https://www.gutenberg.org/ebooks/2600" target="_blank" rel="noopener">Project Gutenberg #2600</a> · public domain in the USA</span>
+        </footer>
+        <aside class="notes">
+          <p>
+            The bundled UTF-8 source is the complete Project Gutenberg edition,
+            including its license header and footer.
+          </p>
+          <p>
+            Rerun the noise step to show statistical variation. The exact
+            recovery percentage changes, but the large sample makes it stable.
+          </p>
+        </aside>
+      </section>
+
+<section
         data-chapter="Final transmission"
         data-notes="Give teams paper. They should independently calculate all three checks, add complaining labels, flip the indicated bit, extract data positions, and consult the codebook. Checks 1, 2, and 4 all fail. Syndrome = 1+2+4 = 7. Flip position 7 to obtain 1110000. Data positions 3,5,6,7 give 1000. The decoded report is LIQUID WATER DETECTED . Only click “Repair + decode” after groups defend their complete chain of reasoning."
         class="slide nila"
@@ -2339,6 +2694,7 @@
 
   <script src="app.js" defer></script>
   <script src="nila-slides.js" defer></script>
+  <script src="hamming-text-game.js" defer></script>
   <script src="deck-controls.js" defer></script>
 </body>
 </html>

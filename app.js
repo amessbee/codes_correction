@@ -1,10 +1,22 @@
 (() => {
   "use strict";
 
+  const deckElement = document.getElementById("deck");
+  const repetitionSlide = deckElement?.querySelector('[data-title="Repetition"]');
+  const watchdogSlide = deckElement?.querySelector('[data-title="Parity watchdog"]');
+  const inspectorSlide = deckElement?.querySelector('[data-title="Three inspectors"]');
+  if (repetitionSlide && watchdogSlide) repetitionSlide.before(watchdogSlide);
+
   const slides = [...document.querySelectorAll(".slide")];
   const total = slides.length;
   let current = Math.max(0, Math.min(total - 1, Number(location.hash.replace("#", "")) - 1 || 0));
   let touchStartX = 0;
+  const repetitionIndex = slides.indexOf(repetitionSlide);
+  const repetitionMajority = document.getElementById("repetitionMajority");
+  const repetitionBudget = document.getElementById("repetitionBudget");
+  let repetitionRevealStage = 0;
+  const inspectorIndex = slides.indexOf(inspectorSlide);
+  let inspectorPlacementStage = 0;
 
   const chapterLabel = document.getElementById("chapterLabel");
   const slideNumber = document.getElementById("slideNumber");
@@ -22,8 +34,54 @@
 
   const deckSubscribers = [];
 
+  function setRepetitionStepVisible(element, visible) {
+    if (!element) return;
+    element.classList.toggle("step-hidden", !visible);
+    element.setAttribute("aria-hidden", String(!visible));
+  }
+
+  function resetRepetitionReveal() {
+    repetitionRevealStage = 0;
+    setRepetitionStepVisible(repetitionMajority, false);
+    setRepetitionStepVisible(repetitionBudget, false);
+  }
+
+  function revealNextRepetitionStep() {
+    if (current !== repetitionIndex) return false;
+    if (repetitionRevealStage === 0) {
+      repetitionRevealStage = 1;
+      setRepetitionStepVisible(repetitionMajority, true);
+      return true;
+    }
+    if (repetitionRevealStage === 1) {
+      repetitionRevealStage = 2;
+      setRepetitionStepVisible(repetitionBudget, true);
+      return true;
+    }
+    return false;
+  }
+
+  function resetInspectorPlacement() {
+    inspectorPlacementStage = 0;
+    if (typeof window.__resetInspectorPlacement === "function") {
+      window.__resetInspectorPlacement();
+    }
+  }
+
+  function revealInspectorPlacement() {
+    if (current !== inspectorIndex || inspectorPlacementStage >= 3) return false;
+    inspectorPlacementStage += 1;
+    if (typeof window.__advanceInspectorPlacement === "function") {
+      window.__advanceInspectorPlacement(inspectorPlacementStage);
+    }
+    return true;
+  }
+
   function applySlide(index) {
+    const previous = current;
     current = Math.max(0, Math.min(total - 1, index));
+    if (current === repetitionIndex && previous !== current) resetRepetitionReveal();
+    if (current === inspectorIndex && previous !== current) resetInspectorPlacement();
     slides.forEach((slide, i) => {
       slide.classList.toggle("active", i === current);
       slide.classList.toggle("was-active", i < current);
@@ -58,7 +116,7 @@
     get current() { return current; },
     get total() { return total; },
     go: showSlide,
-    next: () => showSlide(resolveStep(current, 1)),
+    next: () => nextSlide(),
     prev: () => showSlide(resolveStep(current, -1)),
     subscribe(fn) {
       deckSubscribers.push(fn);
@@ -70,7 +128,11 @@
     },
   };
 
-  function nextSlide() { showSlide(resolveStep(current, 1)); }
+  function nextSlide() {
+    if (revealNextRepetitionStep()) return;
+    if (revealInspectorPlacement()) return;
+    showSlide(resolveStep(current, 1));
+  }
   function previousSlide() { showSlide(resolveStep(current, -1)); }
 
   function toggleNotes() {
