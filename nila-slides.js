@@ -109,6 +109,185 @@
         packingGrid.appendChild(bubble);
       }
 
+      // Draw the complete graph of seven-bit space (the 7-dimensional cube).
+      const hypercubeGraph = document.getElementById("nila-hypercubeGraph");
+      if (hypercubeGraph) {
+        const svgNS = "http://www.w3.org/2000/svg";
+        const makeSvg = (tag, className) => {
+          const element = document.createElementNS(svgNS, tag);
+          if (className) element.setAttribute("class", className);
+          return element;
+        };
+        const sevenBits = (value) => value.toString(2).padStart(7, "0");
+        const parityGroups = [
+          [0, 2, 4, 6],
+          [1, 2, 5, 6],
+          [3, 4, 5, 6],
+        ];
+        const isHammingCodeword = (value) => {
+          const word = sevenBits(value);
+          return parityGroups.every(
+            (group) => group.reduce((sum, position) => sum + Number(word[position]), 0) % 2 === 0,
+          );
+        };
+
+        const values = Array.from({ length: 128 }, (_, value) => value);
+        const codewords = new Set(values.filter(isHammingCodeword));
+        const positions = new Map();
+        const center = { x: 450, y: 300 };
+        const edgeLength = 126;
+        const directionVectors = Array.from({ length: 7 }, (_, bit) => {
+          const angle = (bit - 3) * (Math.PI / 7);
+          return {
+            x: Math.cos(angle) * edgeLength * 1.24,
+            y: Math.sin(angle) * edgeLength,
+          };
+        });
+
+        // Project the 7-cube along seven evenly spaced directions. Every bit
+        // flip follows one direction, while the 128 vertices form a symmetric
+        // woven zonotope instead of bunching around a circular rim.
+        values.forEach((value) => {
+          const position = directionVectors.reduce(
+            (point, vector, bit) => {
+              const sign = value & (1 << bit) ? 0.5 : -0.5;
+              point.x += sign * vector.x;
+              point.y += sign * vector.y;
+              return point;
+            },
+            { x: center.x, y: center.y },
+          );
+          positions.set(value, position);
+        });
+
+        const frame = makeSvg("g", "cube-frame");
+        directionVectors.forEach((vector, bit) => {
+          const magnitude = Math.hypot(vector.x, vector.y);
+          const guideLength = 354;
+          const axis = makeSvg("line", "cube-guide-axis");
+          axis.setAttribute("x1", (center.x - (vector.x / magnitude) * guideLength).toFixed(2));
+          axis.setAttribute("y1", (center.y - (vector.y / magnitude) * guideLength).toFixed(2));
+          axis.setAttribute("x2", (center.x + (vector.x / magnitude) * guideLength).toFixed(2));
+          axis.setAttribute("y2", (center.y + (vector.y / magnitude) * guideLength).toFixed(2));
+          axis.dataset.bit = String(bit);
+          frame.appendChild(axis);
+        });
+        hypercubeGraph.appendChild(frame);
+
+        const edgesGroup = makeSvg("g", "cube-edges");
+        const edgeElements = [];
+        values.forEach((from) => {
+          for (let bit = 0; bit < 7; bit += 1) {
+            const to = from ^ (1 << bit);
+            if (from >= to) continue;
+            const start = positions.get(from);
+            const end = positions.get(to);
+            const edge = makeSvg(
+              "line",
+              `cube-edge${codewords.has(from) || codewords.has(to) ? " codeword-edge" : ""}`,
+            );
+            edge.setAttribute("x1", start.x.toFixed(2));
+            edge.setAttribute("y1", start.y.toFixed(2));
+            edge.setAttribute("x2", end.x.toFixed(2));
+            edge.setAttribute("y2", end.y.toFixed(2));
+            edge.dataset.from = String(from);
+            edge.dataset.to = String(to);
+            edgesGroup.appendChild(edge);
+            edgeElements.push(edge);
+          }
+        });
+        hypercubeGraph.appendChild(edgesGroup);
+
+        const nodesGroup = makeSvg("g", "cube-nodes");
+        const nodeElements = new Map();
+        values.forEach((value) => {
+          const position = positions.get(value);
+          const node = makeSvg("circle", `cube-node${codewords.has(value) ? " codeword" : ""}`);
+          node.setAttribute("cx", position.x.toFixed(2));
+          node.setAttribute("cy", position.y.toFixed(2));
+          node.setAttribute("r", codewords.has(value) ? "5.5" : "3.2");
+          node.dataset.value = String(value);
+          const label = makeSvg("title");
+          label.textContent = `${sevenBits(value)} — ${codewords.has(value) ? "Hamming codeword" : "received word"}`;
+          node.appendChild(label);
+          nodesGroup.appendChild(node);
+          nodeElements.set(value, node);
+        });
+        hypercubeGraph.appendChild(nodesGroup);
+
+        const labelsGroup = makeSvg("g", "cube-neighbour-labels");
+        hypercubeGraph.appendChild(labelsGroup);
+
+        const wordReadout = document.getElementById("nila-hypercubeWord");
+        const neighborReadout = document.getElementById("nila-hypercubeNeighbours");
+        let selectedValue = 0;
+
+        function selectCubeVertex(value) {
+          selectedValue = value;
+          const neighbors = Array.from({ length: 7 }, (_, bit) => value ^ (1 << bit));
+          const neighborSet = new Set(neighbors);
+          nodeElements.forEach((node, nodeValue) => {
+            node.classList.toggle("selected", nodeValue === value);
+            node.classList.toggle("cube-neighbour", neighborSet.has(nodeValue));
+          });
+          edgeElements.forEach((edge) => {
+            edge.classList.toggle(
+              "incident",
+              Number(edge.dataset.from) === value || Number(edge.dataset.to) === value,
+            );
+          });
+
+          labelsGroup.replaceChildren();
+          const selectedPosition = positions.get(value);
+          neighbors.forEach((neighbor) => {
+            const neighborPosition = positions.get(neighbor);
+            const dx = neighborPosition.x - selectedPosition.x;
+            const dy = neighborPosition.y - selectedPosition.y;
+            const distance = Math.hypot(dx, dy);
+            const labelX = Math.max(50, Math.min(850, neighborPosition.x + (dx / distance) * 53));
+            const labelY = Math.max(22, Math.min(588, neighborPosition.y + (dy / distance) * 53));
+            const label = makeSvg("g", "cube-neighbour-label");
+            label.setAttribute("transform", `translate(${labelX.toFixed(2)} ${labelY.toFixed(2)})`);
+
+            const plate = makeSvg("rect");
+            plate.setAttribute("x", "-43");
+            plate.setAttribute("y", "-12");
+            plate.setAttribute("width", "86");
+            plate.setAttribute("height", "24");
+            plate.setAttribute("rx", "7");
+            label.appendChild(plate);
+
+            const text = makeSvg("text");
+            text.setAttribute("x", "0");
+            text.setAttribute("y", "5.5");
+            text.setAttribute("text-anchor", "middle");
+            text.textContent = sevenBits(neighbor);
+            label.appendChild(text);
+            labelsGroup.appendChild(label);
+          });
+
+          wordReadout.textContent = sevenBits(value);
+          if (codewords.has(value)) {
+            neighborReadout.textContent = "Valid codeword · its seven one-flip outcomes glow green.";
+          } else {
+            const nearestCodeword = neighbors.find((neighbor) => codewords.has(neighbor));
+            neighborReadout.textContent = `One flip from codeword ${sevenBits(nearestCodeword)} · all seven neighbors are lit.`;
+          }
+        }
+
+        nodesGroup.addEventListener("pointerover", (event) => {
+          const node = event.target.closest?.(".cube-node");
+          if (node) selectCubeVertex(Number(node.dataset.value));
+        });
+        nodesGroup.addEventListener("click", (event) => {
+          const node = event.target.closest?.(".cube-node");
+          if (node) selectCubeVertex(Number(node.dataset.value));
+        });
+        hypercubeGraph.addEventListener("pointerleave", () => selectCubeVertex(selectedValue));
+        hypercubeGraph.classList.add("has-selection");
+        selectCubeVertex(0);
+      }
+
       // One-light slide.
       const oneLight = document.getElementById("nila-oneLight");
       oneLight.onclick = () => oneLight.classList.toggle("red");
@@ -581,37 +760,39 @@
       const finalReceived = [1, 1, 1, 0, 0, 0, 1];
       let finalStage = 0;
       const finalInspectors = document.getElementById("nila-finalInspectors");
-      function renderFinal() {
-        finalInspectors.innerHTML = "";
-        [1, 2, 4].forEach((k) => {
-          const fail = parityFail(finalReceived, watcherSets[k]);
-          const b = document.createElement("div");
-          b.className = `inspector-light${finalStage >= 1 && fail ? " fail" : ""}`;
-          b.innerHTML = `<strong>${k}</strong><span>${finalStage === 0 ? "not checked" : fail ? "COMPLAINS" : "OK"}</span>`;
-          finalInspectors.appendChild(b);
-        });
-        const a = document.getElementById("nila-finalAnswer");
-        if (finalStage === 0) a.textContent = "";
-        else if (finalStage === 1) a.textContent = "1 + 2 + 4 = 7";
-        else
-          a.innerHTML =
-            '1110001 → 1000 → <span style="color:var(--cyan)">LIQUID WATER DETECTED</span>';
+      if (finalInspectors) {
+        function renderFinal() {
+          finalInspectors.innerHTML = "";
+          [1, 2, 4].forEach((k) => {
+            const fail = parityFail(finalReceived, watcherSets[k]);
+            const b = document.createElement("div");
+            b.className = `inspector-light${finalStage >= 1 && fail ? " fail" : ""}`;
+            b.innerHTML = `<strong>${k}</strong><span>${finalStage === 0 ? "not checked" : fail ? "COMPLAINS" : "OK"}</span>`;
+            finalInspectors.appendChild(b);
+          });
+          const a = document.getElementById("nila-finalAnswer");
+          if (finalStage === 0) a.textContent = "";
+          else if (finalStage === 1) a.textContent = "1 + 2 + 4 = 7";
+          else
+            a.innerHTML =
+              '1110001 → 1000 → <span style="color:var(--cyan)">LIQUID WATER DETECTED</span>';
+        }
+        document.getElementById("nila-finalRun").onclick = () => {
+          finalStage = 1;
+          renderFinal();
+        };
+        document.getElementById("nila-finalRepair").onclick = () => {
+          finalStage = 2;
+          renderFinal();
+        };
+        document.getElementById("nila-finalReset").onclick = resetFinal;
+        function resetFinal() {
+          finalStage = 0;
+          renderFinal();
+          showToast("Final challenge reset");
+        }
+        renderFinal();
       }
-      document.getElementById("nila-finalRun").onclick = () => {
-        finalStage = 1;
-        renderFinal();
-      };
-      document.getElementById("nila-finalRepair").onclick = () => {
-        finalStage = 2;
-        renderFinal();
-      };
-      document.getElementById("nila-finalReset").onclick = resetFinal;
-      function resetFinal() {
-        finalStage = 0;
-        renderFinal();
-        showToast("Final challenge reset");
-      }
-      renderFinal();
 
       // Printable mission cards.
       function printMissionCards() {

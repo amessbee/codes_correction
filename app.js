@@ -7,6 +7,29 @@
   const inspectorSlide = deckElement?.querySelector('[data-title="Three inspectors"]');
   if (repetitionSlide && watchdogSlide) repetitionSlide.before(watchdogSlide);
 
+  // Place each practice lab directly after the idea it rehearses. Keeping this
+  // here means every deck feature sees the same teaching order: numbering,
+  // navigation, overview, notes, annotations, and PDF export.
+  function placeSlidesAfter(anchorTitle, slideTitles) {
+    let cursor = deckElement?.querySelector(`[data-title="${anchorTitle}"]`);
+    if (!cursor) return;
+    slideTitles.forEach((title) => {
+      const slide = deckElement.querySelector(`[data-title="${title}"]`);
+      if (!slide) return;
+      cursor.after(slide);
+      cursor = slide;
+    });
+  }
+  placeSlidesAfter("Distance", ["Practice: Hamming distance"]);
+  placeSlidesAfter("The 7-cube", ["Practice: one-flip neighbors"]);
+  placeSlidesAfter("Three inspectors", ["Practice: inspector signatures"]);
+  placeSlidesAfter("Encode 1010", [
+    "Practice: guided encoding",
+    "Practice: independent encoding",
+  ]);
+  placeSlidesAfter("Find the damaged position", ["Practice: guided decoding"]);
+  placeSlidesAfter("The repaired report", ["Practice: solo decode"]);
+
   const slides = [...document.querySelectorAll(".slide")];
   const total = slides.length;
   let current = Math.max(0, Math.min(total - 1, Number(location.hash.replace("#", "")) - 1 || 0));
@@ -77,11 +100,38 @@
     return true;
   }
 
+  function setRightReveal(slide, visible) {
+    if (!slide?.matches('[data-reveal-right="true"]')) return;
+    slide.classList.toggle("right-revealed", visible);
+    slide.querySelectorAll("[data-reveal-part]").forEach((part) => {
+      part.setAttribute("aria-hidden", String(!visible));
+    });
+  }
+
+  function revealCurrentRight() {
+    const slide = slides[current];
+    if (!slide?.matches('[data-reveal-right="true"]') || slide.classList.contains("right-revealed")) {
+      return false;
+    }
+    setRightReveal(slide, true);
+    return true;
+  }
+
+  function hideCurrentRight() {
+    const slide = slides[current];
+    if (!slide?.matches('[data-reveal-right="true"]') || !slide.classList.contains("right-revealed")) {
+      return false;
+    }
+    setRightReveal(slide, false);
+    return true;
+  }
+
   function applySlide(index) {
     const previous = current;
     current = Math.max(0, Math.min(total - 1, index));
     if (current === repetitionIndex && previous !== current) resetRepetitionReveal();
     if (current === inspectorIndex && previous !== current) resetInspectorPlacement();
+    if (previous !== current) setRightReveal(slides[current], false);
     slides.forEach((slide, i) => {
       slide.classList.toggle("active", i === current);
       slide.classList.toggle("was-active", i < current);
@@ -117,7 +167,7 @@
     get total() { return total; },
     go: showSlide,
     next: () => nextSlide(),
-    prev: () => showSlide(resolveStep(current, -1)),
+    prev: () => previousSlide(),
     subscribe(fn) {
       deckSubscribers.push(fn);
       try { fn(current, total); } catch (_) {}
@@ -129,11 +179,15 @@
   };
 
   function nextSlide() {
+    if (revealCurrentRight()) return;
     if (revealNextRepetitionStep()) return;
     if (revealInspectorPlacement()) return;
     showSlide(resolveStep(current, 1));
   }
-  function previousSlide() { showSlide(resolveStep(current, -1)); }
+  function previousSlide() {
+    if (hideCurrentRight()) return;
+    showSlide(resolveStep(current, -1));
+  }
 
   function toggleNotes() {
     notesPanel.hidden = !notesPanel.hidden;

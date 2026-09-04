@@ -46,6 +46,13 @@
 }
 body[data-dc-fullslide="true"] .deck-chrome { opacity: 0; pointer-events: none; }
 
+/* Optional stage cleanup: these target the repeated rows inside NILA slides,
+   not the navigation chrome that contains the controls themselves. */
+body[data-dc-slide-header-hidden="true"] .slide.nila .slide-head,
+body[data-dc-slide-footer-hidden="true"] .slide.nila .slide-foot {
+  display: none;
+}
+
 /* ---------- control bar ---------- */
 .dc-controls {
   --dc-resting-bottom: 1rem;

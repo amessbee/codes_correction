@@ -40,6 +40,7 @@
 <symbol id="di-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
 <symbol id="di-eye" viewBox="0 0 24 24"><path d="M2.1 12a10.8 10.8 0 0 1 19.8 0 10.8 10.8 0 0 1-19.8 0"/><circle cx="12" cy="12" r="3"/></symbol>
 <symbol id="di-eye-off" viewBox="0 0 24 24"><path d="m2 2 20 20"/><path d="M6.7 6.7A10.7 10.7 0 0 0 2.1 12a10.8 10.8 0 0 0 15.2 5.3"/><path d="M10.7 10.7a2 2 0 0 0 2.6 2.6"/><path d="M14.6 5.2A10.8 10.8 0 0 1 21.9 12a10.9 10.9 0 0 1-1.6 2.6"/></symbol>
+<symbol id="di-list-checks" viewBox="0 0 24 24"><path d="m3 5 2 2 4-4"/><path d="M11 6h10"/><path d="m3 12 2 2 4-4"/><path d="M11 13h10"/><path d="m3 19 2 2 4-4"/><path d="M11 20h10"/></symbol>
 <symbol id="di-gallery-horizontal-end" viewBox="0 0 24 24"><path d="M2 7v10"/><path d="M6 5v14"/><rect width="12" height="18" x="10" y="3" rx="2"/></symbol>
 <symbol id="di-maximize-2" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/><path d="M9 21H3v-6"/></symbol>
 <symbol id="di-minimize-2" viewBox="0 0 24 24"><path d="M4 14h6v6"/><path d="m3 21 7-7"/><path d="m21 3-7 7"/><path d="M14 4h6v6"/></symbol>
@@ -49,6 +50,8 @@
 <symbol id="di-palette" viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
 <symbol id="di-panel-bottom-close" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 15h18"/><path d="m9 10 3 3 3-3"/></symbol>
 <symbol id="di-panel-bottom-open" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 15h18"/><path d="m15 12-3-3-3 3"/></symbol>
+<symbol id="di-panel-top-close" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="m9 14 3-3 3 3"/></symbol>
+<symbol id="di-panel-top-open" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="m15 12-3 3-3-3"/></symbol>
 <symbol id="di-undo-2" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></symbol>
 <symbol id="di-trash-2" viewBox="0 0 24 24"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
 <symbol id="di-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>`;
@@ -82,6 +85,9 @@
     includeHidden: "glitch-deck-include-hidden-v1",
     transition: "glitch-deck-slide-transition",
     theme: "glitch-deck-theme",
+    slideHeaderHidden: "glitch-deck-slide-header-hidden",
+    slideFooterHidden: "glitch-deck-slide-footer-hidden",
+    exerciseMode: "glitch-deck-exercise-mode",
   };
 
   // [id, label, isLight, swatch-ground, swatch-accent]
@@ -147,6 +153,12 @@
   let scratchpadOpen = false;
   let controlsHidden = true;
   let fillWindow = false;
+  let slideHeaderHidden = store.get(KEY.slideHeaderHidden, false) === true;
+  let slideFooterHidden = store.get(KEY.slideFooterHidden, false) === true;
+  const savedExerciseMode = store.get(KEY.exerciseMode, "all");
+  let exerciseMode = ["all", "hide", "only"].includes(savedExerciseMode)
+    ? savedExerciseMode
+    : "all";
 
   let annotations = store.get(KEY.annotations, {}) || {};
   let penColor = "#ff646b";
@@ -164,12 +176,31 @@
   let timerTick = null;
 
   /* --------------------------------------------- visible-slide helpers */
+  const isExerciseSlide = (index) => slides[index]?.classList.contains("exercise-slide");
+
   function visibleIndexes() {
     const out = [];
     for (let i = 0; i < total; i += 1) {
-      if (includeHidden || !hiddenSet.has(i)) out.push(i);
+      const passesHiddenFilter = includeHidden || !hiddenSet.has(i);
+      const passesExerciseFilter =
+        exerciseMode === "only"
+          ? isExerciseSlide(i)
+          : exerciseMode === "hide"
+            ? !isExerciseSlide(i)
+            : true;
+      if (passesHiddenFilter && passesExerciseFilter) out.push(i);
     }
-    return out.length ? out : Array.from({ length: total }, (_, i) => i);
+    if (out.length) return out;
+
+    // If every slide in the chosen view was manually hidden, keep that view
+    // navigable by temporarily including its hidden slides.
+    return Array.from({ length: total }, (_, i) => i).filter((i) =>
+      exerciseMode === "only"
+        ? isExerciseSlide(i)
+        : exerciseMode === "hide"
+          ? !isExerciseSlide(i)
+          : true,
+    );
   }
   function neighbour(from, dir) {
     const vis = visibleIndexes();
@@ -310,6 +341,15 @@
   );
   const btnTheme = mkBtn("palette", "Colour theme (T)", () => setThemePanel(!themeOpen));
   const btnTimer = mkBtn("timer", "Class timer", () => openTimer());
+  const btnSlideHeader = mkBtn("panel-top-close", "Hide slide header", () =>
+    setSlideHeaderHidden(!slideHeaderHidden),
+  );
+  const btnSlideFooter = mkBtn("panel-bottom-close", "Hide slide footer", () =>
+    setSlideFooterHidden(!slideFooterHidden),
+  );
+  const btnExerciseMode = mkBtn("list-checks", "Hide exercise slides", () =>
+    cycleExerciseMode(),
+  );
   const btnHideSlide = mkBtn("eye-off", "Hide this slide", () => toggleHideCurrent());
   const btnIncludeHidden = mkBtn(
     "gallery-horizontal-end",
@@ -330,7 +370,14 @@
 
   bar.append(btnPrev, btnCounter, btnNext, $("span", "dc-divider"));
   bar.append(btnHome, btnNotes, btnScratch, btnEdit, btnPen, btnHl, btnBlackout);
-  bar.append(btnTransitions, btnTheme, btnTimer, btnHideSlide, btnIncludeHidden);
+  bar.append(btnTransitions, btnTheme, btnTimer, $("span", "dc-divider"));
+  bar.append(
+    btnSlideHeader,
+    btnSlideFooter,
+    btnExerciseMode,
+    btnHideSlide,
+    btnIncludeHidden,
+  );
   bar.append(btnFill, btnFullscreen, btnPdf, btnHelp, btnHideBar);
 
   /* --------------------------------------------------- context toolbar */
@@ -551,9 +598,10 @@
   }
 
   function pdfCount() {
+    const visible = new Set(visibleIndexes());
     let n = 0;
     for (let i = pdfRange.from; i <= pdfRange.to; i += 1) {
-      if (includeHidden || !hiddenSet.has(i - 1)) n += 1;
+      if (visible.has(i - 1)) n += 1;
     }
     return n;
   }
@@ -579,7 +627,7 @@
       const grid = $("div", "dc-overview-grid");
       const vis = visibleIndexes();
       slides.forEach((slide, i) => {
-        if (!includeHidden && hiddenSet.has(i)) return;
+        if (!vis.includes(i)) return;
         const pos = vis.indexOf(i);
         const b = $(
           "button",
@@ -1032,6 +1080,36 @@
     btnFill.title = btnFill.getAttribute("aria-label");
     refreshBar();
   }
+  function setSlideHeaderHidden(next) {
+    slideHeaderHidden = next;
+    document.body.dataset.dcSlideHeaderHidden = String(next);
+    store.set(KEY.slideHeaderHidden, next);
+    refreshBar();
+  }
+  function setSlideFooterHidden(next) {
+    slideFooterHidden = next;
+    document.body.dataset.dcSlideFooterHidden = String(next);
+    store.set(KEY.slideFooterHidden, next);
+    refreshBar();
+  }
+  function cycleExerciseMode() {
+    const order = ["all", "hide", "only"];
+    exerciseMode = order[(order.indexOf(exerciseMode) + 1) % order.length];
+    document.body.dataset.dcExerciseMode = exerciseMode;
+    store.set(KEY.exerciseMode, exerciseMode);
+
+    const visible = visibleIndexes();
+    if (!visible.includes(idx)) {
+      const target =
+        visible.find((i) => i > idx) ??
+        [...visible].reverse().find((i) => i < idx) ??
+        visible[0];
+      if (target != null) deck.go(target);
+    }
+    if (overviewOpen) renderOverlay();
+    if (pdfOpen) renderPanel();
+    refreshBar();
+  }
   async function toggleFullscreen() {
     try {
       if (document.fullscreenElement) await document.exitFullscreen();
@@ -1065,8 +1143,9 @@
   function runPdf() {
     const from = clampSlide(pdfRange.from);
     const to = clampSlide(pdfRange.to);
+    const visible = new Set(visibleIndexes());
     slides.forEach((slide, i) => {
-      const inRange = i + 1 >= from && i + 1 <= to && (includeHidden || !hiddenSet.has(i));
+      const inRange = i + 1 >= from && i + 1 <= to && visible.has(i);
       slide.classList.toggle("dc-print-skip", !inRange);
     });
     setPdf(false);
@@ -1112,6 +1191,43 @@
     btnPdf.classList.toggle("dc-on", pdfOpen);
     btnTimer.classList.toggle("dc-on", timerOpen || timerRunning);
     btnFill.classList.toggle("dc-on", fillWindow);
+    setIcon(btnSlideHeader, slideHeaderHidden ? "panel-top-open" : "panel-top-close");
+    btnSlideHeader.classList.toggle("dc-on", slideHeaderHidden);
+    btnSlideHeader.setAttribute("aria-pressed", String(slideHeaderHidden));
+    btnSlideHeader.setAttribute(
+      "aria-label",
+      slideHeaderHidden ? "Show slide header" : "Hide slide header",
+    );
+    btnSlideHeader.title = btnSlideHeader.getAttribute("aria-label");
+    setIcon(btnSlideFooter, slideFooterHidden ? "panel-bottom-open" : "panel-bottom-close");
+    btnSlideFooter.classList.toggle("dc-on", slideFooterHidden);
+    btnSlideFooter.setAttribute("aria-pressed", String(slideFooterHidden));
+    btnSlideFooter.setAttribute(
+      "aria-label",
+      slideFooterHidden ? "Show slide footer" : "Hide slide footer",
+    );
+    btnSlideFooter.title = btnSlideFooter.getAttribute("aria-label");
+    const exerciseLabels = {
+      all: "Hide exercise slides",
+      hide: "Show only exercise slides",
+      only: "Show all slides",
+    };
+    const exerciseIcons = {
+      all: "list-checks",
+      hide: "eye-off",
+      only: "eye",
+    };
+    setIcon(btnExerciseMode, exerciseIcons[exerciseMode]);
+    btnExerciseMode.classList.toggle("dc-on", exerciseMode !== "all");
+    btnExerciseMode.dataset.mode = exerciseMode;
+    btnExerciseMode.setAttribute("aria-label", exerciseLabels[exerciseMode]);
+    btnExerciseMode.title = `${exerciseLabels[exerciseMode]} · current view: ${
+      exerciseMode === "all"
+        ? "all slides"
+        : exerciseMode === "hide"
+          ? "lesson slides only"
+          : "exercise slides only"
+    }`;
     const hidden = hiddenSet.has(idx);
     setIcon(btnHideSlide, hidden ? "eye" : "eye-off");
     btnHideSlide.classList.toggle("dc-on", hidden);
@@ -1127,7 +1243,11 @@
   /* ----------------------------------------------------- slide changes */
   deck.subscribe((current) => {
     idx = current;
-    progressEl.style.width = `${((current + 1) / total) * 100}%`;
+    const visible = visibleIndexes();
+    const visiblePosition = visible.indexOf(current);
+    progressEl.style.width = `${
+      ((Math.max(visiblePosition, 0) + 1) / Math.max(visible.length, 1)) * 100
+    }%`;
     if (scratchpadOpen) setScratchpad(false);
     applyEdits();
     renderAnnotations();
@@ -1179,8 +1299,11 @@
   renderContextToolbar();
   renderPanel();
   renderOverlay();
+  document.body.dataset.dcSlideHeaderHidden = String(slideHeaderHidden);
+  document.body.dataset.dcSlideFooterHidden = String(slideFooterHidden);
+  document.body.dataset.dcExerciseMode = exerciseMode;
   setControlsHidden(true);
-  if (!includeHidden && hiddenSet.has(idx)) {
+  if (!visibleIndexes().includes(idx)) {
     deck.go(visibleIndexes()[0] ?? 0);
   } else {
     refreshBar();

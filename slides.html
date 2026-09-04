@@ -1,53 +1,106 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#050816">
-  <title>GLITCH! — A Math Circle Mission</title>
-  <link rel="stylesheet" href="styles.css?v=20260902">
-  <link rel="stylesheet" href="nila-slides.css">
-  <link rel="stylesheet" href="deck-controls.css">
-  <link rel="stylesheet" href="deck-themes.css">
-</head>
-<body data-visuals="1">
-  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
-
-  <header class="deck-chrome" aria-label="Presentation controls">
-    <button class="brand-mark" data-action="go-home" aria-label="Go to first slide">
-      <span class="signal-dot"></span>
-      <span>GLITCH // MATH CIRCLE</span>
-    </button>
-    <div class="chapter-label" id="chapterLabel">Incoming transmission</div>
-    <div class="header-actions">
-      <small class="deck-signature"><a href="./" style="color:inherit;text-decoration:none;">course page</a> · <a href="https://amessbee.github.io/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">mudassir</a></small>
-      <button class="icon-button" data-action="toggle-display-panel" title="Display controls (D)" aria-label="Toggle display controls" aria-expanded="false">◐</button>
-      <button class="icon-button" data-action="toggle-notes" title="Facilitator notes (N)" aria-label="Toggle facilitator notes">N</button>
-      <button class="icon-button" data-action="fullscreen" title="Fullscreen (F)" aria-label="Enter fullscreen">⛶</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#050816" />
+    <title>GLITCH! — A Math Circle Mission</title>
+    <link rel="stylesheet" href="styles.css?v=20260902" />
+    <link rel="stylesheet" href="nila-slides.css?v=20260904e" />
+    <link rel="stylesheet" href="deck-controls.css?v=20260904c" />
+    <link rel="stylesheet" href="deck-themes.css?v=20260904b" />
+  </head>
+  <body data-visuals="1">
+    <div class="ambient" aria-hidden="true">
+      <span></span><span></span><span></span>
     </div>
-  </header>
 
-  <main class="deck" id="deck">
-    <section class="slide active title-slide" data-chapter="Incoming transmission" data-notes="Welcome students without naming parity or coding theory. Let the room settle, then press Start transmission. Ask: What do you notice? What do you wonder?">
-      <div class="slide-inner hero-layout">
-        <p class="eyebrow">A 90-minute mathematics mission</p>
-        <h1 class="glitch-title" data-text="GLITCH!" aria-label="GLITCH!">GLITCH!</h1>
-        <p class="hero-subtitle">Can mathematics repair a broken message?</p>
-        <p class="presenter-credit">
-          <strong>Dr. Mudassir Shabbir</strong>
-          <span>Department of Computer Science · LUMS</span>
-        </p>
-        <div class="transmission-window" aria-live="polite">
-          <span class="transmission-label">UNKNOWN ORIGIN · SIGNAL 01</span>
-          <strong id="heroTransmission">H?M?N?TY H?S A PR?BL?M</strong>
-          <span class="signal-strength"><i></i><i></i><i></i><i></i><i></i></span>
-        </div>
-        <button class="primary-button" data-action="stabilize">Start transmission <span>→</span></button>
+    <header class="deck-chrome" aria-label="Presentation controls">
+      <button
+        class="brand-mark"
+        data-action="go-home"
+        aria-label="Go to first slide"
+      >
+        <span class="signal-dot"></span>
+        <span>GLITCH // MATH CIRCLE</span>
+      </button>
+      <div class="chapter-label" id="chapterLabel">Incoming transmission</div>
+      <div class="header-actions">
+        <small class="deck-signature"
+          ><a href="./" style="color: inherit; text-decoration: none"
+            >course page</a
+          >
+          ·
+          <a
+            href="https://amessbee.github.io/"
+            target="_blank"
+            rel="noopener"
+            style="color: inherit; text-decoration: none"
+            >mudassir</a
+          ></small
+        >
+        <button
+          class="icon-button"
+          data-action="toggle-display-panel"
+          title="Display controls (D)"
+          aria-label="Toggle display controls"
+          aria-expanded="false"
+        >
+          ◐
+        </button>
+        <button
+          class="icon-button"
+          data-action="toggle-notes"
+          title="Facilitator notes (N)"
+          aria-label="Toggle facilitator notes"
+        >
+          N
+        </button>
+        <button
+          class="icon-button"
+          data-action="fullscreen"
+          title="Fullscreen (F)"
+          aria-label="Enter fullscreen"
+        >
+          ⛶
+        </button>
       </div>
-      <div class="hero-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
-    </section>
+    </header>
 
-    <!-- COMMENTED OUT: One piece will change
+    <main class="deck" id="deck">
+      <section
+        class="slide active title-slide"
+        data-chapter="Incoming transmission"
+        data-notes="Welcome students without naming parity or coding theory. Let the room settle, then press Start transmission. Ask: What do you notice? What do you wonder?"
+      >
+        <div class="slide-inner hero-layout">
+          <p class="eyebrow">A 90-minute mathematics mission</p>
+          <h1 class="glitch-title" data-text="GLITCH!" aria-label="GLITCH!">
+            GLITCH!
+          </h1>
+          <p class="hero-subtitle">Can mathematics repair a broken message?</p>
+          <p class="presenter-credit">
+            <strong>Dr. Mudassir Shabbir</strong>
+            <span>Department of Computer Science · LUMS</span>
+          </p>
+          <div class="transmission-window" aria-live="polite">
+            <span class="transmission-label">UNKNOWN ORIGIN · SIGNAL 01</span>
+            <strong id="heroTransmission">H?M?N?TY H?S A PR?BL?M</strong>
+            <span class="signal-strength"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></span>
+          </div>
+          <button class="primary-button" data-action="stabilize">
+            Start transmission <span>→</span>
+          </button>
+        </div>
+        <div class="hero-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      </section>
+
+      <!-- COMMENTED OUT: One piece will change
     <section class="slide" data-chapter="The glitch" data-notes="Read the question slowly. Establish the rules: no retransmission, exactly one piece changes, and the receiver knows the system in advance. Take a few spontaneous ideas, but do not evaluate them yet.">
       <div class="slide-inner question-layout">
         <p class="eyebrow alarm">One piece will change</p>
@@ -65,270 +118,323 @@
     </section>
     -->
 
-    <section class="slide parity-demo-slide" data-chapter="The impossible trick" data-notes="Act out the card trick live if you have physical cards. The digital board is a backup and a repeatable demo. Students may randomize the 5×5 core or build their own pattern by flipping as many core cards as they like. Then add the mysterious border, turn away, let a student flip exactly one square, and use the separate final reveal.">
-      <div class="slide-inner parity-demo-layout">
-        <div class="slide-copy parity-demo-copy">
-          <p class="eyebrow">Impossible mind-reading</p>
-          <h2>Flip one card. I’ll find it.</h2>
-          <p class="lead">Choose a random pattern—or flip as many of the 25 center cards as you like.</p>
-          <div class="action-stack parity-setup-actions">
-            <button class="secondary-button" data-action="parity-randomize">1 · Random pattern</button>
-            <button class="secondary-button" data-action="parity-border">2 · Add my “decoration”</button>
+      <section
+        class="slide parity-demo-slide"
+        data-chapter="The impossible trick"
+        data-notes="Act out the card trick live if you have physical cards. The digital board is a backup and a repeatable demo. Students may randomize the 5×5 core or build their own pattern by flipping as many core cards as they like. Then add the mysterious border, turn away, let a student flip exactly one square, and use the separate final reveal."
+      >
+        <div class="slide-inner parity-demo-layout">
+          <div class="slide-copy parity-demo-copy">
+            <p class="eyebrow">Impossible mind-reading</p>
+            <h2>Flip one card. I’ll find it.</h2>
+            <p class="lead">
+              Choose a random pattern—or flip as many of the 25 center cards as
+              you like.
+            </p>
+            <div class="action-stack parity-setup-actions">
+              <button class="secondary-button" data-action="parity-randomize">
+                1 · Random pattern
+              </button>
+              <button class="secondary-button" data-action="parity-border">
+                2 · Add my “decoration”
+              </button>
+            </div>
+            <div
+              class="flip-instruction"
+              id="parityFlipPrompt"
+              data-state="waiting"
+              aria-live="polite"
+            >
+              <span>3</span
+              ><strong>After the decoration, flip one card.</strong>
+            </div>
+            <p class="microcopy" id="parityStatus" aria-live="polite">
+              Start with any pattern you want.
+            </p>
           </div>
-          <div class="flip-instruction" id="parityFlipPrompt" data-state="waiting" aria-live="polite">
-            <span>3</span><strong>After the decoration, flip one card.</strong>
+          <div class="board-shell parity-board-shell">
+            <div
+              class="parity-grid"
+              id="parityGrid"
+              role="grid"
+              aria-label="Interactive six by six card grid"
+            ></div>
+            <div class="board-legend">
+              <span><i class="legend-core"></i> chosen cards</span
+              ><span><i class="legend-check"></i> added cards</span>
+            </div>
           </div>
-          <p class="microcopy" id="parityStatus" aria-live="polite">Start with any pattern you want.</p>
+          <div class="parity-reveal-zone">
+            <span>Final reveal</span>
+            <button
+              class="primary-button"
+              id="parityRevealButton"
+              data-action="parity-reveal"
+              disabled
+            >
+              Find the flipped card
+            </button>
+          </div>
         </div>
-        <div class="board-shell parity-board-shell">
-          <div class="parity-grid" id="parityGrid" role="grid" aria-label="Interactive six by six card grid"></div>
-          <div class="board-legend"><span><i class="legend-core"></i> chosen cards</span><span><i class="legend-check"></i> added cards</span></div>
-        </div>
-        <div class="parity-reveal-zone">
-          <span>Final reveal</span>
-          <button class="primary-button" id="parityRevealButton" data-action="parity-reveal" disabled>Find the flipped card</button>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="slide" data-chapter="The reveal" data-notes="Invite a student to state the rule before revealing the name. Click the center diagram, then reveal the word PARITY. Emphasize: the extra squares looked useless, but they turned one invisible mistake into two visible alarms.">
-      <div class="slide-inner reveal-layout">
-        <p class="eyebrow">The intersection gives it away</p>
-        <h2>One flipped square trips exactly two alarms.</h2>
-        <button class="cross-diagram" data-action="pulse-cross" aria-label="Animate the bad row and column">
-          <span class="cross-row"></span><span class="cross-column"></span><strong>✕</strong>
-        </button>
-        <div class="reveal-logic">
-          <span>Every line begins <b>even</b></span>
-          <span class="logic-arrow">→</span>
-          <span>one flip makes one row + one column <b>odd</b></span>
-          <span class="logic-arrow">→</span>
-          <span>their intersection is the glitch</span>
+      <section
+        class="slide"
+        data-chapter="The reveal"
+        data-notes="Invite a student to state the rule before revealing the name. Click the center diagram, then reveal the word PARITY. Emphasize: the extra squares looked useless, but they turned one invisible mistake into two visible alarms."
+      >
+        <div class="slide-inner reveal-layout">
+          <p class="eyebrow">The intersection gives it away</p>
+          <h2>One flipped square trips exactly two alarms.</h2>
+          <button
+            class="cross-diagram"
+            data-action="pulse-cross"
+            aria-label="Animate the bad row and column"
+          >
+            <span class="cross-row"></span><span class="cross-column"></span
+            ><strong>✕</strong>
+          </button>
+          <div class="reveal-logic">
+            <span>Every line begins <b>even</b></span>
+            <span class="logic-arrow">→</span>
+            <span>one flip makes one row + one column <b>odd</b></span>
+            <span class="logic-arrow">→</span>
+            <span>their intersection is the glitch</span>
+          </div>
+          <button class="name-reveal" data-action="reveal-parity">
+            <span>Mathematicians call this…</span
+            ><strong id="parityWord">?</strong>
+          </button>
         </div>
-        <button class="name-reveal" data-action="reveal-parity"><span>Mathematicians call this…</span><strong id="parityWord">?</strong></button>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== NILA mission slides (ported from nila2.html, slides 2-26) ===== -->
-    <svg id="svg-sprite" aria-hidden="true">
-      <defs>
-        <filter id="glow-filter">
-          <feGaussianBlur stdDeviation="4" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-        <linearGradient id="g-europa" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#f4e7c0" />
-          <stop offset=".48" stop-color="#b9c8c7" />
-          <stop offset="1" stop-color="#667f92" />
-        </linearGradient>
-        <linearGradient id="g-jupiter" x1="0" y1="0" x2="0" y2="1">
-          <stop stop-color="#f4d6a4" />
-          <stop offset=".2" stop-color="#a66f54" />
-          <stop offset=".38" stop-color="#f3e0ba" />
-          <stop offset=".55" stop-color="#8f5b4a" />
-          <stop offset=".7" stop-color="#e7bf83" />
-          <stop offset=".86" stop-color="#684539" />
-          <stop offset="1" stop-color="#c68d62" />
-        </linearGradient>
-        <linearGradient id="g-earth" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#6ce1ff" />
-          <stop offset=".55" stop-color="#2177bd" />
-          <stop offset="1" stop-color="#0c315d" />
-        </linearGradient>
-        <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#e8f5fb" />
-          <stop offset=".45" stop-color="#8faebd" />
-          <stop offset="1" stop-color="#395366" />
-        </linearGradient>
-        <radialGradient id="g-glass">
-          <stop stop-color="#d8fbff" />
-          <stop offset=".45" stop-color="#4ab9d6" />
-          <stop offset="1" stop-color="#123e5b" />
-        </radialGradient>
-        <pattern
-          id="ice-cracks"
-          width="90"
-          height="70"
-          patternUnits="userSpaceOnUse"
-        >
-          <path
-            d="M5 58L25 38l19 7 14-24 27 5"
-            fill="none"
-            stroke="rgba(99,132,148,.46)"
-            stroke-width="2"
-          />
-          <path
-            d="M45 45l8 17 18 7"
-            fill="none"
-            stroke="rgba(255,255,255,.32)"
-          />
-        </pattern>
-      </defs>
-      <symbol id="icon-probe" viewBox="0 0 220 180">
-        <g>
-          <path
-            d="M70 68h80l17 42-24 26H78l-25-26z"
-            fill="url(#g-metal)"
-            stroke="#d8f3ff"
-            stroke-width="3"
-          />
+      <!-- ===== NILA mission slides (ported from nila2.html, slides 2-26) ===== -->
+      <svg id="svg-sprite" aria-hidden="true">
+        <defs>
+          <filter id="glow-filter">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <linearGradient id="g-europa" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#f4e7c0" />
+            <stop offset=".48" stop-color="#b9c8c7" />
+            <stop offset="1" stop-color="#667f92" />
+          </linearGradient>
+          <linearGradient id="g-jupiter" x1="0" y1="0" x2="0" y2="1">
+            <stop stop-color="#f4d6a4" />
+            <stop offset=".2" stop-color="#a66f54" />
+            <stop offset=".38" stop-color="#f3e0ba" />
+            <stop offset=".55" stop-color="#8f5b4a" />
+            <stop offset=".7" stop-color="#e7bf83" />
+            <stop offset=".86" stop-color="#684539" />
+            <stop offset="1" stop-color="#c68d62" />
+          </linearGradient>
+          <linearGradient id="g-earth" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#6ce1ff" />
+            <stop offset=".55" stop-color="#2177bd" />
+            <stop offset="1" stop-color="#0c315d" />
+          </linearGradient>
+          <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#e8f5fb" />
+            <stop offset=".45" stop-color="#8faebd" />
+            <stop offset="1" stop-color="#395366" />
+          </linearGradient>
+          <radialGradient id="g-glass">
+            <stop stop-color="#d8fbff" />
+            <stop offset=".45" stop-color="#4ab9d6" />
+            <stop offset="1" stop-color="#123e5b" />
+          </radialGradient>
+          <pattern
+            id="ice-cracks"
+            width="90"
+            height="70"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M5 58L25 38l19 7 14-24 27 5"
+              fill="none"
+              stroke="rgba(99,132,148,.46)"
+              stroke-width="2"
+            />
+            <path
+              d="M45 45l8 17 18 7"
+              fill="none"
+              stroke="rgba(255,255,255,.32)"
+            />
+          </pattern>
+        </defs>
+        <symbol id="icon-probe" viewBox="0 0 220 180">
+          <g>
+            <path
+              d="M70 68h80l17 42-24 26H78l-25-26z"
+              fill="url(#g-metal)"
+              stroke="#d8f3ff"
+              stroke-width="3"
+            />
+            <rect
+              x="85"
+              y="39"
+              width="50"
+              height="42"
+              rx="10"
+              fill="#173b55"
+              stroke="#7deaff"
+              stroke-width="3"
+            />
+            <circle cx="110" cy="60" r="12" fill="url(#g-glass)" />
+            <path
+              d="M67 96L23 68M153 96l44-28M83 134l-30 37m84-37 30 37"
+              stroke="#d7edf5"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+            <circle cx="22" cy="67" r="9" fill="#5e7d90" />
+            <circle cx="198" cy="67" r="9" fill="#5e7d90" />
+            <circle cx="52" cy="171" r="8" fill="#5e7d90" />
+            <circle cx="168" cy="171" r="8" fill="#5e7d90" />
+            <rect x="97" y="136" width="26" height="24" rx="5" fill="#273f50" />
+            <path d="M110 160v18" stroke="#ffd166" stroke-width="7" />
+            <circle cx="110" cy="177" r="8" fill="#ffd166" />
+          </g>
+        </symbol>
+        <symbol id="icon-relay" viewBox="0 0 240 160">
+          <g>
+            <rect
+              x="86"
+              y="51"
+              width="68"
+              height="58"
+              rx="10"
+              fill="url(#g-metal)"
+              stroke="#d9f3ff"
+              stroke-width="3"
+            />
+            <rect
+              x="6"
+              y="42"
+              width="76"
+              height="76"
+              fill="#225c8b"
+              stroke="#67c7f0"
+              stroke-width="3"
+            />
+            <path
+              d="M6 61h76M6 80h76M6 99h76M25 42v76M44 42v76M63 42v76"
+              stroke="rgba(167,224,255,.45)"
+            />
+            <rect
+              x="158"
+              y="42"
+              width="76"
+              height="76"
+              fill="#225c8b"
+              stroke="#67c7f0"
+              stroke-width="3"
+            />
+            <path
+              d="M158 61h76M158 80h76M158 99h76M177 42v76M196 42v76M215 42v76"
+              stroke="rgba(167,224,255,.45)"
+            />
+            <path d="M120 51V22" stroke="#dff6ff" stroke-width="5" />
+            <circle cx="120" cy="18" r="9" fill="#59f18b" />
+            <path
+              d="M103 109q17 34 34 0"
+              fill="none"
+              stroke="#dff6ff"
+              stroke-width="5"
+            />
+          </g>
+        </symbol>
+        <symbol id="icon-station" viewBox="0 0 220 180">
+          <g>
+            <path
+              d="M38 92q72-77 144 0-72 34-144 0z"
+              fill="#d7e8ee"
+              stroke="#fff"
+              stroke-width="3"
+            />
+            <path d="M108 87L73 41" stroke="#d7e8ee" stroke-width="6" />
+            <circle cx="70" cy="38" r="8" fill="#58e6ff" />
+            <path
+              d="M110 105v44m-32 0h64M95 105l-31 57m61-57 31 57"
+              stroke="#8aa4b2"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+            <rect
+              x="34"
+              y="149"
+              width="152"
+              height="18"
+              rx="7"
+              fill="#425d6d"
+            />
+          </g>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 220 220">
           <rect
-            x="85"
-            y="39"
-            width="50"
-            height="42"
-            rx="10"
-            fill="#173b55"
-            stroke="#7deaff"
-            stroke-width="3"
+            x="51"
+            y="18"
+            width="118"
+            height="184"
+            rx="26"
+            fill="url(#g-metal)"
+            stroke="#e9f7ff"
+            stroke-width="4"
           />
-          <circle cx="110" cy="60" r="12" fill="url(#g-glass)" />
+          <rect x="62" y="42" width="96" height="129" rx="8" fill="#0b2940" />
           <path
-            d="M67 96L23 68M153 96l44-28M83 134l-30 37m84-37 30 37"
-            stroke="#d7edf5"
+            d="M73 120q18-32 36-7t38-26"
+            fill="none"
+            stroke="#59f18b"
             stroke-width="7"
-            stroke-linecap="round"
           />
-          <circle cx="22" cy="67" r="9" fill="#5e7d90" />
-          <circle cx="198" cy="67" r="9" fill="#5e7d90" />
-          <circle cx="52" cy="171" r="8" fill="#5e7d90" />
-          <circle cx="168" cy="171" r="8" fill="#5e7d90" />
-          <rect x="97" y="136" width="26" height="24" rx="5" fill="#273f50" />
-          <path d="M110 160v18" stroke="#ffd166" stroke-width="7" />
-          <circle cx="110" cy="177" r="8" fill="#ffd166" />
-        </g>
-      </symbol>
-      <symbol id="icon-relay" viewBox="0 0 240 160">
-        <g>
-          <rect
-            x="86"
-            y="51"
-            width="68"
-            height="58"
-            rx="10"
-            fill="url(#g-metal)"
-            stroke="#d9f3ff"
-            stroke-width="3"
-          />
-          <rect
-            x="6"
-            y="42"
-            width="76"
-            height="76"
-            fill="#225c8b"
-            stroke="#67c7f0"
-            stroke-width="3"
-          />
+          <circle cx="110" cy="185" r="8" fill="#24485c" />
           <path
-            d="M6 61h76M6 80h76M6 99h76M25 42v76M44 42v76M63 42v76"
-            stroke="rgba(167,224,255,.45)"
-          />
-          <rect
-            x="158"
-            y="42"
-            width="76"
-            height="76"
-            fill="#225c8b"
-            stroke="#67c7f0"
-            stroke-width="3"
-          />
-          <path
-            d="M158 61h76M158 80h76M158 99h76M177 42v76M196 42v76M215 42v76"
-            stroke="rgba(167,224,255,.45)"
-          />
-          <path d="M120 51V22" stroke="#dff6ff" stroke-width="5" />
-          <circle cx="120" cy="18" r="9" fill="#59f18b" />
-          <path
-            d="M103 109q17 34 34 0"
-            fill="none"
-            stroke="#dff6ff"
+            d="M80 29h60"
+            stroke="#516f7f"
             stroke-width="5"
-          />
-        </g>
-      </symbol>
-      <symbol id="icon-station" viewBox="0 0 220 180">
-        <g>
-          <path
-            d="M38 92q72-77 144 0-72 34-144 0z"
-            fill="#d7e8ee"
-            stroke="#fff"
-            stroke-width="3"
-          />
-          <path d="M108 87L73 41" stroke="#d7e8ee" stroke-width="6" />
-          <circle cx="70" cy="38" r="8" fill="#58e6ff" />
-          <path
-            d="M110 105v44m-32 0h64M95 105l-31 57m61-57 31 57"
-            stroke="#8aa4b2"
-            stroke-width="7"
             stroke-linecap="round"
           />
-          <rect x="34" y="149" width="152" height="18" rx="7" fill="#425d6d" />
-        </g>
-      </symbol>
-      <symbol id="icon-phone" viewBox="0 0 220 220">
-        <rect
-          x="51"
-          y="18"
-          width="118"
-          height="184"
-          rx="26"
-          fill="url(#g-metal)"
-          stroke="#e9f7ff"
-          stroke-width="4"
-        />
-        <rect x="62" y="42" width="96" height="129" rx="8" fill="#0b2940" />
-        <path
-          d="M73 120q18-32 36-7t38-26"
-          fill="none"
-          stroke="#59f18b"
-          stroke-width="7"
-        />
-        <circle cx="110" cy="185" r="8" fill="#24485c" />
-        <path
-          d="M80 29h60"
-          stroke="#516f7f"
-          stroke-width="5"
-          stroke-linecap="round"
-        />
-      </symbol>
-      <symbol id="icon-drive" viewBox="0 0 220 220">
-        <rect
-          x="25"
-          y="42"
-          width="170"
-          height="136"
-          rx="24"
-          fill="url(#g-metal)"
-          stroke="#e7f6ff"
-          stroke-width="4"
-        />
-        <rect x="44" y="65" width="132" height="69" rx="15" fill="#1c394b" />
-        <circle cx="68" cy="153" r="10" fill="#59f18b" />
-        <circle cx="100" cy="153" r="10" fill="#58e6ff" />
-        <path
-          d="M64 92h92"
-          stroke="#9cc4d5"
-          stroke-width="8"
-          stroke-linecap="round"
-        />
-      </symbol>
-      <symbol id="icon-qr" viewBox="0 0 220 220">
-        <rect x="18" y="18" width="184" height="184" rx="16" fill="#fff" />
-        <g fill="#061322">
-          <path
-            d="M35 35h55v55H35zm12 12v31h31V47zM130 35h55v55h-55zm12 12v31h31V47zM35 130h55v55H35zm12 12v31h31v-31z"
+        </symbol>
+        <symbol id="icon-drive" viewBox="0 0 220 220">
+          <rect
+            x="25"
+            y="42"
+            width="170"
+            height="136"
+            rx="24"
+            fill="url(#g-metal)"
+            stroke="#e7f6ff"
+            stroke-width="4"
           />
+          <rect x="44" y="65" width="132" height="69" rx="15" fill="#1c394b" />
+          <circle cx="68" cy="153" r="10" fill="#59f18b" />
+          <circle cx="100" cy="153" r="10" fill="#58e6ff" />
           <path
-            d="M107 104h17v17h-17zm25 0h18v17h-18zm27 0h26v17h-26zm-52 27h17v17h-17zm26 0h17v17h-17zm26 0h26v17h-26zm-52 27h17v27h-17zm26 9h17v18h-17zm26-9h17v27h-17z"
+            d="M64 92h92"
+            stroke="#9cc4d5"
+            stroke-width="8"
+            stroke-linecap="round"
           />
-        </g>
-      </symbol>
-    </svg>
+        </symbol>
+        <symbol id="icon-qr" viewBox="0 0 220 220">
+          <rect x="18" y="18" width="184" height="184" rx="16" fill="#fff" />
+          <g fill="#061322">
+            <path
+              d="M35 35h55v55H35zm12 12v31h31V47zM130 35h55v55h-55zm12 12v31h31V47zM35 130h55v55H35zm12 12v31h31v-31z"
+            />
+            <path
+              d="M107 104h17v17h-17zm25 0h18v17h-18zm27 0h26v17h-26zm-52 27h17v17h-17zm26 0h17v17h-17zm26 0h26v17h-26zm-52 27h17v27h-17zm26 9h17v18h-17zm26-9h17v27h-17z"
+            />
+          </g>
+        </symbol>
+      </svg>
 
-<section
+      <section
         data-chapter="Meet NILA"
         data-notes="Explain the concrete fiction: NILA landed near Europa’s Conamara Chaos region, drills shallow ice cores, warms samples, and searches for chemical or microscopic patterns. Avoid claiming that it has found life. NASA leads the fictional AURORA mission with international partners. The story is invented; the communication constraints and coding ideas are realistic. Invite three quick hazards: low battery, radiation, blocked line of sight, broken equipment, noisy signals."
         class="slide nila"
@@ -344,7 +450,9 @@
           <div class="hero-grid">
             <div class="hero-copy">
               <div class="mission-stamp">Near-Ice Life Analyzer</div>
-              <h2 class="title-lockup">Meet <strong>Near-Ice Life Analyzer (NILA)</strong></h2>
+              <h2 class="title-lockup">
+                Meet <strong>Near-Ice Life Analyzer (NILA)</strong>
+              </h2>
               <p class="tagline">
                 A small robot, a frozen ocean, and one very expensive
                 flashlight.
@@ -434,7 +542,7 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="The communication chain"
         data-notes="NILA cannot aim a powerful radio dish at Earth. It flashes a visible-light laser to LUMEN, which orbits Europa. LUMEN forwards the message by radio to Earth. NILA wakes twice per Earth day. LUMEN is usefully positioned for only about 90 seconds. If a report is unclear, waiting for another window costs half a day and valuable energy. Ask why low latency is not the only issue: probe lifetime, battery, changing conditions, and scientific priority all matter."
         class="slide nila"
@@ -533,10 +641,14 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="The constraints"
         data-hidden-by-default="true"
-        data-notes="Make the constraints feel physical. Give twelve students or twelve tokens as the battery budget. Remove one token for every transmitted light. Radiation or detector noise can change a green reading to red or red to green. For the first half of the session assume at most one such flip. Do not introduce formal coding vocabulary yet. The students should feel the problem before they receive names for the tools." class="slide nila" data-title="The constraints" data-time="3 min">
+        data-notes="Make the constraints feel physical. Give twelve students or twelve tokens as the battery budget. Remove one token for every transmitted light. Radiation or detector noise can change a green reading to red or red to green. For the first half of the session assume at most one such flip. Do not introduce formal coding vocabulary yet. The students should feel the problem before they receive names for the tools."
+        class="slide nila"
+        data-title="The constraints"
+        data-time="3 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Mission constraints</div>
           <div class="mission-time">The engineering box</div>
@@ -621,7 +733,7 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="One light"
         data-notes="Mission Control begins with one question: “Did the drill reach liquid water?” Agree on green = yes and red = no. Click the large light to toggle it. Then ask: how many distinct messages can a single two-colour light carry? Only after students say “two,” introduce the term bit: one choice between two possibilities."
         class="slide nila"
@@ -673,10 +785,14 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Human card game"
         data-hidden-by-default="true"
-        data-notes="Physical setup: Choose four volunteers. Give each a double-sided red/green card. They stand left-to-right in positions 8, 4, 2, 1. The displayed cards can also be clicked for a digital version. Round structure: One team draws a mission card.; They silently arrange the four volunteers.; Another team reads the pattern and identifies the message.; Swap teams quickly.; The place-value labels allow a secondary route: messages 0–15 can be treated as numbers, but students do not need binary arithmetic to play. The print button creates sixteen cut-out message cards plus red/green bit cards in a new window." class="slide nila" data-title="Human card game" data-time="8 min">
+        data-notes="Physical setup: Choose four volunteers. Give each a double-sided red/green card. They stand left-to-right in positions 8, 4, 2, 1. The displayed cards can also be clicked for a digital version. Round structure: One team draws a mission card.; They silently arrange the four volunteers.; Another team reads the pattern and identifies the message.; Swap teams quickly.; The place-value labels allow a secondary route: messages 0–15 can be treated as numbers, but students do not need binary arithmetic to play. The print button creates sixteen cut-out message cards plus red/green bit cards in a new window."
+        class="slide nila"
+        data-title="Human card game"
+        data-time="8 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Card game · Human transmitter</div>
           <div class="mission-time">Four volunteers</div>
@@ -755,9 +871,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="The codebook"
-        data-notes="Give each group a printed codebook or let them study the wall of cards. Point out that these are not the only possible meanings or assignments; a codebook is a design choice. Highlight that “possible biological pattern” (1010) and “mission emergency” (1011) differ in only one position. Challenge: Could four flashes label all sixteen cards? Yes — exactly, with nothing left over. Students can count or reason through doubling." class="slide nila" data-title="The codebook" data-time="5 min">
+        data-notes="Give each group a printed codebook or let them study the wall of cards. Point out that these are not the only possible meanings or assignments; a codebook is a design choice. Highlight that “possible biological pattern” (1010) and “mission emergency” (1011) differ in only one position. Challenge: Could four flashes label all sixteen cards? Yes — exactly, with nothing left over. Students can count or reason through doubling."
+        class="slide nila"
+        data-title="The codebook"
+        data-time="5 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Mission Control codebook</div>
           <div class="mission-time">16 possible reports</div>
@@ -786,9 +906,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="How many flashes?"
-        data-notes="Ask for a prediction: three, four, or five? Move the slider only after they commit. Each new light doubles the number of patterns because every existing pattern can end in red or green. Three lights give 8 patterns, too few. Four lights give 16 — exactly enough for our sixteen reports, with nothing to spare. Research seed: because every pattern is now in use, any single misread flash turns one valid report into a different valid report." class="slide nila" data-title="How many flashes?" data-time="5 min">
+        data-notes="Ask for a prediction: three, four, or five? Move the slider only after they commit. Each new light doubles the number of patterns because every existing pattern can end in red or green. Three lights give 8 patterns, too few. Four lights give 16 — exactly enough for our sixteen reports, with nothing to spare. Research seed: because every pattern is now in use, any single misread flash turns one valid report into a different valid report."
+        class="slide nila"
+        data-title="How many flashes?"
+        data-time="5 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Capacity lab</div>
           <div class="mission-time">Every light doubles the language</div>
@@ -859,8 +983,8 @@
             existing pattern can end in red or green.
           </p>
           <p>
-            Three lights give 8 patterns, too few. Four lights give 16 —
-            exactly enough for the sixteen reports, with nothing left over.
+            Three lights give 8 patterns, too few. Four lights give 16 — exactly
+            enough for the sixteen reports, with nothing left over.
           </p>
           <p>
             Research seed: with every pattern spoken for, there is no slack. Any
@@ -870,10 +994,14 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Play the codebook"
         data-hidden-by-default="true"
-        data-notes="Use this after one or two physical rounds. A random mission card appears. Students tell you which four lights should be green; click the lights and check. After a correct encoding, click “Radiation!” It flips one random light. Ask the receiving team to decode the corrupted pattern using the codebook. Every four-bit pattern is a valid message now, so a flipped light always produces a different valid report — never an obvious error. Keep one such ambiguous example for the next slide." class="slide nila" data-title="Play the codebook" data-time="8 min">
+        data-notes="Use this after one or two physical rounds. A random mission card appears. Students tell you which four lights should be green; click the lights and check. After a correct encoding, click “Radiation!” It flips one random light. Ask the receiving team to decode the corrupted pattern using the codebook. Every four-bit pattern is a valid message now, so a flipped light always produces a different valid report — never an obvious error. Keep one such ambiguous example for the next slide."
+        class="slide nila"
+        data-title="Play the codebook"
+        data-time="8 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Card game · Round two</div>
           <div class="mission-time">Encode → transmit → decode</div>
@@ -917,14 +1045,14 @@
             the codebook.
           </p>
           <p>
-            Every four-bit pattern is a valid message, so a flipped light
-            always yields a different valid report — the danger is invisible.
-            Keep one such ambiguous example for the next slide.
+            Every four-bit pattern is a valid message, so a flipped light always
+            yields a different valid report — the danger is invisible. Keep one
+            such ambiguous example for the next slide.
           </p>
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Decode the opening"
         data-hidden-by-default="true"
         data-notes="Return to 1011. Let a student find it in the codebook. Make the consequence theatrical: Mission Control starts preparing a shelter command or abandonment procedure. Then announce a diagnostic alert: LUMEN detected a radiation spike during the 90-second link. One colour may have been misread. Ask students to compare 1011 with nearby valid messages. The most important comparison is 1010."
@@ -974,9 +1102,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="One wrong flash"
-        data-notes="Stress the subtlety: the received sequence is valid. Every four-bit pattern is a legal report, so nothing flags the error. Ask: “Can Earth tell whether the sender meant 1010 or 1011?” The honest answer is no. The four information lights carry no evidence about which of two close messages was intended. Key sentence: Our code carries information, but it does not yet protect information." class="slide nila" data-title="One wrong flash" data-time="5 min">
+        data-notes="Stress the subtlety: the received sequence is valid. Every four-bit pattern is a legal report, so nothing flags the error. Ask: “Can Earth tell whether the sender meant 1010 or 1011?” The honest answer is no. The four information lights carry no evidence about which of two close messages was intended. Key sentence: Our code carries information, but it does not yet protect information."
+        class="slide nila"
+        data-title="One wrong flash"
+        data-time="5 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">The catastrophe</div>
           <div class="mission-time">One bit flip</div>
@@ -1000,9 +1132,7 @@
                   ><span class="pulse small green"></span
                   ><span class="pulse small red"></span>
                 </div>
-                <code class="binary-caption" style="font-size: 36px"
-                  >1010</code
-                >
+                <code class="binary-caption" style="font-size: 36px">1010</code>
               </div>
               <div class="radiation-bolt">⚡</div>
               <div class="signal-card">
@@ -1013,9 +1143,7 @@
                   ><span class="pulse small green"></span
                   ><span class="pulse small green"></span>
                 </div>
-                <code class="binary-caption" style="font-size: 36px"
-                  >1011</code
-                >
+                <code class="binary-caption" style="font-size: 36px">1011</code>
               </div>
             </div>
             <div class="ambiguity">“Possible life” became “Emergency.”</div>
@@ -1045,9 +1173,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Invent protection"
-        data-notes="Give groups a few minutes to invent any protection scheme. Each group must state: what it sends, how Earth detects damage, whether Earth can repair it, and how many flashes it costs. Collect proposals without judging immediately. Common ideas: checksum/parity, repeat, majority vote, reserve gaps, send position labels, use brighter or longer flashes. Use the three large cards as buckets for their ideas. The rest of the story tests them." class="slide nila" data-title="Invent protection" data-time="6 min">
+        data-notes="Give groups a few minutes to invent any protection scheme. Each group must state: what it sends, how Earth detects damage, whether Earth can repair it, and how many flashes it costs. Collect proposals without judging immediately. Common ideas: checksum/parity, repeat, majority vote, reserve gaps, send position labels, use brighter or longer flashes. Use the three large cards as buckets for their ideas. The rest of the story tests them."
+        class="slide nila"
+        data-title="Invent protection"
+        data-time="6 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Engineering huddle</div>
           <div class="mission-time">You have 4 minutes</div>
@@ -1085,8 +1217,8 @@
           </p>
           <p>
             Collect proposals without judging immediately. Common ideas:
-            checksum/parity, repeat, majority vote, reserve gaps, send position labels,
-            use brighter or longer flashes.
+            checksum/parity, repeat, majority vote, reserve gaps, send position
+            labels, use brighter or longer flashes.
           </p>
           <p>
             Use the three large cards as buckets for their ideas. The rest of
@@ -1095,9 +1227,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Repetition"
-        data-notes="Two copies can reveal disagreement but cannot tell which copy is correct. Three copies allow a majority vote if at most one transmitted light among the three copies of each position is wrong. Repeating the four-bit report three times costs twelve flashes, beyond the mission budget of eight. Introduce redundancy: deliberate extra information used for reliability. The research question is not whether to use redundancy, but how efficiently." class="slide nila" data-title="Repetition" data-time="5 min">
+        data-notes="Two copies can reveal disagreement but cannot tell which copy is correct. Three copies allow a majority vote if at most one transmitted light among the three copies of each position is wrong. Repeating the four-bit report three times costs twelve flashes, beyond the mission budget of eight. Introduce redundancy: deliberate extra information used for reliability. The research question is not whether to use redundancy, but how efficiently."
+        class="slide nila"
+        data-title="Repetition"
+        data-time="5 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Idea 2 · Repetition</div>
           <div class="mission-time">Simple, reliable, expensive</div>
@@ -1120,11 +1256,19 @@
                 ><span class="mini-bit"></span><span class="mini-bit one"></span
                 ><span class="mini-bit"></span>
               </div>
-              <div class="equation-strip repetition-step step-hidden" id="repetitionMajority" aria-hidden="true">
+              <div
+                class="equation-strip repetition-step step-hidden"
+                id="repetitionMajority"
+                aria-hidden="true"
+              >
                 majority → <span class="accent">1010</span>
               </div>
             </div>
-            <div class="battery-panel repetition-step step-hidden" id="repetitionBudget" aria-hidden="true">
+            <div
+              class="battery-panel repetition-step step-hidden"
+              id="repetitionBudget"
+              aria-hidden="true"
+            >
               <div class="micro">Battery budget</div>
               <div class="flash-count">12 flashes</div>
               <div class="battery">
@@ -1159,9 +1303,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Parity watchdog"
-        data-notes="Start from a four-bit message. Add one parity light so the total number of greens is even — five flashes in all. Let students toggle the lights and keep the watchdog satisfied. Flip any single light. The total parity changes from even to odd, so Earth detects an error. Then ask which light was wrong. One parity check cannot identify the location. Suggested joke: “The watchdog knows somebody entered the house, but cannot tell which window.” Vocabulary: error detection is not the same as error correction ." class="slide nila" data-title="Parity watchdog" data-time="7 min">
+        data-notes="Start from a four-bit message. Add one parity light so the total number of greens is even — five flashes in all. Let students toggle the lights and keep the watchdog satisfied. Flip any single light. The total parity changes from even to odd, so Earth detects an error. Then ask which light was wrong. One parity check cannot identify the location. Suggested joke: “The watchdog knows somebody entered the house, but cannot tell which window.” Vocabulary: error detection is not the same as error correction ."
+        class="slide nila"
+        data-title="Parity watchdog"
+        data-time="7 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Idea 1 · The watchdog</div>
           <div class="mission-time">Even parity</div>
@@ -1231,7 +1379,9 @@
             <div class="parity-console">
               <h2>Make the total number of green lights even.</h2>
               <div class="bit-buttons" id="nila-parityBits"></div>
-              <div class="parity-count" id="nila-parityCount">Green lights: 0</div>
+              <div class="parity-count" id="nila-parityCount">
+                Green lights: 0
+              </div>
               <div class="parity-verdict" id="nila-parityVerdict">
                 Watchdog satisfied ✓
               </div>
@@ -1267,9 +1417,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Distance"
-        data-notes="Define distance only after students count the different positions. Hamming distance is the number of coordinates where two strings differ. If valid messages have distance one, a single flip can turn one valid message into another. At distance two, a corrupted word can sit equally close to both. At distance three, every one-error version remains uniquely closest to its original. Use the islands metaphor: a one-bit error moves one step. Error “bubbles” around valid messages must not overlap." class="slide nila" data-title="Distance" data-time="7 min">
+        data-notes="Define distance only after students count the different positions. Hamming distance is the number of coordinates where two strings differ. If valid messages have distance one, a single flip can turn one valid message into another. At distance two, a corrupted word can sit equally close to both. At distance three, every one-error version remains uniquely closest to its original. Use the islands metaphor: a one-bit error moves one step. Error “bubbles” around valid messages must not overlap."
+        class="slide nila"
+        data-title="Distance"
+        data-time="7 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Idea 3 · Give messages personal space</div>
           <div class="mission-time">Hamming distance</div>
@@ -1314,7 +1468,15 @@
         </div>
         <footer class="slide-foot">
           <span class="prompt">How far apart must valid messages be?</span
-          ><span>Count differing positions</span>
+          ><span
+            ><a
+              class="slide-tool-link"
+              href="hamming-neighbor-graph.html"
+              target="_blank"
+              rel="noopener"
+              >Open closest-neighbor graph</a
+            ></span
+          >
         </footer>
         <aside class="notes">
           <p>
@@ -1335,12 +1497,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Try five flashes"
         data-notes="Make this an intentionally generous attempt. Five flashes create only 32 possible received strings. Correcting one error means each legal message needs its untouched word plus five distinct one-flip outcomes: six exclusive slots. Pretend, optimistically, that these neighborhoods pack with no accidental overlap. Five complete neighborhoods already use 30 slots, leaving only two for the sixth message. We need sixteen messages, so five flashes cannot possibly work. Emphasize that this is not a failed construction—it is a best-case impossibility argument."
         class="slide nila"
         data-title="Try five flashes"
         data-time="4 min"
+        data-reveal-right="true"
       >
         <header class="slide-head">
           <div class="eyebrow">Honest attempt 1 · Five flashes</div>
@@ -1352,14 +1515,20 @@
               <div class="attempt-board-head">
                 <span>Best-case packing attempt</span><strong>32 slots</strong>
               </div>
-              <div class="attempt-groups" id="nila-fiveAttempt" aria-label="Five complete six-slot neighborhoods, two leftover slots, and an incomplete sixth neighborhood"></div>
+              <div
+                class="attempt-groups"
+                id="nila-fiveAttempt"
+                aria-label="Five complete six-slot neighborhoods, two leftover slots, and an incomplete sixth neighborhood"
+              ></div>
               <div class="attempt-legend">
                 <span><i class="attempt-original-key"></i> message</span>
-                <span><i class="attempt-neighbour-key"></i> one-flip result</span>
+                <span
+                  ><i class="attempt-neighbour-key"></i> one-flip result</span
+                >
                 <span><i class="attempt-missing-key"></i> missing slot</span>
               </div>
             </div>
-            <div class="attempt-reasoning">
+            <div class="attempt-reasoning" data-reveal-part aria-hidden="true">
               <div class="attempt-kicker">Be unrealistically generous</div>
               <h2>Assume every neighborhood packs perfectly.</h2>
               <div class="attempt-math">
@@ -1371,38 +1540,45 @@
               </div>
               <div class="attempt-verdict">
                 <span>32 ÷ 6</span><strong>At most 5 protected messages</strong>
-                <small>We need 16. The sixth message already spills over.</small>
+                <small
+                  >We need 16. The sixth message already spills over.</small
+                >
               </div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">Can rearranging the bubbles create more space?</span
-          ><span>No—every message still needs six exclusive outcomes</span>
+          <span class="prompt"
+            >Can rearranging the bubbles create more space?</span
+          ><span data-reveal-part aria-hidden="true"
+            >No—every message still needs six exclusive outcomes</span
+          >
         </footer>
         <aside class="notes">
           <p>
-            Treat this as a genuine attempt, but grant it every advantage: assume
-            the first neighborhoods never overlap accidentally.
+            Treat this as a genuine attempt, but grant it every advantage:
+            assume the first neighborhoods never overlap accidentally.
           </p>
           <p>
             Each protected five-bit message needs six received strings: the
             original and the five strings reached by one flip. Five such groups
-            use 30 of the 32 strings. Only two remain, but message six needs six.
+            use 30 of the 32 strings. Only two remain, but message six needs
+            six.
           </p>
           <p>
-            Therefore five flashes cannot protect sixteen reports, regardless
-            of how cleverly the legal messages are chosen.
+            Therefore five flashes cannot protect sixteen reports, regardless of
+            how cleverly the legal messages are chosen.
           </p>
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Try six flashes"
         data-notes="Now give six flashes the same optimistic treatment. There are 64 possible received strings. Each legal message needs itself plus six distinct one-flip outcomes: seven exclusive slots. Even if nine neighborhoods pack perfectly, they consume 63 strings and leave only one. The tenth message already fails, and the mission needs sixteen. This visual should make 16×7 greater than 64 feel inevitable before presenting the formal bound."
         class="slide nila"
         data-title="Try six flashes"
         data-time="4 min"
+        data-reveal-right="true"
       >
         <header class="slide-head">
           <div class="eyebrow">Honest attempt 2 · Six flashes</div>
@@ -1414,14 +1590,20 @@
               <div class="attempt-board-head">
                 <span>Best-case packing attempt</span><strong>64 slots</strong>
               </div>
-              <div class="attempt-groups" id="nila-sixAttempt" aria-label="Nine complete seven-slot neighborhoods, one leftover slot, and an incomplete tenth neighborhood"></div>
+              <div
+                class="attempt-groups"
+                id="nila-sixAttempt"
+                aria-label="Nine complete seven-slot neighborhoods, one leftover slot, and an incomplete tenth neighborhood"
+              ></div>
               <div class="attempt-legend">
                 <span><i class="attempt-original-key"></i> message</span>
-                <span><i class="attempt-neighbour-key"></i> one-flip result</span>
+                <span
+                  ><i class="attempt-neighbour-key"></i> one-flip result</span
+                >
                 <span><i class="attempt-missing-key"></i> missing slot</span>
               </div>
             </div>
-            <div class="attempt-reasoning">
+            <div class="attempt-reasoning" data-reveal-part aria-hidden="true">
               <div class="attempt-kicker">Try again with twice the space</div>
               <h2>Six flashes still run out far too early.</h2>
               <div class="attempt-math">
@@ -1433,14 +1615,18 @@
               </div>
               <div class="attempt-verdict">
                 <span>64 ÷ 7</span><strong>At most 9 protected messages</strong>
-                <small>We need 16. The tenth message has only one slot left.</small>
+                <small
+                  >We need 16. The tenth message has only one slot left.</small
+                >
               </div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
           <span class="prompt">What changes when we allow seven flashes?</span
-          ><span>One more flash doubles the universe to 128</span>
+          ><span data-reveal-part aria-hidden="true"
+            >One more flash doubles the universe to 128</span
+          >
         </footer>
         <aside class="notes">
           <p>
@@ -1449,7 +1635,8 @@
           </p>
           <p>
             Each six-bit message needs seven exclusive outcomes. Nine groups use
-            63 of the 64 strings. The tenth group cannot fit, let alone all sixteen.
+            63 of the 64 strings. The tenth group cannot fit, let alone all
+            sixteen.
           </p>
           <p>
             Now students are ready for the compact inequality on the next slide.
@@ -1457,9 +1644,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Sphere packing"
-        data-notes="Group exercise: For length n, a word plus all words one flip away has size n+1. Sixteen correctable messages need sixteen disjoint balls, inside 2ⁿ total strings. n = 6: 16×7 = 112 &gt; 64, so impossible.; n = 7: 16×8 = 128 = 128 — an exact fit with nothing wasted.; The Hamming(7,4) code we build next meets this bound with equality: a perfect code. Emphasize the research lesson: a lower bound says what cannot work; here it is tight. Determining the largest code with given length and distance is written A₂(n,d). Extension: model all n-bit words as graph vertices, join pairs at distance 1 or 2, and seek a largest independent set." class="slide nila" data-title="Sphere packing" data-time="8 min">
+        data-notes="Group exercise: For length n, a word plus all words one flip away has size n+1. Sixteen correctable messages need sixteen disjoint balls, inside 2ⁿ total strings. n = 6: 16×7 = 112 &gt; 64, so impossible.; n = 7: 16×8 = 128 = 128 — an exact fit with nothing wasted.; The Hamming(7,4) code we build next meets this bound with equality: a perfect code. Emphasize the research lesson: a lower bound says what cannot work; here it is tight. Determining the largest code with given length and distance is written A₂(n,d). Extension: model all n-bit words as graph vertices, join pairs at distance 1 or 2, and seek a largest independent set."
+        class="slide nila"
+        data-title="Sphere packing"
+        data-time="8 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Research door 1 · Pack the message bubbles</div>
           <div class="mission-time">A counting lower bound</div>
@@ -1475,7 +1666,11 @@
                 <span>Universe of 7-bit strings</span>
                 <strong>2<sup>7</sup> = 128</strong>
               </div>
-              <div class="packing-grid" id="nila-packingGrid" aria-hidden="true"></div>
+              <div
+                class="packing-grid"
+                id="nila-packingGrid"
+                aria-hidden="true"
+              ></div>
               <div class="packing-legend" aria-hidden="true">
                 <span><i class="legend-original"></i> original</span>
                 <span><i class="legend-neighbour"></i> one-flip neighbour</span>
@@ -1523,9 +1718,105 @@
         </aside>
       </section>
 
-<section
+      <section
+        data-chapter="The 7-cube"
+        data-notes="Every possible seven-bit received word is a vertex. Two vertices share an edge exactly when one bit differs, so this graph contains 128 vertices and 448 one-flip edges. Hover over or click a vertex to spotlight its seven immediate neighbors. The sixteen amber vertices are the Hamming(7,4) codewords. Notice that no amber pair shares an edge: one error always leaves its codeword, never lands directly on another. Each amber codeword and its seven neighbors form one of the sixteen perfect neighborhoods from the previous slide."
+        class="slide nila hypercube-slide"
+        data-title="The 7-cube"
+        data-time="4 min"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">See the whole seven-bit universe</div>
+          <div class="mission-time">Q₇ · 128 vertices</div>
+        </header>
+        <div class="slide-body">
+          <div class="hypercube-stage">
+            <div class="hypercube-copy">
+              <!-- <div class="attempt-kicker">The graph of seven-bit space</div> -->
+              <h2>One flipped bit draws one edge.</h2>
+              <p class="lede">
+                Every seven-bit word appears once. Neighbors differ in exactly
+                one position—one possible transmission error. Each bit gets
+                its own direction in this symmetric projection.
+              </p>
+              <div class="hypercube-counts" aria-label="Graph counts">
+                <span><strong>128</strong> possible words</span>
+                <span><strong>7</strong> neighbors each</span>
+                <span><strong>448</strong> edges total</span>
+              </div>
+              <div class="hypercube-legend" aria-label="Graph legend">
+                <span><i class="cube-key word-key"></i> any received word</span>
+                <span
+                  ><i class="cube-key codeword-key"></i> Hamming codeword</span
+                >
+                <span
+                  ><i class="cube-key neighbour-key"></i> one flip away</span
+                >
+              </div>
+              <p class="hypercube-prompt">
+                Hover or tap a point. Can two amber points ever be neighbors?
+              </p>
+            </div>
+            <div class="hypercube-figure">
+              <svg
+                class="hypercube-graph"
+                id="nila-hypercubeGraph"
+                viewBox="0 0 900 610"
+                role="img"
+                aria-labelledby="hypercubeTitle hypercubeDesc"
+              >
+                <title id="hypercubeTitle">
+                  All seven-bit words connected by one-bit changes
+                </title>
+                <desc id="hypercubeDesc">
+                  A symmetric seven-direction projection with 128 vertices and
+                  448 edges. Each edge joins two seven-bit strings that differ
+                  in exactly one position. The seven neighbors of the selected
+                  word are labeled with their bit values.
+                </desc>
+              </svg>
+              <div class="hypercube-readout" aria-live="polite">
+                <span>Selected word</span>
+                <code id="nila-hypercubeWord">0000000</code>
+                <small id="nila-hypercubeNeighbours"
+                  >Its seven one-flip neighbors are highlighted.</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">A one-bit error is one step along an edge</span
+          ><span
+            ><a
+              class="slide-tool-link"
+              href="hamming-neighbor-graph.html"
+              target="_blank"
+              rel="noopener"
+              >Try your own codewords</a
+            ></span
+          >
+        </footer>
+        <aside class="notes">
+          <p>
+            Read one highlighted example aloud. Flipping any one of its seven
+            positions follows exactly one of the seven bright incident edges.
+          </p>
+          <p>
+            The amber vertices are the sixteen valid Hamming(7,4) codewords.
+            Their radius-one neighborhoods partition all 128 vertices, which is
+            the exact packing promised on the previous slide.
+          </p>
+        </aside>
+      </section>
+
+      <section
         data-chapter="Three inspectors"
-        data-notes="Begin with the obvious arrangement: four data lights followed by three check lights. Ask whether merely appending the checks gives each damaged position a unique alarm signature. Advance to count the eight possible three-inspector yes/no patterns. Reserve 000 for no error, then translate the seven remaining binary signatures into position numbers 1 through 7. Next isolate 001, 010, and 100—the signatures belonging to exactly one inspector. Give those solo signatures to P1, P2, and P4. Ask students to place the four data bits in the remaining positions 3, 5, 6, and 7 and predict the complete left-to-right order. Only on the fifth advance reveal the arrangement. Inspector 1 watches 1,3,5,7.; Inspector 2 watches 2,3,6,7.; Inspector 4 watches 4,5,6,7." class="slide nila" data-title="Three inspectors" data-time="8 min">
+        data-notes="Begin with the obvious arrangement: four data lights followed by three check lights. Ask whether merely appending the checks gives each damaged position a unique alarm signature. Advance to count the eight possible three-inspector yes/no patterns. Reserve 000 for no error, then translate the seven remaining binary signatures into position numbers 1 through 7. Next isolate 001, 010, and 100—the signatures belonging to exactly one inspector. Give those solo signatures to P1, P2, and P4. Ask students to place the four data bits in the remaining positions 3, 5, 6, and 7 and predict the complete left-to-right order. Only on the fifth advance reveal the arrangement. Inspector 1 watches 1,3,5,7.; Inspector 2 watches 2,3,6,7.; Inspector 4 watches 4,5,6,7."
+        class="slide nila"
+        data-title="Three inspectors"
+        data-time="8 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">A seven-flash repair code</div>
           <div class="mission-time">3 inspectors · 4 data lights</div>
@@ -1535,27 +1826,43 @@
             <div class="position-map-panel">
               <div class="position-map" id="nila-positionMap"></div>
               <div class="position-order-caption" id="nila-positionCaption">
-                First attempt: keep the four data lights together and append all three checks.
+                First attempt: keep the four data lights together and append all
+                three checks.
               </div>
             </div>
             <div class="placement-side">
-              <div class="placement-discovery placement-details" id="nila-placementDiscovery" aria-hidden="false">
+              <div
+                class="placement-discovery placement-details"
+                id="nila-placementDiscovery"
+                aria-hidden="false"
+              >
                 <span>Design requirement</span>
                 <h2>Every damaged position needs its own alarm pattern.</h2>
-                <p>Three inspectors each answer yes or no. How many different patterns can they report?</p>
+                <p>
+                  Three inspectors each answer yes or no. How many different
+                  patterns can they report?
+                </p>
               </div>
-              <div class="inspectors placement-details step-hidden" id="nila-inspectorCards" aria-hidden="true"></div>
+              <div
+                class="inspectors placement-details step-hidden"
+                id="nila-inspectorCards"
+                aria-hidden="true"
+              ></div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt" id="nila-inspectorPrompt">Do three checks help just because we appended them?</span
-          ><span id="nila-inspectorFooterHint">Next: find positions that give every light a distinct signature</span>
+          <span class="prompt" id="nila-inspectorPrompt"
+            >Do three checks help just because we appended them?</span
+          ><span id="nila-inspectorFooterHint"
+            >Next: find positions that give every light a distinct
+            signature</span
+          >
         </footer>
         <aside class="notes">
           <p>
-            Start with the natural first draft: D1, D2, D3, D4, then P1, P2,
-            P4. Ask what makes those final three positions special. Nothing yet.
+            Start with the natural first draft: D1, D2, D3, D4, then P1, P2, P4.
+            Ask what makes those final three positions special. Nothing yet.
           </p>
           <p>
             First count the eight possible three-inspector signatures. Reserve
@@ -1585,9 +1892,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Encode 1010"
-        data-notes="Assign one inspector to each group. Put data 1,0,1,0 in positions 3,5,6,7. Each group calculates its check light. Results for even parity: p1=1, p2=0, p4=1. The seven-bit codeword is 1011010 . Use “Next step” to reveal data placement, then check values. Do not rush the arithmetic; let students physically count green lights in each inspector’s set." class="slide nila" data-title="Encode 1010" data-time="8 min">
+        data-notes="Assign one inspector to each group. Put data 1,0,1,0 in positions 3,5,6,7. Each group calculates its check light. Results for even parity: p1=1, p2=0, p4=1. The seven-bit codeword is 1011010 . Use “Next step” to reveal data placement, then check values. Do not rush the arithmetic; let students physically count green lights in each inspector’s set."
+        class="slide nila"
+        data-title="Encode 1010"
+        data-time="8 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Build NILA’s protected report</div>
           <div class="mission-time">Data: 1010</div>
@@ -1617,8 +1928,8 @@
             3,5,6,7. Each group calculates its check light.
           </p>
           <p>
-            Results for even parity: p1=1, p2=0, p4=1. The seven-bit codeword
-            is <strong>1011010</strong>.
+            Results for even parity: p1=1, p2=0, p4=1. The seven-bit codeword is
+            <strong>1011010</strong>.
           </p>
           <p>
             Use “Next step” to reveal data placement, then check values. Do not
@@ -1628,7 +1939,7 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Find the damaged position"
         data-notes="The received word is 1011000; position 6 was flipped from 1 to 0. Have groups run their inspector parity checks independently. Inspector 1: satisfied.; Inspector 2: complains.; Inspector 4: complains.; Complaining labels 2+4=6, so flip position 6. This complaint pattern is called a syndrome . It is not merely an alarm; it is an address. Older-student extension: the checks can be written as a parity-check matrix H and syndrome s = Hrᵀ mod 2."
         class="slide nila"
@@ -1651,8 +1962,11 @@
             <div class="syndrome" id="nila-syndromeNumber">?</div>
             <div class="button-row">
               <button class="action" id="nila-runChecks">Run inspectors</button
-              ><button class="action primary" id="nila-repairError">Repair</button
-              ><button class="action ghost" id="nila-resetSyndrome">Reset</button>
+              ><button class="action primary" id="nila-repairError">
+                Repair</button
+              ><button class="action ghost" id="nila-resetSyndrome">
+                Reset
+              </button>
             </div>
           </div>
         </div>
@@ -1683,7 +1997,7 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="The repaired report"
         data-notes="After repair, extract data positions 3,5,6,7: 1010. The codebook says “possible biological pattern.” Be scientifically careful: this is not “aliens discovered.” The pattern needs repeat samples, contamination checks, controls, and independent measurements. Key line: “Error correction did not prove life. It protected the evidence on its journey.”"
         class="slide nila"
@@ -1735,9 +2049,472 @@
         </aside>
       </section>
 
-<section
+      <section
+        data-chapter="Practice: Hamming distance"
+        data-notes="Give students two minutes alone, then one minute to compare. Answers: the three distances are 1, 3, and 4. A pair of valid codewords in a code that corrects one error must have distance at least 3, so pairs B and C pass this test while pair A does not. Click Next once to reveal the check, then again to continue."
+        class="slide nila exercise-slide"
+        data-title="Practice: Hamming distance"
+        data-time="3 min"
+        data-reveal-right="true"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Practice lab · 1 of 7</div>
+          <div class="mission-time">Work alone · 3 minutes</div>
+        </header>
+        <div class="slide-body">
+          <div class="exercise-stage">
+            <div class="exercise-task">
+              <div class="exercise-kicker">Write one number for each pair</div>
+              <h2>Hamming distance</h2>
+              <ol class="exercise-instructions">
+                <li>Compare the bits in the same positions.</li>
+                <li>Count every position where the bits differ.</li>
+                <li>
+                  Circle each pair that could belong to a one-error-correcting
+                  code.
+                </li>
+              </ol>
+              <div
+                class="exercise-word-pairs"
+                aria-label="Three pairs of seven-bit words"
+              >
+                <div>
+                  <strong>A</strong><code>1011010</code><code>1011000</code>
+                </div>
+                <div>
+                  <strong>B</strong><code>0000000</code><code>1110000</code>
+                </div>
+                <div>
+                  <strong>C</strong><code>1100110</code><code>1010101</code>
+                </div>
+              </div>
+            </div>
+            <div class="exercise-solution" data-reveal-part aria-hidden="true">
+              <span class="exercise-answer-label">Check your work</span>
+              <h3>A = 1, B = 3, C = 4</h3>
+              <p>
+                Pairs B and C are far enough apart. Pair A is only one flip
+                apart.
+              </p>
+              <div class="exercise-why">
+                To correct one error, valid codewords need distance at least 3.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Next reveals the check</span
+          ><span data-reveal-part aria-hidden="true"
+            >One error needs distance 3</span
+          >
+        </footer>
+        <aside class="notes">
+          <p>Distances: A = 1, B = 3, C = 4.</p>
+          <p>
+            Ask a student to explain why distance 2 still allows ambiguity after
+            one flip.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        data-chapter="Practice: one-flip neighbors"
+        data-notes="Students should change one position at a time, moving from left to right. The seven neighbors of 0101101 are 1101101, 0001101, 0111101, 0100101, 0101001, 0101111, and 0101100. Including the original gives a radius-one neighborhood of size 8. Click Next once to reveal the list."
+        class="slide nila exercise-slide"
+        data-title="Practice: one-flip neighbors"
+        data-time="4 min"
+        data-reveal-right="true"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Practice lab · 2 of 7</div>
+          <div class="mission-time">Pairs · 4 minutes</div>
+        </header>
+        <div class="slide-body">
+          <div class="exercise-stage">
+            <div class="exercise-task">
+              <div class="exercise-kicker">Explore one error bubble</div>
+              <h2>One-flip neighbors</h2>
+              <div class="exercise-focus-word">
+                <span>Start with</span><code>0101101</code>
+              </div>
+              <ol class="exercise-instructions">
+                <li>Flip bit 1 and record the new word.</li>
+                <li>Restore it, then repeat for bits 2 through 7.</li>
+                <li>Count the original word and all its neighbors.</li>
+              </ol>
+              <p class="exercise-deliverable">
+                Your paper should contain seven different neighbors and one
+                neighborhood size.
+              </p>
+            </div>
+            <div
+              class="exercise-solution compact-solution"
+              data-reveal-part
+              aria-hidden="true"
+            >
+              <span class="exercise-answer-label">Seven neighbors</span>
+              <div class="neighbor-answer-list">
+                <code>1101101</code><code>0001101</code><code>0111101</code>
+                <code>0100101</code><code>0101001</code><code>0101111</code>
+                <code>0101100</code>
+              </div>
+              <div class="exercise-why">
+                1 original + 7 neighbors = 8 received words
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Change exactly one position each time</span
+          ><span data-reveal-part aria-hidden="true">Neighborhood size: 8</span>
+        </footer>
+        <aside class="notes">
+          <p>
+            Have partners check that every listed word differs from the original
+            in exactly one place.
+          </p>
+          <p>Connect the answer 8 to the perfect packing count 16 × 8 = 128.</p>
+        </aside>
+      </section>
+
+      <section
+        data-chapter="Practice: inspector signatures"
+        data-notes="Use complaint order P4, P2, P1 so the pattern reads as the binary form of the position number. Answers: position 3 gives 011, position 5 gives 101, position 6 gives 110, and position 7 gives 111. Ask why 000 cannot label a bit position: it must mean that no inspector complains."
+        class="slide nila exercise-slide"
+        data-title="Practice: inspector signatures"
+        data-time="4 min"
+        data-reveal-right="true"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Practice lab · 3 of 7</div>
+          <div class="mission-time">Pairs · 4 minutes</div>
+        </header>
+        <div class="slide-body">
+          <div class="exercise-stage">
+            <div class="exercise-task">
+              <div class="exercise-kicker">
+                1 means that inspector complains
+              </div>
+              <h2>Inspector signatures</h2>
+              <ol class="exercise-instructions">
+                <li>
+                  For each position, decide whether P4, P2, and P1 watch it.
+                </li>
+                <li>Write the complaint pattern in the order P4 P2 P1.</li>
+                <li>Read the pattern as a binary number.</li>
+              </ol>
+              <table class="exercise-signature-table">
+                <thead>
+                  <tr>
+                    <th>Position</th>
+                    <th>P4 P2 P1</th>
+                    <th>Sum</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>3</td>
+                    <td>___</td>
+                    <td>___</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>___</td>
+                    <td>___</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>___</td>
+                    <td>___</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>___</td>
+                    <td>___</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="exercise-solution" data-reveal-part aria-hidden="true">
+              <span class="exercise-answer-label">Completed map</span>
+              <div class="signature-answers">
+                <code>3 = 011</code><code>5 = 101</code> <code>6 = 110</code
+                ><code>7 = 111</code>
+              </div>
+              <p>
+                The complaint pattern is the binary address of the damaged
+                position.
+              </p>
+              <div class="exercise-why">000 stays reserved for “no error.”</div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Why must every nonzero pattern appear once?</span
+          ><span data-reveal-part aria-hidden="true"
+            >The syndrome becomes an address</span
+          >
+        </footer>
+        <aside class="notes">
+          <p>Answers: 3 = 011, 5 = 101, 6 = 110, 7 = 111.</p>
+          <p>
+            Invite students to add the already known anchors 1 = 001, 2 = 010,
+            and 4 = 100.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        data-chapter="Practice: guided encoding"
+        data-notes="Students place 0,1,1,0 in positions 3,5,6,7. With even parity, P1 must be 1, P2 must be 1, and P4 must be 0. The full codeword is 1100110. Encourage students to audit all three parity groups after filling the check bits."
+        class="slide nila exercise-slide"
+        data-title="Practice: guided encoding"
+        data-time="4 min"
+        data-reveal-right="true"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Practice lab · 4 of 7</div>
+          <div class="mission-time">Guided · 4 minutes</div>
+        </header>
+        <div class="slide-body">
+          <div class="exercise-stage">
+            <div class="exercise-task">
+              <div class="exercise-kicker">Encode data 0110</div>
+              <h2>Guided encoding</h2>
+              <div
+                class="exercise-position-strip"
+                aria-label="Seven positions with data placed and parity slots blank"
+              >
+                <span><small>1 · P1</small>?</span
+                ><span><small>2 · P2</small>?</span>
+                <span class="data"><small>3 · D1</small>0</span
+                ><span><small>4 · P4</small>?</span>
+                <span class="data"><small>5 · D2</small>1</span
+                ><span class="data"><small>6 · D3</small>1</span>
+                <span class="data"><small>7 · D4</small>0</span>
+              </div>
+              <ol class="exercise-instructions">
+                <li>Choose P1 so positions 1, 3, 5, and 7 have even parity.</li>
+                <li>Repeat for P2 on 2, 3, 6, and 7.</li>
+                <li>Repeat for P4 on 4, 5, 6, and 7.</li>
+              </ol>
+            </div>
+            <div class="exercise-solution" data-reveal-part aria-hidden="true">
+              <span class="exercise-answer-label">Even parity</span>
+              <div class="parity-answer">
+                <span>P1 = <strong>1</strong></span
+                ><span>P2 = <strong>1</strong></span
+                ><span>P4 = <strong>0</strong></span>
+              </div>
+              <h3><code>1100110</code></h3>
+              <p>
+                Audit the three inspector groups. Every group contains an even
+                number of ones.
+              </p>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">Write all seven bits before checking</span
+          ><span data-reveal-part aria-hidden="true">0110 becomes 1100110</span>
+        </footer>
+        <aside class="notes">
+          <p>Answer: P1 = 1, P2 = 1, P4 = 0. Codeword: 1100110.</p>
+          <p>
+            Ask groups to defend one parity bit rather than only reporting the
+            final word.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        data-chapter="Practice: independent encoding"
+        data-notes="This round removes the position hints. For data 1101, P1 = 1, P2 = 0, and P4 = 0. The encoded word is 1010101. If answers differ, students should test each parity group instead of restarting immediately."
+        class="slide nila exercise-slide"
+        data-title="Practice: independent encoding"
+        data-time="4 min"
+        data-reveal-right="true"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Practice lab · 5 of 7</div>
+          <div class="mission-time">Work alone · 4 minutes</div>
+        </header>
+        <div class="slide-body">
+          <div class="exercise-stage">
+            <div class="exercise-task">
+              <div class="exercise-kicker">Encode data 1101</div>
+              <h2>Independent encoding</h2>
+              <div class="exercise-focus-word">
+                <span>Data</span><code>1101</code>
+              </div>
+              <ol class="exercise-instructions">
+                <li>
+                  Draw positions 1 through 7 and label the parity positions.
+                </li>
+                <li>Place the four data bits in positions 3, 5, 6, and 7.</li>
+                <li>Choose all three parity bits, then audit every group.</li>
+              </ol>
+              <p class="exercise-deliverable">
+                Submit one seven-bit codeword and three parity checks.
+              </p>
+            </div>
+            <div class="exercise-solution" data-reveal-part aria-hidden="true">
+              <span class="exercise-answer-label">Encoding check</span>
+              <div class="parity-answer">
+                <span>P1 = <strong>1</strong></span
+                ><span>P2 = <strong>0</strong></span
+                ><span>P4 = <strong>0</strong></span>
+              </div>
+              <h3><code>1010101</code></h3>
+              <div class="exercise-why">
+                The data positions 3, 5, 6, and 7 still read 1101.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">No position guide this time</span
+          ><span data-reveal-part aria-hidden="true">1101 becomes 1010101</span>
+        </footer>
+        <aside class="notes">
+          <p>Answer: P1 = 1, P2 = 0, P4 = 0. Codeword: 1010101.</p>
+          <p>
+            Use parity audits as a debugging habit. Students should find a local
+            mistake without discarding the whole calculation.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        data-chapter="Practice: guided decoding"
+        data-notes="For received word 1000111, P1 and P4 complain while P2 is satisfied. The syndrome is 1 + 4 = 5. Flip position 5 to obtain 1000011. Extract positions 3,5,6,7 to recover data 0011."
+        class="slide nila exercise-slide"
+        data-title="Practice: guided decoding"
+        data-time="4 min"
+        data-reveal-right="true"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Practice lab · 6 of 7</div>
+          <div class="mission-time">Guided · 4 minutes</div>
+        </header>
+        <div class="slide-body">
+          <div class="exercise-stage">
+            <div class="exercise-task">
+              <div class="exercise-kicker">Received word</div>
+              <h2>Guided decoding</h2>
+              <div class="exercise-focus-word received">
+                <span>Earth sees</span><code>1000111</code>
+              </div>
+              <ol class="exercise-instructions">
+                <li>Test P1 on positions 1, 3, 5, and 7.</li>
+                <li>Test P2 and P4 in the same way.</li>
+                <li>Add the labels of the complaining inspectors.</li>
+                <li>
+                  Flip that position, then read data positions 3, 5, 6, and 7.
+                </li>
+              </ol>
+            </div>
+            <div class="exercise-solution" data-reveal-part aria-hidden="true">
+              <span class="exercise-answer-label">Repair path</span>
+              <div class="decode-chain">
+                <code>complaints: P1 + P4</code><strong>syndrome 5</strong
+                ><code>1000011</code><strong>data 0011</strong>
+              </div>
+              <div class="exercise-why">
+                Flip position 5, then all three parity checks pass.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt"
+            >The complaining labels identify one position</span
+          ><span data-reveal-part aria-hidden="true"
+            >Repair bit 5 · recover 0011</span
+          >
+        </footer>
+        <aside class="notes">
+          <p>
+            P1 and P4 complain. Syndrome 5. Repaired word 1000011. Data 0011.
+          </p>
+          <p>
+            Ask students to audit the repaired word before extracting the data.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        data-chapter="Practice: solo decode"
+        data-notes="This final practice removes the group lists. Received word 0101100 has syndrome 3. Flipping position 3 gives valid codeword 0111100. Data positions 3,5,6,7 give 1100. Students who finish early should encode a new four-bit word, flip one bit, and trade the received word with a partner."
+        class="slide nila exercise-slide exercise-final"
+        data-title="Practice: solo decode"
+        data-time="5 min"
+        data-reveal-right="true"
+      >
+        <header class="slide-head">
+          <div class="eyebrow">Practice lab · 7 of 7</div>
+          <div class="mission-time">Solo check · 5 minutes</div>
+        </header>
+        <div class="slide-body">
+          <div class="exercise-stage">
+            <div class="exercise-task">
+              <div class="exercise-kicker">One error occurred</div>
+              <h2>Complete decode</h2>
+              <div class="exercise-focus-word received">
+                <span>Received</span><code>0101100</code>
+              </div>
+              <ol class="exercise-instructions">
+                <li>Find the syndrome without using a group diagram.</li>
+                <li>Repair the indicated bit.</li>
+                <li>Extract the four data bits.</li>
+                <li>Verify the repaired word with all three parity checks.</li>
+              </ol>
+              <p class="exercise-deliverable">
+                Show the syndrome, repaired codeword, recovered data, and parity
+                audit.
+              </p>
+            </div>
+            <div class="exercise-solution" data-reveal-part aria-hidden="true">
+              <span class="exercise-answer-label">Solo check</span>
+              <div class="decode-chain">
+                <strong>syndrome 3</strong><code>0111100</code
+                ><strong>data 1100</strong>
+              </div>
+              <p>
+                All three groups have even parity after bit 3 changes from 0 to
+                1.
+              </p>
+              <div class="exercise-why">
+                Finished early? Encode a new word, flip one bit, and trade with
+                a partner.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span class="prompt">This one uses the complete routine</span
+          ><span data-reveal-part aria-hidden="true"
+            >Syndrome 3 · repaired data 1100</span
+          >
+        </footer>
+        <aside class="notes">
+          <p>
+            Answer: syndrome 3, repaired codeword 0111100, recovered data 1100.
+          </p>
+          <p>
+            The early-finisher partner exchange turns the fixed problem into a
+            student-generated test.
+          </p>
+        </aside>
+      </section>
+
+      <section
         data-chapter="Two errors"
-        data-notes="A distance-3 Hamming code can miscorrect two errors because the syndrome may point to an innocent position. Add an eighth overall parity bit to obtain single-error correction, double-error detection (SECDED). Challenge table: Syndrome 0, overall parity OK: no error.; Syndrome nonzero, overall parity wrong: one error in indicated position.; Syndrome 0, overall parity wrong: error in the overall parity bit.; Syndrome nonzero, overall parity OK: two errors detected; do not “repair.”; Ask what the probe should do after detecting but not correcting two errors: request retransmission, mark data uncertain, or use a stronger code." class="slide nila" data-title="Two errors" data-time="7 min">
+        data-notes="A distance-3 Hamming code can miscorrect two errors because the syndrome may point to an innocent position. Add an eighth overall parity bit to obtain single-error correction, double-error detection (SECDED). Challenge table: Syndrome 0, overall parity OK: no error.; Syndrome nonzero, overall parity wrong: one error in indicated position.; Syndrome 0, overall parity wrong: error in the overall parity bit.; Syndrome nonzero, overall parity OK: two errors detected; do not “repair.”; Ask what the probe should do after detecting but not correcting two errors: request retransmission, mark data uncertain, or use a stronger code."
+        class="slide nila"
+        data-title="Two errors"
+        data-time="7 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Research door 2 · What if two lights flip?</div>
           <div class="mission-time">Beyond single-error correction</div>
@@ -1813,7 +2590,7 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Shortest possible code"
         data-notes="For sixteen messages, counting already settles it: n = 6 is impossible and n = 7 fits exactly (16×8 = 128 = 2⁷). The Hamming(7,4) code is a perfect code, so seven flashes is provably optimal. The open problems appear when the numbers stop cooperating. Translate them into several languages: Coding: choose seventeen length-7 binary words with minimum distance 3 — or prove it is impossible.; Graph theory: from the graph on 128 words, choose seventeen vertices with no pair at distance 1 or 2.; Optimization: maximum independent set / integer programming.; Computation: greedy search, backtracking, SAT, or symmetry breaking.; Do not require a full solution in class. A good mini-project is to find the largest code students can construct and provide a verifiable distance table."
         class="slide nila"
@@ -1869,9 +2646,7 @@
               <div class="bound-equation">
                 n = 7 → <span style="color: var(--green)">perfect fit</span>
               </div>
-              <div class="bound-equation">
-                16 · 8 = 128 = 2<sup>7</sup>
-              </div>
+              <div class="bound-equation">16 · 8 = 128 = 2<sup>7</sup></div>
               <div class="research-door">
                 Add a 17th report, or demand two-error correction. When does
                 counting stop deciding it?
@@ -1889,7 +2664,10 @@
             impossible, and n = 7 fits with equality. Hamming(7,4) is a
             <strong>perfect code</strong>, so seven flashes is provably optimal.
           </p>
-          <p>Push the numbers and the problem reopens. Translate it into several languages:</p>
+          <p>
+            Push the numbers and the problem reopens. Translate it into several
+            languages:
+          </p>
           <ul>
             <li>
               <strong>Coding:</strong> choose seventeen length-7 binary words
@@ -1916,9 +2694,13 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Research lab"
-        data-notes="Suggested deliverables: A one-page problem statement defining message length, alphabet, and allowed errors.; A construction or algorithm.; A verifier that checks every pair or every error pattern.; A comparison with a simple bound or baseline.; One unanswered question discovered during the work.; Age differentiation: Grades 6–7 can build physical codebooks and test them. Grades 8–9 can write a small brute-force checker. Grade 10 can formulate graphs, matrices, or optimization models. Important research habit: distinguish random noise, known erasures, bursts, insertions/deletions, and adversarial errors. Different channels demand different codes." class="slide nila" data-title="Research lab" data-time="10–30 min">
+        data-notes="Suggested deliverables: A one-page problem statement defining message length, alphabet, and allowed errors.; A construction or algorithm.; A verifier that checks every pair or every error pattern.; A comparison with a simple bound or baseline.; One unanswered question discovered during the work.; Age differentiation: Grades 6–7 can build physical codebooks and test them. Grades 8–9 can write a small brute-force checker. Grade 10 can formulate graphs, matrices, or optimization models. Important research habit: distinguish random noise, known erasures, bursts, insertions/deletions, and adversarial errors. Different channels demand different codes."
+        class="slide nila"
+        data-title="Research lab"
+        data-time="10–30 min"
+      >
         <header class="slide-head">
           <div class="eyebrow">Choose a research door</div>
           <div class="mission-time">Mini-project menu</div>
@@ -2030,7 +2812,7 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="ECC in the real world"
         data-notes="Connect the story to familiar systems. Keep claims general rather than diving into standards. Optional live demonstration: display or print a QR code with part covered. Let students predict whether it will scan. Discuss that QR uses blocks and algebraic error correction rather than the simple Hamming code shown today. Other examples: CDs/DVDs, satellite telemetry, deep-space imaging, memory ECC, barcodes, mobile networks, data centers."
         class="slide nila"
@@ -2096,7 +2878,7 @@
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Recovery game"
         data-notes="This is a real byte-by-byte Hamming(7,4) experiment. Let students edit the page of text, then press Encode. Every byte becomes two four-bit nibbles, and every nibble becomes a seven-bit Hamming codeword. Adjust the bit-flip percentage, then damage transmitted bits independently. Before repairing, ask for a prediction: how much of the text will survive? Hamming(7,4) guarantees repair only when a codeword receives at most one flip; as the rate rises, more seven-bit blocks receive multiple errors. Press Repair + compare to measure exact byte recovery."
         class="slide nila"
@@ -2108,23 +2890,41 @@
           <div class="mission-time">A page of editable text</div>
         </header>
         <div class="slide-body">
-          <div class="hamming-text-game" data-hamming-game data-source="text" data-stage="0">
+          <div
+            class="hamming-text-game"
+            data-hamming-game
+            data-source="text"
+            data-stage="0"
+          >
             <div class="hamming-game-title">
-              <div><span>LIVE PAYLOAD</span><h2>Can Hamming code rescue a damaged page?</h2></div>
+              <div>
+                <span>LIVE PAYLOAD</span>
+                <h2>Can Hamming code rescue a damaged page?</h2>
+              </div>
               <label class="hamming-noise-control">
                 <span>Random bit flips</span>
-                <input type="range" min="0" max="50" value="3" step="1" data-noise-rate aria-label="Random bit-flip percentage">
+                <input
+                  type="range"
+                  min="0"
+                  max="50"
+                  value="3"
+                  step="1"
+                  data-noise-rate
+                  aria-label="Random bit-flip percentage"
+                />
                 <output data-noise-output>3%</output>
               </label>
             </div>
             <div class="hamming-text-compare">
               <label class="hamming-text-pane">
                 <span>Original text · editable</span>
-                <textarea data-source-input spellcheck="false">NILA REPORT 47-B
+                <textarea data-source-input spellcheck="false">
+NILA REPORT 47-B
 
 The drill reached a layer of unusually clear ice at 04:17. Beneath it, the spectrometer found a repeating chemical pattern. This is not proof of life, but it is exactly the kind of clue the mission came to investigate.
 
-Battery reserves are low. The next communication window lasts ninety seconds. Please confirm that this report arrived intact—and if it did not, let the mathematics repair what the radiation changed.</textarea>
+Battery reserves are low. The next communication window lasts ninety seconds. Please confirm that this report arrived intact—and if it did not, let the mathematics repair what the radiation changed.</textarea
+                >
               </label>
               <div class="hamming-text-pane">
                 <span>Broken text · before repair</span>
@@ -2132,31 +2932,49 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
               </div>
               <div class="hamming-text-pane">
                 <span>Recovered text</span>
-                <pre data-recovered-output>Recovered text will appear here.</pre>
+                <pre data-recovered-output>
+Recovered text will appear here.</pre
+                >
               </div>
             </div>
             <div class="hamming-game-console">
               <div class="hamming-actions">
-                <button class="action" data-hamming-action="encode">1 · Encode (7,4)</button>
-                <button class="action warn" data-hamming-action="corrupt">2 · Flip 3%</button>
-                <button class="action primary" data-hamming-action="repair">3 · Repair + compare</button>
-                <button class="action ghost" data-hamming-action="reset">Reset</button>
+                <button class="action" data-hamming-action="encode">
+                  1 · Encode (7,4)
+                </button>
+                <button class="action warn" data-hamming-action="corrupt">
+                  2 · Flip 3%
+                </button>
+                <button class="action primary" data-hamming-action="repair">
+                  3 · Repair + compare
+                </button>
+                <button class="action ghost" data-hamming-action="reset">
+                  Reset
+                </button>
               </div>
               <div class="hamming-progress"><i data-game-progress></i></div>
-              <div class="hamming-status" data-game-status aria-live="polite">Ready. Encode the source to begin.</div>
+              <div class="hamming-status" data-game-status aria-live="polite">
+                Ready. Encode the source to begin.
+              </div>
               <div class="hamming-metrics">
                 <span>Source<strong data-metric="source">—</strong></span>
                 <span>Encoded<strong data-metric="encoded">—</strong></span>
                 <span>Flipped<strong data-metric="flips">—</strong></span>
                 <span>Recovered<strong data-metric="recovery">—</strong></span>
               </div>
-              <div class="hamming-bit-sample" data-bit-sample><em>original</em><b>→</b><em>damaged</em><b>→</b><em>repaired</em></div>
+              <div class="hamming-bit-sample" data-bit-sample>
+                <em>original</em><b>→</b><em>damaged</em><b>→</b
+                ><em>repaired</em>
+              </div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">Predict the recovery percentage before decoding</span
-          ><span>Every result is computed from the actual transmitted bits</span>
+          <span class="prompt"
+            >Predict the recovery percentage before decoding</span
+          ><span
+            >Every result is computed from the actual transmitted bits</span
+          >
         </footer>
         <aside class="notes">
           <p>Edit the text if the group wants to send its own message.</p>
@@ -2168,7 +2986,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Recovery game"
         data-notes="Round two uses a locally authored recreation inspired by CERN's first website. It is HTML, so damage can affect both visible words and structural markup. Encode the source, choose a bit-flip rate, apply fresh noise, and repair it. The right-hand browser preview renders the recovered HTML. Compare the exact-byte percentage with the visual result: a page may look plausible even when some bytes are wrong. This is a useful distinction between mathematical correctness and human-perceived usability."
         class="slide nila"
@@ -2180,50 +2998,92 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
           <div class="mission-time">The first website · recreated</div>
         </header>
         <div class="slide-body">
-          <div class="hamming-text-game" data-hamming-game data-source="web" data-stage="0">
+          <div
+            class="hamming-text-game"
+            data-hamming-game
+            data-source="web"
+            data-stage="0"
+          >
             <div class="hamming-game-title">
-              <div><span>FAMOUS WEBPAGE</span><h2>Will damaged HTML still behave like a webpage?</h2></div>
+              <div>
+                <span>FAMOUS WEBPAGE</span>
+                <h2>Will damaged HTML still behave like a webpage?</h2>
+              </div>
               <label class="hamming-noise-control">
                 <span>Random bit flips</span>
-                <input type="range" min="0" max="50" value="3" step="1" data-noise-rate aria-label="Random bit-flip percentage">
+                <input
+                  type="range"
+                  min="0"
+                  max="50"
+                  value="3"
+                  step="1"
+                  data-noise-rate
+                  aria-label="Random bit-flip percentage"
+                />
                 <output data-noise-output>3%</output>
               </label>
             </div>
             <div class="hamming-text-compare webpage-compare">
               <div class="hamming-text-pane">
                 <span>Original · a playful 1991-style recreation</span>
-                <iframe data-source-preview title="Original recreation of the first website" sandbox></iframe>
+                <iframe
+                  data-source-preview
+                  title="Original recreation of the first website"
+                  sandbox
+                ></iframe>
               </div>
               <div class="hamming-text-pane">
                 <span>Broken webpage · before repair</span>
-                <iframe data-damaged-output title="Damaged webpage before repair" sandbox></iframe>
+                <iframe
+                  data-damaged-output
+                  title="Damaged webpage before repair"
+                  sandbox
+                ></iframe>
               </div>
               <div class="hamming-text-pane">
                 <span>Recovered webpage</span>
-                <iframe data-recovered-output title="Recovered webpage" sandbox></iframe>
+                <iframe
+                  data-recovered-output
+                  title="Recovered webpage"
+                  sandbox
+                ></iframe>
               </div>
             </div>
             <div class="hamming-game-console">
               <div class="hamming-actions">
-                <button class="action" data-hamming-action="encode">1 · Encode HTML</button>
-                <button class="action warn" data-hamming-action="corrupt">2 · Flip 3%</button>
-                <button class="action primary" data-hamming-action="repair">3 · Repair + render</button>
-                <button class="action ghost" data-hamming-action="reset">Reset</button>
+                <button class="action" data-hamming-action="encode">
+                  1 · Encode HTML
+                </button>
+                <button class="action warn" data-hamming-action="corrupt">
+                  2 · Flip 3%
+                </button>
+                <button class="action primary" data-hamming-action="repair">
+                  3 · Repair + render
+                </button>
+                <button class="action ghost" data-hamming-action="reset">
+                  Reset
+                </button>
               </div>
               <div class="hamming-progress"><i data-game-progress></i></div>
-              <div class="hamming-status" data-game-status aria-live="polite">Ready. Encode the source to begin.</div>
+              <div class="hamming-status" data-game-status aria-live="polite">
+                Ready. Encode the source to begin.
+              </div>
               <div class="hamming-metrics">
                 <span>HTML<strong data-metric="source">—</strong></span>
                 <span>Encoded<strong data-metric="encoded">—</strong></span>
                 <span>Flipped<strong data-metric="flips">—</strong></span>
                 <span>Recovered<strong data-metric="recovery">—</strong></span>
               </div>
-              <div class="hamming-bit-sample" data-bit-sample><em>original</em><b>→</b><em>damaged</em><b>→</b><em>repaired</em></div>
+              <div class="hamming-bit-sample" data-bit-sample>
+                <em>original</em><b>→</b><em>damaged</em><b>→</b
+                ><em>repaired</em>
+              </div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">Can a page look right without being byte-perfect?</span
+          <span class="prompt"
+            >Can a page look right without being byte-perfect?</span
           ><span>Source code is data too</span>
         </footer>
         <aside class="notes">
@@ -2234,7 +3094,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Recovery game"
         data-notes="The final scale test processes the complete Project Gutenberg UTF-8 text of War and Peace by Leo Tolstoy, not an excerpt. The source file is 3,359,405 bytes. Encoding creates two Hamming codewords per byte and 47,031,670 transmitted bits. Choose a bit-flip rate, apply independent noise, then repair and compare every decoded byte with the original. Processing is chunked so the presentation remains responsive. Point out that the code is doing millions of small local repairs, but blocks with two or more errors remain outside its guarantee."
         class="slide nila"
@@ -2246,12 +3106,28 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
           <div class="mission-time">Complete public-domain book · 3.36 MB</div>
         </header>
         <div class="slide-body">
-          <div class="hamming-text-game" data-hamming-game data-source="book" data-stage="0">
+          <div
+            class="hamming-text-game"
+            data-hamming-game
+            data-source="book"
+            data-stage="0"
+          >
             <div class="hamming-game-title">
-              <div><span>PROJECT GUTENBERG EBOOK #2600</span><h2>Can we repair all of <em>War and Peace</em>?</h2></div>
+              <div>
+                <span>PROJECT GUTENBERG EBOOK #2600</span>
+                <h2>Can we repair all of <em>War and Peace</em>?</h2>
+              </div>
               <label class="hamming-noise-control">
                 <span>Random bit flips</span>
-                <input type="range" min="0" max="50" value="3" step="1" data-noise-rate aria-label="Random bit-flip percentage">
+                <input
+                  type="range"
+                  min="0"
+                  max="50"
+                  value="3"
+                  step="1"
+                  data-noise-rate
+                  aria-label="Random bit-flip percentage"
+                />
                 <output data-noise-output>3%</output>
               </label>
             </div>
@@ -2266,31 +3142,57 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
               </div>
               <div class="hamming-text-pane">
                 <span>Recovered book · opening preview</span>
-                <pre data-recovered-output>Recovered text will appear here.</pre>
+                <pre data-recovered-output>
+Recovered text will appear here.</pre
+                >
               </div>
             </div>
             <div class="hamming-game-console">
               <div class="hamming-actions">
-                <button class="action" data-hamming-action="encode">1 · Encode complete book</button>
-                <button class="action warn" data-hamming-action="corrupt">2 · Flip 3%</button>
-                <button class="action primary" data-hamming-action="repair">3 · Repair + compare</button>
-                <button class="action ghost" data-hamming-action="reset">Reset</button>
+                <button class="action" data-hamming-action="encode">
+                  1 · Encode complete book
+                </button>
+                <button class="action warn" data-hamming-action="corrupt">
+                  2 · Flip 3%
+                </button>
+                <button class="action primary" data-hamming-action="repair">
+                  3 · Repair + compare
+                </button>
+                <button class="action ghost" data-hamming-action="reset">
+                  Reset
+                </button>
               </div>
               <div class="hamming-progress"><i data-game-progress></i></div>
-              <div class="hamming-status" data-game-status aria-live="polite">Ready. Encode the source to begin.</div>
+              <div class="hamming-status" data-game-status aria-live="polite">
+                Ready. Encode the source to begin.
+              </div>
               <div class="hamming-metrics">
                 <span>Book<strong data-metric="source">3.36 MB</strong></span>
                 <span>Encoded<strong data-metric="encoded">—</strong></span>
                 <span>Flipped<strong data-metric="flips">—</strong></span>
                 <span>Recovered<strong data-metric="recovery">—</strong></span>
               </div>
-              <div class="hamming-bit-sample" data-bit-sample><em>original</em><b>→</b><em>damaged</em><b>→</b><em>repaired</em></div>
+              <div class="hamming-bit-sample" data-bit-sample>
+                <em>original</em><b>→</b><em>damaged</em><b>→</b
+                ><em>repaired</em>
+              </div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">Millions of repairs—what does the guarantee still miss?</span
-          ><span>Leo Tolstoy · <a class="slide-source-link" href="https://www.gutenberg.org/ebooks/2600" target="_blank" rel="noopener">Project Gutenberg #2600</a> · public domain in the USA</span>
+          <span class="prompt"
+            >Millions of repairs—what does the guarantee still miss?</span
+          ><span
+            >Leo Tolstoy ·
+            <a
+              class="slide-source-link"
+              href="https://www.gutenberg.org/ebooks/2600"
+              target="_blank"
+              rel="noopener"
+              >Project Gutenberg #2600</a
+            >
+            · public domain in the USA</span
+          >
         </footer>
         <aside class="notes">
           <p>
@@ -2304,7 +3206,8 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <!-- Slide 40 (Final transmission) intentionally commented out.
+      <section
         data-chapter="Final transmission"
         data-notes="Give teams paper. They should independently calculate all three checks, add complaining labels, flip the indicated bit, extract data positions, and consult the codebook. Checks 1, 2, and 4 all fail. Syndrome = 1+2+4 = 7. Flip position 7 to obtain 1110000. Data positions 3,5,6,7 give 1000. The decoded report is LIQUID WATER DETECTED . Only click “Repair + decode” after groups defend their complete chain of reasoning."
         class="slide nila"
@@ -2352,8 +3255,9 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
           </p>
         </aside>
       </section>
+      -->
 
-<section
+      <section
         data-chapter="Thank you"
         data-notes="Invite one-sentence reflections: “The most surprising thing was…” or “The next error model I would study is…” Return to the opening mystery. Students now possess not only a shared codebook, but a way for messages to carry evidence about their own damage. Optional exit ticket: Design three valid binary messages that can each survive one wrong bit. Explain why your set works."
         class="slide nila"
@@ -2437,7 +3341,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Encore: repetition codes"
         data-notes="This encore begins after the formal ending, so use it when the group wants a glimpse beyond Hamming(7,4). Repetition codes are the simplest infinite family: repeat one data bit n times, with n odd. The code has parameters [n,1,n], rate 1/n, and corrects floor((n-1)/2) errors by majority vote. Have students predict the guarantee for repetition lengths 3, 5, and 7. The lesson is not that repetition is bad; it is wonderfully robust and wonderfully expensive."
         class="slide nila"
@@ -2454,18 +3358,35 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
             <div class="beyond-copy">
               <span class="beyond-kicker">Repetition code</span>
               <h2>When in doubt, say it again.</h2>
-              <p class="lede">Send one bit <em>n</em> times. Decode by majority vote.</p>
-              <div class="parameter-banner"><strong>[n, 1, n]</strong><span>length · data · distance</span></div>
+              <p class="lede">
+                Send one bit <em>n</em> times. Decode by majority vote.
+              </p>
+              <div class="parameter-banner">
+                <strong>[n, 1, n]</strong><span>length · data · distance</span>
+              </div>
             </div>
-            <div class="repeat-family-demo" aria-label="Examples of repetition codes">
-              <div><span>Send</span><b>1</b><i>→</i><code>111</code><small>[3,1,3] corrects 1 error</small></div>
-              <div><span>Send</span><b>1</b><i>→</i><code>11111</code><small>[5,1,5] corrects 2 errors</small></div>
-              <div><span>Send</span><b>1</b><i>→</i><code>1111111</code><small>[7,1,7] corrects 3 errors</small></div>
+            <div
+              class="repeat-family-demo"
+              aria-label="Examples of repetition codes"
+            >
+              <div>
+                <span>Send</span><b>1</b><i>→</i><code>111</code
+                ><small>[3,1,3] corrects 1 error</small>
+              </div>
+              <div>
+                <span>Send</span><b>1</b><i>→</i><code>11111</code
+                ><small>[5,1,5] corrects 2 errors</small>
+              </div>
+              <div>
+                <span>Send</span><b>1</b><i>→</i><code>1111111</code
+                ><small>[7,1,7] corrects 3 errors</small>
+              </div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">What reliability do we buy—and what rate do we pay?</span
+          <span class="prompt"
+            >What reliability do we buy—and what rate do we pay?</span
           ><span>Corrects ⌊(n − 1)/2⌋ errors · rate 1/n</span>
         </footer>
         <aside class="notes">
@@ -2477,7 +3398,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Encore: the Golay code"
         data-notes="Read [23,12,7] exactly as students learned to read Hamming parameters: 23 transmitted bits, 12 data bits, minimum distance 7. Distance 7 guarantees correction of any three flipped bits. There are 2^12 = 4096 codewords. Around each codeword, the original plus every word at distance 1, 2, or 3 gives 1 + 23 + 253 + 1771 = 2048 received words. Multiplying by 4096 gives 2^23 exactly. The balls tile the whole space, so the binary Golay code is perfect. Marcel Golay introduced it in a one-page 1949 note."
         class="slide nila"
@@ -2499,20 +3420,35 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
                 <b><strong>12</strong> data</b>
                 <b><strong>7</strong> minimum distance</b>
               </div>
-              <div class="golay-promise">Any <strong>3 flipped bits</strong> can be corrected.</div>
+              <div class="golay-promise">
+                Any <strong>3 flipped bits</strong> can be corrected.
+              </div>
             </div>
             <div class="perfect-proof">
               <span>One radius-3 neighborhood</span>
-              <div class="perfect-sum">1 + 23 + 253 + 1771 = <strong>2048</strong></div>
+              <div class="perfect-sum">
+                1 + 23 + 253 + 1771 = <strong>2048</strong>
+              </div>
               <div class="perfect-times">4096 messages × 2048 outcomes</div>
               <div class="perfect-equals">= 8,388,608 = 2<sup>23</sup></div>
-              <p>Every possible received word belongs to exactly one message.</p>
+              <p>
+                Every possible received word belongs to exactly one message.
+              </p>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">A perfect tiling—now with three-error correction</span
-          ><span><a class="slide-source-link" href="https://pierre-hyvernat.apps.math.cnrs.fr/data/Enseignement/2223/info602/TP-Golay/golay_paper.pdf" target="_blank" rel="noopener">Golay's original 1949 note</a></span>
+          <span class="prompt"
+            >A perfect tiling—now with three-error correction</span
+          ><span
+            ><a
+              class="slide-source-link"
+              href="https://pierre-hyvernat.apps.math.cnrs.fr/data/Enseignement/2223/info602/TP-Golay/golay_paper.pdf"
+              target="_blank"
+              rel="noopener"
+              >Golay's original 1949 note</a
+            ></span
+          >
         </footer>
         <aside class="notes">
           <p>
@@ -2526,7 +3462,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Encore: extended Golay"
         data-hidden-by-default="true"
         data-notes="Add one overall parity bit to the 23-bit Golay word. The result is the extended binary Golay code [24,12,8]. It still corrects any three errors; its minimum distance 8 can detect up to seven errors when only detection is required. JPL's Deep Space Network report describes use of the 23/24-bit Golay family on several links, including the Voyager imaging system link. Use that story to connect the abstract parameters to pictures traveling across billions of kilometers."
@@ -2543,14 +3479,20 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
           <div class="voyager-stage">
             <div class="voyager-art" aria-hidden="true">
               <div class="voyager-probe">🛰️</div>
-              <div class="voyager-beam"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="voyager-beam">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
               <div class="voyager-earth">🌍</div>
-              <div class="voyager-photo">JUPITER<br><strong>IMAGE DATA</strong></div>
+              <div class="voyager-photo">
+                JUPITER<br /><strong>IMAGE DATA</strong>
+              </div>
             </div>
             <div class="voyager-copy">
               <span class="beyond-kicker">Extended binary Golay code</span>
               <h2>[24, 12, 8]</h2>
-              <div class="golay-upgrade"><span>[23,12,7]</span><i>+ parity</i><strong>[24,12,8]</strong></div>
+              <div class="golay-upgrade">
+                <span>[23,12,7]</span><i>+ parity</i><strong>[24,12,8]</strong>
+              </div>
               <ul class="beyond-list">
                 <li>Correct any 3 flipped bits.</li>
                 <li>Detect up to 7 errors when only detecting.</li>
@@ -2560,8 +3502,18 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">The mathematics in this room once protected pictures from space</span
-          ><span><a class="slide-source-link" href="https://ipnpr.jpl.nasa.gov/progress_report/42-96/96E.PDF" target="_blank" rel="noopener">JPL: The (23,12) Binary Golay Code</a></span>
+          <span class="prompt"
+            >The mathematics in this room once protected pictures from
+            space</span
+          ><span
+            ><a
+              class="slide-source-link"
+              href="https://ipnpr.jpl.nasa.gov/progress_report/42-96/96E.PDF"
+              target="_blank"
+              rel="noopener"
+              >JPL: The (23,12) Binary Golay Code</a
+            ></span
+          >
         </footer>
         <aside class="notes">
           <p>
@@ -2572,7 +3524,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Encore: Reed–Solomon intuition"
         data-notes="Reed and Solomon's original viewpoint is wonderfully visual. Treat k message symbols as the coefficients of a polynomial of degree less than k, then transmit its values at n agreed positions. This example works modulo 11: the message (2,3,1) becomes p(x)=2+3x+x². Evaluating at x=0 through 6 produces (2,6,1,9,8,9,1). Emphasize the shape, not the modular arithmetic: three symbols determine one quadratic, and seven samples provide four redundant checks. Reed–Solomon codes use finite fields; modulo 11 is a small field chosen so students can verify the arithmetic by hand."
         class="slide nila"
@@ -2588,7 +3540,10 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
           <div class="rs-shape-stage">
             <div class="rs-message-card">
               <span class="beyond-kicker">Three message symbols</span>
-              <div class="rs-message-symbols" aria-label="Message symbols 2, 3, 1">
+              <div
+                class="rs-message-symbols"
+                aria-label="Message symbols 2, 3, 1"
+              >
                 <b>2</b><b>3</b><b>1</b>
               </div>
               <div class="rs-turn-arrow">become the coefficients of</div>
@@ -2596,8 +3551,13 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
               <small>Arithmetic wraps around modulo 11.</small>
             </div>
             <div class="rs-sample-card">
-              <span class="beyond-kicker">Sample the same shape seven times</span>
-              <div class="rs-sample-strip" aria-label="Seven evaluations of the polynomial">
+              <span class="beyond-kicker"
+                >Sample the same shape seven times</span
+              >
+              <div
+                class="rs-sample-strip"
+                aria-label="Seven evaluations of the polynomial"
+              >
                 <div><small>x=0</small><strong>2</strong></div>
                 <div><small>x=1</small><strong>6</strong></div>
                 <div><small>x=2</small><strong>1</strong></div>
@@ -2606,25 +3566,39 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
                 <div><small>x=5</small><strong>9</strong></div>
                 <div><small>x=6</small><strong>1</strong></div>
               </div>
-              <div class="rs-codeword-label"><span>TRANSMIT</span><code>2 · 6 · 1 · 9 · 8 · 9 · 1</code></div>
-              <p>We did not copy the message. We sent enough points to rebuild its <strong>rule</strong>.</p>
+              <div class="rs-codeword-label">
+                <span>TRANSMIT</span><code>2 · 6 · 1 · 9 · 8 · 9 · 1</code>
+              </div>
+              <p>
+                We did not copy the message. We sent enough points to rebuild
+                its <strong>rule</strong>.
+              </p>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">A low-degree polynomial cannot wiggle arbitrarily</span
-          ><span><a class="slide-source-link" href="https://epubs.siam.org/doi/abs/10.1137/0108018" target="_blank" rel="noopener">Reed &amp; Solomon's 1960 paper</a></span>
+          <span class="prompt"
+            >A low-degree polynomial cannot wiggle arbitrarily</span
+          ><span
+            ><a
+              class="slide-source-link"
+              href="https://epubs.siam.org/doi/abs/10.1137/0108018"
+              target="_blank"
+              rel="noopener"
+              >Reed &amp; Solomon's 1960 paper</a
+            ></span
+          >
         </footer>
         <aside class="notes">
           <p>
-            Invite students to check one sample. For example, p(2) = 2 + 6 +
-            4 = 12, which wraps to 1 modulo 11. The message contains three
-            field symbols, while the codeword contains seven.
+            Invite students to check one sample. For example, p(2) = 2 + 6 + 4 =
+            12, which wraps to 1 modulo 11. The message contains three field
+            symbols, while the codeword contains seven.
           </p>
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Encore: Reed–Solomon repair"
         data-notes="This is a [7,3,5] Reed–Solomon example: n=7 transmitted symbols, k=3 message symbols, and minimum distance n-k+1=5. Therefore it corrects floor((5-1)/2)=2 unknown symbol errors, or up to 4 erasures when their locations are known. A symbol may represent a whole byte, so one symbol error can contain several bad bits. That is why Reed–Solomon is especially useful when damage comes in clumps. QR Code's official documentation says its error correction is implemented with Reed–Solomon codes and operates at the byte level. JPL documents a (255,223) Reed–Solomon code that corrects 16 symbol errors in a 255-symbol block."
         class="slide nila"
@@ -2642,33 +3616,67 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
               <div class="rs-word-block is-broken">
                 <span>RECEIVED</span>
                 <div aria-label="Received symbols 2, 6, 7, 9, 8, 4, 1">
-                  <b>2</b><b>6</b><b class="bad">7</b><b>9</b><b>8</b><b class="bad">4</b><b>1</b>
+                  <b>2</b><b>6</b><b class="bad">7</b><b>9</b><b>8</b
+                  ><b class="bad">4</b><b>1</b>
                 </div>
                 <small>Two symbols no longer lie on the shape.</small>
               </div>
               <div class="rs-decoder">
                 <span>DECODER</span>
-                <strong>Find the degree-2 polynomial that agrees with at least 5 points</strong>
+                <strong
+                  >Find the degree-2 polynomial that agrees with at least 5
+                  points</strong
+                >
                 <i>→</i>
               </div>
               <div class="rs-word-block is-fixed">
                 <span>RECOVERED</span>
                 <div aria-label="Recovered symbols 2, 6, 1, 9, 8, 9, 1">
-                  <b>2</b><b>6</b><b class="fixed">1</b><b>9</b><b>8</b><b class="fixed">9</b><b>1</b>
+                  <b>2</b><b>6</b><b class="fixed">1</b><b>9</b><b>8</b
+                  ><b class="fixed">9</b><b>1</b>
                 </div>
-                <small><strong>[7,3,5]</strong> corrects any 2 symbol errors.</small>
+                <small
+                  ><strong>[7,3,5]</strong> corrects any 2 symbol errors.</small
+                >
               </div>
             </div>
             <div class="rs-uses" aria-label="Uses of Reed-Solomon codes">
-              <div><span>▦</span><strong>QR codes</strong><small>survive dirt and missing patches</small></div>
-              <div><span>💿</span><strong>Storage &amp; media</strong><small>repair clustered damage</small></div>
-              <div><span>🛰️</span><strong>Space links</strong><small>recover blocks of telemetry</small></div>
+              <div>
+                <span>▦</span><strong>QR codes</strong
+                ><small>survive dirt and missing patches</small>
+              </div>
+              <div>
+                <span>💿</span><strong>Storage &amp; media</strong
+                ><small>repair clustered damage</small>
+              </div>
+              <div>
+                <span>🛰️</span><strong>Space links</strong
+                ><small>recover blocks of telemetry</small>
+              </div>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">Known missing positions are even easier: four erasures can be restored</span
-          ><span class="source-pair"><a class="slide-source-link" href="https://www.qrcode.com/en/about/error_correction.html" target="_blank" rel="noopener">QR Code</a> · <a class="slide-source-link" href="https://deepspace.jpl.nasa.gov/dsndocs/810-005/206/206E.pdf" target="_blank" rel="noopener">JPL Deep Space Network</a></span>
+          <span class="prompt"
+            >Known missing positions are even easier: four erasures can be
+            restored</span
+          ><span class="source-pair"
+            ><a
+              class="slide-source-link"
+              href="https://www.qrcode.com/en/about/error_correction.html"
+              target="_blank"
+              rel="noopener"
+              >QR Code</a
+            >
+            ·
+            <a
+              class="slide-source-link"
+              href="https://deepspace.jpl.nasa.gov/dsndocs/810-005/206/206E.pdf"
+              target="_blank"
+              rel="noopener"
+              >JPL Deep Space Network</a
+            ></span
+          >
         </footer>
         <aside class="notes">
           <p>
@@ -2680,7 +3688,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         </aside>
       </section>
 
-<section
+      <section
         data-chapter="Encore: where next?"
         data-notes="End the encore with a ladder rather than a catalogue to memorize. Repetition teaches majority. Hamming teaches syndromes and perfect one-error packing. Golay shows that rare, beautiful perfect codes can correct more. Reed-Solomon codes work with symbol errors and power storage and QR-like systems. Convolutional, turbo, LDPC, and polar codes approach demanding modern communication limits. The motivational point is that students already know the central design questions: what errors are allowed, what guarantee is needed, and how much redundancy can be afforded."
         class="slide nila"
@@ -2695,24 +3703,42 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
         <div class="slide-body">
           <div class="code-ladder-stage">
             <div class="code-ladder">
-              <div><span>1</span><strong>Repetition</strong><small>majority vote</small></div>
+              <div>
+                <span>1</span><strong>Repetition</strong
+                ><small>majority vote</small>
+              </div>
               <i>→</i>
-              <div><span>2</span><strong>Hamming</strong><small>one-error address</small></div>
+              <div>
+                <span>2</span><strong>Hamming</strong
+                ><small>one-error address</small>
+              </div>
               <i>→</i>
-              <div><span>3</span><strong>Golay</strong><small>perfect radius 3</small></div>
+              <div>
+                <span>3</span><strong>Golay</strong
+                ><small>perfect radius 3</small>
+              </div>
               <i>→</i>
-              <div><span>4</span><strong>Reed-Solomon</strong><small>repair symbols</small></div>
+              <div>
+                <span>4</span><strong>Reed-Solomon</strong
+                ><small>repair symbols</small>
+              </div>
               <i>→</i>
-              <div><span>5</span><strong>LDPC · Polar</strong><small>modern high-rate links</small></div>
+              <div>
+                <span>5</span><strong>LDPC · Polar</strong
+                ><small>modern high-rate links</small>
+              </div>
             </div>
             <div class="next-mission-question">
               <span>You already know how to begin:</span>
-              <h2>What can fail? What must survive? What redundancy can we afford?</h2>
+              <h2>
+                What can fail? What must survive? What redundancy can we afford?
+              </h2>
             </div>
           </div>
         </div>
         <footer class="slide-foot">
-          <span class="prompt">Invent a channel. Then invent the code it needs.</span
+          <span class="prompt"
+            >Invent a channel. Then invent the code it needs.</span
           ><span>The next theorem could be yours.</span>
         </footer>
         <aside class="notes">
@@ -2723,9 +3749,9 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
           </p>
         </aside>
       </section>
-    <!-- ===== end NILA mission slides ===== -->
+      <!-- ===== end NILA mission slides ===== -->
 
-    <!-- COMMENTED OUT: Alien transmission rescue
+      <!-- COMMENTED OUT: Alien transmission rescue
     <section class="slide" data-chapter="Alien rescue" data-notes="What the board represents: every square has only two possible values—green means ON and white means OFF. The upper-left 5 × 5 area is the alien picture. The gold-outlined sixth column and sixth row are checking pixels added before transmission; the gold outline marks their job, not a third value. The checks were chosen so that every complete row and every complete column originally contained an even number of ON squares. When this slide loads—or when you press New glitch—the computer secretly flips exactly one of the 36 squares. The damaged square may be in the picture or in the outlined checking border. How to run it: (1) Ask students to count green ON squares across each complete row, including its outlined checking square. Exactly one row now has an odd count. (2) Count down each complete column in the same way. Exactly one column has an odd count. (3) The damaged pixel must be where that odd row and odd column cross. Click that intersection, then press Repair selected. A correct choice flips the pixel back, restores even counts everywhere, and reveals HELLO, HUMANS. A wrong choice is not destructive; the board shakes and students can select another square. Important: students do not need to recognize the picture, and the app does not highlight the odd lines for them—the mathematical task is to find them by counting. If the room is stuck, model one row aloud and remind them that outlined pixels still have the same ON/OFF values. After success, connect this directly to the card trick: one changed square disturbs one row check and one column check, so their intersection locates the error.">
       <div class="slide-inner demo-layout alien-layout">
         <div class="slide-copy">
@@ -2753,7 +3779,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
     </section>
     -->
 
-    <!-- COMMENTED OUT: Twist: two glitches
+      <!-- COMMENTED OUT: Twist: two glitches
     <section class="slide" data-chapter="System limits" data-notes="Create two errors several times. Ask what the check information can prove. Students should discover that the method may detect something happened but cannot always identify the two original squares. The key word here is guarantee.">
       <div class="slide-inner demo-layout two-glitch-layout">
         <div class="slide-copy">
@@ -2774,7 +3800,7 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
     </section>
     -->
 
-    <!-- COMMENTED OUT: slides 29 onward (New mission → Mission complete)
+      <!-- COMMENTED OUT: slides 29 onward (New mission → Mission complete)
     <section class="slide" data-chapter="New mission" data-notes="Introduce four NASA commands. Clarify that each command may use any row of red/blue cards, and another team flips exactly one card after sending. The receiver sees only the damaged row.">
       <div class="slide-inner command-layout">
         <p class="eyebrow">NASA needs only four commands</p>
@@ -2971,35 +3997,85 @@ Battery reserves are low. The next communication window lasts ninety seconds. Pl
       </div>
       <figure class="story-figure world-story" aria-hidden="true"><span>🌍</span><i></i><span>📡</span></figure>
     </section>
-    -->
-  </main>
+    --></main>
 
-  <aside class="notes-panel" id="notesPanel" aria-label="Facilitator notes" hidden>
-    <div><span>FACILITATOR NOTE</span><button data-action="toggle-notes" aria-label="Close notes">×</button></div>
-    <p id="notesText"></p>
-  </aside>
+    <aside
+      class="notes-panel"
+      id="notesPanel"
+      aria-label="Facilitator notes"
+      hidden
+    >
+      <div>
+        <span>FACILITATOR NOTE</span
+        ><button data-action="toggle-notes" aria-label="Close notes">×</button>
+      </div>
+      <p id="notesText"></p>
+    </aside>
 
-  <aside class="display-panel" id="displayPanel" aria-label="Display controls" hidden>
-    <div class="display-panel-heading"><span>DISPLAY</span><button data-action="toggle-display-panel" aria-label="Close display controls">×</button></div>
-    <label class="visual-density-label" for="visualDensity"><span>Figures</span><output id="visualDensityValue" for="visualDensity">Current</output></label>
-    <div class="visual-density-control"><span>Fewer</span><input id="visualDensity" type="range" min="0" max="2" value="1" step="1" aria-label="Amount of optional figures"><span>More</span></div>
-    <button class="projector-toggle" id="projectorToggle" data-action="toggle-projector" aria-pressed="false"><i aria-hidden="true"></i><span>Flip colors for projector</span></button>
-    <button class="display-reset" data-action="reset-display">Reset to current design</button>
-    <p class="display-shortcuts">Shortcuts: <kbd>D</kbd> controls · <kbd>C</kbd> flip colors</p>
-  </aside>
+    <aside
+      class="display-panel"
+      id="displayPanel"
+      aria-label="Display controls"
+      hidden
+    >
+      <div class="display-panel-heading">
+        <span>DISPLAY</span
+        ><button
+          data-action="toggle-display-panel"
+          aria-label="Close display controls"
+        >
+          ×
+        </button>
+      </div>
+      <label class="visual-density-label" for="visualDensity"
+        ><span>Figures</span
+        ><output id="visualDensityValue" for="visualDensity"
+          >Current</output
+        ></label
+      >
+      <div class="visual-density-control">
+        <span>Fewer</span
+        ><input
+          id="visualDensity"
+          type="range"
+          min="0"
+          max="2"
+          value="1"
+          step="1"
+          aria-label="Amount of optional figures"
+        /><span>More</span>
+      </div>
+      <button
+        class="projector-toggle"
+        id="projectorToggle"
+        data-action="toggle-projector"
+        aria-pressed="false"
+      >
+        <i aria-hidden="true"></i><span>Flip colors for projector</span>
+      </button>
+      <button class="display-reset" data-action="reset-display">
+        Reset to current design
+      </button>
+      <p class="display-shortcuts">
+        Shortcuts: <kbd>D</kbd> controls · <kbd>C</kbd> flip colors
+      </p>
+    </aside>
 
-  <footer class="deck-footer">
-    <div class="progress-track"><i id="progressBar"></i></div>
-    <div class="slide-count"><strong id="slideNumber">01</strong><span>/</span><span id="slideTotal">18</span></div>
-    <div class="nav-controls">
-      <button data-action="prev" aria-label="Previous slide">←</button>
-      <button data-action="next" aria-label="Next slide">→</button>
-    </div>
-  </footer>
+    <footer class="deck-footer">
+      <div class="progress-track"><i id="progressBar"></i></div>
+      <div class="slide-count">
+        <strong id="slideNumber">01</strong><span>/</span
+        ><span id="slideTotal">18</span>
+      </div>
+      <div class="nav-controls">
+        <button data-action="prev" aria-label="Previous slide">←</button>
+        <button data-action="next" aria-label="Next slide">→</button>
+      </div>
+    </footer>
 
-  <script src="app.js" defer></script>
-  <script src="nila-slides.js" defer></script>
-  <script src="hamming-text-game.js" defer></script>
-  <script src="deck-controls.js?v=20260902" defer></script>
-</body>
+    <script src="app.js?v=20260904d" defer></script>
+    <script src="nila-slides.js?v=20260904b" defer></script>
+    <script src="hamming-text-game.js" defer></script>
+    <script src="deck-controls.js?v=20260904d" defer></script>
+  </body>
 </html>

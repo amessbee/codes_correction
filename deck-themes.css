@@ -244,6 +244,83 @@ body.deck-light .slide.nila .extra-parity h2 { color: var(--ink); }
 body.deck-light .slide.nila .extra-parity .lede { color: var(--muted); }
 body.deck-light .slide.nila .doubling-column .stack span { opacity: 0.9; }
 
+/* Small controls and captions that intentionally use reversed text in dark mode. */
+body.deck-light .slide.nila .action.primary,
+body.deck-light .slide.nila .prompt::before {
+  color: #ffffff;
+}
+body.deck-light .slide.nila .human-card::before {
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #121a2b;
+}
+body.deck-light .slide.nila .attempt-failed small,
+body.deck-light .slide.nila .hamming-noise-control output {
+  color: var(--red);
+}
+body.deck-light .slide.nila .attempt-verdict small,
+body.deck-light .slide.nila .position-cell::after,
+body.deck-light .slide.nila .hamming-status,
+body.deck-light .slide.nila .hamming-bit-sample b {
+  color: var(--muted);
+}
+body.deck-light .slide.nila .position-order-caption {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+/* The 7-cube remains a dark inset so the dense graph stays legible. Re-reverse
+   every label and brighten the fine geometry only while a light theme is on. */
+body.deck-light .slide.nila .hypercube-figure {
+  border-color: rgba(10, 107, 98, 0.34);
+  box-shadow: 0 20px 54px rgba(20, 32, 58, 0.2), inset 0 0 80px rgba(88, 230, 255, 0.055);
+}
+body.deck-light .slide.nila .cube-guide-axis {
+  stroke: rgba(130, 224, 238, 0.13);
+}
+body.deck-light .slide.nila .cube-edge {
+  stroke: rgba(125, 220, 236, 0.25);
+}
+body.deck-light .slide.nila .cube-edge.codeword-edge {
+  stroke: rgba(255, 209, 102, 0.46);
+}
+body.deck-light .slide.nila .cube-edge.incident {
+  stroke: rgba(255, 255, 255, 0.98);
+}
+body.deck-light .slide.nila .cube-node {
+  fill: #65dcec;
+  stroke: rgba(239, 253, 255, 0.82);
+}
+body.deck-light .slide.nila .cube-node.codeword {
+  fill: #ffd166;
+  stroke: #fff5cf;
+}
+body.deck-light .slide.nila .cube-node.cube-neighbour {
+  fill: #59f18b;
+  stroke: #effff4;
+}
+body.deck-light .slide.nila .cube-node.selected {
+  fill: #ffffff;
+  stroke: #65dcec;
+}
+body.deck-light .slide.nila .cube-neighbour-label rect {
+  fill: rgba(4, 15, 27, 0.97);
+  stroke: rgba(89, 241, 139, 0.92);
+}
+body.deck-light .slide.nila .cube-neighbour-label text {
+  fill: #f0fff5;
+}
+body.deck-light .slide.nila .hypercube-readout span {
+  color: #b8d0dc;
+}
+body.deck-light .slide.nila .hypercube-readout code {
+  color: #70ebff;
+}
+body.deck-light .slide.nila .hypercube-readout small {
+  color: #eef9ff;
+}
+
 /* "MISSION EMERGENCY" stays an alarm — a solid dark-red card so its text pops */
 body.deck-light .slide.nila .alarm-panel {
   background: linear-gradient(160deg, #7a1526, #3a0a13);

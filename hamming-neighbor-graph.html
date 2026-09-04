@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050816" />
+    <title>Closest-neighbor graph · GLITCH Math Circle</title>
+    <link rel="stylesheet" href="hamming-neighbor-graph.css?v=20260904a" />
+  </head>
+  <body>
+    <header class="lab-header">
+      <a class="lab-brand" href="slides.html">GLITCH // GRAPH LAB</a>
+      <button class="theme-toggle" id="themeToggle" type="button">
+        Use light theme
+      </button>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="pageTitle">
+        <p class="eyebrow">Hamming distance explorer</p>
+        <h1 id="pageTitle">Closest-neighbor graph</h1>
+        <p>
+          Each binary string becomes a node. An edge appears when either
+          endpoint names the other among its closest strings. Ties create
+          several edges.
+        </p>
+      </section>
+
+      <div class="workspace">
+        <form class="input-panel" id="wordForm" novalidate>
+          <div class="input-heading">
+            <label for="wordInput">Binary strings</label>
+            <span id="inputCount">16 strings</span>
+          </div>
+          <p class="input-hint" id="inputHint">
+            Separate strings with spaces, commas, or new lines. Every string
+            must have the same length.
+          </p>
+          <textarea
+            id="wordInput"
+            aria-describedby="inputHint inputError"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          >0000000
+1101001
+0101010
+1000011
+1001100
+0100101
+1100110
+0001111
+1110000
+0011001
+1011010
+0110011
+0111100
+1010101
+0010110
+1111111</textarea
+          >
+          <p class="input-error" id="inputError" role="alert" hidden></p>
+          <div class="form-actions">
+            <button class="primary-action" type="submit">Draw graph</button>
+            <button class="secondary-action" id="restoreButton" type="button">
+              Restore Hamming(7,4)
+            </button>
+          </div>
+          <p class="input-note">
+            The default list contains all 16 codewords of the Hamming(7,4)
+            code used in the lesson.
+          </p>
+        </form>
+
+        <section class="graph-panel" aria-labelledby="graphTitle">
+          <div class="graph-heading">
+            <div>
+              <h2 id="graphTitle">Nearest connections</h2>
+              <output id="graphSummary" aria-live="polite"></output>
+            </div>
+            <button class="arrange-button" id="arrangeButton" type="button">
+              Arrange again
+            </button>
+          </div>
+          <div class="graph-key" aria-label="Graph key">
+            <span><i class="key-line mutual"></i>mutual closest</span>
+            <span><i class="key-line one-way"></i>closest for one endpoint</span>
+            <span>edge number = Hamming distance</span>
+          </div>
+          <div class="graph-stage" id="graphStage">
+            <svg
+              id="neighborGraph"
+              role="img"
+              aria-labelledby="graphTitle graphDescription"
+            >
+              <desc id="graphDescription"></desc>
+            </svg>
+          </div>
+          <p class="selection-readout" id="selectionReadout" aria-live="polite"></p>
+        </section>
+      </div>
+    </main>
+
+    <script src="hamming-neighbor-graph.js?v=20260904c" defer></script>
+  </body>
+</html>
